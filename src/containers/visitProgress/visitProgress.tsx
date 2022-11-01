@@ -67,7 +67,6 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '24px',
-        justifyContent: 'center',
       }}
     >
       <h2>Market Visit Progress</h2>
