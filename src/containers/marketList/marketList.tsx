@@ -1,6 +1,6 @@
 import { useState, MutableRef } from 'preact/hooks';
-import MarketItem from '../components/marketItem';
-import marketData from '../data/markets.json';
+import MarketItem from './marketItem';
+import marketData from '../../data/markets.json';
 
 interface Props {
   marketListRef: MutableRef<HTMLDivElement | null>;
@@ -31,7 +31,8 @@ const MarketList = ({ marketListRef }: Props) => {
       style={{
         backgroundColor: 'rgb(238,238,238)',
         padding: '24px',
-        margin: '0px',
+        margin: '0 auto',
+        maxWidth: '1200px',
         minHeight: 'calc(100vh - 48px)',
       }}
     >

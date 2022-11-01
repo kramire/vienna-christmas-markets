@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'preact/hooks';
-import LocationIcon from '../assets/location.svg';
-import CalendarIcon from '../assets/calendar.svg';
-import ClockIcon from '../assets/clock.svg';
-import { localizeDate } from '../utils/localizeDate';
-import { Market } from '../app.types';
+import LocationIcon from '../../assets/location.svg';
+import CalendarIcon from '../../assets/calendar.svg';
+import ClockIcon from '../../assets/clock.svg';
+import { localizeDate } from '../../utils/localizeDate';
+import { Market } from '../../app.types';
 
 interface Props {
   market: Market;
@@ -21,12 +21,12 @@ const MarketItem = ({ market }: Props) => {
   return (
     <li
       key={market.id}
+      className="market-item"
       style={{
         margin: '0px',
         padding: '24px 28px',
         border: '1px solid #141414',
         borderRadius: '12px',
-        minWidth: '320px',
         flex: 1,
         boxSizing: 'border-box',
       }}

@@ -42,3 +42,43 @@ h3 {
 p {
   line-height: 28px;
 }
+
+button {
+  border: none;
+  background: none;
+  padding: 0px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.header-image {
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.market-item {
+  min-width: 320px;
+}
+
+@media (min-width: 600px) {
+  .header-image {
+    background-size: 50vw;
+    background-repeat: repeat-x;
+    height: 180px;
+  }
+
+  .market-item {
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-image {
+    background-size: 25vw;
+    background-repeat: repeat-x;
+    height: 180px;
+  }
+}
