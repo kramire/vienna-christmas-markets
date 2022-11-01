@@ -1,5 +1,5 @@
 import { MutableRef } from 'preact/hooks';
-import garlandBackground from '../assets/garland.jpg';
+import garlandBackground from '../assets/garland.webp';
 
 interface Props {
   marketListRef: MutableRef<HTMLDivElement | null>;
