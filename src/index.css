@@ -47,6 +47,8 @@ button {
   border: none;
   background: none;
   padding: 0px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {

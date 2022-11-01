@@ -31,6 +31,7 @@ const MarketList = ({ marketListRef }: Props) => {
       style={{
         backgroundColor: 'rgb(238,238,238)',
         padding: '24px',
+        paddingTop: '0px',
         margin: '0 auto',
         maxWidth: '1200px',
         minHeight: 'calc(100vh - 48px)',
@@ -42,6 +43,9 @@ const MarketList = ({ marketListRef }: Props) => {
           gap: '12px',
           alignItems: 'center',
           justifyContent: 'space-between',
+          backgroundColor: 'rgb(238,238,238)',
+          position: 'sticky',
+          top: 0,
         }}
       >
         <h2>List for 2022</h2>

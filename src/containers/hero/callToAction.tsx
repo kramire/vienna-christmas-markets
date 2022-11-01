@@ -11,6 +11,7 @@ const CallToAction = ({ handleClick }: Props) => (
       fontWeight: 'bold',
       lineHeight: '24px',
       borderBottom: '1px solid black',
+      color: '#141414',
     }}
   >
     See Markets
