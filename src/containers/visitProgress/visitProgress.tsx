@@ -58,14 +58,16 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
   }, []);
 
   return (
-    <Flex
+    <div
       ref={visitProgressRef}
-      flexDirection="column"
-      alignItems="center"
-      gap="24px"
       style={{
         paddingTop: '24px',
         minHeight: 'calc(100vh - 24px)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '24px',
+        justifyContent: 'center',
       }}
     >
       <h2>Market Visit Progress</h2>
@@ -125,7 +127,7 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
           </ul>
         </div>
       </Flex>
-    </Flex>
+    </div>
   );
 };
 
