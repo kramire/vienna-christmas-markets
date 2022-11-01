@@ -1,12 +1,14 @@
 import { useState, MutableRef } from 'preact/hooks';
+import { Market } from '../../app.types';
+import Flex from '../../components/flex';
 import MarketItem from './marketItem';
-import marketData from '../../data/markets.json';
 
 interface Props {
+  markets: Array<Market>;
   marketListRef: MutableRef<HTMLDivElement | null>;
 }
 
-const MarketList = ({ marketListRef }: Props) => {
+const MarketList = ({ markets: marketData, marketListRef }: Props) => {
   const [markets, setMarkets] = useState(marketData);
   const [showOpenNow, setShowOpenNow] = useState(false);
 
@@ -25,6 +27,7 @@ const MarketList = ({ marketListRef }: Props) => {
       setShowOpenNow(true);
     }
   };
+
   return (
     <div
       ref={marketListRef}
@@ -34,15 +37,15 @@ const MarketList = ({ marketListRef }: Props) => {
         paddingTop: '0px',
         margin: '0 auto',
         maxWidth: '1200px',
-        minHeight: 'calc(100vh - 48px)',
+        minHeight: 'calc(100vh - 24px)',
       }}
     >
-      <div
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        gap="12px"
         style={{
-          display: 'flex',
-          gap: '12px',
-          alignItems: 'center',
-          justifyContent: 'space-between',
+          padding: '20px 0px',
           backgroundColor: 'rgb(238,238,238)',
           position: 'sticky',
           top: 0,
@@ -63,7 +66,7 @@ const MarketList = ({ marketListRef }: Props) => {
         >
           Open Today
         </button>
-      </div>
+      </Flex>
       <ul
         style={{
           listStyle: 'none',

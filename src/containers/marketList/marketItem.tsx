@@ -4,6 +4,7 @@ import CalendarIcon from '../../assets/calendar.svg';
 import ClockIcon from '../../assets/clock.svg';
 import { localizeDate } from '../../utils/localizeDate';
 import { Market } from '../../app.types';
+import Flex from '../../components/flex';
 
 interface Props {
   market: Market;
@@ -34,18 +35,17 @@ const MarketItem = ({ market }: Props) => {
       <h3
         style={{
           fontWeight: 'bold',
-          fontSize: '24px',
+          fontSize: '22px',
           marginBottom: '12px',
           lineHeight: '32px',
         }}
       >
-        {market.name}
+        {market.id}. {market.name}
       </h3>
-      <div
+      <Flex
+        alignItems="center"
+        gap="16px"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '16px',
           margin: '8px 0px',
         }}
       >
@@ -56,12 +56,11 @@ const MarketItem = ({ market }: Props) => {
           height={16}
         />
         <p>{market.district}</p>
-      </div>
-      <div
+      </Flex>
+      <Flex
+        alignItems="center"
+        gap="16px"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '16px',
           margin: '8px 0px',
         }}
       >
@@ -70,7 +69,7 @@ const MarketItem = ({ market }: Props) => {
           {localizeDate(market.start, language)} -{' '}
           {localizeDate(market.end, language)}
         </p>
-      </div>
+      </Flex>
       <div style={{ display: 'flex', gap: '16px', margin: '8px 0px' }}>
         <img
           src={ClockIcon}
@@ -79,28 +78,27 @@ const MarketItem = ({ market }: Props) => {
           height={16}
           style={{ marginTop: '7px' }}
         />
-        <div
+        <Flex
+          flexDirection="column"
+          gap="0px 24px"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
             flexWrap: 'wrap',
             height: '112px',
-            gap: '0px 24px',
           }}
         >
           {market.times.map((time, timeIdx) =>
             Array.isArray(time) ? (
-              <div style={{ display: 'flex', gap: '12px', fontSize: '14px' }}>
+              <Flex gap="12px" style={{ fontSize: '14px' }}>
                 <p style={{ width: '14px', textAlign: 'center' }}>
                   {weekDays[timeIdx]}
                 </p>
                 <p key={`${market.id}_${timeIdx}`} style={{ fontSize: '14px' }}>
                   {time[0]} - {time[1]}
                 </p>
-              </div>
+              </Flex>
             ) : null
           )}
-        </div>
+        </Flex>
       </div>
     </li>
   );

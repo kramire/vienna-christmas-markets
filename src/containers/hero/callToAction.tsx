@@ -1,8 +1,9 @@
 interface Props {
+  label: string;
   handleClick: () => void;
 }
 
-const CallToAction = ({ handleClick }: Props) => (
+const CallToAction = ({ label, handleClick }: Props) => (
   <button
     onClick={handleClick}
     style={{
@@ -14,7 +15,7 @@ const CallToAction = ({ handleClick }: Props) => (
       color: '#141414',
     }}
   >
-    See Markets
+    {label}
   </button>
 );
 
