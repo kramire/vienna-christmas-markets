@@ -7,15 +7,24 @@ const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-async function createServer() {
+async function createServer(isProd = process.env.NODE_ENV === 'production') {
+  const resolve = p => path.resolve(__dirname, p);
+
+  const indexProd = isProd
+    ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8')
+    : '';
+
   const app = express();
 
   // Create Vite server in middleware mode and configure the app type as
   // 'custom', disabling Vite's own HTML serving logic so parent server
   // can take control
+  /**
+   * @type {import('vite').ViteDevServer}
+   */
   let vite;
 
-  if (isTest) {
+  if (!isProd) {
     vite = await (
       await import('vite')
     ).createServer({
@@ -29,31 +38,37 @@ async function createServer() {
     app.use(vite.middlewares);
   } else {
     app.use((await import('compression')).default());
-    app.use(express.static('dist/client'));
+    app.use(
+      express.static(path.resolve('dist/client'), {
+        index: false,
+      })
+    );
   }
 
   app.use('*', async (req, res, next) => {
     const url = req.originalUrl;
 
     try {
-      // 1. Read index.html
-      const pathToHtml = isTest ? 'index.html' : 'dist/client/index.html';
-      let template = fs.readFileSync(
-        path.resolve(__dirname, pathToHtml),
-        'utf-8'
-      );
+      let template, render;
+      if (!isProd) {
+        // 1. Read index.html
+        // always read fresh template in dev
+        template = fs.readFileSync(resolve('index.html'), 'utf-8');
 
-      // 2. Apply Vite HTML transforms. This injects the Vite HMR client, and
-      //    also applies HTML transforms from Vite plugins, e.g. global preambles
-      //    from @vitejs/plugin-react
-      template = await vite.transformIndexHtml(url, template);
+        // 2. Apply Vite HTML transforms. This injects the Vite HMR client, and
+        //    also applies HTML transforms from Vite plugins, e.g. global preambles
+        //    from @vitejs/plugin-react
+        template = await vite.transformIndexHtml(url, template);
 
-      // 3. Load the server entry. vite.ssrLoadModule automatically transforms
-      //    your ESM source code to be usable in Node.js! There is no bundling
-      //    required, and provides efficient invalidation similar to HMR.
-      const { renderTest } = await vite.ssrLoadModule('/src/entry-server.tsx');
-      const { renderProd } = await import('./dist/server/entry-server.js');
-      const render = isTest ? renderTest : renderProd;
+        // 3. Load the server entry. vite.ssrLoadModule automatically transforms
+        //    your ESM source code to be usable in Node.js! There is no bundling
+        //    required, and provides efficient invalidation similar to HMR.
+        render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render;
+      } else {
+        template = indexProd;
+        // @ts-ignore
+        render = (await import('./dist/server/entry-server.js')).render;
+      }
 
       // 4. render the app HTML. This assumes entry-server.js's exported `render`
       //    function calls appropriate framework SSR APIs,
