@@ -1,10 +1,8 @@
-export const localizeDate = (date: string | Date) => {
-  const navLang = navigator.language;
-
+export const localizeDate = (date: string | Date, language: string) => {
   if (typeof date === 'string') {
     const dateFromString = new Date(date);
-    return dateFromString.toLocaleDateString(navLang);
+    return dateFromString.toLocaleDateString(language);
   }
 
-  return date.toLocaleDateString(navLang);
+  return date.toLocaleDateString(language);
 };

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'preact/hooks';
 import LocationIcon from '../assets/location.svg';
 import CalendarIcon from '../assets/calendar.svg';
 import ClockIcon from '../assets/clock.svg';
@@ -11,6 +12,12 @@ interface Props {
 const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S'];
 
 const MarketItem = ({ market }: Props) => {
+  const [language, setLanguage] = useState('en-GB');
+
+  useEffect(() => {
+    setLanguage(navigator.language);
+  }, []);
+
   return (
     <li
       key={market.id}
@@ -60,7 +67,8 @@ const MarketItem = ({ market }: Props) => {
       >
         <img src={CalendarIcon} alt="calendar" width={16} height={16} />
         <p>
-          {localizeDate(market.start)} - {localizeDate(market.end)}
+          {localizeDate(market.start, language)} -{' '}
+          {localizeDate(market.end, language)}
         </p>
       </div>
       <div style={{ display: 'flex', gap: '16px', margin: '8px 0px' }}>
