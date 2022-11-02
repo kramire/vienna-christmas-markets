@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, MutableRef } from 'preact/hooks';
 import { Market } from '../../app.types';
 import Flex from '../../components/flex';
+import useLocalStorage from '../../hooks/useLocalStorage';
 import buildTree from '../../utils/build-tree';
 import { isOpen } from '../../utils/isOpen';
 
@@ -15,6 +16,8 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
   const [visitedMarketsIds, setVisitedMarketsIds] = useState<number[]>([]);
 
   const tree = useMemo(() => buildTree(markets), [markets]);
+
+  const { getItem, setItem } = useLocalStorage();
 
   const handleOrnamentClick = (ornamentId: number | undefined) => () => {
     if (!ornamentId || !visitedMarketsIds) return;
@@ -32,17 +35,12 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
         setVisitedMarketsIds(newVisitedMarketIds);
       }
 
-      localStorage.setItem(
-        VISITED_MARKETS_LOCAL_STORAGE_KEY,
-        JSON.stringify(newVisitedMarketIds)
-      );
+      setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds);
     }
   };
 
   useEffect(() => {
-    const storedVisitedMarkets = localStorage.getItem(
-      VISITED_MARKETS_LOCAL_STORAGE_KEY
-    );
+    const storedVisitedMarkets = getItem(VISITED_MARKETS_LOCAL_STORAGE_KEY);
 
     const marketIds = markets.map(market => market.id);
 
@@ -73,7 +71,7 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
       <Flex flexDirection="column" alignItems="center" gap="8px">
         <div
           style={{
-            fontSize: '30px',
+            fontSize: '42px',
             filter: `grayscale(${
               1 - visitedMarketsIds.length / markets.length
             })`,
@@ -93,13 +91,13 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
                   alignItems="center"
                   onClick={handleOrnamentClick(ornament?.id)}
                   style={{
-                    width: '30px',
-                    height: '30px',
+                    width: '40px',
+                    height: '40px',
                     border: '2px solid',
                     borderColor: hasVisited ? 'green' : 'black',
                     borderRadius: '50%',
                     boxShadow: hasVisited ? '0px 0px 1px 1px green' : 'none',
-                    fontSize: '18px',
+                    fontSize: '24px',
                     color: hasVisited ? 'green' : 'inherit',
                     fontWeight: !hasVisited ? 'bold' : 'inherit',
                   }}

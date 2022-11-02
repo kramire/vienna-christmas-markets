@@ -5,4 +5,5 @@ export interface Market {
   start: string;
   end: string;
   times: Array<[string, string] | null>;
+  website: string;
 }
