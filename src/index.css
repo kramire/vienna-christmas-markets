@@ -58,6 +58,10 @@ button {
   font-family: 'Noto Serif', serif;
 }
 
+img {
+  outline: none;
+}
+
 button:hover {
   cursor: pointer;
 }

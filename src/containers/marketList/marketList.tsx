@@ -23,6 +23,10 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
   const toggleOpenNow = () => setShowOpenNow(prev => !prev);
   const toggleMyFavorites = () => setShowFavorites(prev => !prev);
 
+  const scrollToTopOfRef = () => {
+    marketListRef.current?.scrollIntoView();
+  };
+
   const toggleFavoriteMarket = (marketId: number) => () => {
     const isFavorite = favorites.includes(marketId);
 
@@ -62,6 +66,7 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
     }
 
     setMarkets(filteredMarkets);
+    scrollToTopOfRef();
   }, [showOpenNow, showFavorites]);
 
   useEffect(() => {

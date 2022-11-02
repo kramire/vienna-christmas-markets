@@ -4,7 +4,6 @@ const Footer = () => {
       style={{
         display: 'flex',
         justifyContent: 'center',
-        paddingBottom: '24px',
       }}
     >
       <p style={{ fontSize: '11px' }}>
