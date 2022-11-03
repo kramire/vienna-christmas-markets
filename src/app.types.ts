@@ -6,4 +6,10 @@ export interface Market {
   end: string;
   times: Array<[string, string] | null>;
   website: string;
+  type: ResultType;
+}
+
+export enum ResultType {
+  MARKET = 'MARKET',
+  EVENT = 'EVENT',
 }

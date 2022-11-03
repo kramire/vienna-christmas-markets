@@ -22,7 +22,7 @@ function buildTree<T>(items: Array<T>): Array<Array<T | null>> {
 
   if (isTreeIncomplete) {
     let lastRow = tree[tree.length - 1];
-    lastRow.push(null, null);
+    lastRow.push(null); // manual
 
     tree.pop();
     tree.push(lastRow);

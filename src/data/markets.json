@@ -16,7 +16,8 @@
       ["14:00", "23:00"]
     ],
     "website": "http://www.mqw.at",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 2,
@@ -35,7 +36,8 @@
       ["10:00", "21:00"]
     ],
     "website": "https://spittelberg.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 3,
@@ -54,7 +56,8 @@
       ["12:00", "21:00"]
     ],
     "website": "https://www.weihnachtimpark.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 4,
@@ -73,7 +76,8 @@
       ["11:00", "21:00"]
     ],
     "website": "https://www.weihnachtsdorf.at/stephansplatz/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 5,
@@ -92,7 +96,8 @@
       ["11:00", "21:00"]
     ],
     "website": "http://www.adventgenussmarkt.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 6,
@@ -111,7 +116,8 @@
       ["11:00", "20:00"]
     ],
     "website": "https://www.weihnachtsdorf.at/campus-universitaet-wien/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 7,
@@ -130,7 +136,8 @@
       ["10:00", "21:00"]
     ],
     "website": "https://www.weihnachtsmarkt-hof.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 8,
@@ -149,7 +156,8 @@
       ["11:00", "21:00"]
     ],
     "website": "https://www.weihnachtsdorf.at/weihnachtsdorf-maria-theresien-platz/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 9,
@@ -168,7 +176,8 @@
       ["16:00", "21:00"]
     ],
     "website": " https://www.weihnachtimwald.com/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 10,
@@ -187,7 +196,8 @@
       ["10:00", "20:00"]
     ],
     "website": "https://www.wien.gv.at/umwelt/parks/blumengaerten-hirschstetten/weihnachten.html",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 11,
@@ -206,7 +216,8 @@
       ["10:00", "21:00"]
     ],
     "website": "https://www.weihnachtsdorf.at/schloss-belvedere/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 12,
@@ -225,7 +236,8 @@
       ["10:00", "21:00"]
     ],
     "website": "https://www.adventimgartenpalais.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 13,
@@ -244,7 +256,8 @@
       ["10:00", "21:00"]
     ],
     "website": "https://altwiener-markt.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 14,
@@ -263,7 +276,8 @@
       ["12:00", "20:00"]
     ],
     "website": "https://divinaart.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 15,
@@ -282,7 +296,8 @@
       ["11:00", "21:00"]
     ],
     "website": "https://www.almadvent.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 16,
@@ -301,7 +316,8 @@
       ["10:00", "21:00"]
     ],
     "website": "https://www.schoenbrunn.at/veranstaltungen/alle-veranstaltungen/event/kultur-und-weihnachtsmarkt-schloss-schoenbrunn",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 17,
@@ -320,7 +336,8 @@
       ["10:00", "21:30"]
     ],
     "website": "https://www.christkindlmarkt.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
   },
   {
     "id": 18,
@@ -339,6 +356,67 @@
       ["11:00", "22:00"]
     ],
     "website": "https://www.wintermarkt.at/",
-    "imgUrl": ""
+    "imgUrl": "",
+    "type": "MARKET"
+  },
+  {
+    "id": 19,
+    "name": "Ottakringer Weihnachtszauber",
+    "district": "1160",
+    "coordinates": [48.212359, 16.3242538],
+    "start": "11/24/2022",
+    "end": "12/23/2022",
+    "times": [
+      null,
+      null,
+      null,
+      ["15:00", "22:00"],
+      ["15:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "20:00"]
+    ],
+    "website": "https://www.vienna.at/neuer-christkindlmarkt-in-wien-der-ottakringer-weihnachtszauber/7723477",
+    "imgUrl": "",
+    "type": "MARKET"
+  },
+  {
+    "id": 20,
+    "name": "Winter in the City",
+    "district": "1010",
+    "coordinates": [48.20794, 16.374048],
+    "start": "11/4/2022",
+    "end": "12/31/2022",
+    "times": [
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"]
+    ],
+    "website": "http://www.winterinthecity.at/",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 21,
+    "name": "Kylo Punschterrassen",
+    "district": "1010",
+    "coordinates": [48.21164, 16.383692],
+    "start": "11/19/2022",
+    "end": "12/23/2022",
+    "times": [
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["17:00", "22:00"]
+    ],
+    "website": "https://klyo.at/urania-wien/",
+    "imgUrl": "",
+    "type": "EVENT"
   }
 ]

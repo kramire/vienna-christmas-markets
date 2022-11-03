@@ -28,7 +28,10 @@ interface Props {
 
 const Flex = ({ children, ref, onClick, style, ...rest }: Props) => {
   return (
-    <div ref={ref} style={{ display: 'flex', ...rest, ...style }}>
+    <div
+      ref={ref}
+      style={{ display: 'flex', boxSizing: 'border-box', ...rest, ...style }}
+    >
       {children}
     </div>
   );

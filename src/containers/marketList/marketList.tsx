@@ -1,8 +1,8 @@
 import { useState, useEffect, MutableRef } from 'preact/hooks';
-import { Market } from '../../app.types';
+import { Market, ResultType } from '../../app.types';
 import Flex from '../../components/flex';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import ListFilter from './listFilter';
+import FilterItem from './filterItem';
 import MarketItem from './marketItem';
 
 const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets';
@@ -17,11 +17,15 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [showOpenNow, setShowOpenNow] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [showMarkets, setShowMarkets] = useState(true);
+  const [showEvents, setShowEvents] = useState(false);
 
   const { getItem, setItem } = useLocalStorage();
 
   const toggleOpenNow = () => setShowOpenNow(prev => !prev);
   const toggleMyFavorites = () => setShowFavorites(prev => !prev);
+  const toggleMarkets = () => setShowMarkets(prev => !prev);
+  const toggleEvents = () => setShowEvents(prev => !prev);
 
   const scrollToTopOfRef = () => {
     marketListRef.current?.scrollIntoView();
@@ -45,6 +49,19 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
   useEffect(() => {
     let filteredMarkets = marketData;
 
+    filteredMarkets = filteredMarkets.filter(market => {
+      if (showMarkets && showEvents) {
+        return true;
+      }
+      if (showMarkets) {
+        return market.type === ResultType.MARKET;
+      }
+      if (showEvents) {
+        return market.type === ResultType.EVENT;
+      }
+      return false;
+    });
+
     if (showOpenNow) {
       filteredMarkets = markets.filter(market => {
         const today = new Date();
@@ -67,7 +84,7 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
 
     setMarkets(filteredMarkets);
     scrollToTopOfRef();
-  }, [showOpenNow, showFavorites]);
+  }, [showOpenNow, showFavorites, showMarkets, showEvents]);
 
   useEffect(() => {
     const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY);
@@ -90,26 +107,50 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
       <Flex
         flexDirection="column"
         alignItems="center"
-        gap="16px"
         style={{
-          padding: '12px 24px 20px',
-          backgroundColor: 'rgb(9, 46, 11)',
           position: 'sticky',
           top: 0,
           boxShadow: '2px 2px 4px 1px #5e5e5e',
           marginBottom: '24px',
         }}
       >
-        <h2 style={{ textAlign: 'center', color: 'rgb(238, 238, 238)' }}>
-          List for 2022
-        </h2>
-        <Flex gap="12px">
-          <ListFilter
+        <div
+          style={{
+            width: '100%',
+            backgroundColor: 'rgb(9, 46, 11)',
+            textAlign: 'center',
+            padding: '8px 0px',
+          }}
+        >
+          <h2 style={{ textAlign: 'center', color: 'rgb(238, 238, 238)' }}>
+            List for 2022
+          </h2>
+        </div>
+        <Flex
+          gap="12px"
+          style={{
+            width: '100%',
+            backgroundColor: 'rgb(238, 238, 238)',
+            color: 'rgb(9, 46, 11)',
+            padding: '12px',
+          }}
+        >
+          <FilterItem
+            label="Markets"
+            isSelected={showMarkets}
+            handleClick={toggleMarkets}
+          />
+          <FilterItem
+            label="Events"
+            isSelected={showEvents}
+            handleClick={toggleEvents}
+          />
+          <FilterItem
             label="Open Now"
             isSelected={showOpenNow}
             handleClick={toggleOpenNow}
           />
-          <ListFilter
+          <FilterItem
             label="My Favorites"
             isSelected={showFavorites}
             handleClick={toggleMyFavorites}
@@ -137,7 +178,7 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
             />
           ))
         ) : (
-          <p>No markets open today.</p>
+          <p>No results to show.</p>
         )}
       </ul>
     </div>
