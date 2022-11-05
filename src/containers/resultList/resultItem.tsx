@@ -27,14 +27,11 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
   return (
     <li
       key={result.id}
-      className="market-item"
+      className="result-item"
       style={{
         margin: '0px',
         padding: '24px',
         flex: 1,
-        boxSizing: 'border-box',
-        boxShadow: '#083d0b 6px 6px 2px 0px',
-        border: '1px solid rgb(9, 46, 11)',
       }}
     >
       <Flex justifyContent="space-between" gap="12px">

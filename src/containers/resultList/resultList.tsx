@@ -1,20 +1,22 @@
 import { useState, useEffect, MutableRef } from 'preact/hooks';
-import { Market, Event } from '../../app.types';
+import { Market, Event, PageType } from '../../app.types';
 import { getNavigatorLocation } from '../../utils/get-navigator-location';
 import Flex from '../../components/flex';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import FilterItem from './filterItem';
 import ResultItem from './resultItem';
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates';
+import { footerItemMapping } from '../../components/footer/footer.constants';
 
 const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets';
 const NEAR_ME_KM_DISTANCE_AWAY = 1;
 
 interface Props {
   results: Array<Market> | Array<Event>;
+  page: PageType;
 }
 
-const ResultList = ({ results }: Props) => {
+const ResultList = ({ results, page }: Props) => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [showOpenNow, setShowOpenNow] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
@@ -37,35 +39,39 @@ const ResultList = ({ results }: Props) => {
   const filterResults = (results: Array<Market> | Array<Event>) => {
     let newResults = results;
 
-    if (showOpenNow) {
-      newResults = newResults.filter(result => {
-        const today = new Date();
-        const startDate = new Date(result.start);
-        const endDate = new Date(result.end);
-
-        if (showOpenNow && (today < startDate || today > endDate)) {
-          return false;
-        }
-
-        return true;
-      });
-    }
-
-    if (showFavorites) {
+    if (page === PageType.FAVORITES) {
       newResults = newResults.filter(result => favorites.includes(result.id));
-    }
+    } else {
+      if (showOpenNow) {
+        newResults = newResults.filter(result => {
+          const today = new Date();
+          const startDate = new Date(result.start);
+          const endDate = new Date(result.end);
 
-    if (showNearMe && deviceLocation) {
-      newResults = newResults.filter(result => {
-        const [resultLat, resultLong] = result.coordinates;
-        const distanceAway = getDistanceFromLatLonInKm(
-          resultLat,
-          resultLong,
-          deviceLocation.lat,
-          deviceLocation.lng
-        );
-        return distanceAway <= NEAR_ME_KM_DISTANCE_AWAY;
-      });
+          if (showOpenNow && (today < startDate || today > endDate)) {
+            return false;
+          }
+
+          return true;
+        });
+      }
+
+      if (showFavorites) {
+        newResults = newResults.filter(result => favorites.includes(result.id));
+      }
+
+      if (showNearMe && deviceLocation) {
+        newResults = newResults.filter(result => {
+          const [resultLat, resultLong] = result.coordinates;
+          const distanceAway = getDistanceFromLatLonInKm(
+            resultLat,
+            resultLong,
+            deviceLocation.lat,
+            deviceLocation.lng
+          );
+          return distanceAway <= NEAR_ME_KM_DISTANCE_AWAY;
+        });
+      }
     }
 
     return newResults;
@@ -135,18 +141,26 @@ const ResultList = ({ results }: Props) => {
           boxShadow: '2px 2px 4px 1px #5e5e5e',
         }}
       >
-        <div
+        <Flex
+          alignItems="center"
+          gap="12px"
           style={{
             width: '100%',
             backgroundColor: 'rgb(9, 46, 11)',
+            color: 'rgb(238, 238, 238)',
             textAlign: 'center',
-            padding: '8px 0px',
+            padding: '12px 16px',
           }}
         >
-          <h2 style={{ textAlign: 'center', color: 'rgb(238, 238, 238)' }}>
-            List for 2022
-          </h2>
-        </div>
+          <i
+            class={footerItemMapping[page].fontClasses}
+            style={{
+              fontSize: '20px',
+              height: '20px',
+            }}
+          ></i>
+          <h2>Christmas in Vienna - {page}</h2>
+        </Flex>
         <Flex
           gap="12px"
           style={{
@@ -167,11 +181,13 @@ const ResultList = ({ results }: Props) => {
             handleClick={toggleNearMe}
             isLoading={isLoading}
           />
-          <FilterItem
-            label="My Favorites"
-            isSelected={showFavorites}
-            handleClick={toggleMyFavorites}
-          />
+          {page !== PageType.FAVORITES && (
+            <FilterItem
+              label="My Favorites"
+              isSelected={showFavorites}
+              handleClick={toggleMyFavorites}
+            />
+          )}
         </Flex>
       </Flex>
       <p style={{ padding: '0px 24px' }}>

@@ -27,9 +27,15 @@ export function App() {
       <div style={{ height: `calc(100% - ${FOOTER_HEIGHT}px)` }}>
         {page === PageType.HOME && <Hero goToPage={goToPage} />}
         {page === PageType.VISITS && <VisitProgress markets={markets} />}
-        {page === PageType.MARKETS && <ResultList results={markets} />}
-        {page === PageType.EVENTS && <ResultList results={events} />}
-        {/* {page === PageType.FAVORITES && <ResultList results={results} />} */}
+        {page === PageType.MARKETS && (
+          <ResultList results={markets} page={PageType.MARKETS} />
+        )}
+        {page === PageType.EVENTS && (
+          <ResultList results={events} page={PageType.EVENTS} />
+        )}
+        {page === PageType.FAVORITES && (
+          <ResultList results={results} page={PageType.FAVORITES} />
+        )}
       </div>
       <Footer page={page} goToPage={goToPage} />
     </div>
