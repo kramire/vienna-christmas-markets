@@ -66,6 +66,7 @@ const VisitProgress = ({ markets }: Props) => {
         style={{
           backgroundColor: 'rgb(238,238,238)',
           marginTop: '130px',
+          height: 'calc(100% - 130px)',
         }}
       >
         <h2
