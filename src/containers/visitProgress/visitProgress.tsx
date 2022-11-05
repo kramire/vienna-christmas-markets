@@ -63,11 +63,7 @@ const VisitProgress = ({ markets }: Props) => {
         justifyContent="center"
         alignItems="center"
         gap="12px"
-        style={{
-          backgroundColor: 'rgb(238,238,238)',
-          marginTop: '130px',
-          height: 'calc(100% - 130px)',
-        }}
+        style={{ backgroundColor: 'rgb(238,238,238)', marginTop: '130px' }}
       >
         <h2
           style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '28px' }}

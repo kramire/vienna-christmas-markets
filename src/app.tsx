@@ -24,20 +24,20 @@ export function App() {
 
   return (
     <>
-      {page === PageType.VISITS || page === PageType.HOME ? (
+      {page === PageType.VISITS ? (
         <div
           style={{
             width: '100%',
             height: `calc(100% - 194px)`,
           }}
         >
-          {page === PageType.HOME && <Hero goToPage={goToPage} />}
-          {page === PageType.VISITS && <VisitProgress markets={markets} />}
+          <VisitProgress markets={markets} />
         </div>
       ) : (
         <div
           style={{ width: '100%', height: `calc(100% - ${FOOTER_HEIGHT}px)` }}
         >
+          {page === PageType.HOME && <Hero goToPage={goToPage} />}
           {page === PageType.MARKETS && (
             <ResultList results={markets} page={PageType.MARKETS} />
           )}
