@@ -23,21 +23,33 @@ export function App() {
   );
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <div style={{ height: `calc(100% - ${FOOTER_HEIGHT}px)` }}>
-        {page === PageType.HOME && <Hero goToPage={goToPage} />}
-        {page === PageType.VISITS && <VisitProgress markets={markets} />}
-        {page === PageType.MARKETS && (
-          <ResultList results={markets} page={PageType.MARKETS} />
-        )}
-        {page === PageType.EVENTS && (
-          <ResultList results={events} page={PageType.EVENTS} />
-        )}
-        {page === PageType.FAVORITES && (
-          <ResultList results={results} page={PageType.FAVORITES} />
-        )}
-      </div>
+    <>
+      {page === PageType.VISITS ? (
+        <div
+          style={{
+            width: '100%',
+            height: `calc(100% - 194px)`,
+          }}
+        >
+          <VisitProgress markets={markets} />
+        </div>
+      ) : (
+        <div
+          style={{ width: '100%', height: `calc(100% - ${FOOTER_HEIGHT}px)` }}
+        >
+          {page === PageType.HOME && <Hero goToPage={goToPage} />}
+          {page === PageType.MARKETS && (
+            <ResultList results={markets} page={PageType.MARKETS} />
+          )}
+          {page === PageType.EVENTS && (
+            <ResultList results={events} page={PageType.EVENTS} />
+          )}
+          {page === PageType.FAVORITES && (
+            <ResultList results={results} page={PageType.FAVORITES} />
+          )}
+        </div>
+      )}
       <Footer page={page} goToPage={goToPage} />
-    </div>
+    </>
   );
 }

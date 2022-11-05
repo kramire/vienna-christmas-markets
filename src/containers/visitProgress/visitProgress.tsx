@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo, MutableRef } from 'preact/hooks';
-import { Market, PageType } from '../../app.types';
+import { useState, useEffect, useMemo } from 'preact/hooks';
+import { Market } from '../../app.types';
 import Flex from '../../components/flex';
-import { footerItemMapping } from '../../components/footer/footer.constants';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import buildTree from '../../utils/build-tree';
 import { isOpen } from '../../utils/isOpen';
+import HeaderImage from '../hero/headerImage';
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
@@ -56,43 +56,24 @@ const VisitProgress = ({ markets }: Props) => {
   }, []);
 
   return (
-    <Flex
-      flexDirection="column"
-      gap="12px"
-      style={{
-        backgroundColor: 'rgb(238,238,238)',
-        margin: '0 auto',
-        height: '100%',
-      }}
-    >
-      <Flex
-        alignItems="center"
-        justifyContent="space-around"
-        gap="12px"
-        style={{
-          width: '100%',
-          backgroundColor: 'rgb(9, 46, 11)',
-          color: 'rgb(238, 238, 238)',
-          textAlign: 'center',
-          padding: '12px 16px',
-        }}
-      >
-        <i
-          class={footerItemMapping[PageType.VISITS].fontClasses}
-          style={{
-            fontSize: '20px',
-            height: '20px',
-          }}
-        ></i>
-        <h2>Vienna Market Visit Progress</h2>
-      </Flex>
+    <>
+      <HeaderImage />
       <Flex
         flexDirection="column"
-        justifyContent="space-around"
+        justifyContent="center"
         alignItems="center"
-        style={{ height: '100%' }}
+        gap="12px"
+        style={{
+          backgroundColor: 'rgb(238,238,238)',
+          marginTop: '130px',
+        }}
       >
-        <Flex flexDirection="column" alignItems="center" gap="16px">
+        <h2
+          style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '28px' }}
+        >
+          Market Visit Progress
+        </h2>
+        <Flex flexDirection="column" alignItems="center" gap="12px">
           <div
             style={{
               fontSize: '42px',
@@ -138,8 +119,8 @@ const VisitProgress = ({ markets }: Props) => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '24px',
-            margin: '24px',
+            gap: '12px',
+            margin: '12px 24px 24px',
             padding: '24px',
           }}
         >
@@ -158,7 +139,7 @@ const VisitProgress = ({ markets }: Props) => {
           </div>
         </div>
       </Flex>
-    </Flex>
+    </>
   );
 };
 
