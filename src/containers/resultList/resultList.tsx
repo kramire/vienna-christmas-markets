@@ -1,34 +1,55 @@
 import { useState, useEffect, MutableRef } from 'preact/hooks';
-import { Market, ResultType } from '../../app.types';
+import { Market, Event } from '../../app.types';
 import Flex from '../../components/flex';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import FilterItem from './filterItem';
-import MarketItem from './marketItem';
+import ResultItem from './resultItem';
 
 const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets';
 
 interface Props {
-  markets: Array<Market>;
+  results: Array<Market> | Array<Event>;
 }
 
-const MarketList = ({ markets: marketData }: Props) => {
-  const [markets, setMarkets] = useState(marketData);
+const ResultList = ({ results }: Props) => {
   const [favorites, setFavorites] = useState<number[]>([]);
   const [showOpenNow, setShowOpenNow] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
-  const [showMarkets, setShowMarkets] = useState(true);
-  const [showEvents, setShowEvents] = useState(false);
 
   const { getItem, setItem } = useLocalStorage();
 
   const toggleOpenNow = () => setShowOpenNow(prev => !prev);
   const toggleMyFavorites = () => setShowFavorites(prev => !prev);
-  const toggleMarkets = () => setShowMarkets(prev => !prev);
-  const toggleEvents = () => setShowEvents(prev => !prev);
 
   // const scrollToTopOfRef = () => {
   //   marketListRef.current?.scrollIntoView();
   // };
+
+  const filterResults = (results: Array<Market> | Array<Event>) => {
+    let newResults = results;
+
+    if (showOpenNow) {
+      newResults = newResults.filter(result => {
+        const today = new Date();
+        const startDate = new Date(result.start);
+        const endDate = new Date(result.end);
+
+        if (showOpenNow && (today < startDate || today > endDate)) {
+          return false;
+        }
+
+        return true;
+      });
+    }
+
+    if (showFavorites) {
+      newResults = newResults.filter(result => favorites.includes(result.id));
+    }
+
+    return newResults;
+  };
+
+  const shownResults = filterResults(results);
 
   const toggleFavoriteMarket = (marketId: number) => () => {
     const isFavorite = favorites.includes(marketId);
@@ -46,46 +67,6 @@ const MarketList = ({ markets: marketData }: Props) => {
   };
 
   useEffect(() => {
-    let filteredMarkets = marketData;
-
-    filteredMarkets = filteredMarkets.filter(market => {
-      if (showMarkets && showEvents) {
-        return true;
-      }
-      if (showMarkets) {
-        return market.type === ResultType.MARKET;
-      }
-      if (showEvents) {
-        return market.type === ResultType.EVENT;
-      }
-      return false;
-    });
-
-    if (showOpenNow) {
-      filteredMarkets = markets.filter(market => {
-        const today = new Date();
-        const startDate = new Date(market.start);
-        const endDate = new Date(market.end);
-
-        if (showOpenNow && (today < startDate || today > endDate)) {
-          return false;
-        }
-
-        return true;
-      });
-    }
-
-    if (showFavorites) {
-      filteredMarkets = filteredMarkets.filter(market =>
-        favorites.includes(market.id)
-      );
-    }
-
-    setMarkets(filteredMarkets);
-    // scrollToTopOfRef();
-  }, [showOpenNow, showFavorites, showMarkets, showEvents]);
-
-  useEffect(() => {
     const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY);
 
     if (storedFavoritedMarkets) {
@@ -97,9 +78,9 @@ const MarketList = ({ markets: marketData }: Props) => {
     <div
       style={{
         backgroundColor: 'rgb(238,238,238)',
-        maxWidth: '1200px',
-        minHeight: 'calc(100vh - 24px)',
         margin: '0 auto',
+        height: '100%',
+        overflowY: 'scroll',
       }}
     >
       <Flex
@@ -134,16 +115,6 @@ const MarketList = ({ markets: marketData }: Props) => {
           }}
         >
           <FilterItem
-            label="Markets"
-            isSelected={showMarkets}
-            handleClick={toggleMarkets}
-          />
-          <FilterItem
-            label="Events"
-            isSelected={showEvents}
-            handleClick={toggleEvents}
-          />
-          <FilterItem
             label="Open Now"
             isSelected={showOpenNow}
             handleClick={toggleOpenNow}
@@ -167,11 +138,12 @@ const MarketList = ({ markets: marketData }: Props) => {
           paddingTop: '0px',
         }}
       >
-        {markets.length > 0 ? (
-          markets.map(market => (
-            <MarketItem
-              market={market}
-              isFavorite={favorites.includes(market.id)}
+        {shownResults.length > 0 ? (
+          shownResults.map((result, idx) => (
+            <ResultItem
+              key={idx}
+              result={result}
+              isFavorite={favorites.includes(result.id)}
               toggleFavoriteMarket={toggleFavoriteMarket}
             />
           ))
@@ -183,4 +155,4 @@ const MarketList = ({ markets: marketData }: Props) => {
   );
 };
 
-export default MarketList;
+export default ResultList;

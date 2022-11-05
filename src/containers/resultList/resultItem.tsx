@@ -6,18 +6,18 @@ import InfoIcon from '../../assets/info.svg';
 import FilledHeartIcon from '../../assets/filledHeart.svg';
 import EmptyHeartIcon from '../../assets/emptyHeart.svg';
 import { localizeDate } from '../../utils/localizeDate';
-import { Market } from '../../app.types';
+import { Event, Market, ResultType } from '../../app.types';
 import Flex from '../../components/flex';
 
 interface Props {
-  market: Market;
+  result: Market | Event;
   isFavorite: boolean;
   toggleFavoriteMarket: (id: number) => () => void;
 }
 
 const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S'];
 
-const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
+const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
   const [language, setLanguage] = useState('en-GB');
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
 
   return (
     <li
-      key={market.id}
+      key={result.id}
       className="market-item"
       style={{
         margin: '0px',
@@ -47,10 +47,12 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
             color: 'rgb(9, 46, 11)',
           }}
         >
-          {market.id}. {market.name}
+          {result.type === ResultType.MARKET
+            ? `${result.id}. ${result.name}`
+            : result.name}
         </h3>
         <img
-          onClick={toggleFavoriteMarket(market.id)}
+          onClick={toggleFavoriteMarket(result.id)}
           src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
           alt={isFavorite ? 'Favorite Venue' : 'Unfavorite venue'}
           loading="lazy"
@@ -68,7 +70,7 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
             width={16}
             height={16}
           />
-          <p>{market.district}</p>
+          <p>{result.district}</p>
         </Flex>
         <Flex alignItems="center" gap="16px">
           <img
@@ -79,8 +81,8 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
             height={16}
           />
           <p>
-            {localizeDate(market.start, language)} -{' '}
-            {localizeDate(market.end, language)}
+            {localizeDate(result.start, language)} -{' '}
+            {localizeDate(result.end, language)}
           </p>
         </Flex>
         <Flex gap="16px">
@@ -100,14 +102,14 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
               height: '96px',
             }}
           >
-            {market.times.map((time, timeIdx) =>
+            {result.times.map((time, timeIdx) =>
               Array.isArray(time) ? (
                 <Flex gap="12px" style={{ fontSize: '14px' }}>
                   <p style={{ width: '14px', textAlign: 'center' }}>
                     {weekDays[timeIdx]}
                   </p>
                   <p
-                    key={`${market.id}_${timeIdx}`}
+                    key={`${result.id}_${timeIdx}`}
                     style={{ fontSize: '14px' }}
                   >
                     {time[0]} - {time[1]}
@@ -133,9 +135,9 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
           />
 
           <a
-            href={market.website}
+            href={result.website}
             target="_blank"
-            alt={`Homepage for the ${market.name} market.`}
+            alt={`Homepage for the ${result.name} event.`}
           >
             Website
           </a>
@@ -145,4 +147,4 @@ const MarketItem = ({ market, isFavorite, toggleFavoriteMarket }: Props) => {
   );
 };
 
-export default MarketItem;
+export default ResultItem;

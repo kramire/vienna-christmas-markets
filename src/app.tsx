@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks';
 import Hero from './containers/hero';
-import MarketList from './containers/marketList';
+import ResultList from './containers/resultList';
 import Footer from './components/footer/footer';
 import VisitProgress from './containers/visitProgress';
 import data from './data/data.json';
@@ -27,9 +27,9 @@ export function App() {
       <div style={{ height: `calc(100% - ${FOOTER_HEIGHT}px)` }}>
         {page === PageType.HOME && <Hero goToPage={goToPage} />}
         {page === PageType.VISITS && <VisitProgress markets={markets} />}
-        {page === PageType.MARKETS && <MarketList markets={markets} />}
-        {/* {page === PageType.EVENTS && <MarketList events={events} />} */}
-        {/* {page === PageType.FAVORITES && <MarketList results={results} />} */}
+        {page === PageType.MARKETS && <ResultList results={markets} />}
+        {page === PageType.EVENTS && <ResultList results={events} />}
+        {/* {page === PageType.FAVORITES && <ResultList results={results} />} */}
       </div>
       <Footer page={page} goToPage={goToPage} />
     </div>
