@@ -381,6 +381,26 @@
   },
   {
     "id": 20,
+    "name": "Badeschiff ParadEis",
+    "district": "1010",
+    "coordinates": [48.21163, 16.381463],
+    "start": "11/1/2022",
+    "end": "03/31/2023",
+    "times": [
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"]
+    ],
+    "website": "https://www.badeschiff.at/#eisstock",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 21,
     "name": "Winter in the City",
     "district": "1010",
     "coordinates": [48.20794, 16.374048],
@@ -400,8 +420,28 @@
     "type": "EVENT"
   },
   {
-    "id": 21,
-    "name": "Kylo Punschterrassen",
+    "id": 22,
+    "name": "Punsch am Wasser",
+    "district": "1210",
+    "coordinates": [48.241072, 16.398425],
+    "start": "11/04/2022",
+    "end": "12/18/2022",
+    "times": [
+      null,
+      null,
+      null,
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["15:00", "21:00"]
+    ],
+    "website": "https://viennawurstelstand.com/event/punsch-am-wasser/",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 23,
+    "name": "Klyo Punschterrassen",
     "district": "1010",
     "coordinates": [48.21164, 16.383692],
     "start": "11/19/2022",
@@ -416,6 +456,26 @@
       ["17:00", "22:00"]
     ],
     "website": "https://klyo.at/urania-wien/",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 24,
+    "name": "Pop Up Wintermarket @ Lucullus",
+    "district": "1030",
+    "coordinates": [48.198788, 16.385051],
+    "start": "11/21/2022",
+    "end": "12/22/2022",
+    "times": [
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      null,
+      null
+    ],
+    "website": null,
     "imgUrl": "",
     "type": "EVENT"
   }
