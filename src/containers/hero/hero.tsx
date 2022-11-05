@@ -2,25 +2,19 @@ import { MutableRef } from 'preact/hooks';
 import HeaderImage from './headerImage';
 import CallToAction from './callToAction';
 import Flex from '../../components/flex';
+import { PageType } from '../../app.types';
 
 interface Props {
-  marketListRef: MutableRef<HTMLDivElement | null>;
-  visitProgressRef: MutableRef<HTMLDivElement | null>;
+  goToPage: (page: PageType) => void;
 }
 
-const Hero = ({ marketListRef, visitProgressRef }: Props) => {
-  const scrollRefToView = (ref: MutableRef<HTMLDivElement | null>) => () => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+const Hero = ({ goToPage }: Props) => {
   return (
     <Flex
       justifyContent="center"
       style={{
         width: '100vw',
-        height: '100vh',
+        height: '100%',
       }}
     >
       <HeaderImage />
@@ -35,11 +29,11 @@ const Hero = ({ marketListRef, visitProgressRef }: Props) => {
         >
           <CallToAction
             label="Track Visits"
-            handleClick={scrollRefToView(visitProgressRef)}
+            handleClick={() => goToPage(PageType.VISITS)}
           />
           <CallToAction
             label="See Markets"
-            handleClick={scrollRefToView(marketListRef)}
+            handleClick={() => goToPage(PageType.MARKETS)}
           />
         </Flex>
       </Flex>

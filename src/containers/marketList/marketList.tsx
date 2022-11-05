@@ -9,10 +9,9 @@ const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets';
 
 interface Props {
   markets: Array<Market>;
-  marketListRef: MutableRef<HTMLDivElement | null>;
 }
 
-const MarketList = ({ markets: marketData, marketListRef }: Props) => {
+const MarketList = ({ markets: marketData }: Props) => {
   const [markets, setMarkets] = useState(marketData);
   const [favorites, setFavorites] = useState<number[]>([]);
   const [showOpenNow, setShowOpenNow] = useState(false);
@@ -27,9 +26,9 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
   const toggleMarkets = () => setShowMarkets(prev => !prev);
   const toggleEvents = () => setShowEvents(prev => !prev);
 
-  const scrollToTopOfRef = () => {
-    marketListRef.current?.scrollIntoView();
-  };
+  // const scrollToTopOfRef = () => {
+  //   marketListRef.current?.scrollIntoView();
+  // };
 
   const toggleFavoriteMarket = (marketId: number) => () => {
     const isFavorite = favorites.includes(marketId);
@@ -83,7 +82,7 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
     }
 
     setMarkets(filteredMarkets);
-    scrollToTopOfRef();
+    // scrollToTopOfRef();
   }, [showOpenNow, showFavorites, showMarkets, showEvents]);
 
   useEffect(() => {
@@ -96,7 +95,6 @@ const MarketList = ({ markets: marketData, marketListRef }: Props) => {
 
   return (
     <div
-      ref={marketListRef}
       style={{
         backgroundColor: 'rgb(238,238,238)',
         maxWidth: '1200px',

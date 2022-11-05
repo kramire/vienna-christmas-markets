@@ -9,10 +9,9 @@ const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
 interface Props {
   markets: Array<Market>;
-  visitProgressRef: MutableRef<HTMLDivElement | null>;
 }
 
-const VisitProgress = ({ markets, visitProgressRef }: Props) => {
+const VisitProgress = ({ markets }: Props) => {
   const [visitedMarketsIds, setVisitedMarketsIds] = useState<number[]>([]);
 
   const tree = useMemo(() => buildTree(markets), [markets]);
@@ -57,7 +56,6 @@ const VisitProgress = ({ markets, visitProgressRef }: Props) => {
 
   return (
     <div
-      ref={visitProgressRef}
       style={{
         paddingTop: '24px',
         minHeight: 'calc(100vh - 24px)',

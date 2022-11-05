@@ -30,6 +30,7 @@ const Flex = ({ children, ref, onClick, style, ...rest }: Props) => {
   return (
     <div
       ref={ref}
+      onClick={onClick}
       style={{ display: 'flex', boxSizing: 'border-box', ...rest, ...style }}
     >
       {children}
