@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Winter MQ",
     "district": "1070",
-    "coordinates": [48.202836, 16.358979],
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
     "start": "11/10/2022",
     "end": "12/23/2022",
     "times": [
@@ -23,7 +23,7 @@
     "id": 2,
     "name": "Weihnachtsmarkt am Spittelberg",
     "district": "1070",
-    "coordinates": [48.203344, 16.355455],
+    "coordinates": { "lat": 48.203344, "lng": 16.355455 },
     "start": "11/11/2022",
     "end": "12/23/2022",
     "times": [
@@ -43,7 +43,7 @@
     "id": 3,
     "name": "Weihnachtsmarkt im Türkenschanzpark",
     "district": "1180",
-    "coordinates": [48.234781, 16.333768],
+    "coordinates": { "lat": 48.234781, "lng": 16.333768 },
     "start": "11/11/2022",
     "end": "12/23/2022",
     "times": [
@@ -63,7 +63,7 @@
     "id": 4,
     "name": "Weihnachtsdorf am Stephansplatz",
     "district": "1010",
-    "coordinates": [48.20824, 16.37247],
+    "coordinates": { "lat": 48.20824, "lng": 16.37247 },
     "start": "11/11/2022",
     "end": "12/26/2022",
     "times": [
@@ -83,7 +83,7 @@
     "id": 5,
     "name": "Advent-Genussmarkt bei der Oper",
     "district": "1010",
-    "coordinates": [48.202518, 16.371],
+    "coordinates": { "lat": 48.202518, "lng": 16.371 },
     "start": "11/11/2022",
     "end": "12/31/2022",
     "times": [
@@ -103,7 +103,7 @@
     "id": 6,
     "name": "Weihnachtsdorf am Campus der Universität Wien",
     "district": "1090",
-    "coordinates": [48.215582, 16.352607],
+    "coordinates": { "lat": 48.215582, "lng": 16.352607 },
     "start": "11/11/2022",
     "end": "12/23/2022",
     "times": [
@@ -123,7 +123,7 @@
     "id": 7,
     "name": "Weihnachtsmarkt Am Hof",
     "district": "1010",
-    "coordinates": [48.210857, 16.367494],
+    "coordinates": { "lat": 48.210857, "lng": 16.367494 },
     "start": "11/11/2022",
     "end": "12/23/2022",
     "times": [
@@ -143,7 +143,7 @@
     "id": 8,
     "name": "Weihnachtsdorf Maria-Theresien-Platz",
     "district": "1010",
-    "coordinates": [48.204682, 16.361063],
+    "coordinates": { "lat": 48.204682, "lng": 16.361063 },
     "start": "11/16/2022",
     "end": "12/26/2022",
     "times": [
@@ -163,7 +163,7 @@
     "id": 9,
     "name": "Weihnacht im Wald",
     "district": "1020",
-    "coordinates": [48.207493, 16.401838],
+    "coordinates": { "lat": 48.207493, "lng": 16.401838 },
     "start": "11/17/2022",
     "end": "12/31/2022",
     "times": [
@@ -183,7 +183,7 @@
     "id": 10,
     "name": "Weihnachtsmarkt in den Blumengärten Hirschstetten",
     "district": "1220",
-    "coordinates": [48.238924, 16.474131],
+    "coordinates": { "lat": 48.238924, "lng": 16.474131 },
     "start": "11/17/2022",
     "end": "12/23/2022",
     "times": [
@@ -203,7 +203,7 @@
     "id": 11,
     "name": "Weihnachtsdorf Schloss Belvedere",
     "district": "1030",
-    "coordinates": [48.191807, 16.380843],
+    "coordinates": { "lat": 48.191807, "lng": 16.380843 },
     "start": "11/18/2022",
     "end": "12/26/2022",
     "times": [
@@ -223,7 +223,7 @@
     "id": 12,
     "name": "Advent im Gartenpalais Liechtenstein",
     "district": "1090",
-    "coordinates": [48.22227, 16.359773],
+    "coordinates": { "lat": 48.22227, "lng": 16.359773 },
     "start": "11/18/2022",
     "end": "12/23/2022",
     "times": [
@@ -243,7 +243,7 @@
     "id": 13,
     "name": "Altwiener Christkindlmarkt Freyung",
     "district": "1010",
-    "coordinates": [48.211618, 16.36557],
+    "coordinates": { "lat": 48.211618, "lng": 16.36557 },
     "start": "11/18/2022",
     "end": "12/23/2022",
     "times": [
@@ -263,7 +263,7 @@
     "id": 14,
     "name": "Art Advent - Kunst & Handwerk am Karlsplatz",
     "district": "1040",
-    "coordinates": [48.19861, 16.371617],
+    "coordinates": { "lat": 48.19861, "lng": 16.371617 },
     "start": "11/18/2022",
     "end": "12/23/2022",
     "times": [
@@ -283,7 +283,7 @@
     "id": 15,
     "name": "Almadvent",
     "district": "1020",
-    "coordinates": [48.217274, 16.40742],
+    "coordinates": { "lat": 48.217274, "lng": 16.40742 },
     "start": "11/18/2022",
     "end": "12/23/2022",
     "times": [
@@ -303,7 +303,7 @@
     "id": 16,
     "name": "Kultur- und Weihnachtsmarkt Schloss Schönbrunn",
     "district": "1130",
-    "coordinates": [48.186191, 16.312962],
+    "coordinates": { "lat": 48.186191, "lng": 16.312962 },
     "start": "11/19/2022",
     "end": "1/4/2023",
     "times": [
@@ -323,7 +323,7 @@
     "id": 17,
     "name": "Wiener Christkindlmarkt auf dem Rathausplatz",
     "district": "1010",
-    "coordinates": [48.210641, 16.358914],
+    "coordinates": { "lat": 48.210641, "lng": 16.358914 },
     "start": "11/19/2022",
     "end": "12/26/2022",
     "times": [
@@ -343,7 +343,7 @@
     "id": 18,
     "name": "Wintermarkt am Riesenradplatz",
     "district": "1030",
-    "coordinates": [48.216976, 16.396323],
+    "coordinates": { "lat": 48.216976, "lng": 16.396323 },
     "start": "11/19/2022",
     "end": "1/8/2023",
     "times": [
@@ -363,7 +363,7 @@
     "id": 19,
     "name": "Ottakringer Weihnachtszauber",
     "district": "1160",
-    "coordinates": [48.212359, 16.3242538],
+    "coordinates": { "lat": 48.212359, "lng": 16.3242538 },
     "start": "11/24/2022",
     "end": "12/23/2022",
     "times": [
@@ -383,7 +383,7 @@
     "id": 20,
     "name": "Badeschiff ParadEis",
     "district": "1010",
-    "coordinates": [48.21163, 16.381463],
+    "coordinates": { "lat": 48.21163, "lng": 16.381463 },
     "start": "11/1/2022",
     "end": "03/31/2023",
     "times": [
@@ -403,7 +403,7 @@
     "id": 21,
     "name": "Winter in the City",
     "district": "1010",
-    "coordinates": [48.20794, 16.374048],
+    "coordinates": { "lat": 48.20794, "lng": 16.374048 },
     "start": "11/4/2022",
     "end": "12/31/2022",
     "times": [
@@ -423,7 +423,7 @@
     "id": 22,
     "name": "Punsch am Wasser",
     "district": "1210",
-    "coordinates": [48.241072, 16.398425],
+    "coordinates": { "lat": 48.241072, "lng": 16.398425 },
     "start": "11/04/2022",
     "end": "12/18/2022",
     "times": [
@@ -443,7 +443,7 @@
     "id": 23,
     "name": "Klyo Punschterrassen",
     "district": "1010",
-    "coordinates": [48.21164, 16.383692],
+    "coordinates": { "lat": 48.21164, "lng": 16.383692 },
     "start": "11/19/2022",
     "end": "12/23/2022",
     "times": [
@@ -463,7 +463,7 @@
     "id": 24,
     "name": "Pop Up Wintermarket @ Lucullus",
     "district": "1030",
-    "coordinates": [48.198788, 16.385051],
+    "coordinates": { "lat": 48.198788, "lng": 16.385051 },
     "start": "11/21/2022",
     "end": "12/22/2022",
     "times": [

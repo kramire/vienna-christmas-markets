@@ -1,3 +1,5 @@
+import { theme } from '../../theme';
+
 interface Props {
   label: string;
   isSelected: boolean;
@@ -14,9 +16,9 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
       padding: '8px',
       borderRadius: '20px',
       border: '1px solid #09420c',
-      color: isSelected ? 'rgb(238, 238, 238)' : '#09420c',
+      color: isSelected ? theme.colors.bgWhite : theme.colors.darkGreen,
       background:
-        isSelected || isLoading ? 'rgba(9,66,12, 0.9)' : 'rgb(238, 238, 238)',
+        isSelected || isLoading ? 'rgba(9,66,12, 0.9)' : theme.colors.bgWhite,
       fontSize: '14px',
       fontFamily: 'sans-serif',
     }}

@@ -1,11 +1,12 @@
 interface Result {
   id: number;
   name: string;
+  coordinates: Coordinate;
   district: string;
   start: string;
   end: string;
-  times: Array<[string, string] | null>;
-  website: string;
+  times: Array<Array<string> | null>; // this is Array<[string, string] | null> but TS complains about JSON
+  website: string | null;
 }
 
 export enum ResultType {
@@ -27,4 +28,11 @@ export enum PageType {
   EVENTS = 'EVENTS',
   FAVORITES = 'FAVORITES',
   VISITS = 'VISITS',
+}
+
+export type FilterType = 'openNow' | 'favorited' | 'nearMe';
+
+export interface Coordinate {
+  lat: number;
+  lng: number;
 }

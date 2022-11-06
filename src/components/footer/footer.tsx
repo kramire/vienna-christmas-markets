@@ -1,4 +1,5 @@
 import { PageType } from '../../app.types';
+import { theme } from '../../theme';
 import { footerItemMapping } from './footer.constants';
 import FooterItem from './footerItem';
 
@@ -17,7 +18,6 @@ const Footer = ({ page: currentPage, goToPage }: Props) => {
       style={{
         display: 'flex',
         justifyContent: 'space-around',
-        gap: '12px',
         position: 'fixed',
         bottom: '0',
         left: '0',
@@ -25,9 +25,7 @@ const Footer = ({ page: currentPage, goToPage }: Props) => {
         zIndex: 1,
         width: '100%',
         boxShadow: 'rgb(8 61 11 / 18%) 0px -1px 2px -1px',
-        fontSize: '14px',
-        fontFamily: 'sans-serif',
-        backgroundColor: 'rgb(238, 238, 238)',
+        backgroundColor: theme.colors.bgWhite,
       }}
     >
       {footerItemPages.map(page => (

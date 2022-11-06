@@ -8,16 +8,16 @@ import EmptyHeartIcon from '../../assets/emptyHeart.svg';
 import { localizeDate } from '../../utils/localizeDate';
 import { Event, Market, ResultType } from '../../app.types';
 import Flex from '../../components/flex';
+import { theme } from '../../theme';
+import { weekDays } from './resultList.constants';
 
 interface Props {
   result: Market | Event;
   isFavorite: boolean;
-  toggleFavoriteMarket: (id: number) => () => void;
+  toggleFavoriteResult: (id: number) => () => void;
 }
 
-const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S'];
-
-const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
+const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   const [language, setLanguage] = useState('en-GB');
 
   useEffect(() => {
@@ -32,6 +32,7 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
         margin: '0px',
         padding: '24px',
         flex: 1,
+        height: 'fit-content',
       }}
     >
       <Flex justifyContent="space-between" gap="12px">
@@ -41,7 +42,7 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
             fontSize: '22px',
             marginBottom: '12px',
             lineHeight: '32px',
-            color: 'rgb(9, 46, 11)',
+            color: theme.colors.darkGreen,
           }}
         >
           {result.type === ResultType.MARKET
@@ -49,7 +50,7 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
             : result.name}
         </h3>
         <img
-          onClick={toggleFavoriteMarket(result.id)}
+          onClick={toggleFavoriteResult(result.id)}
           src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
           alt={isFavorite ? 'Favorite Venue' : 'Unfavorite venue'}
           loading="lazy"
@@ -116,29 +117,31 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteMarket }: Props) => {
             )}
           </Flex>
         </Flex>
-        <Flex
-          alignItems="center"
-          gap="16px"
-          style={{
-            margin: '8px 0px',
-          }}
-        >
-          <img
-            src={InfoIcon}
-            loading="lazy"
-            alt="info"
-            width={16}
-            height={16}
-          />
-
-          <a
-            href={result.website}
-            target="_blank"
-            alt={`Homepage for the ${result.name} event.`}
+        {result.website && (
+          <Flex
+            alignItems="center"
+            gap="16px"
+            style={{
+              margin: '8px 0px',
+            }}
           >
-            Website
-          </a>
-        </Flex>
+            <img
+              src={InfoIcon}
+              loading="lazy"
+              alt="info"
+              width={16}
+              height={16}
+            />
+
+            <a
+              href={result.website}
+              target="_blank"
+              alt={`Homepage for the ${result.name} event.`}
+            >
+              Website
+            </a>
+          </Flex>
+        )}
       </Flex>
     </li>
   );

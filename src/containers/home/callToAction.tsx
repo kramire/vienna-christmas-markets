@@ -1,3 +1,5 @@
+import { theme } from '../../theme';
+
 interface Props {
   label: string;
   handleClick: () => void;
@@ -11,8 +13,8 @@ const CallToAction = ({ label, handleClick }: Props) => (
       fontFamily: 'serif',
       fontWeight: 'bold',
       lineHeight: '24px',
-      borderBottom: '1px solid black',
-      color: '#141414',
+      borderBottom: `1px solid ${theme.colors.text}`,
+      color: theme.colors.text,
     }}
   >
     {label}

@@ -1,4 +1,5 @@
-import garlandBackground from '../../assets/garland.webp';
+import garlandBackground from '../assets/garland.webp';
+import { theme } from '../theme';
 
 const HeaderImage = () => {
   return (
@@ -6,10 +7,11 @@ const HeaderImage = () => {
       className="header-image"
       style={{
         backgroundImage: `url(${garlandBackground})`,
-        backgroundColor: 'rgb(238,238,238)',
+        backgroundColor: theme.colors.bgWhite,
         width: '100%',
         position: 'absolute',
         top: '0',
+        zIndex: 1,
       }}
     />
   );

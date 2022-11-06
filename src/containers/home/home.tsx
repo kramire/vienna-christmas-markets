@@ -1,5 +1,4 @@
-import { MutableRef } from 'preact/hooks';
-import HeaderImage from './headerImage';
+import HeaderImage from '../../components/headerImage';
 import CallToAction from './callToAction';
 import Flex from '../../components/flex';
 import { PageType } from '../../app.types';
@@ -8,17 +7,23 @@ interface Props {
   goToPage: (page: PageType) => void;
 }
 
-const Hero = ({ goToPage }: Props) => {
+const Home = ({ goToPage }: Props) => {
   return (
     <Flex
       justifyContent="center"
       style={{
-        width: '100vw',
+        width: '100%',
         height: '100%',
       }}
     >
       <HeaderImage />
-      <Flex flexDirection="column" gap="32px" justifyContent="center">
+      <Flex
+        className="animate-slide-in"
+        flexDirection="column"
+        gap="32px"
+        justifyContent="center"
+        style={{ marginBottom: '57px' }}
+      >
         <h1 style={{ textAlign: 'center' }}>Vienna Christmas Markets</h1>
         <Flex
           gap="20px"
@@ -41,4 +46,4 @@ const Hero = ({ goToPage }: Props) => {
   );
 };
 
-export default Hero;
+export default Home;

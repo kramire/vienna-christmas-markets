@@ -1,4 +1,5 @@
 import { PageType } from '../../app.types';
+import { theme } from '../../theme';
 import Flex from '../flex';
 import { footerItemMapping } from './footer.constants';
 
@@ -25,18 +26,18 @@ const FooterItem = ({
     style={{
       padding: '8px',
       flex: 1,
-      color: isSelected ? 'rgb(9, 46, 11)' : 'inherit',
+      color: isSelected ? theme.colors.darkGreen : 'inherit',
       backgroundColor: isSelected ? 'rgba(9, 46, 11, 0.1)' : 'transparent',
     }}
   >
     <i
       class={fontClasses}
       style={{
-        fontSize: '20px',
-        height: '20px',
+        fontSize: '16px',
+        height: '16px',
       }}
     ></i>
-    <p>{name}</p>
+    <p style={{ fontSize: '12px', lineHeight: '14px' }}>{name}</p>
   </Flex>
 );
 

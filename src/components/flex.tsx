@@ -19,6 +19,7 @@ interface Props {
   children: ComponentChildren;
   ref?: MutableRef<HTMLDivElement | null>;
   onClick?: JSXInternal.MouseEventHandler<HTMLDivElement> | undefined;
+  className?: string;
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   justifyContent?: Alignment;
   alignItems?: Alignment;
@@ -26,12 +27,13 @@ interface Props {
   style?: JSXInternal.CSSProperties;
 }
 
-const Flex = ({ children, ref, onClick, style, ...rest }: Props) => {
+const Flex = ({ children, ref, onClick, className, style, ...rest }: Props) => {
   return (
     <div
       ref={ref}
       onClick={onClick}
-      style={{ display: 'flex', boxSizing: 'border-box', ...rest, ...style }}
+      className={className}
+      style={{ display: 'flex', ...rest, ...style }}
     >
       {children}
     </div>

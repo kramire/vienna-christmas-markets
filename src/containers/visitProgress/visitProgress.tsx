@@ -4,7 +4,8 @@ import Flex from '../../components/flex';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import buildTree from '../../utils/build-tree';
 import { isOpen } from '../../utils/isOpen';
-import HeaderImage from '../hero/headerImage';
+import HeaderImage from '../../components/headerImage';
+import { theme } from '../../theme';
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
@@ -59,11 +60,16 @@ const VisitProgress = ({ markets }: Props) => {
     <>
       <HeaderImage />
       <Flex
+        className="animate-slide-in"
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
         gap="12px"
-        style={{ backgroundColor: 'rgb(238,238,238)', marginTop: '130px' }}
+        style={{
+          backgroundColor: theme.colors.bgWhite,
+          marginTop: '130px',
+          paddingBottom: '50px',
+        }}
       >
         <h2
           style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '28px' }}
@@ -96,7 +102,7 @@ const VisitProgress = ({ markets }: Props) => {
                       width: '44px',
                       height: '44px',
                       border: '2px solid',
-                      borderColor: hasVisited ? 'green' : 'black',
+                      borderColor: hasVisited ? 'green' : theme.colors.text,
                       borderRadius: '50%',
                       boxShadow: hasVisited ? '0px 0px 1px 1px green' : 'none',
                       fontSize: '24px',
