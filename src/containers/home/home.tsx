@@ -18,7 +18,7 @@ const Home = ({ goToPage }: Props) => {
         flexDirection="column"
         gap="24px 16px"
         justifyContent="center"
-        style={{ marginBottom: '66px' }}
+        style={{ marginBottom: '12px' }}
       >
         <div style={{ position: 'relative' }}>
           <img
@@ -60,21 +60,20 @@ const Home = ({ goToPage }: Props) => {
       >
         <HomeItem
           title="Christmas Markets"
-          description="Enjoy the Christmas seasonal with traditional food, drinks, and shopping at the Viennese Christmas Markets."
+          description="Enjoy the Christmas season with traditional food, drinks, and shopping at the Viennese Christmas Markets."
           actionLabel="See the markets"
           handleClick={() => goToPage(PageType.MARKETS)}
         />
         <HomeItem
           title="Pop Ups & Events"
-          description="From ice curling, to wurst grilling, to design markets, there are
-            plenty of seasonal events for all to enjoy."
+          description="Whether it's ice curling, wurst grilling, or design markets, there's something seasonal for everyone."
           actionLabel="Track progress"
           handleClick={() => goToPage(PageType.EVENTS)}
         />
         <HomeItem
           title="Christmas Challenge"
           description="Eager to visit all of Vienna's Christmas Markets? Keep track of
-              your progress!"
+              your progress right here!"
           actionLabel="Track progress"
           handleClick={() => goToPage(PageType.VISITS)}
         />
