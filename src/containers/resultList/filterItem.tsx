@@ -15,10 +15,11 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
       minWidth: '80px',
       padding: '8px',
       borderRadius: '20px',
-      border: '1px solid #09420c',
+      border: '1px solid',
+      borderColor: theme.colors.darkGreen,
       color: isSelected ? theme.colors.bgWhite : theme.colors.darkGreen,
       background:
-        isSelected || isLoading ? 'rgba(9,66,12, 0.9)' : theme.colors.bgWhite,
+        isSelected || isLoading ? theme.colors.darkGreen : theme.colors.bgWhite,
       fontSize: '14px',
       fontFamily: 'sans-serif',
     }}

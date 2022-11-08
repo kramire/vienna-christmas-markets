@@ -11,7 +11,6 @@ import Flex from '../../components/flex';
 import ResultItem from './resultItem';
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates';
 import { theme } from '../../theme';
-import Header from './header';
 import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import {
@@ -19,15 +18,25 @@ import {
   FOOTER_HEIGHT,
 } from '../../app.constants';
 import Filters from './filters';
+import Header from '../../components/header';
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>;
   page: PageType;
   favorites: Array<number>;
   setFavorites: (value: Array<number>) => void;
+  deviceLocation: Coordinate | undefined;
+  setDeviceLocation: (value: Coordinate) => void;
 }
 
-const ResultList = ({ results, page, favorites, setFavorites }: Props) => {
+const ResultList = ({
+  results,
+  page,
+  favorites,
+  setFavorites,
+  deviceLocation,
+  setDeviceLocation,
+}: Props) => {
   const [activeFilters, setActiveFilters] = useState<{
     [key in FilterType]: boolean;
   }>({
@@ -36,9 +45,6 @@ const ResultList = ({ results, page, favorites, setFavorites }: Props) => {
     nearMe: false,
   });
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
-  const [deviceLocation, setDeviceLocation] = useState<Coordinate | undefined>(
-    undefined
-  );
 
   const { setItem } = useLocalStorage();
 
@@ -134,24 +140,14 @@ const ResultList = ({ results, page, favorites, setFavorites }: Props) => {
         overflowY: 'scroll',
       }}
     >
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        style={{
-          position: 'sticky',
-          top: 0,
-          boxShadow: '2px 2px 4px 1px #5e5e5e',
-          zIndex: 1,
-        }}
-      >
-        <Header page={page} />
+      <Header>
         <Filters
           activeFilters={activeFilters}
           toggleFilter={toggleFilter}
           isLoadingLocation={isLoadingLocation}
           page={page}
         />
-      </Flex>
+      </Header>
       <p style={{ padding: '0px 24px' }}>
         {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'}{' '}
         found

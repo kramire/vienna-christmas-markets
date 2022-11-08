@@ -40,8 +40,7 @@ h1 {
 
 h2 {
   font-size: 16px;
-  font-weight: normal;
-  line-height: 36px;
+  line-height: 26px;
 }
 
 p,
@@ -70,12 +69,6 @@ img {
 
 button:hover {
   cursor: pointer;
-}
-
-.header-image {
-  background-size: 100vw;
-  background-repeat: no-repeat;
-  height: 130px;
 }
 
 .result-item {
@@ -118,25 +111,5 @@ button:hover {
   100% {
     transform: translateY(0%);
     opacity: 1;
-  }
-}
-
-@media (min-width: 600px) {
-  .header-image {
-    background-size: 50vw;
-    background-repeat: repeat-x;
-    height: 180px;
-  }
-
-  .market-item {
-    min-width: 400px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .header-image {
-    background-size: 25vw;
-    background-repeat: repeat-x;
-    height: 180px;
   }
 }

@@ -4,8 +4,8 @@ import Flex from '../../components/flex';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import buildTree from '../../utils/build-tree';
 import { isOpen } from '../../utils/isOpen';
-import HeaderImage from '../../components/headerImage';
 import { theme } from '../../theme';
+import Header from '../../components/header';
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
@@ -57,8 +57,17 @@ const VisitProgress = ({ markets }: Props) => {
   }, []);
 
   return (
-    <>
-      <HeaderImage />
+    <Flex
+      flexDirection="column"
+      gap="16px"
+      style={{
+        backgroundColor: theme.colors.bgWhite,
+        margin: '0 auto',
+        height: '100%',
+        overflowY: 'scroll',
+      }}
+    >
+      <Header />
       <Flex
         className="animate-slide-in"
         flexDirection="column"
@@ -67,19 +76,13 @@ const VisitProgress = ({ markets }: Props) => {
         gap="12px"
         style={{
           backgroundColor: theme.colors.bgWhite,
-          marginTop: '130px',
           paddingBottom: '50px',
         }}
       >
-        <h2
-          style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '28px' }}
-        >
-          Market Visit Progress
-        </h2>
         <Flex flexDirection="column" alignItems="center" gap="12px">
           <div
             style={{
-              fontSize: '42px',
+              fontSize: '40px',
               filter: `grayscale(${
                 1 - visitedMarketsIds.length / markets.length
               })`,
@@ -125,15 +128,19 @@ const VisitProgress = ({ markets }: Props) => {
             gap: '12px',
             margin: '12px 24px 24px',
             padding: '24px',
+            fontSize: '13px',
+            lineHeight: '20px',
           }}
         >
           <p style={{ fontWeight: 'bold' }}>
             Visit the markets to decorate the tree!
           </p>
-          <div style={{ maxWidth: '100%', fontSize: '14px' }}>
+          <div style={{ maxWidth: '100%' }}>
             <p>Rules:</p>
-            <ul style={{ paddingLeft: '20px' }}>
-              <li>When you visit a market, click the ornament on the tree.</li>
+            <ul style={{ paddingLeft: '20px', margin: '8px 0px' }}>
+              <li style={{ marginBottom: '8px' }}>
+                When you visit a market, click the ornament on the tree.
+              </li>
               <li>
                 You can only click the ornament after that market has opened
                 this season.
@@ -142,7 +149,7 @@ const VisitProgress = ({ markets }: Props) => {
           </div>
         </div>
       </Flex>
-    </>
+    </Flex>
   );
 };
 

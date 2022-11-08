@@ -1,7 +1,9 @@
-import HeaderImage from '../../components/headerImage';
-import CallToAction from './callToAction';
 import Flex from '../../components/flex';
+
 import { PageType } from '../../app.types';
+import Header from '../../components/header';
+import HomeItem from './homeItem';
+import HomeImage from '../../assets/karls-christmas.webp';
 
 interface Props {
   goToPage: (page: PageType) => void;
@@ -9,40 +11,75 @@ interface Props {
 
 const Home = ({ goToPage }: Props) => {
   return (
-    <Flex
-      justifyContent="center"
-      style={{
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      <HeaderImage />
+    <>
+      <Header />
       <Flex
         className="animate-slide-in"
         flexDirection="column"
-        gap="32px"
+        gap="24px 16px"
         justifyContent="center"
-        style={{ marginBottom: '57px' }}
+        style={{ marginBottom: '66px' }}
       >
-        <h1 style={{ textAlign: 'center' }}>Vienna Christmas Markets</h1>
-        <Flex
-          gap="20px"
-          justifyContent="center"
-          style={{
-            fontFamily: 'serif',
-          }}
-        >
-          <CallToAction
-            label="Track Visits"
-            handleClick={() => goToPage(PageType.VISITS)}
+        <div style={{ position: 'relative' }}>
+          <img
+            width="100%"
+            height="550px"
+            alt="Karl's Kirche"
+            style={{
+              width: '100vw',
+              height: '550px',
+              objectFit: 'cover',
+              filter: 'brightness(0.5)',
+              boxShadow: 'rgb(0 0 0 / 48%) 0px 2px 5px 1px',
+            }}
+            loading="eager"
+            src={HomeImage}
           />
-          <CallToAction
-            label="See Markets"
-            handleClick={() => goToPage(PageType.MARKETS)}
-          />
-        </Flex>
+          <h1
+            style={{
+              fontSize: '26px',
+              color: 'white',
+              lineHeight: '34px',
+              position: 'absolute',
+              bottom: '182px',
+              textAlign: 'center',
+              background: '#0000009e',
+              width: '100%',
+              padding: '8px',
+            }}
+          >
+            Discover the magic of Christmas in Vienna
+          </h1>
+        </div>
       </Flex>
-    </Flex>
+      <Flex
+        flexDirection="column"
+        gap="24px 16px"
+        justifyContent="center"
+        style={{ marginBottom: '60px', paddingBottom: '24px' }}
+      >
+        <HomeItem
+          title="Christmas Markets"
+          description="Enjoy the Christmas seasonal with traditional food, drinks, and shopping at the Viennese Christmas Markets."
+          actionLabel="See the markets"
+          handleClick={() => goToPage(PageType.MARKETS)}
+        />
+        <HomeItem
+          title="Pop Ups & Events"
+          description="From ice curling, to wurst grilling, to design markets, there are
+            plenty of seasonal events for all to enjoy."
+          actionLabel="Track progress"
+          handleClick={() => goToPage(PageType.EVENTS)}
+        />
+        <HomeItem
+          title="Christmas Challenge"
+          description="Eager to visit all of Vienna's Christmas Markets? Keep track of
+              your progress!"
+          actionLabel="Track progress"
+          handleClick={() => goToPage(PageType.VISITS)}
+        />
+      </Flex>
+    </>
   );
 };
 

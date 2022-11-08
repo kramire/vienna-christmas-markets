@@ -9,15 +9,23 @@ const CallToAction = ({ label, handleClick }: Props) => (
   <button
     onClick={handleClick}
     style={{
-      fontSize: '18px',
+      fontSize: '16px',
       fontFamily: 'serif',
       fontWeight: 'bold',
-      lineHeight: '24px',
-      borderBottom: `1px solid ${theme.colors.text}`,
+      lineHeight: '18px',
       color: theme.colors.text,
+      width: 'fit-content',
+      alignSelf: 'end',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
     }}
   >
-    {label}
+    <p>{label}</p>
+    <i
+      class="fa-solid fa-arrow-right-long"
+      style={{ width: '14px', height: '14px' }}
+    ></i>
   </button>
 );
 
