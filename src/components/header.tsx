@@ -27,7 +27,6 @@ const Header = ({ children }: Props) => {
           backgroundColor: 'rgb(216, 219, 216)',
           padding: '8px 16px',
           height: '66px',
-          boxShadow: '0px 0px 2px 1px rgb(9 46 11 / 71%)',
         }}
       >
         <p>Christmas in</p>

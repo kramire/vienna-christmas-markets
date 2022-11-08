@@ -27,7 +27,9 @@ const FooterItem = ({
       flex: 1,
       color: theme.colors.darkGreen,
       backgroundColor: isSelected ? 'rgba(9, 46, 11, 0.1)' : 'transparent',
+      transition: 'background-color 0.3s ease',
       cursor: 'pointer',
+      '-webkit-tap-highlight-color': 'transparent',
     }}
   >
     <i
