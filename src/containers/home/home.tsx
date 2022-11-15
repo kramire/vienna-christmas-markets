@@ -12,7 +12,7 @@ interface Props {
 const Home = ({ goToPage }: Props) => {
   return (
     <>
-      <Header />
+      <Header hideOnScroll />
       <Flex
         className="animate-slide-in"
         flexDirection="column"

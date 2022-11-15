@@ -4,9 +4,10 @@ import Flex from './flex';
 
 interface Props {
   children?: ComponentChildren;
+  hideOnScroll?: boolean;
 }
 
-const Header = ({ children }: Props) => {
+const Header = ({ children, hideOnScroll = false }: Props) => {
   return (
     <Flex
       flexDirection="column"
@@ -15,7 +16,7 @@ const Header = ({ children }: Props) => {
         position: 'sticky',
         top: 0,
         boxShadow: '0px 0px 2px 1px rgb(9 46 11 / 71%)',
-        zIndex: 1,
+        zIndex: hideOnScroll ? 0 : 1,
       }}
     >
       <Flex

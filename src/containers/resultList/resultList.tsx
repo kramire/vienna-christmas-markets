@@ -19,6 +19,7 @@ import {
 } from '../../app.constants';
 import Filters from './filters';
 import Header from '../../components/header';
+import { isOpen } from '../../utils/isOpen';
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>;
@@ -76,17 +77,9 @@ const ResultList = ({
     let newResults = results;
 
     if (activeFilters.openNow) {
-      newResults = newResults.filter(result => {
-        const today = new Date();
-        const startDate = new Date(result.start);
-        const endDate = new Date(result.end);
-
-        if (activeFilters.openNow && (today < startDate || today > endDate)) {
-          return false;
-        }
-
-        return true;
-      });
+      newResults = newResults.filter(result =>
+        isOpen(result.start, result.end, result.times)
+      );
     }
 
     if (activeFilters.favorited) {

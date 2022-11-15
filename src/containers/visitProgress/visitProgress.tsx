@@ -26,7 +26,7 @@ const VisitProgress = ({ markets }: Props) => {
 
     const market = markets.find(market => market.id === ornamentId);
 
-    if (market && isOpen(market.start)) {
+    if (market && isOpen(market.start, market.end, market.times)) {
       let newVisitedMarketIds: number[] = [];
 
       if (visitedMarketsIds.includes(ornamentId)) {

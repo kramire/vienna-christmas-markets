@@ -9,7 +9,7 @@ import { localizeDate } from '../../utils/localizeDate';
 import { Event, Market, ResultType } from '../../app.types';
 import Flex from '../../components/flex';
 import { theme } from '../../theme';
-import { weekDays } from './resultList.constants';
+import { GOOGLE_MAPS_LINK, weekDays } from './resultList.constants';
 
 interface Props {
   result: Market | Event;
@@ -68,7 +68,15 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
             width={16}
             height={16}
           />
-          <p>{result.district}</p>
+          <a
+            href={`${GOOGLE_MAPS_LINK}&query=${result.coordinates.lat},${result.coordinates.lng}`}
+            target="_blank"
+            aria-label="Google maps link"
+          >
+            <p style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+              {result.district}
+            </p>
+          </a>
         </Flex>
         <Flex alignItems="center" gap="16px">
           <img
