@@ -25,22 +25,12 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   }, []);
 
   return (
-    <li
-      key={result.id}
-      className="result-item"
-      style={{
-        margin: '0px',
-        padding: '24px',
-        flex: 1,
-        height: 'fit-content',
-      }}
-    >
+    <li key={result.id} className="result-item">
       <Flex justifyContent="space-between" gap="12px">
         <h3
           style={{
             fontWeight: 'bold',
             fontSize: '22px',
-            marginBottom: '12px',
             lineHeight: '32px',
             color: theme.colors.darkGreen,
           }}
@@ -78,19 +68,21 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
             </p>
           </a>
         </Flex>
-        <Flex alignItems="center" gap="16px">
-          <img
-            src={CalendarIcon}
-            loading="lazy"
-            alt="calendar"
-            width={16}
-            height={16}
-          />
-          <p>
-            {localizeDate(result.start, language)} -{' '}
-            {localizeDate(result.end, language)}
-          </p>
-        </Flex>
+        {result.start && result.end && (
+          <Flex alignItems="center" gap="16px">
+            <img
+              src={CalendarIcon}
+              loading="lazy"
+              alt="calendar"
+              width={16}
+              height={16}
+            />
+            <p>
+              {localizeDate(result.start, language)} -{' '}
+              {localizeDate(result.end, language)}
+            </p>
+          </Flex>
+        )}
         <Flex gap="16px">
           <img
             src={ClockIcon}

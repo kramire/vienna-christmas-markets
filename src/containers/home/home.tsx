@@ -4,6 +4,7 @@ import { PageType } from '../../app.types';
 import Header from '../../components/header';
 import HomeItem from './homeItem';
 import HomeImage from '../../assets/karls-christmas.webp';
+import { FOOTER_HEIGHT } from '../../app.constants';
 
 interface Props {
   goToPage: (page: PageType) => void;
@@ -56,7 +57,7 @@ const Home = ({ goToPage }: Props) => {
         flexDirection="column"
         gap="24px 16px"
         justifyContent="center"
-        style={{ marginBottom: '60px', paddingBottom: '24px' }}
+        style={{ marginBottom: `${FOOTER_HEIGHT}px`, padding: '0px 24px 24px' }}
       >
         <HomeItem
           title="Christmas Markets"

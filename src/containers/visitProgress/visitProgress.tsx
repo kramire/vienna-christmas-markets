@@ -7,6 +7,7 @@ import { isOpen } from '../../utils/isOpen';
 import { theme } from '../../theme';
 import Header from '../../components/header';
 import SurpriseImage from '../../assets/christmas-sparkler.webp';
+import { FOOTER_HEIGHT } from '../../app.constants';
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
@@ -26,7 +27,11 @@ const VisitProgress = ({ markets }: Props) => {
 
     const market = markets.find(market => market.id === ornamentId);
 
-    if (market && isOpen(market.start, market.end, market.times)) {
+    if (!market || !market.start || !market.end) {
+      return;
+    }
+
+    if (isOpen(market.start, market.end, market.times)) {
       let newVisitedMarketIds: number[] = [];
 
       if (visitedMarketsIds.includes(ornamentId)) {
@@ -67,8 +72,7 @@ const VisitProgress = ({ markets }: Props) => {
         alignItems="center"
         gap="12px"
         style={{
-          backgroundColor: theme.colors.bgWhite,
-          paddingBottom: '50px',
+          marginBottom: `${FOOTER_HEIGHT}px`,
         }}
       >
         <Flex
@@ -121,11 +125,7 @@ const VisitProgress = ({ markets }: Props) => {
         <div
           className="result-item"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
             margin: '12px 24px 24px',
-            padding: '24px',
             fontSize: '13px',
             lineHeight: '20px',
           }}

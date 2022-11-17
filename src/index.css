@@ -76,6 +76,26 @@ button:hover {
   box-sizing: border-box;
   box-shadow: #083d0b 6px 6px 2px 0px;
   border: 1px solid rgb(9, 46, 11);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  height: fit-content;
+  flex: 1 0 100%;
+}
+
+@media (min-width: 800px) {
+  .result-item {
+    flex: 0 0 49%;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .result-item {
+    flex: 0 0 32%;
+    min-height: 400px;
+  }
 }
 
 .loader {

@@ -10,7 +10,6 @@ import { getNavigatorLocation } from '../../utils/get-navigator-location';
 import Flex from '../../components/flex';
 import ResultItem from './resultItem';
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates';
-import { theme } from '../../theme';
 import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import {
@@ -77,9 +76,12 @@ const ResultList = ({
     let newResults = results;
 
     if (activeFilters.openNow) {
-      newResults = newResults.filter(result =>
-        isOpen(result.start, result.end, result.times)
-      );
+      newResults = newResults.filter(result => {
+        if (!result.start || !result.end) {
+          return false;
+        }
+        return isOpen(result.start, result.end, result.times);
+      });
     }
 
     if (activeFilters.favorited) {
@@ -122,17 +124,16 @@ const ResultList = ({
     }
   }, [activeFilters.nearMe]);
 
+  useEffect(() => {
+    setActiveFilters({
+      openNow: false,
+      favorited: false,
+      nearMe: false,
+    });
+  }, [page]);
+
   return (
-    <Flex
-      flexDirection="column"
-      gap="12px"
-      style={{
-        backgroundColor: theme.colors.bgWhite,
-        margin: '0 auto',
-        height: '100%',
-        overflowY: 'scroll',
-      }}
-    >
+    <Flex flexDirection="column" style={{ height: '100%' }}>
       <Header>
         <Filters
           activeFilters={activeFilters}
@@ -141,27 +142,32 @@ const ResultList = ({
           page={page}
         />
       </Header>
-      <p style={{ padding: '0px 24px' }}>
-        {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'}{' '}
-        found
-        {activeFilters.nearMe &&
-          deviceLocation &&
-          ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-      </p>
-      <div
+      <Flex
         className="animate-slide-in"
+        flexDirection="column"
+        gap="12px"
         style={{
-          height: `calc(100% - 118px - ${FOOTER_HEIGHT}px)`,
+          height: `100%`,
+          padding: '12px 24px 24px',
+          marginBottom: `${FOOTER_HEIGHT}px`,
+          overflow: 'scroll',
         }}
       >
+        <p>
+          {shownResults.length}{' '}
+          {shownResults.length === 1 ? 'result' : 'results'} found
+          {activeFilters.nearMe &&
+            deviceLocation &&
+            ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+        </p>
         <ul
           style={{
             listStyle: 'none',
             display: 'flex',
             flexWrap: 'wrap',
             gap: '24px 16px',
-            margin: '0px',
-            padding: '0px 24px 24px',
+            padding: 0,
+            margin: 0,
           }}
         >
           {shownResults.map((result, idx) => (
@@ -173,7 +179,7 @@ const ResultList = ({
             />
           ))}
         </ul>
-      </div>
+      </Flex>
     </Flex>
   );
 };

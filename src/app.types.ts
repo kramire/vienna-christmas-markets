@@ -3,8 +3,8 @@ interface Result {
   name: string;
   coordinates: Coordinate;
   district: string;
-  start: string;
-  end: string;
+  start: string | null;
+  end: string | null;
   times: Array<Array<string> | null>; // this is Array<[string, string] | null> but TS complains about JSON
   website: string | null;
 }

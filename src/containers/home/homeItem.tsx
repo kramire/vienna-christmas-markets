@@ -9,16 +9,7 @@ interface Props {
 
 const HomeItem = ({ title, description, actionLabel, handleClick }: Props) => {
   return (
-    <div
-      className="result-item"
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '8px',
-        margin: '0px 24px',
-        padding: '24px',
-      }}
-    >
+    <div className="result-item">
       <h2>{title}</h2>
       <p
         style={{

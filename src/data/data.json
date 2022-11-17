@@ -441,6 +441,26 @@
   },
   {
     "id": 23,
+    "name": "Urban après ski - Atmosphere Rooftop Bar",
+    "district": "1010",
+    "coordinates": { "lat": 48.2022967, "lng": 16.3764527 },
+    "start": "11/07/2022",
+    "end": "12/31/2022",
+    "times": [
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"]
+    ],
+    "website": "https://www.ritzcarlton.com/de/hotels/europe/vienna/dining/atmosphere-rooftop-bar",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 24,
     "name": "Klyo Punschterrassen",
     "district": "1010",
     "coordinates": { "lat": 48.21164, "lng": 16.383692 },
@@ -460,7 +480,7 @@
     "type": "EVENT"
   },
   {
-    "id": 24,
+    "id": 25,
     "name": "Pop Up Wintermarket @ Lucullus",
     "district": "1030",
     "coordinates": { "lat": 48.198788, "lng": 16.385051 },
@@ -476,6 +496,26 @@
       null
     ],
     "website": null,
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 26,
+    "name": "Kleinod Wintergraten",
+    "district": "1010",
+    "coordinates": { "lat": 48.2031461, "lng": 16.3783354 },
+    "start": null,
+    "end": null,
+    "times": [
+      null,
+      ["17:00", "24:00"],
+      ["17:00", "24:00"],
+      ["17:00", "02:00"],
+      ["17:00", "02:00"],
+      ["17:00", "02:00"],
+      null
+    ],
+    "website": "https://www.kleinod-stadtgarten.wien/",
     "imgUrl": "",
     "type": "EVENT"
   }
