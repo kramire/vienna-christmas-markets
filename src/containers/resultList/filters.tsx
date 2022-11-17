@@ -8,6 +8,8 @@ interface Props {
   toggleFilter: (filterKey: FilterType) => () => void;
   isLoadingLocation: boolean;
   page: PageType;
+  showMap: boolean;
+  toggleMap: () => void;
 }
 
 const Filters = ({
@@ -15,35 +17,60 @@ const Filters = ({
   toggleFilter,
   isLoadingLocation,
   page,
+  showMap,
+  toggleMap,
 }: Props) => {
   return (
     <Flex
-      gap="12px"
+      justifyContent="space-between"
       style={{
         width: '100%',
         backgroundColor: theme.colors.bgWhite,
-        color: theme.colors.darkGreen,
         padding: '12px',
       }}
     >
-      <FilterItem
-        label="Open Now"
-        isSelected={activeFilters.openNow}
-        handleClick={toggleFilter('openNow')}
-      />
-      <FilterItem
-        label="Near Me"
-        isSelected={activeFilters.nearMe}
-        handleClick={toggleFilter('nearMe')}
-        isLoading={isLoadingLocation}
-      />
-      {page !== PageType.FAVORITES && (
+      <Flex gap="12px" style={{ color: theme.colors.darkGreen }}>
         <FilterItem
-          label="My Favorites"
-          isSelected={activeFilters.favorited}
-          handleClick={toggleFilter('favorited')}
+          label="Open Now"
+          isSelected={activeFilters.openNow}
+          handleClick={toggleFilter('openNow')}
         />
-      )}
+        <FilterItem
+          label="Near Me"
+          isSelected={activeFilters.nearMe}
+          handleClick={toggleFilter('nearMe')}
+          isLoading={isLoadingLocation}
+        />
+        {page !== PageType.FAVORITES && (
+          <FilterItem
+            label="My Favorites"
+            isSelected={activeFilters.favorited}
+            handleClick={toggleFilter('favorited')}
+          />
+        )}
+      </Flex>
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        style={{ color: theme.colors.darkGreen }}
+      >
+        <div onClick={toggleMap} style={{ fontSize: '20px' }}>
+          {showMap ? (
+            <i class="fa-solid fa-list-ul"></i>
+          ) : (
+            <i class="fa-solid fa-map-location-dot"></i>
+          )}
+        </div>
+        <p
+          style={{
+            fontSize: '12px',
+            lineHeight: '10px',
+            fontFamily: 'sans-serif',
+          }}
+        >
+          {showMap ? 'List' : 'Map'}
+        </p>
+      </Flex>
     </Flex>
   );
 };

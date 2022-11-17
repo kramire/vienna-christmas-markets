@@ -167,3 +167,8 @@ button:hover {
 .bounce {
   animation: bounce 2s ease 2;
 }
+
+#map {
+  height: calc(100vh - 124px - 60px);
+  filter: grayscale(0.3);
+}

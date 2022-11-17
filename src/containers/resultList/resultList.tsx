@@ -19,6 +19,7 @@ import {
 import Filters from './filters';
 import Header from '../../components/header';
 import { isOpen } from '../../utils/isOpen';
+import Map from './map';
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>;
@@ -45,8 +46,11 @@ const ResultList = ({
     nearMe: false,
   });
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   const { setItem } = useLocalStorage();
+
+  const toggleMap = () => setShowMap(prev => !prev);
 
   const toggleFilter = (filterKey: FilterType) => () => {
     setActiveFilters({
@@ -130,6 +134,7 @@ const ResultList = ({
       favorited: false,
       nearMe: false,
     });
+    setShowMap(false);
   }, [page]);
 
   return (
@@ -140,46 +145,52 @@ const ResultList = ({
           toggleFilter={toggleFilter}
           isLoadingLocation={isLoadingLocation}
           page={page}
+          showMap={showMap}
+          toggleMap={toggleMap}
         />
       </Header>
-      <Flex
-        className="animate-slide-in"
-        flexDirection="column"
-        gap="12px"
-        style={{
-          height: `100%`,
-          padding: '12px 24px 24px',
-          marginBottom: `${FOOTER_HEIGHT}px`,
-          overflow: 'scroll',
-        }}
-      >
-        <p>
-          {shownResults.length}{' '}
-          {shownResults.length === 1 ? 'result' : 'results'} found
-          {activeFilters.nearMe &&
-            deviceLocation &&
-            ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-        </p>
-        <ul
+      {showMap ? (
+        <Map results={shownResults} />
+      ) : (
+        <Flex
+          className="animate-slide-in"
+          flexDirection="column"
+          gap="12px"
           style={{
-            listStyle: 'none',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '24px 16px',
-            padding: 0,
-            margin: 0,
+            height: `100%`,
+            padding: '12px 24px 24px',
+            marginBottom: `${FOOTER_HEIGHT}px`,
+            overflow: 'scroll',
           }}
         >
-          {shownResults.map((result, idx) => (
-            <ResultItem
-              key={idx}
-              result={result}
-              isFavorite={favorites.includes(result.id)}
-              toggleFavoriteResult={toggleFavoriteResult}
-            />
-          ))}
-        </ul>
-      </Flex>
+          <p>
+            {shownResults.length}{' '}
+            {shownResults.length === 1 ? 'result' : 'results'} found
+            {activeFilters.nearMe &&
+              deviceLocation &&
+              ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+          </p>
+          <ul
+            style={{
+              listStyle: 'none',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '24px 16px',
+              padding: 0,
+              margin: 0,
+            }}
+          >
+            {shownResults.map((result, idx) => (
+              <ResultItem
+                key={idx}
+                result={result}
+                isFavorite={favorites.includes(result.id)}
+                toggleFavoriteResult={toggleFavoriteResult}
+              />
+            ))}
+          </ul>
+        </Flex>
+      )}
     </Flex>
   );
 };
