@@ -3,11 +3,11 @@ import { Market } from '../../app.types';
 import Flex from '../../components/flex';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import buildSquares from '../../utils/build-square';
-import { isOpen } from '../../utils/isOpen';
 import { theme } from '../../theme';
 import Header from '../../components/header';
 import SurpriseImage from '../../assets/christmas-sparkler.webp';
 import { FOOTER_HEIGHT } from '../../app.constants';
+import { hasStarted } from '../../utils/hasStarted';
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
@@ -31,7 +31,7 @@ const VisitProgress = ({ markets }: Props) => {
       return;
     }
 
-    if (isOpen(market.start, market.end, market.times)) {
+    if (hasStarted(market.start)) {
       let newVisitedMarketIds: number[] = [];
 
       if (visitedMarketsIds.includes(ornamentId)) {
