@@ -9,7 +9,7 @@ interface Props {
 
 const HomeItem = ({ title, description, actionLabel, handleClick }: Props) => {
   return (
-    <div className="result-item">
+    <div className="result-item" onClick={handleClick}>
       <h2>{title}</h2>
       <p
         style={{
@@ -20,7 +20,7 @@ const HomeItem = ({ title, description, actionLabel, handleClick }: Props) => {
       >
         {description}
       </p>
-      <CallToAction label={actionLabel} handleClick={handleClick} />
+      <CallToAction label={actionLabel} />
     </div>
   );
 };

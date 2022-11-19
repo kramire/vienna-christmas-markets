@@ -25,7 +25,7 @@ const Home = ({ goToPage }: Props) => {
             alt="Karl's Kirche"
             style={{
               width: '100vw',
-              height: `calc(100vh - ${FOOTER_HEIGHT}px)`,
+              height: `calc(100vh - 140px)`,
               objectFit: 'cover',
               filter: 'brightness(0.5)',
               boxShadow: 'rgb(0 0 0 / 48%) 0px 2px 5px 1px',
@@ -39,7 +39,7 @@ const Home = ({ goToPage }: Props) => {
               color: 'white',
               lineHeight: '34px',
               position: 'absolute',
-              top: '0px',
+              top: '12px',
               textAlign: 'center',
               background: '#0000009e',
               width: '100%',

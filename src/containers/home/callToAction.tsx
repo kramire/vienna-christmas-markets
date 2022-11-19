@@ -2,12 +2,10 @@ import { theme } from '../../theme';
 
 interface Props {
   label: string;
-  handleClick: () => void;
 }
 
-const CallToAction = ({ label, handleClick }: Props) => (
-  <button
-    onClick={handleClick}
+const CallToAction = ({ label }: Props) => (
+  <div
     style={{
       fontSize: '16px',
       fontFamily: 'serif',
@@ -26,7 +24,7 @@ const CallToAction = ({ label, handleClick }: Props) => (
       class="fa-solid fa-arrow-right-long"
       style={{ width: '14px', height: '14px' }}
     ></i>
-  </button>
+  </div>
 );
 
 export default CallToAction;
