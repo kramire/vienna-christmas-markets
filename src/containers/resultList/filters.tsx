@@ -52,7 +52,7 @@ const Filters = ({
       <Flex
         flexDirection="column"
         alignItems="center"
-        style={{ color: theme.colors.darkGreen }}
+        style={{ color: theme.colors.darkGreen, paddingRight: '8px' }}
       >
         <div onClick={toggleMap} style={{ fontSize: '20px' }}>
           {showMap ? (

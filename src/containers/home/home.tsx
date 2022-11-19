@@ -1,7 +1,5 @@
 import Flex from '../../components/flex';
-
 import { PageType } from '../../app.types';
-import Header from '../../components/header';
 import HomeItem from './homeItem';
 import HomeImage from '../../assets/karls-christmas.webp';
 import { FOOTER_HEIGHT } from '../../app.constants';
@@ -13,7 +11,6 @@ interface Props {
 const Home = ({ goToPage }: Props) => {
   return (
     <>
-      <Header hideOnScroll />
       <Flex
         className="animate-slide-in"
         flexDirection="column"
@@ -28,7 +25,7 @@ const Home = ({ goToPage }: Props) => {
             alt="Karl's Kirche"
             style={{
               width: '100vw',
-              height: '550px',
+              height: `calc(100vh - ${FOOTER_HEIGHT}px)`,
               objectFit: 'cover',
               filter: 'brightness(0.5)',
               boxShadow: 'rgb(0 0 0 / 48%) 0px 2px 5px 1px',
@@ -42,7 +39,7 @@ const Home = ({ goToPage }: Props) => {
               color: 'white',
               lineHeight: '34px',
               position: 'absolute',
-              bottom: '182px',
+              top: '0px',
               textAlign: 'center',
               background: '#0000009e',
               width: '100%',
@@ -60,19 +57,19 @@ const Home = ({ goToPage }: Props) => {
         style={{ marginBottom: `${FOOTER_HEIGHT}px`, padding: '0px 24px 24px' }}
       >
         <HomeItem
-          title="Christmas Markets"
+          title="Visit Christmas Markets"
           description="Enjoy the Christmas season with traditional food, drinks, and shopping at the Viennese Christmas Markets."
           actionLabel="See the markets"
           handleClick={() => goToPage(PageType.MARKETS)}
         />
         <HomeItem
-          title="Pop Ups & Events"
+          title="Check out Pop Ups & Events"
           description="Whether it's ice curling, wurst grilling, or design markets, there's something seasonal for everyone."
-          actionLabel="Track progress"
+          actionLabel="View events"
           handleClick={() => goToPage(PageType.EVENTS)}
         />
         <HomeItem
-          title="Christmas Challenge"
+          title="Take on the Challenge"
           description="Eager to visit all of Vienna's Christmas Markets? Keep track of
               your progress right here!"
           actionLabel="Track progress"
