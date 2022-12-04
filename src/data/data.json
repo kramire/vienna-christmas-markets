@@ -461,6 +461,67 @@
   },
   {
     "id": 24,
+    "name": "k.u.k. Weihnachtsmarkt am Michaelerplatz",
+    "district": "1010",
+    "coordinates": { "lat": 48.2079208, "lng": 16.3668509 },
+    "start": "11/11/2022",
+    "end": "1/6/2023",
+    "times": [
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"]
+    ],
+    "website": "https://kuk-weihnachtsmarkt.at/en/home-en/",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 25,
+    "name": "IKEA Weihnachtsmarkt",
+    "district": "1150",
+    "coordinates": { "lat": 48.1957757, "lng": 16.3380544 },
+    "start": "11/18/2022",
+    "end": "12/23/2022",
+    "times": [
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      null
+    ],
+    "website": "https://www.ikea.com/at/de/stores/wien-westbahnhof/events-und-aktivitaeten-im-ikea-einrichtungshaus-wien-westbahnhof-pub404b7a70",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 26,
+    "name": "Punsch im Winterwonderland",
+    "district": "1220",
+    "coordinates": { "lat": 48.2320506, "lng": 16.4341442 },
+    "start": "11/18/2022",
+    "end": "12/23/2022",
+    "times": [
+      null,
+      null,
+      null,
+      null,
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["15:00", "21:00"],
+      null
+    ],
+    "website": "https://www.dasbootshaus.at/",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 27,
     "name": "Klyo Punschterrassen",
     "district": "1010",
     "coordinates": { "lat": 48.21164, "lng": 16.383692 },
@@ -480,7 +541,7 @@
     "type": "EVENT"
   },
   {
-    "id": 25,
+    "id": 28,
     "name": "Pop Up Wintermarket @ Lucullus",
     "district": "1030",
     "coordinates": { "lat": 48.198788, "lng": 16.385051 },
@@ -500,8 +561,8 @@
     "type": "EVENT"
   },
   {
-    "id": 26,
-    "name": "Kleinod Wintergraten",
+    "id": 29,
+    "name": "Kleinod Wintergarten",
     "district": "1010",
     "coordinates": { "lat": 48.2031461, "lng": 16.3783354 },
     "start": null,
