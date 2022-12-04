@@ -46,7 +46,12 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           loading="lazy"
           width="20px"
           height="20px"
-          style={{ marginTop: '6px', width: '20px', height: '20px' }}
+          style={{
+            marginTop: '6px',
+            width: '20px',
+            height: '20px',
+            outline: 'none',
+          }}
         />
       </Flex>
       <Flex flexDirection="column" gap="12px">
@@ -100,21 +105,21 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
               height: '96px',
             }}
           >
-            {result.times.map((time, timeIdx) =>
-              Array.isArray(time) ? (
-                <Flex gap="12px" style={{ fontSize: '14px' }}>
-                  <p style={{ width: '14px', textAlign: 'center' }}>
-                    {weekDays[timeIdx]}
-                  </p>
+            {result.times.map((time, timeIdx) => (
+              <Flex gap="12px" style={{ fontSize: '14px' }}>
+                <p style={{ width: '14px', textAlign: 'center' }}>
+                  {weekDays[timeIdx]}
+                </p>
+                {
                   <p
                     key={`${result.id}_${timeIdx}`}
                     style={{ fontSize: '14px' }}
                   >
-                    {time[0]} - {time[1]}
+                    {Array.isArray(time) ? `${time[0]} - ${time[1]}` : 'Closed'}
                   </p>
-                </Flex>
-              ) : null
-            )}
+                }
+              </Flex>
+            ))}
           </Flex>
         </Flex>
         {result.website && (

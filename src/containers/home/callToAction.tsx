@@ -20,10 +20,7 @@ const CallToAction = ({ label }: Props) => (
     }}
   >
     <p>{label}</p>
-    <i
-      class="fa-solid fa-arrow-right-long"
-      style={{ width: '14px', height: '14px' }}
-    ></i>
+    <i class="fa-solid fa-arrow-right-long" style={{ height: '14px' }}></i>
   </div>
 );
 

@@ -39,7 +39,7 @@ const Map = ({ results }: Props) => {
       const marker = L.marker([
         result.coordinates.lat,
         result.coordinates.lng,
-      ]).bindPopup(result.name);
+      ]).bindPopup(`${result.id}. ${result.name}`);
 
       mapMarkers.addLayer(marker);
     });

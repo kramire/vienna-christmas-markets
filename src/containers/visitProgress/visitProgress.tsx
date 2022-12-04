@@ -22,6 +22,9 @@ const VisitProgress = ({ markets }: Props) => {
 
   const { getItem, setItem } = useLocalStorage();
 
+  const checkHasVisitedMarket = (marketId: number) =>
+    visitedMarketsIds.includes(marketId);
+
   const handleOrnamentClick = (ornamentId: number | undefined) => () => {
     if (!ornamentId || !visitedMarketsIds) return;
 
@@ -76,6 +79,32 @@ const VisitProgress = ({ markets }: Props) => {
         }}
       >
         <Flex
+          flexDirection="column"
+          gap="12px"
+          style={{
+            margin: '24px',
+            fontSize: '13px',
+            lineHeight: '20px',
+          }}
+        >
+          <h2 style={{ fontSize: '16px', textAlign: 'center' }}>
+            Visit the markets to reveal the image!
+          </h2>
+          <div style={{ maxWidth: '100%' }}>
+            <p>Rules:</p>
+            <ul style={{ paddingLeft: '20px', margin: '8px 0px' }}>
+              <li style={{ marginBottom: '8px' }}>
+                When you visit a market, click its corresponding box on the
+                grid.
+              </li>
+              <li>
+                You can only click the ornament after that market has opened
+                this season.
+              </li>
+            </ul>
+          </div>
+        </Flex>
+        <Flex
           className="image-reveal"
           flexDirection="column"
           alignItems="center"
@@ -107,15 +136,24 @@ const VisitProgress = ({ markets }: Props) => {
                     style={{
                       width: 'calc(100vw / 5)',
                       height: 'calc(412px / 4)',
-                      fontSize: '24px',
                       backgroundColor: hasVisited
                         ? 'transparent'
                         : theme.colors.bgWhite,
                       transition: 'background-color 1s ease',
-                      fontWeight: !hasVisited ? 'bold' : 'inherit',
+                      cursor: 'pointer',
+                      '-webkit-tap-highlight-color': 'transparent',
                     }}
                   >
-                    {ornament?.id ?? ''}
+                    {!hasVisited ? (
+                      <p
+                        style={{
+                          fontSize: '24px',
+                          fontWeight: !hasVisited ? 'bold' : 'inherit',
+                        }}
+                      >
+                        {ornament?.id}
+                      </p>
+                    ) : null}
                   </Flex>
                 );
               })}
@@ -125,27 +163,48 @@ const VisitProgress = ({ markets }: Props) => {
         <div
           className="result-item"
           style={{
-            margin: '12px 24px 24px',
+            margin: '24px',
             fontSize: '13px',
             lineHeight: '20px',
           }}
         >
-          <p style={{ fontWeight: 'bold' }}>
-            Visit the markets to reveal the image!
-          </p>
-          <div style={{ maxWidth: '100%' }}>
-            <p>Rules:</p>
-            <ul style={{ paddingLeft: '20px', margin: '8px 0px' }}>
-              <li style={{ marginBottom: '8px' }}>
-                When you visit a market, click its corresponding box on the
-                grid.
-              </li>
-              <li>
-                You can only click the ornament after that market has opened
-                this season.
-              </li>
-            </ul>
-          </div>
+          <h3 style={{ textDecoration: 'underline' }}>Legend</h3>
+          <Flex flexDirection="column" gap="12px">
+            {markets.map(market => {
+              const hasVisited = checkHasVisitedMarket(market.id);
+              return (
+                <Flex key={market.id} gap="16px">
+                  <p style={{ flexBasis: '24px', textAlign: 'center' }}>
+                    {market.id}.
+                  </p>
+                  <div style={{ flex: 1 }}>
+                    <p>{market.name}</p>
+                    <p style={{ fontSize: '11px' }}>{market.district}</p>
+                  </div>
+                  <div
+                    onClick={handleOrnamentClick(market.id)}
+                    style={{
+                      flexBasis: '16px',
+                      cursor: 'pointer',
+                      '-webkit-tap-highlight-color': 'transparent',
+                    }}
+                  >
+                    <i
+                      class={
+                        hasVisited
+                          ? 'fa-solid fa-circle-check'
+                          : 'fa-regular fa-circle-check'
+                      }
+                      style={{
+                        fontSize: '16px',
+                        color: hasVisited ? theme.colors.darkGreen : 'darkgray',
+                      }}
+                    ></i>
+                  </div>
+                </Flex>
+              );
+            })}
+          </Flex>
         </div>
       </Flex>
     </>
