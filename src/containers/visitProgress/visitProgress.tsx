@@ -8,6 +8,8 @@ import Header from '../../components/header';
 import SurpriseImage from '../../assets/christmas-sparkler.webp';
 import { FOOTER_HEIGHT } from '../../app.constants';
 import { hasStarted } from '../../utils/hasStarted';
+import CircleCheckSolid from '../../assets/circleCheckSolid.svg';
+import CircleCheck from '../../assets/circleCheck.svg';
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
 
@@ -189,17 +191,13 @@ const VisitProgress = ({ markets }: Props) => {
                       '-webkit-tap-highlight-color': 'transparent',
                     }}
                   >
-                    <i
-                      class={
-                        hasVisited
-                          ? 'fa-solid fa-circle-check'
-                          : 'fa-regular fa-circle-check'
-                      }
-                      style={{
-                        fontSize: '16px',
-                        color: hasVisited ? theme.colors.darkGreen : 'darkgray',
-                      }}
-                    ></i>
+                    <img
+                      src={hasVisited ? CircleCheckSolid : CircleCheck}
+                      width={16}
+                      height={16}
+                      loading="lazy"
+                      alt="name"
+                    />
                   </div>
                 </Flex>
               );

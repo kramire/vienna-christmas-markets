@@ -5,18 +5,12 @@ import Flex from '../flex';
 interface Props {
   page: PageType;
   name: string;
-  fontClasses: string;
+  iconSrc: string;
   isSelected: boolean;
   goToPage: (page: PageType) => void;
 }
 
-const FooterItem = ({
-  page,
-  name,
-  fontClasses,
-  isSelected,
-  goToPage,
-}: Props) => (
+const FooterItem = ({ page, name, iconSrc, isSelected, goToPage }: Props) => (
   <Flex
     onClick={() => goToPage(page)}
     flexDirection="column"
@@ -32,13 +26,7 @@ const FooterItem = ({
       '-webkit-tap-highlight-color': 'transparent',
     }}
   >
-    <i
-      class={fontClasses}
-      style={{
-        fontSize: '18px',
-        height: '18px',
-      }}
-    ></i>
+    <img src={iconSrc} width={18} height={18} loading="lazy" alt="name" />
     <p style={{ fontSize: '12px', lineHeight: '14px' }}>{name}</p>
   </Flex>
 );

@@ -32,7 +32,7 @@ const Footer = ({ page: currentPage, goToPage }: Props) => {
         <FooterItem
           goToPage={goToPage}
           name={footerItemMapping[page].name}
-          fontClasses={footerItemMapping[page].fontClasses}
+          iconSrc={footerItemMapping[page].iconSrc}
           page={page as PageType}
           isSelected={page === currentPage}
         />

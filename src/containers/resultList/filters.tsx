@@ -2,6 +2,8 @@ import { FilterType, PageType } from '../../app.types';
 import Flex from '../../components/flex';
 import FilterItem from './filterItem';
 import { theme } from '../../theme';
+import Map from '../../assets/mapIcon.svg';
+import List from '../../assets/listIcon.svg';
 
 interface Props {
   activeFilters: { [key in FilterType]: boolean };
@@ -54,11 +56,14 @@ const Filters = ({
         alignItems="center"
         style={{ color: theme.colors.darkGreen, paddingRight: '8px' }}
       >
-        <div onClick={toggleMap} style={{ fontSize: '20px' }}>
+        <div
+          onClick={toggleMap}
+          style={{ fontSize: '20px', cursor: 'pointer' }}
+        >
           {showMap ? (
-            <i class="fa-solid fa-list-ul"></i>
+            <img src={List} width={20} height={20} loading="lazy" alt="name" />
           ) : (
-            <i class="fa-solid fa-map-location-dot"></i>
+            <img src={Map} width={20} height={20} loading="lazy" alt="name" />
           )}
         </div>
         <p

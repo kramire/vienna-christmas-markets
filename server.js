@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
+import helmet from 'helmet';
 
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD;
 
@@ -15,6 +16,33 @@ async function createServer(isProd = process.env.NODE_ENV === 'production') {
     : '';
 
   const app = express();
+  app.use(
+    helmet.contentSecurityPolicy({
+      directives: {
+        'default-src': ["'none'"],
+        'script-src': [
+          "'self'",
+          'https://unpkg.com/leaflet@1.9.2/dist/leaflet.js',
+        ],
+        'style-src': [
+          "'self'",
+          "'unsafe-inline'",
+          'fonts.googleapis.com',
+          'https://unpkg.com/leaflet@1.9.2/dist/leaflet.css',
+        ],
+        'font-src': ['fonts.gstatic.com'],
+        'img-src': [
+          "'self'",
+          'https://unpkg.com/leaflet@1.9.2/dist/images/marker-icon-2x.png',
+          'https://unpkg.com/leaflet@1.9.2/dist/images/marker-icon.png',
+          'https://unpkg.com/leaflet@1.9.2/dist/images/marker-shadow.png',
+          'https://tile.openstreetmap.org/',
+          'data:',
+        ],
+        'connect-src': ["'self'", 'ws://localhost:24678/'],
+      },
+    })
+  );
 
   // Create Vite server in middleware mode and configure the app type as
   // 'custom', disabling Vite's own HTML serving logic so parent server

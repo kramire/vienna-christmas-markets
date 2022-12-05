@@ -1,26 +1,31 @@
 import { PageType } from '../../app.types';
+import House from '../../assets/house.svg';
+import Market from '../../assets/store.svg';
+import Mug from '../../assets/mug.svg';
+import HeartSolid from '../../assets/heartSolid.svg';
+import Tree from '../../assets/tree.svg';
 
 export const footerItemMapping: {
-  [key in PageType]: { name: string; fontClasses: string };
+  [key in PageType]: { name: string; iconSrc: string };
 } = {
   HOME: {
     name: 'Home',
-    fontClasses: 'fa-solid fa-house',
+    iconSrc: House,
   },
   MARKETS: {
     name: 'Markets',
-    fontClasses: 'fa-solid fa-store',
+    iconSrc: Market,
   },
   EVENTS: {
     name: 'Events',
-    fontClasses: 'fa-solid fa-mug-hot',
+    iconSrc: Mug,
   },
   FAVORITES: {
     name: 'Favorites',
-    fontClasses: 'fa-regular fa-heart',
+    iconSrc: HeartSolid,
   },
   VISITS: {
     name: 'Visits',
-    fontClasses: 'fa-solid fa-tree',
+    iconSrc: Tree,
   },
 };

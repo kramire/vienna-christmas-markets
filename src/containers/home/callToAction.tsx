@@ -1,4 +1,5 @@
 import { theme } from '../../theme';
+import ArrowRight from '../../assets/arrowRight.svg';
 
 interface Props {
   label: string;
@@ -17,10 +18,11 @@ const CallToAction = ({ label }: Props) => (
       display: 'flex',
       alignItems: 'center',
       gap: '8px',
+      cursor: 'pointer',
     }}
   >
     <p>{label}</p>
-    <i class="fa-solid fa-arrow-right-long" style={{ height: '14px' }}></i>
+    <img src={ArrowRight} width={14} height={14} loading="lazy" alt="name" />
   </div>
 );
 
