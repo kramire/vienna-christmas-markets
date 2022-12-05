@@ -3,7 +3,7 @@ import Flex from '../../components/flex';
 import FilterItem from './filterItem';
 import { theme } from '../../theme';
 import Map from '../../assets/mapicon.svg';
-import List from '../../assets/listIcon.svg';
+import List from '../../assets/listicon.svg';
 
 interface Props {
   activeFilters: { [key in FilterType]: boolean };
