@@ -2,7 +2,7 @@ import { FilterType, PageType } from '../../app.types';
 import Flex from '../../components/flex';
 import FilterItem from './filterItem';
 import { theme } from '../../theme';
-import Map from '../../assets/mapIcon.svg';
+import Map from '../../assets/mapicon.svg';
 import List from '../../assets/listIcon.svg';
 
 interface Props {
