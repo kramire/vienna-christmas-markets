@@ -150,7 +150,7 @@ const VisitProgress = ({ markets }: Props) => {
                       <p
                         style={{
                           fontSize: '24px',
-                          fontWeight: !hasVisited ? 'bold' : 'inherit',
+                          fontWeight: !hasVisited ? 'semi-bold' : 'inherit',
                         }}
                       >
                         {ornament?.id}

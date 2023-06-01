@@ -10,7 +10,7 @@ const CallToAction = ({ label }: Props) => (
     style={{
       fontSize: '16px',
       fontFamily: 'serif',
-      fontWeight: 'bold',
+      fontWeight: 'semi-bold',
       lineHeight: '18px',
       color: theme.colors.text,
       width: 'fit-content',

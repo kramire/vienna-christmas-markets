@@ -29,7 +29,7 @@ const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
       <Flex justifyContent="space-between" gap="12px">
         <h3
           style={{
-            fontWeight: 'bold',
+            fontWeight: 'semi-bold',
             fontSize: '22px',
             lineHeight: '32px',
             color: theme.colors.darkGreen,
