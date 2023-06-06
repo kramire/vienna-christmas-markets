@@ -9,6 +9,8 @@ import { localizeDate } from '../../utils/localizeDate';
 import { Event, Market, ResultType } from '../../app.types';
 import { theme } from '../../theme';
 import { GOOGLE_MAPS_LINK, weekDays } from './resultList.constants';
+import { resultToImgUrlMapping } from '../../app.constants';
+import OpenStatusLabel from '../../components/openStatusLabel';
 
 interface Props {
   result: Market | Event;
@@ -19,118 +21,131 @@ interface Props {
 const ResultItem = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   const [language, setLanguage] = useState('en-GB');
 
+  const { id, name, type, coordinates, district, start, end, times, website } =
+    result;
+
+  const imgSrc = resultToImgUrlMapping[id];
+
   useEffect(() => {
     setLanguage(navigator.language);
   }, []);
 
   return (
     <li
-      key={result.id}
-      class="flex flex-col justify-between w-full px-4 py-6 gap-3"
+      key={id}
+      class="gap-3 w-full relative"
       style={{ boxShadow: '0 16px 64px -16px rgba(46,55,77,.24)' }}
     >
-      <div class="flex justify-between gap-3">
-        <h3
-          class="text-xl font-semibold"
-          style={{
-            color: theme.colors.darkGreen,
-          }}
-        >
-          {result.type === ResultType.MARKET
-            ? `${result.id}. ${result.name}`
-            : result.name}
-        </h3>
+      {imgSrc && (
         <img
-          onClick={toggleFavoriteResult(result.id)}
-          src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
-          alt={isFavorite ? 'Favorite Venue' : 'Unfavorite venue'}
-          loading="lazy"
-          width="20px"
-          height="20px"
-          style={{
-            marginTop: '6px',
-            width: '20px',
-            height: '20px',
-            outline: 'none',
-          }}
+          src={imgSrc}
+          alt={name}
+          width="100%"
+          height="256px"
+          class="w-full h-64 object-cover border border-solid border-slate-300"
         />
-      </div>
-      <div class="flex align-center gap-4">
-        <img
-          src={LocationIcon}
-          loading="lazy"
-          alt="district location"
-          width={16}
-          height={16}
-        />
-        <a
-          href={`${GOOGLE_MAPS_LINK}&query=${result.coordinates.lat},${result.coordinates.lng}`}
-          target="_blank"
-          aria-label="Google maps link"
-        >
-          <p style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-            {result.district}
-          </p>
-        </a>
-      </div>
-      {result.start && result.end && (
-        <div class="flex align-center gap-4">
-          <img
-            src={CalendarIcon}
-            loading="lazy"
-            alt="calendar"
-            width={16}
-            height={16}
-          />
-          <p>
-            {localizeDate(result.start, language)} -{' '}
-            {localizeDate(result.end, language)}
-          </p>
-        </div>
       )}
-      <div class="flex gap-4">
-        <img
-          src={ClockIcon}
-          loading="lazy"
-          alt="clock"
-          width={16}
-          height={16}
-          style={{ marginTop: '7px' }}
-        />
-        <div class="h-24 flex flex-col flex-wrap gap-x-6">
-          {result.times.map((time, timeIdx) => (
-            <div class="flex gap-3" style={{ fontSize: '14px' }}>
-              <p style={{ width: '14px', textAlign: 'center' }}>
-                {weekDays[timeIdx]}
-              </p>
-              {
-                <p key={`${result.id}_${timeIdx}`} style={{ fontSize: '14px' }}>
-                  {Array.isArray(time) ? `${time[0]} - ${time[1]}` : 'Closed'}
-                </p>
-              }
-            </div>
-          ))}
+      <div class="flex flex-col justify-between w-full px-4 py-6 gap-3">
+        <div class="flex justify-between gap-3">
+          <h3
+            class="text-xl font-semibold"
+            style={{
+              color: theme.colors.darkGreen,
+            }}
+          >
+            {type === ResultType.MARKET ? `${id}. ${name}` : name}
+          </h3>
+          <img
+            onClick={toggleFavoriteResult(id)}
+            src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
+            alt={isFavorite ? 'Favorite Venue' : 'Unfavorite venue'}
+            loading="lazy"
+            width="20px"
+            height="20px"
+            style={{
+              marginTop: '6px',
+              width: '20px',
+              height: '20px',
+              outline: 'none',
+            }}
+          />
         </div>
-      </div>
-      {result.website && (
         <div class="flex align-center gap-4">
           <img
-            src={InfoIcon}
+            src={LocationIcon}
             loading="lazy"
-            alt="info"
+            alt="district location"
             width={16}
             height={16}
           />
-
           <a
-            href={result.website}
+            href={`${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`}
             target="_blank"
-            alt={`Homepage for the ${result.name} event.`}
+            aria-label="Google maps link"
           >
-            Website
+            <p style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+              {district}
+            </p>
           </a>
         </div>
-      )}
+        {start && end && (
+          <div class="flex align-center gap-4">
+            <img
+              src={CalendarIcon}
+              loading="lazy"
+              alt="calendar"
+              width={16}
+              height={16}
+            />
+            <p>
+              {localizeDate(start, language)} - {localizeDate(end, language)}
+            </p>
+          </div>
+        )}
+        <div class="flex gap-4">
+          <img
+            src={ClockIcon}
+            loading="lazy"
+            alt="clock"
+            width={16}
+            height={16}
+            style={{ marginTop: '7px' }}
+          />
+          <div class="h-24 flex flex-col flex-wrap gap-x-6">
+            {times.map((time, timeIdx) => (
+              <div class="flex gap-3" style={{ fontSize: '14px' }}>
+                <p style={{ width: '14px', textAlign: 'center' }}>
+                  {weekDays[timeIdx]}
+                </p>
+                {
+                  <p key={`${id}_${timeIdx}`} style={{ fontSize: '14px' }}>
+                    {Array.isArray(time) ? `${time[0]} - ${time[1]}` : 'Closed'}
+                  </p>
+                }
+              </div>
+            ))}
+          </div>
+        </div>
+        {website && (
+          <div class="flex align-center gap-4">
+            <img
+              src={InfoIcon}
+              loading="lazy"
+              alt="info"
+              width={16}
+              height={16}
+            />
+            <a
+              href={website}
+              target="_blank"
+              alt={`Homepage for the ${name} event.`}
+            >
+              Website
+            </a>
+          </div>
+        )}
+      </div>
+      <OpenStatusLabel start={start} end={end} times={times} />
     </li>
   );
 };

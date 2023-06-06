@@ -1,4 +1,4 @@
-export const isOpen = (
+export const getIsOpen = (
   startDate: string,
   endDate: string,
   times: Array<Array<string> | null>

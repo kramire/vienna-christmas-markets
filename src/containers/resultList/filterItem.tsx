@@ -13,7 +13,7 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
     style={{
       height: '34px',
       minWidth: '80px',
-      padding: '8px',
+      padding: '0px 8px',
       borderRadius: '20px',
       border: '1px solid',
       borderColor: theme.colors.darkGreen,

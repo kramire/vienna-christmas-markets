@@ -18,7 +18,7 @@ import {
 } from '../../app.constants';
 import Filters from './filters';
 import Header from '../../components/header';
-import { isOpen } from '../../utils/isOpen';
+import { getIsOpen } from '../../utils/get-is-open';
 import Map from './map';
 
 interface Props {
@@ -84,7 +84,7 @@ const ResultList = ({
         if (!result.start || !result.end) {
           return false;
         }
-        return isOpen(result.start, result.end, result.times);
+        return getIsOpen(result.start, result.end, result.times);
       });
     }
 
