@@ -1,12 +1,12 @@
-import { useState } from 'preact/hooks';
-import Footer from './components/footer/footer';
-import { PageType } from './app.types';
-import Pages from './pages';
+import { useState } from 'preact/hooks'
+import Footer from './components/footer/footer'
+import { PageType } from './app.types'
+import Pages from './pages'
 
 export function App() {
-  const [page, setPage] = useState<PageType>(PageType.HOME);
+  const [page, setPage] = useState<PageType>(PageType.HOME)
 
-  const goToPage = (page: PageType) => setPage(page);
+  const goToPage = (page: PageType) => setPage(page)
 
   return (
     <div
@@ -20,5 +20,5 @@ export function App() {
       <Pages page={page} goToPage={goToPage} />
       <Footer page={page} goToPage={goToPage} />
     </div>
-  );
+  )
 }

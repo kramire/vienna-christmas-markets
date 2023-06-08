@@ -1,10 +1,10 @@
-import CallToAction from './callToAction';
+import CallToAction from './callToAction'
 
 interface Props {
-  title: string;
-  description: string;
-  actionLabel: string;
-  handleClick: () => void;
+  title: string
+  description: string
+  actionLabel: string
+  handleClick: () => void
 }
 
 const HomeItem = ({ title, description, actionLabel, handleClick }: Props) => {
@@ -22,7 +22,7 @@ const HomeItem = ({ title, description, actionLabel, handleClick }: Props) => {
       </p>
       <CallToAction label={actionLabel} />
     </div>
-  );
-};
+  )
+}
 
-export default HomeItem;
+export default HomeItem

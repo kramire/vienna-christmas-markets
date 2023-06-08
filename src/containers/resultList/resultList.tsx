@@ -1,141 +1,123 @@
-import { useState, useEffect } from 'preact/hooks';
-import {
-  Market,
-  Event,
-  PageType,
-  FilterType,
-  Coordinate,
-} from '../../app.types';
-import { getNavigatorLocation } from '../../utils/get-navigator-location';
-import Flex from '../../components/flex';
-import ResultItem from './resultItem';
-import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates';
-import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import {
-  FAVORITED_MARKETS_LOCAL_STORAGE_KEY,
-  FOOTER_HEIGHT,
-} from '../../app.constants';
-import Filters from './filters';
-import Header from '../../components/header';
-import { getIsOpen } from '../../utils/get-is-open';
-import Map from './map';
+import { useState, useEffect } from 'preact/hooks'
+import { Market, Event, PageType, FilterType, Coordinate } from '../../app.types'
+import { getNavigatorLocation } from '../../utils/get-navigator-location'
+import Flex from '../../components/flex'
+import ResultCard from './resultCard/resultCard'
+import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
+import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY, FOOTER_HEIGHT } from '../../app.constants'
+import Filters from './filters'
+import Header from '../../components/header'
+import { getIsOpen } from '../../utils/get-is-open'
+import Map from './map'
 
 interface Props {
-  results: Array<Market> | Array<Event> | Array<Market | Event>;
-  page: PageType;
-  favorites: Array<number>;
-  setFavorites: (value: Array<number>) => void;
-  deviceLocation: Coordinate | undefined;
-  setDeviceLocation: (value: Coordinate) => void;
+  results: Array<Market> | Array<Event> | Array<Market | Event>
+  page: PageType
+  favorites: Array<number>
+  setFavorites: (value: Array<number>) => void
+  deviceLocation: Coordinate | undefined
+  setDeviceLocation: (value: Coordinate) => void
 }
 
-const ResultList = ({
-  results,
-  page,
-  favorites,
-  setFavorites,
-  deviceLocation,
-  setDeviceLocation,
-}: Props) => {
+const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, setDeviceLocation }: Props) => {
   const [activeFilters, setActiveFilters] = useState<{
-    [key in FilterType]: boolean;
+    [key in FilterType]: boolean
   }>({
     openNow: false,
     favorited: false,
     nearMe: false,
-  });
-  const [isLoadingLocation, setIsLoadingLocation] = useState(false);
-  const [showMap, setShowMap] = useState(false);
+  })
+  const [isLoadingLocation, setIsLoadingLocation] = useState(false)
+  const [showMap, setShowMap] = useState(false)
 
-  const { setItem } = useLocalStorage();
+  const { setItem } = useLocalStorage()
 
-  const toggleMap = () => setShowMap(prev => !prev);
+  const toggleMap = () => setShowMap((prev) => !prev)
 
   const toggleFilter = (filterKey: FilterType) => () => {
     setActiveFilters({
       ...activeFilters,
       [filterKey]: !activeFilters[filterKey],
-    });
-  };
+    })
+  }
 
   const toggleFavoriteResult = (marketId: number) => () => {
-    const isFavorite = favorites.includes(marketId);
+    const isFavorite = favorites.includes(marketId)
 
-    let newFavorites;
+    let newFavorites
 
     if (isFavorite) {
-      newFavorites = favorites.filter(id => id !== marketId);
+      newFavorites = favorites.filter((id) => id !== marketId)
     } else {
-      newFavorites = favorites.concat(marketId);
+      newFavorites = favorites.concat(marketId)
     }
 
-    setFavorites(newFavorites);
-    setItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY, newFavorites);
-  };
+    setFavorites(newFavorites)
+    setItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY, newFavorites)
+  }
 
-  const filterResults = (
-    results: Array<Market> | Array<Event> | Array<Market | Event>
-  ) => {
-    let newResults = results;
+  const filterResults = (results: Array<Market> | Array<Event> | Array<Market | Event>) => {
+    let newResults = results
 
     if (activeFilters.openNow) {
-      newResults = newResults.filter(result => {
+      newResults = newResults.filter((result) => {
         if (!result.start || !result.end) {
-          return false;
+          return false
         }
-        return getIsOpen(result.start, result.end, result.times);
-      });
+        return getIsOpen(result.start, result.end, result.times)
+      })
     }
 
     if (activeFilters.favorited) {
-      newResults = newResults.filter(result => favorites.includes(result.id));
+      newResults = newResults.filter((result) => favorites.includes(result.id))
     }
 
     if (activeFilters.nearMe && deviceLocation) {
-      newResults = newResults.filter(result => {
+      newResults = newResults.filter((result) => {
         const distanceAway = getDistanceFromLatLonInKm(
           result.coordinates.lat,
           result.coordinates.lng,
           deviceLocation.lat,
-          deviceLocation.lng
-        );
-        return distanceAway <= NEAR_ME_KM_DISTANCE_AWAY;
-      });
+          deviceLocation.lng,
+        )
+        return distanceAway <= NEAR_ME_KM_DISTANCE_AWAY
+      })
     }
 
-    return newResults;
-  };
+    return newResults
+  }
 
-  const shownResults = filterResults(results);
+  const shownResults = filterResults(results)
 
   useEffect(() => {
     const getResult = async () => {
       try {
-        setIsLoadingLocation(true);
-        const result = await getNavigatorLocation();
+        setIsLoadingLocation(true)
+        const result = await getNavigatorLocation()
         if (result) {
-          setDeviceLocation(result);
-          setIsLoadingLocation(false);
+          setDeviceLocation(result)
+          setIsLoadingLocation(false)
         }
       } catch {
-        setActiveFilters({ ...activeFilters, nearMe: false });
-        setIsLoadingLocation(false);
+        setActiveFilters({ ...activeFilters, nearMe: false })
+        setIsLoadingLocation(false)
       }
-    };
-    if (activeFilters.nearMe && !deviceLocation) {
-      getResult();
     }
-  }, [activeFilters.nearMe]);
+    if (activeFilters.nearMe && !deviceLocation) {
+      getResult()
+    }
+  }, [activeFilters.nearMe])
 
   useEffect(() => {
     setActiveFilters({
       openNow: false,
       favorited: false,
       nearMe: false,
-    });
-    setShowMap(false);
-  }, [page]);
+    })
+    setShowMap(false)
+  }, [page])
 
   return (
     <Flex flexDirection="column" style={{ height: '100%' }}>
@@ -164,24 +146,22 @@ const ResultList = ({
           }}
         >
           <p>
-            {shownResults.length}{' '}
-            {shownResults.length === 1 ? 'result' : 'results'} found
-            {activeFilters.nearMe &&
-              deviceLocation &&
-              ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+            {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
+            {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
           </p>
           <ul
             style={{
               listStyle: 'none',
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '24px 16px',
+              display: 'grid',
+              gap: '20px',
               padding: 0,
               margin: 0,
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              justifyContent: 'space-between',
             }}
           >
             {shownResults.map((result, idx) => (
-              <ResultItem
+              <ResultCard
                 key={idx}
                 result={result}
                 isFavorite={favorites.includes(result.id)}
@@ -192,7 +172,7 @@ const ResultList = ({
         </Flex>
       )}
     </Flex>
-  );
-};
+  )
+}
 
-export default ResultList;
+export default ResultList

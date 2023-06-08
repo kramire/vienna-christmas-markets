@@ -1,17 +1,15 @@
-import { PageType } from '../../app.types';
-import { theme } from '../../theme';
-import { footerItemMapping } from './footer.constants';
-import FooterItem from './footerItem';
+import { PageType } from '../../app.types'
+import { theme } from '../../theme'
+import { footerItemMapping } from './footer.constants'
+import FooterItem from './footerItem'
 
 interface Props {
-  page: PageType;
-  goToPage: (page: PageType) => void;
+  page: PageType
+  goToPage: (page: PageType) => void
 }
 
 const Footer = ({ page: currentPage, goToPage }: Props) => {
-  const footerItemPages = Object.keys(footerItemMapping) as Array<
-    keyof typeof PageType
-  >;
+  const footerItemPages = Object.keys(footerItemMapping) as Array<keyof typeof PageType>
 
   return (
     <footer
@@ -28,7 +26,7 @@ const Footer = ({ page: currentPage, goToPage }: Props) => {
         backgroundColor: theme.colors.bgWhite,
       }}
     >
-      {footerItemPages.map(page => (
+      {footerItemPages.map((page) => (
         <FooterItem
           goToPage={goToPage}
           name={footerItemMapping[page].name}
@@ -38,7 +36,7 @@ const Footer = ({ page: currentPage, goToPage }: Props) => {
         />
       ))}
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,8 +1,8 @@
-import { theme } from '../../theme';
-import ArrowRight from '../../assets/arrowRight.svg';
+import { theme } from '../../theme'
+import ArrowRight from '../../assets/arrowRight.svg'
 
 interface Props {
-  label: string;
+  label: string
 }
 
 const CallToAction = ({ label }: Props) => (
@@ -24,6 +24,6 @@ const CallToAction = ({ label }: Props) => (
     <p>{label}</p>
     <img src={ArrowRight} width={14} height={14} loading="lazy" alt="name" />
   </div>
-);
+)
 
-export default CallToAction;
+export default CallToAction

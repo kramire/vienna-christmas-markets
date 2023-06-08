@@ -1,6 +1,6 @@
-import { ComponentChildren } from 'preact';
-import { MutableRef } from 'preact/hooks';
-import { JSXInternal } from 'preact/src/jsx';
+import { ComponentChildren } from 'preact'
+import { MutableRef } from 'preact/hooks'
+import { JSXInternal } from 'preact/src/jsx'
 
 type Alignment =
   | 'start'
@@ -13,31 +13,26 @@ type Alignment =
   | 'normal'
   | 'space-between'
   | 'space-around'
-  | 'space-evenly';
+  | 'space-evenly'
 
 interface Props {
-  children: ComponentChildren;
-  ref?: MutableRef<HTMLDivElement | null>;
-  onClick?: JSXInternal.MouseEventHandler<HTMLDivElement> | undefined;
-  className?: string;
-  flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-  justifyContent?: Alignment;
-  alignItems?: Alignment;
-  gap?: string | number | null | undefined;
-  style?: JSXInternal.CSSProperties;
+  children: ComponentChildren
+  ref?: MutableRef<HTMLDivElement | null>
+  onClick?: JSXInternal.MouseEventHandler<HTMLDivElement> | undefined
+  className?: string
+  flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse'
+  justifyContent?: Alignment
+  alignItems?: Alignment
+  gap?: string | number | null | undefined
+  style?: JSXInternal.CSSProperties
 }
 
 const Flex = ({ children, ref, onClick, className, style, ...rest }: Props) => {
   return (
-    <div
-      ref={ref}
-      onClick={onClick}
-      className={className}
-      style={{ display: 'flex', ...rest, ...style }}
-    >
+    <div ref={ref} onClick={onClick} className={className} style={{ display: 'flex', ...rest, ...style }}>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Flex;
+export default Flex

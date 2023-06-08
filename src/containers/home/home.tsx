@@ -1,11 +1,11 @@
-import Flex from '../../components/flex';
-import { PageType } from '../../app.types';
-import HomeItem from './homeItem';
-import HomeImage from '../../assets/karls-christmas.webp';
-import { FOOTER_HEIGHT } from '../../app.constants';
+import Flex from '../../components/flex'
+import { PageType } from '../../app.types'
+import HomeItem from './homeItem'
+import HomeImage from '../../assets/karls-christmas.webp'
+import { FOOTER_HEIGHT } from '../../app.constants'
 
 interface Props {
-  goToPage: (page: PageType) => void;
+  goToPage: (page: PageType) => void
 }
 
 const Home = ({ goToPage }: Props) => {
@@ -77,7 +77,7 @@ const Home = ({ goToPage }: Props) => {
         />
       </Flex>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -1,47 +1,39 @@
-import { useState, useEffect } from 'preact/hooks';
-import Home from './containers/home';
-import ResultList from './containers/resultList';
-import VisitProgress from './containers/visitProgress';
-import data from './data/data.json';
-import { Market, Event, PageType, ResultType, Coordinate } from './app.types';
-import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from './app.constants';
-import useLocalStorage from './hooks/useLocalStorage';
+import { useState, useEffect } from 'preact/hooks'
+import Home from './containers/home'
+import ResultList from './containers/resultList'
+import VisitProgress from './containers/visitProgress'
+import data from './data/data.json'
+import { Market, Event, PageType, ResultType, Coordinate } from './app.types'
+import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from './app.constants'
+import useLocalStorage from './hooks/useLocalStorage'
 
 interface Props {
-  page: PageType;
-  goToPage: (page: PageType) => void;
+  page: PageType
+  goToPage: (page: PageType) => void
 }
 
 const Pages = ({ page, goToPage }: Props) => {
-  const [favorites, setFavorites] = useState<number[]>([]);
-  const [deviceLocation, setDeviceLocation] = useState<Coordinate | undefined>(
-    undefined
-  );
+  const [favorites, setFavorites] = useState<number[]>([])
+  const [deviceLocation, setDeviceLocation] = useState<Coordinate | undefined>(undefined)
 
-  const { getItem } = useLocalStorage();
+  const { getItem } = useLocalStorage()
 
-  const results: Array<Market | Event> = data;
+  const results: Array<Market | Event> = data
 
-  const marketResults: Array<Market> = results.filter(
-    result => result.type === ResultType.MARKET
-  );
-  const eventResults: Array<Event> = results.filter(
-    result => result.type === ResultType.EVENT
-  );
-  const favoriteResults: Array<Market | Event> = results.filter(result =>
-    favorites.includes(result.id)
-  );
+  const marketResults: Array<Market> = results.filter((result) => result.type === ResultType.MARKET)
+  const eventResults: Array<Event> = results.filter((result) => result.type === ResultType.EVENT)
+  const favoriteResults: Array<Market | Event> = results.filter((result) => favorites.includes(result.id))
 
   useEffect(() => {
-    const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY);
+    const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY)
     if (storedFavoritedMarkets) {
-      setFavorites(JSON.parse(storedFavoritedMarkets));
+      setFavorites(JSON.parse(storedFavoritedMarkets))
     }
-  }, []);
+  }, [])
 
   switch (page) {
     case PageType.HOME:
-      return <Home goToPage={goToPage} />;
+      return <Home goToPage={goToPage} />
     case PageType.MARKETS:
       return (
         <ResultList
@@ -52,7 +44,7 @@ const Pages = ({ page, goToPage }: Props) => {
           deviceLocation={deviceLocation}
           setDeviceLocation={setDeviceLocation}
         />
-      );
+      )
     case PageType.EVENTS:
       return (
         <ResultList
@@ -63,7 +55,7 @@ const Pages = ({ page, goToPage }: Props) => {
           deviceLocation={deviceLocation}
           setDeviceLocation={setDeviceLocation}
         />
-      );
+      )
     case PageType.FAVORITES:
       return (
         <ResultList
@@ -74,12 +66,12 @@ const Pages = ({ page, goToPage }: Props) => {
           deviceLocation={deviceLocation}
           setDeviceLocation={setDeviceLocation}
         />
-      );
+      )
     case PageType.VISITS:
-      return <VisitProgress markets={marketResults} />;
+      return <VisitProgress markets={marketResults} />
     default:
-      return null;
+      return null
   }
-};
+}
 
-export default Pages;
+export default Pages

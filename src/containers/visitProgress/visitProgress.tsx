@@ -1,71 +1,68 @@
-import { useState, useEffect, useMemo } from 'preact/hooks';
-import { Market } from '../../app.types';
-import Flex from '../../components/flex';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import buildSquares from '../../utils/build-square';
-import { theme } from '../../theme';
-import Header from '../../components/header';
-import SurpriseImage from '../../assets/christmas-sparkler.webp';
-import { FOOTER_HEIGHT } from '../../app.constants';
-import { hasStarted } from '../../utils/hasStarted';
-import CircleCheckSolid from '../../assets/circleCheckSolid.svg';
-import CircleCheck from '../../assets/circleCheck.svg';
+import { useState, useEffect, useMemo } from 'preact/hooks'
+import { Market } from '../../app.types'
+import Flex from '../../components/flex'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import buildSquares from '../../utils/build-square'
+import { theme } from '../../theme'
+import Header from '../../components/header'
+import SurpriseImage from '../../assets/christmas-sparkler.webp'
+import { FOOTER_HEIGHT } from '../../app.constants'
+import { hasStarted } from '../../utils/hasStarted'
+import CircleCheckSolid from '../../assets/circleCheckSolid.svg'
+import CircleCheck from '../../assets/circleCheck.svg'
 
-const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets';
+const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets'
 
 interface Props {
-  markets: Array<Market>;
+  markets: Array<Market>
 }
 
 const VisitProgress = ({ markets }: Props) => {
-  const [visitedMarketsIds, setVisitedMarketsIds] = useState<number[]>([]);
+  const [visitedMarketsIds, setVisitedMarketsIds] = useState<number[]>([])
 
-  const squares = useMemo(() => buildSquares(markets), [markets]);
+  const squares = useMemo(() => buildSquares(markets), [markets])
 
-  const { getItem, setItem } = useLocalStorage();
+  const { getItem, setItem } = useLocalStorage()
 
-  const checkHasVisitedMarket = (marketId: number) =>
-    visitedMarketsIds.includes(marketId);
+  const checkHasVisitedMarket = (marketId: number) => visitedMarketsIds.includes(marketId)
 
   const handleOrnamentClick = (ornamentId: number | undefined) => () => {
-    if (!ornamentId || !visitedMarketsIds) return;
+    if (!ornamentId || !visitedMarketsIds) return
 
-    const market = markets.find(market => market.id === ornamentId);
+    const market = markets.find((market) => market.id === ornamentId)
 
     if (!market || !market.start || !market.end) {
-      return;
+      return
     }
 
     if (hasStarted(market.start)) {
-      let newVisitedMarketIds: number[] = [];
+      let newVisitedMarketIds: number[] = []
 
       if (visitedMarketsIds.includes(ornamentId)) {
-        newVisitedMarketIds = visitedMarketsIds.filter(id => id !== ornamentId);
-        setVisitedMarketsIds(newVisitedMarketIds);
+        newVisitedMarketIds = visitedMarketsIds.filter((id) => id !== ornamentId)
+        setVisitedMarketsIds(newVisitedMarketIds)
       } else {
-        newVisitedMarketIds = visitedMarketsIds.concat(ornamentId);
-        setVisitedMarketsIds(newVisitedMarketIds);
+        newVisitedMarketIds = visitedMarketsIds.concat(ornamentId)
+        setVisitedMarketsIds(newVisitedMarketIds)
       }
 
-      setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds);
+      setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
     }
-  };
+  }
 
   useEffect(() => {
-    const storedVisitedMarkets = getItem(VISITED_MARKETS_LOCAL_STORAGE_KEY);
+    const storedVisitedMarkets = getItem(VISITED_MARKETS_LOCAL_STORAGE_KEY)
 
-    const marketIds = markets.map(market => market.id);
+    const marketIds = markets.map((market) => market.id)
 
     if (storedVisitedMarkets) {
-      const parsedData = JSON.parse(storedVisitedMarkets);
-      const visitedMarketsIds = marketIds.filter(marketId =>
-        parsedData.includes(marketId)
-      );
-      setVisitedMarketsIds(visitedMarketsIds);
+      const parsedData = JSON.parse(storedVisitedMarkets)
+      const visitedMarketsIds = marketIds.filter((marketId) => parsedData.includes(marketId))
+      setVisitedMarketsIds(visitedMarketsIds)
     } else {
-      setVisitedMarketsIds([]);
+      setVisitedMarketsIds([])
     }
-  }, []);
+  }, [])
 
   return (
     <>
@@ -89,20 +86,12 @@ const VisitProgress = ({ markets }: Props) => {
             lineHeight: '20px',
           }}
         >
-          <h2 style={{ fontSize: '16px', textAlign: 'center' }}>
-            Visit the markets to reveal the image!
-          </h2>
+          <h2 style={{ fontSize: '16px', textAlign: 'center' }}>Visit the markets to reveal the image!</h2>
           <div style={{ maxWidth: '100%' }}>
             <p>Rules:</p>
             <ul style={{ paddingLeft: '20px', margin: '8px 0px' }}>
-              <li style={{ marginBottom: '8px' }}>
-                When you visit a market, click its corresponding box on the
-                grid.
-              </li>
-              <li>
-                You can only click the ornament after that market has opened
-                this season.
-              </li>
+              <li style={{ marginBottom: '8px' }}>When you visit a market, click its corresponding box on the grid.</li>
+              <li>You can only click the ornament after that market has opened this season.</li>
             </ul>
           </div>
         </Flex>
@@ -126,10 +115,8 @@ const VisitProgress = ({ markets }: Props) => {
                 display: 'flex',
               }}
             >
-              {branch.map(ornament => {
-                const hasVisited =
-                  ornament === null ||
-                  (ornament && visitedMarketsIds.includes(ornament.id));
+              {branch.map((ornament) => {
+                const hasVisited = ornament === null || (ornament && visitedMarketsIds.includes(ornament.id))
                 return (
                   <Flex
                     justifyContent="center"
@@ -138,9 +125,7 @@ const VisitProgress = ({ markets }: Props) => {
                     style={{
                       width: 'calc(100vw / 5)',
                       height: 'calc(412px / 4)',
-                      backgroundColor: hasVisited
-                        ? 'transparent'
-                        : theme.colors.bgWhite,
+                      backgroundColor: hasVisited ? 'transparent' : theme.colors.bgWhite,
                       transition: 'background-color 1s ease',
                       cursor: 'pointer',
                       '-webkit-tap-highlight-color': 'transparent',
@@ -157,7 +142,7 @@ const VisitProgress = ({ markets }: Props) => {
                       </p>
                     ) : null}
                   </Flex>
-                );
+                )
               })}
             </div>
           ))}
@@ -172,13 +157,11 @@ const VisitProgress = ({ markets }: Props) => {
         >
           <h3 style={{ textDecoration: 'underline' }}>Legend</h3>
           <Flex flexDirection="column" gap="12px">
-            {markets.map(market => {
-              const hasVisited = checkHasVisitedMarket(market.id);
+            {markets.map((market) => {
+              const hasVisited = checkHasVisitedMarket(market.id)
               return (
                 <Flex key={market.id} gap="16px">
-                  <p style={{ flexBasis: '24px', textAlign: 'center' }}>
-                    {market.id}.
-                  </p>
+                  <p style={{ flexBasis: '24px', textAlign: 'center' }}>{market.id}.</p>
                   <div style={{ flex: 1 }}>
                     <p>{market.name}</p>
                     <p style={{ fontSize: '11px' }}>{market.district}</p>
@@ -200,13 +183,13 @@ const VisitProgress = ({ markets }: Props) => {
                     />
                   </div>
                 </Flex>
-              );
+              )
             })}
           </Flex>
         </div>
       </Flex>
     </>
-  );
-};
+  )
+}
 
-export default VisitProgress;
+export default VisitProgress

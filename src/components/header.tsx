@@ -1,10 +1,10 @@
-import { ComponentChildren } from 'preact';
-import { theme } from '../theme';
-import Flex from './flex';
+import { ComponentChildren } from 'preact'
+import { theme } from '../theme'
+import Flex from './flex'
 
 interface Props {
-  children?: ComponentChildren;
-  hideOnScroll?: boolean;
+  children?: ComponentChildren
+  hideOnScroll?: boolean
 }
 
 const Header = ({ children, hideOnScroll = false }: Props) => {
@@ -43,7 +43,7 @@ const Header = ({ children, hideOnScroll = false }: Props) => {
       </Flex>
       {children}
     </Flex>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

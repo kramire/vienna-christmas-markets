@@ -1,12 +1,12 @@
 interface Result {
-  id: number;
-  name: string;
-  coordinates: Coordinate;
-  district: string;
-  start: string | null;
-  end: string | null;
-  times: Array<Array<string> | null>; // this is Array<[string, string] | null> but TS complains about JSON
-  website: string | null;
+  id: number
+  name: string
+  coordinates: Coordinate
+  district: string
+  start: string | null
+  end: string | null
+  times: Array<Array<string> | null> // this is Array<[string, string] | null> but TS complains about JSON
+  website: string | null
 }
 
 export enum ResultType {
@@ -15,11 +15,11 @@ export enum ResultType {
 }
 
 export interface Market extends Result {
-  type: ResultType.MARKET;
+  type: ResultType.MARKET
 }
 
 export interface Event extends Result {
-  type: ResultType.EVENT;
+  type: ResultType.EVENT
 }
 
 export enum PageType {
@@ -30,9 +30,9 @@ export enum PageType {
   VISITS = 'VISITS',
 }
 
-export type FilterType = 'openNow' | 'favorited' | 'nearMe';
+export type FilterType = 'openNow' | 'favorited' | 'nearMe'
 
 export interface Coordinate {
-  lat: number;
-  lng: number;
+  lat: number
+  lng: number
 }

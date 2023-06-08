@@ -1,10 +1,10 @@
-import { theme } from '../../theme';
+import { theme } from '../../theme'
 
 interface Props {
-  label: string;
-  isSelected: boolean;
-  handleClick: () => void;
-  isLoading?: boolean;
+  label: string
+  isSelected: boolean
+  handleClick: () => void
+  isLoading?: boolean
 }
 
 const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
@@ -18,14 +18,13 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
       border: '1px solid',
       borderColor: theme.colors.darkGreen,
       color: isSelected ? theme.colors.bgWhite : theme.colors.darkGreen,
-      background:
-        isSelected || isLoading ? theme.colors.darkGreen : theme.colors.bgWhite,
+      background: isSelected || isLoading ? theme.colors.darkGreen : theme.colors.bgWhite,
       fontSize: '14px',
       fontFamily: 'sans-serif',
     }}
   >
     {isLoading ? <span class="loader"></span> : label}
   </button>
-);
+)
 
-export default FilterItem;
+export default FilterItem

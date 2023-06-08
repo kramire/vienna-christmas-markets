@@ -1,27 +1,20 @@
-import { FilterType, PageType } from '../../app.types';
-import Flex from '../../components/flex';
-import FilterItem from './filterItem';
-import { theme } from '../../theme';
-import Map from '../../assets/mapicon.svg';
-import List from '../../assets/listicon.svg';
+import { FilterType, PageType } from '../../app.types'
+import Flex from '../../components/flex'
+import FilterItem from './filterItem'
+import { theme } from '../../theme'
+import Map from '../../assets/mapicon.svg'
+import List from '../../assets/listicon.svg'
 
 interface Props {
-  activeFilters: { [key in FilterType]: boolean };
-  toggleFilter: (filterKey: FilterType) => () => void;
-  isLoadingLocation: boolean;
-  page: PageType;
-  showMap: boolean;
-  toggleMap: () => void;
+  activeFilters: { [key in FilterType]: boolean }
+  toggleFilter: (filterKey: FilterType) => () => void
+  isLoadingLocation: boolean
+  page: PageType
+  showMap: boolean
+  toggleMap: () => void
 }
 
-const Filters = ({
-  activeFilters,
-  toggleFilter,
-  isLoadingLocation,
-  page,
-  showMap,
-  toggleMap,
-}: Props) => {
+const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, page, showMap, toggleMap }: Props) => {
   return (
     <Flex
       justifyContent="space-between"
@@ -32,11 +25,7 @@ const Filters = ({
       }}
     >
       <Flex gap="12px" style={{ color: theme.colors.darkGreen }}>
-        <FilterItem
-          label="Open Now"
-          isSelected={activeFilters.openNow}
-          handleClick={toggleFilter('openNow')}
-        />
+        <FilterItem label="Open Now" isSelected={activeFilters.openNow} handleClick={toggleFilter('openNow')} />
         <FilterItem
           label="Near Me"
           isSelected={activeFilters.nearMe}
@@ -51,15 +40,8 @@ const Filters = ({
           />
         )}
       </Flex>
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        style={{ color: theme.colors.darkGreen, paddingRight: '8px' }}
-      >
-        <div
-          onClick={toggleMap}
-          style={{ fontSize: '20px', cursor: 'pointer' }}
-        >
+      <Flex flexDirection="column" alignItems="center" style={{ color: theme.colors.darkGreen, paddingRight: '8px' }}>
+        <div onClick={toggleMap} style={{ fontSize: '20px', cursor: 'pointer' }}>
           {showMap ? (
             <img src={List} width={20} height={20} loading="lazy" alt="name" />
           ) : (
@@ -77,7 +59,7 @@ const Filters = ({
         </p>
       </Flex>
     </Flex>
-  );
-};
+  )
+}
 
-export default Filters;
+export default Filters

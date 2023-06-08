@@ -166,15 +166,7 @@
     "coordinates": { "lat": 48.207493, "lng": 16.401838 },
     "start": "11/17/2022",
     "end": "12/31/2022",
-    "times": [
-      null,
-      null,
-      null,
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"]
-    ],
+    "times": [null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"]],
     "website": " https://www.weihnachtimwald.com/",
     "imgUrl": "",
     "type": "MARKET"
@@ -186,15 +178,7 @@
     "coordinates": { "lat": 48.238924, "lng": 16.474131 },
     "start": "11/17/2022",
     "end": "12/23/2022",
-    "times": [
-      null,
-      null,
-      null,
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"]
-    ],
+    "times": [null, null, null, ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"]],
     "website": "https://www.wien.gv.at/umwelt/parks/blumengaerten-hirschstetten/weihnachten.html",
     "imgUrl": "",
     "type": "MARKET"
@@ -366,15 +350,7 @@
     "coordinates": { "lat": 48.212359, "lng": 16.3242538 },
     "start": "11/24/2022",
     "end": "12/23/2022",
-    "times": [
-      null,
-      null,
-      null,
-      ["15:00", "22:00"],
-      ["15:00", "22:00"],
-      ["11:00", "22:00"],
-      ["11:00", "20:00"]
-    ],
+    "times": [null, null, null, ["15:00", "22:00"], ["15:00", "22:00"], ["11:00", "22:00"], ["11:00", "20:00"]],
     "website": "https://www.vienna.at/neuer-christkindlmarkt-in-wien-der-ottakringer-weihnachtszauber/7723477",
     "imgUrl": "",
     "type": "MARKET"
@@ -426,15 +402,7 @@
     "coordinates": { "lat": 48.241072, "lng": 16.398425 },
     "start": "11/04/2022",
     "end": "12/18/2022",
-    "times": [
-      null,
-      null,
-      null,
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"]
-    ],
+    "times": [null, null, null, ["15:00", "21:00"], ["15:00", "21:00"], ["15:00", "21:00"], ["15:00", "21:00"]],
     "website": "https://viennawurstelstand.com/event/punsch-am-wasser/",
     "imgUrl": "",
     "type": "EVENT"
@@ -506,16 +474,7 @@
     "coordinates": { "lat": 48.2320506, "lng": 16.4341442 },
     "start": "11/18/2022",
     "end": "12/23/2022",
-    "times": [
-      null,
-      null,
-      null,
-      null,
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["15:00", "21:00"],
-      null
-    ],
+    "times": [null, null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["15:00", "21:00"], null],
     "website": "https://www.dasbootshaus.at/",
     "imgUrl": "",
     "type": "EVENT"

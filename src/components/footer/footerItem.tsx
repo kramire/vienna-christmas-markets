@@ -1,13 +1,13 @@
-import { PageType } from '../../app.types';
-import { theme } from '../../theme';
-import Flex from '../flex';
+import { PageType } from '../../app.types'
+import { theme } from '../../theme'
+import Flex from '../flex'
 
 interface Props {
-  page: PageType;
-  name: string;
-  iconSrc: string;
-  isSelected: boolean;
-  goToPage: (page: PageType) => void;
+  page: PageType
+  name: string
+  iconSrc: string
+  isSelected: boolean
+  goToPage: (page: PageType) => void
 }
 
 const FooterItem = ({ page, name, iconSrc, isSelected, goToPage }: Props) => (
@@ -29,6 +29,6 @@ const FooterItem = ({ page, name, iconSrc, isSelected, goToPage }: Props) => (
     <img src={iconSrc} width={18} height={18} loading="lazy" alt="name" />
     <p style={{ fontSize: '12px', lineHeight: '14px' }}>{name}</p>
   </Flex>
-);
+)
 
-export default FooterItem;
+export default FooterItem
