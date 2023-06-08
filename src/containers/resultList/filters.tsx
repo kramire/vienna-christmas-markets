@@ -16,15 +16,8 @@ interface Props {
 
 const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, page, showMap, toggleMap }: Props) => {
   return (
-    <Flex
-      justifyContent="space-between"
-      style={{
-        width: '100%',
-        backgroundColor: theme.colors.bgWhite,
-        padding: '12px',
-      }}
-    >
-      <Flex gap="12px" style={{ color: theme.colors.darkGreen }}>
+    <div class="flex flex-wrap md:flex-nowrap justify-between w-full gap-3">
+      <div class="flex gap-3" style={{ color: theme.colors.darkGreen }}>
         <FilterItem label="Open Now" isSelected={activeFilters.openNow} handleClick={toggleFilter('openNow')} />
         <FilterItem
           label="Near Me"
@@ -39,26 +32,18 @@ const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, page, showMap
             handleClick={toggleFilter('favorited')}
           />
         )}
-      </Flex>
-      <Flex flexDirection="column" alignItems="center" style={{ color: theme.colors.darkGreen, paddingRight: '8px' }}>
-        <div onClick={toggleMap} style={{ fontSize: '20px', cursor: 'pointer' }}>
+      </div>
+      <div class="flex gap-2 items-center" style={{ color: theme.colors.darkGreen }}>
+        <div onClick={toggleMap} class="text-xl cursor-pointer">
           {showMap ? (
             <img src={List} width={20} height={20} loading="lazy" alt="name" />
           ) : (
             <img src={Map} width={20} height={20} loading="lazy" alt="name" />
           )}
         </div>
-        <p
-          style={{
-            fontSize: '12px',
-            lineHeight: '10px',
-            fontFamily: 'sans-serif',
-          }}
-        >
-          {showMap ? 'List' : 'Map'}
-        </p>
-      </Flex>
-    </Flex>
+        <p class="text-sm md:text-base">{showMap ? 'View List' : 'View Map'}</p>
+      </div>
+    </div>
   )
 }
 
