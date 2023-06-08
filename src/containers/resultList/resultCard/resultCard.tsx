@@ -3,8 +3,6 @@ import LocationIcon from '../../../assets/location.svg'
 import CalendarIcon from '../../../assets/calendar.svg'
 import ClockIcon from '../../../assets/clock.svg'
 import InfoIcon from '../../../assets/info.svg'
-import FilledHeartIcon from '../../../assets/filledHeart.svg'
-import EmptyHeartIcon from '../../../assets/emptyHeart.svg'
 import { localizeDate } from '../../../utils/localizeDate'
 import { Event, Market, ResultType } from '../../../app.types'
 import { theme } from '../../../theme'
@@ -12,6 +10,7 @@ import { GOOGLE_MAPS_LINK, weekDays } from '../resultList.constants'
 import { resultToImgUrlMapping } from '../../../app.constants'
 import OpenStatusLabel from '../../../components/openStatusLabel'
 import CardImage from './cardImage'
+import FavoriteButton from './favoriteButton'
 
 interface Props {
   result: Market | Event
@@ -35,28 +34,10 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
       <CardImage imgSrc={imgSrc} altText={name} />
       <div class="flex flex-col justify-between w-full px-4 py-6 gap-3">
         <div class="flex justify-between gap-3">
-          <h3
-            class="text-xl font-semibold"
-            style={{
-              color: theme.colors.darkGreen,
-            }}
-          >
+          <h3 class="text-xl font-semibold" style={{ color: theme.colors.darkGreen }}>
             {type === ResultType.MARKET ? `${id}. ${name}` : name}
           </h3>
-          <img
-            onClick={toggleFavoriteResult(id)}
-            src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
-            alt={isFavorite ? 'Favorite Venue' : 'Unfavorite venue'}
-            loading="lazy"
-            width="20px"
-            height="20px"
-            style={{
-              marginTop: '6px',
-              width: '20px',
-              height: '20px',
-              outline: 'none',
-            }}
-          />
+          <FavoriteButton isFavorite={isFavorite} handleClick={() => toggleFavoriteResult(id)} />
         </div>
         <div class="flex align-center gap-4">
           <img src={LocationIcon} loading="lazy" alt="district location" width={16} height={16} />
@@ -65,7 +46,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
             target="_blank"
             aria-label="Google maps link"
           >
-            <p style={{ textDecoration: 'underline', cursor: 'pointer' }}>{district}</p>
+            <p class="decoration-solid cursor-pointer">{district}</p>
           </a>
         </div>
         {start && end && (
@@ -77,16 +58,16 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </div>
         )}
         <div class="flex gap-4">
-          <img src={ClockIcon} loading="lazy" alt="clock" width={16} height={16} style={{ marginTop: '7px' }} />
+          <img src={ClockIcon} loading="lazy" alt="clock" width={16} height={16} class="mt-2" />
           <div class="h-24 flex flex-col flex-wrap gap-x-6">
             {times.map((time, timeIdx) => (
-              <div class="flex gap-3" style={{ fontSize: '14px' }}>
-                <p style={{ width: '14px', textAlign: 'center' }}>{weekDays[timeIdx]}</p>
-                {
-                  <p key={`${id}_${timeIdx}`} style={{ fontSize: '14px' }}>
-                    {Array.isArray(time) ? `${time[0]} - ${time[1]}` : 'Closed'}
-                  </p>
-                }
+              <div key={`${id}_${timeIdx}`} class="flex gap-3 text-sm">
+                <p class="w-3.5 text-center">{weekDays[timeIdx]}</p>
+                {Array.isArray(time) ? (
+                  <p class="text-sm">{`${time[0]} - ${time[1]}`}</p>
+                ) : (
+                  <p class="text-sm">Closed</p>
+                )}
               </div>
             ))}
           </div>
