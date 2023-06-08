@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'preact/hooks'
 import { Market, Event, PageType, FilterType, Coordinate } from '../../app.types'
 import { getNavigatorLocation } from '../../utils/get-navigator-location'
-import Flex from '../../components/flex'
 import ResultCard from './resultCard/resultCard'
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
 import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY, FOOTER_HEIGHT } from '../../app.constants'
+import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import Filters from './filters'
 import Header from '../../components/header'
 import { getIsOpen } from '../../utils/get-is-open'
 import Map from './map'
+import HeaderText from '../../components/headerText'
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
@@ -120,7 +120,7 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
   }, [page])
 
   return (
-    <Flex flexDirection="column" style={{ height: '100%' }}>
+    <div class="flex flex-col gap-1 md:gap-3">
       <Header>
         <Filters
           activeFilters={activeFilters}
@@ -134,44 +134,34 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
       {showMap ? (
         <Map results={shownResults} />
       ) : (
-        <Flex
-          className="animate-slide-in"
-          flexDirection="column"
-          gap="12px"
-          style={{
-            height: `100%`,
-            padding: '12px 24px 24px',
-            marginBottom: `${FOOTER_HEIGHT}px`,
-            overflow: 'scroll',
-          }}
-        >
-          <p>
-            {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-            {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-          </p>
-          <ul
-            style={{
-              listStyle: 'none',
-              display: 'grid',
-              gap: '20px',
-              padding: 0,
-              margin: 0,
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              justifyContent: 'space-between',
-            }}
-          >
-            {shownResults.map((result, idx) => (
-              <ResultCard
-                key={idx}
-                result={result}
-                isFavorite={favorites.includes(result.id)}
-                toggleFavoriteResult={toggleFavoriteResult}
-              />
-            ))}
-          </ul>
-        </Flex>
+        <div className="animate-slide-in" class=" w-full flex flex-col gap-3 px-6 py-4 overflow-scroll">
+          <div class="md:w-5/6 flex flex-col gap-6 md:gap-8 m-auto">
+            <div class="flex flex-col gap-1 md:gap-3">
+              <HeaderText page={page} />
+              <p>
+                {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
+                {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+              </p>
+            </div>
+            <ul
+              class="list-none grid justify-between p-0 m-0 gap-7"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              }}
+            >
+              {shownResults.map((result, idx) => (
+                <ResultCard
+                  key={idx}
+                  result={result}
+                  isFavorite={favorites.includes(result.id)}
+                  toggleFavoriteResult={toggleFavoriteResult}
+                />
+              ))}
+            </ul>
+          </div>
+        </div>
       )}
-    </Flex>
+    </div>
   )
 }
 

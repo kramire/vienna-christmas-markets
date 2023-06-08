@@ -31,7 +31,7 @@ const Header = ({ children, hideOnScroll = false }: Props) => {
         }}
       >
         <p>Christmas in</p>
-        <h2
+        <p
           style={{
             fontSize: '28px',
             textTransform: 'uppercase',
@@ -39,7 +39,7 @@ const Header = ({ children, hideOnScroll = false }: Props) => {
           }}
         >
           Vienna
-        </h2>
+        </p>
       </Flex>
       {children}
     </Flex>
