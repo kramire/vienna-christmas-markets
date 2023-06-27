@@ -119,12 +119,24 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
   }, [page])
 
   return (
-    <div class="flex flex-col gap-1 md:gap-3">
+    <div class="h-full flex flex-col gap-1 md:gap-3">
       {showMap ? (
-        <Map results={shownResults} />
+        <>
+          <div class="px-6 py-4">
+            <Filters
+              activeFilters={activeFilters}
+              toggleFilter={toggleFilter}
+              isLoadingLocation={isLoadingLocation}
+              page={page}
+              showMap={showMap}
+              toggleMap={toggleMap}
+            />
+          </div>
+          <Map results={shownResults} />
+        </>
       ) : (
-        <div className="animate-slide-in" class=" w-full flex flex-col gap-3 px-6 py-4 overflow-scroll">
-          <div class="md:w-5/6 flex flex-col gap-6 md:gap-9 m-auto">
+        <div className="animate-slide-in" class=" w-full flex flex-col gap-3 px-6 lg:px-0 py-4 overflow-scroll">
+          <div class="w-full flex flex-col gap-6 md:gap-9 m-auto">
             <div class="flex flex-col gap-3 md:gap-4">
               <div class="flex flex-col gap-1 md:gap-3">
                 <HeaderText page={page} />
@@ -143,7 +155,7 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
               />
             </div>
             <ul
-              class="list-none grid justify-between p-0 m-0 gap-7"
+              class="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
               style={{
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
               }}

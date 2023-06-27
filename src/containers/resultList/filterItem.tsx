@@ -17,8 +17,8 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
       borderRadius: '20px',
       border: '1px solid',
       borderColor: theme.colors.darkGreen,
-      color: isSelected ? theme.colors.bgWhite : theme.colors.darkGreen,
-      background: isSelected || isLoading ? theme.colors.darkGreen : theme.colors.bgWhite,
+      color: isSelected ? 'white' : theme.colors.darkGreen,
+      background: isSelected || isLoading ? theme.colors.darkGreen : 'white',
       fontSize: '14px',
       fontFamily: 'sans-serif',
     }}

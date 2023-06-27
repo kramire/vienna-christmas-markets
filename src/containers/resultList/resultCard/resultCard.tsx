@@ -8,7 +8,7 @@ import { Event, Market, ResultType } from '../../../app.types'
 import { theme } from '../../../theme'
 import { GOOGLE_MAPS_LINK, weekDays } from '../resultList.constants'
 import { resultToImgUrlMapping } from '../../../app.constants'
-import OpenStatusLabel from '../../../components/openStatusLabel'
+// import OpenStatusLabel from '../../../components/openStatusLabel'
 import CardImage from './cardImage'
 import FavoriteButton from './favoriteButton'
 
@@ -30,7 +30,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   }, [])
 
   return (
-    <li key={id} class="gap-3 w-full relative" style={{ boxShadow: '0 16px 64px -16px rgba(46,55,77,.24)' }}>
+    <li key={id} class="gap-3 w-full relative" style={{ boxShadow: 'rgb(223 220 220 / 55%) 0px 1px 6px 2px' }}>
       <CardImage imgSrc={imgSrc} altText={name} />
       <div class="flex flex-col justify-between w-full px-4 py-6 gap-3">
         <div class="flex justify-between gap-3">
@@ -81,7 +81,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </div>
         )}
       </div>
-      <OpenStatusLabel start={start} end={end} times={times} />
+      {/* <OpenStatusLabel start={start} end={end} times={times} /> */}
     </li>
   )
 }

@@ -1,4 +1,5 @@
-export const FOOTER_HEIGHT = 60
+export const MAX_CONTENT_WIDTH = 1130
+export const HEADER_HEIGHT = 56
 
 export const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
 

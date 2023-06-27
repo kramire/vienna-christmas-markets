@@ -3,9 +3,7 @@ import { Market } from '../../app.types'
 import Flex from '../../components/flex'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import buildSquares from '../../utils/build-square'
-import { theme } from '../../theme'
 import SurpriseImage from '../../assets/christmas-sparkler.webp'
-import { FOOTER_HEIGHT } from '../../app.constants'
 import { hasStarted } from '../../utils/hasStarted'
 import CircleCheckSolid from '../../assets/circleCheckSolid.svg'
 import CircleCheck from '../../assets/circleCheck.svg'
@@ -64,16 +62,7 @@ const VisitProgress = ({ markets }: Props) => {
   }, [])
 
   return (
-    <Flex
-      className="animate-slide-in"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      gap="12px"
-      style={{
-        marginBottom: `${FOOTER_HEIGHT}px`,
-      }}
-    >
+    <Flex className="animate-slide-in" flexDirection="column" justifyContent="center" alignItems="center" gap="12px">
       <Flex
         flexDirection="column"
         gap="12px"
@@ -122,7 +111,7 @@ const VisitProgress = ({ markets }: Props) => {
                   style={{
                     width: 'calc(100vw / 5)',
                     height: 'calc(412px / 4)',
-                    backgroundColor: hasVisited ? 'transparent' : theme.colors.bgWhite,
+                    backgroundColor: hasVisited ? 'transparent' : 'white',
                     transition: 'background-color 1s ease',
                     cursor: 'pointer',
                     '-webkit-tap-highlight-color': 'transparent',
