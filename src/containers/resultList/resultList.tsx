@@ -7,7 +7,6 @@ import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import Filters from './filters'
-import Header from '../../components/header'
 import { getIsOpen } from '../../utils/get-is-open'
 import Map from './map'
 import HeaderText from '../../components/headerText'
@@ -121,7 +120,6 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
 
   return (
     <div class="flex flex-col gap-1 md:gap-3">
-      <Header />
       {showMap ? (
         <Map results={shownResults} />
       ) : (

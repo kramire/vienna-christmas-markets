@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
-import Footer from './components/footer/footer'
 import { PageType } from './app.types'
 import Pages from './pages'
+import Header from './components/header'
 
 export function App() {
   const [page, setPage] = useState<PageType>(PageType.HOME)
@@ -17,8 +17,8 @@ export function App() {
         inset: 0,
       }}
     >
+      <Header goToPage={goToPage} />
       <Pages page={page} goToPage={goToPage} />
-      <Footer page={page} goToPage={goToPage} />
     </div>
   )
 }
