@@ -39,7 +39,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </h3>
           <FavoriteButton isFavorite={isFavorite} handleClick={() => toggleFavoriteResult(id)} />
         </div>
-        <div class="flex align-center gap-4">
+        <div class="flex items-center gap-4">
           <img src={LocationIcon} loading="lazy" alt="district location" width={16} height={16} />
           <a
             href={`${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`}
@@ -50,7 +50,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </a>
         </div>
         {start && end && (
-          <div class="flex align-center gap-4">
+          <div class="flex items-center gap-4">
             <img src={CalendarIcon} loading="lazy" alt="calendar" width={16} height={16} />
             <p>
               {localizeDate(start, language)} - {localizeDate(end, language)}
@@ -73,7 +73,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </div>
         </div>
         {website && (
-          <div class="flex align-center gap-4">
+          <div class="flex items-center gap-4">
             <img src={InfoIcon} loading="lazy" alt="info" width={16} height={16} />
             <a href={website} target="_blank" alt={`Homepage for the ${name} event.`}>
               Website
