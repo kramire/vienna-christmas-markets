@@ -1,18 +1,14 @@
+import Router, { Route } from 'preact-router'
 import { useState, useEffect } from 'preact/hooks'
 import Home from './containers/home'
 import ResultList from './containers/resultList'
 import VisitProgress from './containers/visitProgress'
 import data from './data/data.json'
-import { Market, Event, PageType, ResultType, Coordinate } from './app.types'
+import { Market, Event, ResultType, Coordinate } from './app.types'
 import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from './app.constants'
 import useLocalStorage from './hooks/useLocalStorage'
 
-interface Props {
-  page: PageType
-  goToPage: (page: PageType) => void
-}
-
-const Pages = ({ page, goToPage }: Props) => {
+const Pages = () => {
   const [favorites, setFavorites] = useState<number[]>([])
   const [deviceLocation, setDeviceLocation] = useState<Coordinate | undefined>(undefined)
 
@@ -31,47 +27,48 @@ const Pages = ({ page, goToPage }: Props) => {
     }
   }, [])
 
-  switch (page) {
-    case PageType.HOME:
-      return <Home goToPage={goToPage} />
-    case PageType.MARKETS:
-      return (
-        <ResultList
-          results={marketResults}
-          page={PageType.MARKETS}
-          favorites={favorites}
-          setFavorites={setFavorites}
-          deviceLocation={deviceLocation}
-          setDeviceLocation={setDeviceLocation}
-        />
-      )
-    case PageType.EVENTS:
-      return (
-        <ResultList
-          results={eventResults}
-          page={PageType.EVENTS}
-          favorites={favorites}
-          setFavorites={setFavorites}
-          deviceLocation={deviceLocation}
-          setDeviceLocation={setDeviceLocation}
-        />
-      )
-    case PageType.FAVORITES:
-      return (
-        <ResultList
-          results={favoriteResults}
-          page={PageType.FAVORITES}
-          favorites={favorites}
-          setFavorites={setFavorites}
-          deviceLocation={deviceLocation}
-          setDeviceLocation={setDeviceLocation}
-        />
-      )
-    case PageType.VISITS:
-      return <VisitProgress markets={marketResults} />
-    default:
-      return null
-  }
+  return (
+    <Router>
+      <Route
+        path="/markets"
+        component={() => (
+          <ResultList
+            results={marketResults}
+            favorites={favorites}
+            setFavorites={setFavorites}
+            deviceLocation={deviceLocation}
+            setDeviceLocation={setDeviceLocation}
+          />
+        )}
+      />
+      <Route
+        path="/events"
+        component={() => (
+          <ResultList
+            results={eventResults}
+            favorites={favorites}
+            setFavorites={setFavorites}
+            deviceLocation={deviceLocation}
+            setDeviceLocation={setDeviceLocation}
+          />
+        )}
+      />
+      <Route
+        path="/favorites"
+        component={() => (
+          <ResultList
+            results={favoriteResults}
+            favorites={favorites}
+            setFavorites={setFavorites}
+            deviceLocation={deviceLocation}
+            setDeviceLocation={setDeviceLocation}
+          />
+        )}
+      />
+      <Route path="/visits" component={() => <VisitProgress markets={marketResults} />} />
+      <Route path="/" component={Home} />
+    </Router>
+  )
 }
 
 export default Pages

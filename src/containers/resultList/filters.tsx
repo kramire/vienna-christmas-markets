@@ -1,5 +1,4 @@
-import { FilterType, PageType } from '../../app.types'
-import Flex from '../../components/flex'
+import { FilterType, Routes } from '../../app.types'
 import FilterItem from './filterItem'
 import { theme } from '../../theme'
 import Map from '../../assets/mapicon.svg'
@@ -9,12 +8,13 @@ interface Props {
   activeFilters: { [key in FilterType]: boolean }
   toggleFilter: (filterKey: FilterType) => () => void
   isLoadingLocation: boolean
-  page: PageType
   showMap: boolean
   toggleMap: () => void
 }
 
-const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, page, showMap, toggleMap }: Props) => {
+const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, showMap, toggleMap }: Props) => {
+  const isFavoritesPage = window.location.pathname === Routes.FAVORITES
+
   return (
     <div class="flex flex-wrap md:flex-nowrap justify-between w-full gap-3">
       <div class="flex gap-3" style={{ color: theme.colors.darkGreen }}>
@@ -25,7 +25,7 @@ const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, page, showMap
           handleClick={toggleFilter('nearMe')}
           isLoading={isLoadingLocation}
         />
-        {page !== PageType.FAVORITES && (
+        {!isFavoritesPage && (
           <FilterItem
             label="My Favorites"
             isSelected={activeFilters.favorited}

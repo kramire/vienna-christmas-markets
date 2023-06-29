@@ -1,13 +1,7 @@
 import Flex from '../../components/flex'
-import { PageType } from '../../app.types'
-import HomeItem from './homeItem'
 import HomeImage from '../../assets/karls-christmas.webp'
 
-interface Props {
-  goToPage: (page: PageType) => void
-}
-
-const Home = ({ goToPage }: Props) => {
+const Home = () => {
   return (
     <>
       <Flex
@@ -49,7 +43,7 @@ const Home = ({ goToPage }: Props) => {
           </h1>
         </div>
       </Flex>
-      <Flex flexDirection="column" gap="24px 16px" justifyContent="center" style={{ padding: '0px 24px 24px' }}>
+      {/* <Flex flexDirection="column" gap="24px 16px" justifyContent="center" style={{ padding: '0px 24px 24px' }}>
         <HomeItem
           title="Visit Christmas Markets"
           description="Enjoy the Christmas season with traditional food, drinks, and shopping at the Viennese Christmas Markets."
@@ -69,7 +63,7 @@ const Home = ({ goToPage }: Props) => {
           actionLabel="Track progress"
           handleClick={() => goToPage(PageType.VISITS)}
         />
-      </Flex>
+      </Flex> */}
     </>
   )
 }

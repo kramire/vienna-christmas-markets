@@ -1,14 +1,14 @@
-import { PageType } from '../../app.types'
+import { Routes } from '../../app.types'
 
 interface MenuItem {
   name: string
-  pageType: PageType
+  to: Routes
 }
 
 export const menuItems: Array<MenuItem> = [
-  { name: 'Home', pageType: PageType.HOME },
-  { name: 'Markets', pageType: PageType.MARKETS },
-  { name: 'Events', pageType: PageType.EVENTS },
-  { name: 'Favorites', pageType: PageType.FAVORITES },
-  { name: 'Visits', pageType: PageType.VISITS },
+  { name: 'Home', to: Routes.HOME },
+  { name: 'Markets', to: Routes.MARKETS },
+  { name: 'Events', to: Routes.EVENTS },
+  { name: 'Favorites', to: Routes.FAVORITES },
+  { name: 'Visits', to: Routes.VISITS },
 ]

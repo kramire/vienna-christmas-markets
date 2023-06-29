@@ -22,17 +22,17 @@ export interface Event extends Result {
   type: ResultType.EVENT
 }
 
-export enum PageType {
-  HOME = 'HOME',
-  MARKETS = 'MARKETS',
-  EVENTS = 'EVENTS',
-  FAVORITES = 'FAVORITES',
-  VISITS = 'VISITS',
-}
-
 export type FilterType = 'openNow' | 'favorited' | 'nearMe'
 
 export interface Coordinate {
   lat: number
   lng: number
+}
+
+export enum Routes {
+  HOME = '/',
+  MARKETS = '/markets',
+  EVENTS = '/events',
+  FAVORITES = '/favorites',
+  VISITS = '/visits',
 }

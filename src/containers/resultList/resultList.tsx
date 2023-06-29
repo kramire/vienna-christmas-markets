@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'preact/hooks'
-import { Market, Event, PageType, FilterType, Coordinate } from '../../app.types'
+import { Market, Event, FilterType, Coordinate } from '../../app.types'
 import { getNavigatorLocation } from '../../utils/get-navigator-location'
 import ResultCard from './resultCard/resultCard'
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
@@ -13,14 +13,13 @@ import HeaderText from '../../components/headerText'
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
-  page: PageType
   favorites: Array<number>
   setFavorites: (value: Array<number>) => void
   deviceLocation: Coordinate | undefined
   setDeviceLocation: (value: Coordinate) => void
 }
 
-const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, setDeviceLocation }: Props) => {
+const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDeviceLocation }: Props) => {
   const [activeFilters, setActiveFilters] = useState<{
     [key in FilterType]: boolean
   }>({
@@ -116,7 +115,7 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
       nearMe: false,
     })
     setShowMap(false)
-  }, [page])
+  }, [])
 
   return (
     <div class="h-full flex flex-col gap-1 md:gap-3">
@@ -127,7 +126,6 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
               activeFilters={activeFilters}
               toggleFilter={toggleFilter}
               isLoadingLocation={isLoadingLocation}
-              page={page}
               showMap={showMap}
               toggleMap={toggleMap}
             />
@@ -139,7 +137,7 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
           <div class="w-full flex flex-col gap-6 md:gap-9 m-auto">
             <div class="flex flex-col gap-3 md:gap-4">
               <div class="flex flex-col gap-1 md:gap-3">
-                <HeaderText page={page} />
+                <HeaderText />
                 <p>
                   {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
                   {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
@@ -149,7 +147,6 @@ const ResultList = ({ results, page, favorites, setFavorites, deviceLocation, se
                 activeFilters={activeFilters}
                 toggleFilter={toggleFilter}
                 isLoadingLocation={isLoadingLocation}
-                page={page}
                 showMap={showMap}
                 toggleMap={toggleMap}
               />

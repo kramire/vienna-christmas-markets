@@ -16,7 +16,8 @@
     "express": "^4.18.2",
     "helmet": "^6.0.1",
     "preact": "^10.11.2",
-    "preact-render-to-string": "^5.2.6"
+    "preact-render-to-string": "^5.2.6",
+    "preact-router": "^4.1.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.4.0",

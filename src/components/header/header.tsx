@@ -1,15 +1,11 @@
 import { useState } from 'preact/hooks'
 import Menu from '../../assets/menu.svg'
-
 import NavigationMenu from './navigationMenu'
-import { PageType } from '../../app.types'
 import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '../../app.constants'
+import { Link } from 'preact-router/match'
+import { Routes } from '../../app.types'
 
-interface Props {
-  goToPage: (page: PageType) => void
-}
-
-const Header = ({ goToPage }: Props) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -30,13 +26,13 @@ const Header = ({ goToPage }: Props) => {
           style={{ maxWidth: `${MAX_CONTENT_WIDTH}px`, margin: '0 auto' }}
         >
           <img src={Menu} width={24} height={16} onClick={toggleMenu} />
-          <div onClick={() => goToPage(PageType.HOME)}>
+          <Link href={Routes.HOME}>
             <p class="flex-1">Christmas in Vienna</p>
-          </div>
+          </Link>
           <div />
         </div>
       </div>
-      <NavigationMenu isOpen={isMenuOpen} handleClose={toggleMenu} goToPage={goToPage} />
+      <NavigationMenu isOpen={isMenuOpen} handleClose={toggleMenu} />
     </>
   )
 }
