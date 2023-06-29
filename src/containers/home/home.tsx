@@ -37,21 +37,21 @@ const Home = () => {
       <div class="flex flex-col md:flex-row justify-around gap-8 md:gap-12 px-6 md:px-0">
         <Link href={Routes.MARKETS}>
           <div class="group flex-1 flex flex-col gap-3 items-center peer">
-            <img src={ChristmasMug} width="48px" height="48px" />
+            <img src={ChristmasMug} width={48} height={48} alt="Christmas drinking mug" />
             <h2 class="text-xl font-bold group-hover:underline">Traditional Markets</h2>
             <p class="text-center">Enjoy the seasonal delicacies, including the famous punch and mulled wine.</p>
           </div>
         </Link>
         <Link href={Routes.EVENTS}>
           <div class="group flex-1 flex flex-col gap-3 items-center">
-            <img src={ChristmasLights} width="48px" height="48px" />
+            <img src={ChristmasLights} width={48} height={48} alt="Christmas lights" />
             <h2 class="text-xl font-bold group-hover:underline">Pop up Events</h2>
             <p class="text-center">Check out festive popup restaurants, bars, and curling venues around the city.</p>
           </div>
         </Link>
         <Link href={Routes.VISITS}>
           <div class="group flex-1 flex flex-col gap-3 items-center">
-            <img src={ChristmasPresent} width="48px" height="48px" />
+            <img src={ChristmasPresent} width={48} height={48} alt="Chritmas present" />
             <h2 class="text-xl font-bold group-hover:underline">Track your Progress</h2>
             <p class="text-center">Interested in visiting over 15 Christmas markets in Vienna? Track your progress!</p>
           </div>
