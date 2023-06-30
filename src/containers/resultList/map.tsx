@@ -45,7 +45,7 @@ const Map = ({ results }: Props) => {
     map.addLayer(mapMarkers)
   }, [map, mapMarkers, results])
 
-  return <div id="map" style={{ height: '70%', zIndex: 1 }}></div>
+  return <div id="map" style={{ height: 'calc(100vh - 200px)', zIndex: 1 }}></div>
 }
 
 export default Map

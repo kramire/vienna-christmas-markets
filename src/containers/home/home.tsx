@@ -1,4 +1,4 @@
-import HomeImage from '../../assets/Saint-Stephens-Cathedral-with-Christmas-Tree.webp'
+import HomeImage from '../../assets/Vienna-City-Center-Christmas-Lights.webp'
 import ChristmasMug from '../../assets/christmas-mug.png'
 import ChristmasLights from '../../assets/christmas-lights.svg'
 import ChristmasPresent from '../../assets/christmas-present.png'
@@ -7,10 +7,15 @@ import { Routes } from '../../app.types'
 
 const Home = () => {
   return (
-    <div class="flex flex-col gap-5 md:gap-12 pb-5 md:py-5">
-      <div class="flex flex-col-reverse md:flex-row items-center justify-end md:justify-start md:gap-20">
+    <div class="flex flex-col gap-5 md:gap-12 pb-10 md:p-5">
+      <div class="flex flex-col md:flex-row items-center justify-end md:justify-start md:gap-20">
+        <div class="md:flex-1 py-8 px-3 md:px-5">
+          <h1 class="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 text-center">
+            Discover the magic of Christmas in Vienna
+          </h1>
+        </div>
         <div class="md:flex-1">
-          <div class="py-8 w-full h-full" style={{ backgroundColor: 'rgb(238 193 32)' }}>
+          <div class="md:py-8 md:pr-4 w-full h-full" style={{ backgroundColor: 'rgb(4 49 4)' }}>
             <img
               width="90%"
               height="auto"
@@ -21,17 +26,12 @@ const Home = () => {
                 height: 'auto',
                 objectFit: 'contain',
                 boxShadow: 'rgb(0 0 0 / 48%) 0px 2px 5px 1px',
-                left: '20px',
+                right: '20px',
               }}
               loading="eager"
               src={HomeImage}
             />
           </div>
-        </div>
-        <div class="md:flex-1 py-8 px-3 md:px-5">
-          <h1 class="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 text-center">
-            Discover the magic of Christmas in Vienna
-          </h1>
         </div>
       </div>
       <div class="flex flex-col md:flex-row justify-around gap-8 md:gap-12 px-6 md:px-0">

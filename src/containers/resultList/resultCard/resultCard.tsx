@@ -37,7 +37,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           <h3 class="text-xl font-semibold" style={{ color: theme.colors.darkGreen }}>
             {type === ResultType.MARKET ? `${id}. ${name}` : name}
           </h3>
-          <FavoriteButton isFavorite={isFavorite} handleClick={() => toggleFavoriteResult(id)} />
+          <FavoriteButton isFavorite={isFavorite} handleClick={toggleFavoriteResult(id)} />
         </div>
         <div class="flex items-center gap-4">
           <img src={LocationIcon} loading="lazy" alt="district location" width={16} height={16} />

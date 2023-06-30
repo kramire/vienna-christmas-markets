@@ -44,7 +44,7 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
   const toggleFavoriteResult = (marketId: number) => () => {
     const isFavorite = favorites.includes(marketId)
 
-    let newFavorites
+    let newFavorites: Array<number> = []
 
     if (isFavorite) {
       newFavorites = favorites.filter((id) => id !== marketId)
@@ -118,7 +118,7 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
   }, [])
 
   return (
-    <div class="h-full flex flex-col gap-1 md:gap-3">
+    <div class="h-full flex flex-col md:gap-3">
       {showMap ? (
         <>
           <div class="px-6 py-4">
@@ -133,40 +133,38 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
           <Map results={shownResults} />
         </>
       ) : (
-        <div className="animate-slide-in" class=" w-full flex flex-col gap-3 px-6 lg:px-0 py-4 overflow-scroll">
-          <div class="w-full flex flex-col gap-6 md:gap-9 m-auto">
-            <div class="flex flex-col gap-3 md:gap-4">
-              <div class="flex flex-col gap-1 md:gap-3">
-                <HeaderText />
-                <p>
-                  {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-                  {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-                </p>
-              </div>
-              <Filters
-                activeFilters={activeFilters}
-                toggleFilter={toggleFilter}
-                isLoadingLocation={isLoadingLocation}
-                showMap={showMap}
-                toggleMap={toggleMap}
-              />
+        <div class="w-full flex flex-col gap-6 md:gap-9 m-auto px-6 lg:px-0  py-4 ">
+          <div class="flex flex-col gap-3 md:gap-4">
+            <div class="flex flex-col md:gap-3">
+              <HeaderText />
+              <p>
+                {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
+                {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+              </p>
             </div>
-            <ul
-              class="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
-              style={{
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
-              }}
-            >
-              {shownResults.map((result, idx) => (
-                <ResultCard
-                  key={idx}
-                  result={result}
-                  isFavorite={favorites.includes(result.id)}
-                  toggleFavoriteResult={toggleFavoriteResult}
-                />
-              ))}
-            </ul>
+            <Filters
+              activeFilters={activeFilters}
+              toggleFilter={toggleFilter}
+              isLoadingLocation={isLoadingLocation}
+              showMap={showMap}
+              toggleMap={toggleMap}
+            />
           </div>
+          <ul
+            class="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
+            style={{
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
+            }}
+          >
+            {shownResults.map((result, idx) => (
+              <ResultCard
+                key={idx}
+                result={result}
+                isFavorite={favorites.includes(result.id)}
+                toggleFavoriteResult={toggleFavoriteResult}
+              />
+            ))}
+          </ul>
         </div>
       )}
     </div>

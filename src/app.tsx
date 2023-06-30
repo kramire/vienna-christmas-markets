@@ -8,12 +8,13 @@ export function App() {
       style={{
         width: '100%',
         position: 'fixed',
+        overflowX: 'hidden',
         overflowY: 'scroll',
         inset: 0,
       }}
     >
       <Header />
-      <div style={{ maxWidth: `${MAX_CONTENT_WIDTH}px`, height: `calc(100% - ${HEADER_HEIGHT}px)`, margin: '0 auto' }}>
+      <div style={{ maxWidth: `${MAX_CONTENT_WIDTH}px`, margin: '0 auto' }}>
         <Pages />
       </div>
     </div>
