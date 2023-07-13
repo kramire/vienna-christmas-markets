@@ -13,16 +13,16 @@ const OpenStatusLabel = ({ start, end, times }: Props) => {
 
   if (isOpen) {
     return (
-      <div class="px-3 py-1.5 rounded-lg bg-green-700 absolute -top-4 -right-2">
-        <p class="text-white font-bold text-sm">Open now</p>
+      <div className="px-3 py-1.5 rounded-lg bg-green-700 absolute -top-4 -right-2">
+        <p className="text-white font-bold text-sm">Open now</p>
       </div>
     )
   }
 
   if (isClosedForSeason) {
     return (
-      <div class="px-3 py-1.5 rounded-lg bg-neutral-700 absolute -top-4 -right-2">
-        <p class="text-white font-bold text-sm">Closed for the season</p>
+      <div className="px-3 py-1.5 rounded-lg bg-neutral-700 absolute -top-4 -right-2">
+        <p className="text-white font-bold text-sm">Closed for the season</p>
       </div>
     )
   }

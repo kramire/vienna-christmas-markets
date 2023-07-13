@@ -1,5 +1,7 @@
-import FilledHeartIcon from '../../../assets/filledHeart.svg'
-import EmptyHeartIcon from '../../../assets/emptyHeart.svg'
+import Image from 'next/image'
+
+const FilledHeartIcon = '/filledHeart.svg'
+const EmptyHeartIcon = '/emptyHeart.svg'
 
 interface Props {
   isFavorite: boolean
@@ -7,13 +9,13 @@ interface Props {
 }
 
 const FavoriteButton = ({ isFavorite, handleClick }: Props) => (
-  <img
+  <Image
     onClick={handleClick}
     src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
     alt={isFavorite ? 'Favorite Venue' : 'Not a favorited venue'}
     loading="lazy"
-    width="20px"
-    height="20px"
+    width={20}
+    height={20}
     style={{
       marginTop: '6px',
       width: '20px',

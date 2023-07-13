@@ -23,7 +23,7 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
       fontFamily: 'sans-serif',
     }}
   >
-    {isLoading ? <span class="loader"></span> : label}
+    {isLoading ? <span className="loader"></span> : label}
   </button>
 )
 

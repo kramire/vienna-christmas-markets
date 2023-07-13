@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'preact/hooks'
+'use client'
+import { useState, useEffect } from 'react'
 import { Market, Event, FilterType, Coordinate } from '../../app.types'
 import { getNavigatorLocation } from '../../utils/get-navigator-location'
 import ResultCard from './resultCard/resultCard'
@@ -8,7 +9,7 @@ import useLocalStorage from '../../hooks/useLocalStorage'
 import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import Filters from './filters'
 import { getIsOpen } from '../../utils/get-is-open'
-import Map from './map'
+// import Map from './map'
 import HeaderText from '../../components/headerText'
 
 interface Props {
@@ -118,10 +119,10 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
   }, [])
 
   return (
-    <div class="h-full flex flex-col md:gap-3">
+    <div className="h-full flex flex-col md:gap-3">
       {showMap ? (
         <>
-          <div class="px-6 py-4">
+          <div className="px-6 py-4">
             <Filters
               activeFilters={activeFilters}
               toggleFilter={toggleFilter}
@@ -130,12 +131,12 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
               toggleMap={toggleMap}
             />
           </div>
-          <Map results={shownResults} />
+          {/* <Map results={shownResults} /> */}
         </>
       ) : (
-        <div class="w-full flex flex-col gap-6 md:gap-9 m-auto px-6 lg:px-0  py-4 ">
-          <div class="flex flex-col gap-3 md:gap-4">
-            <div class="flex flex-col md:gap-3">
+        <div className="w-full flex flex-col gap-6 md:gap-9 m-auto px-6 lg:px-0  py-4 ">
+          <div className="flex flex-col gap-3 md:gap-4">
+            <div className="flex flex-col md:gap-3">
               <HeaderText />
               <p>
                 {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
@@ -151,7 +152,7 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
             />
           </div>
           <ul
-            class="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
+            className="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
             style={{
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
             }}

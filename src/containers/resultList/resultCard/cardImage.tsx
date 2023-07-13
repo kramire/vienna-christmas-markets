@@ -1,5 +1,6 @@
-import MissingImageIcon from '../../../assets/gingerbread-house.png'
+import Image from 'next/image'
 
+const MissingImageIcon = '/gingerbread-house.png'
 interface Props {
   imgSrc: string
   altText: string
@@ -8,19 +9,19 @@ interface Props {
 const CardImage = ({ imgSrc, altText }: Props) => {
   if (imgSrc) {
     return (
-      <img
+      <Image
         src={imgSrc}
         alt={altText}
-        width="100%"
-        height="256px"
-        class="w-full h-64 object-cover border border-solid border-gray-300"
+        width={300}
+        height={256}
+        className="w-full h-64 object-cover border border-solid border-gray-300"
       />
     )
   }
 
   return (
-    <div class="w-full h-64 flex justify-center items-center border border-solid border-gray-200 bg-gray-100">
-      <img src={MissingImageIcon} width={56} height={56} alt="Gingergread house" />
+    <div className="w-full h-64 flex justify-center items-center border border-solid border-gray-200 bg-gray-100">
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingergread house" />
     </div>
   )
 }

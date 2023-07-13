@@ -1,12 +1,15 @@
-import { useState, useEffect, useMemo } from 'preact/hooks'
+'use client'
+import { useState, useEffect, useMemo } from 'react'
 import { Market } from '../../app.types'
 import Flex from '../../components/flex'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import buildSquares from '../../utils/build-square'
-import SurpriseImage from '../../assets/christmas-sparkler.webp'
 import { hasStarted } from '../../utils/hasStarted'
-import CircleCheckSolid from '../../assets/circleCheckSolid.svg'
-import CircleCheck from '../../assets/circleCheck.svg'
+import Image from 'next/image'
+
+const SurpriseImage = '/christmas-sparkler.webp'
+const CircleCheckSolid = '/circleCheckSolid.svg'
+const CircleCheck = '/circleCheck.svg'
 
 const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets'
 
@@ -62,7 +65,7 @@ const VisitProgress = ({ markets }: Props) => {
   }, [])
 
   return (
-    <Flex className="animate-slide-in" flexDirection="column" justifyContent="center" alignItems="center" gap="12px">
+    <Flex flexDirection="column" justifyContent="center" alignItems="center" gap="12px">
       <Flex
         flexDirection="column"
         gap="12px"
@@ -96,15 +99,16 @@ const VisitProgress = ({ markets }: Props) => {
       >
         {squares.map((branch, idx) => (
           <div
-            key={idx}
+            key={`square_${idx}`}
             style={{
               display: 'flex',
             }}
           >
-            {branch.map((ornament) => {
+            {branch.map((ornament, idx) => {
               const hasVisited = ornament === null || (ornament && visitedMarketsIds.includes(ornament.id))
               return (
                 <Flex
+                  key={`ornament_${idx}`}
                   justifyContent="center"
                   alignItems="center"
                   onClick={handleOrnamentClick(ornament?.id)}
@@ -114,7 +118,7 @@ const VisitProgress = ({ markets }: Props) => {
                     backgroundColor: hasVisited ? 'transparent' : 'white',
                     transition: 'background-color 1s ease',
                     cursor: 'pointer',
-                    '-webkit-tap-highlight-color': 'transparent',
+                    // '-webkit-tap-highlight-color': 'transparent',
                   }}
                 >
                   {!hasVisited ? (
@@ -157,15 +161,15 @@ const VisitProgress = ({ markets }: Props) => {
                   style={{
                     flexBasis: '16px',
                     cursor: 'pointer',
-                    '-webkit-tap-highlight-color': 'transparent',
+                    // '-webkit-tap-highlight-color': 'transparent',
                   }}
                 >
-                  <img
+                  <Image
                     src={hasVisited ? CircleCheckSolid : CircleCheck}
                     width={16}
                     height={16}
                     loading="lazy"
-                    alt="name"
+                    alt={hasVisited ? 'Checked' : 'Unchecked'}
                   />
                 </div>
               </Flex>

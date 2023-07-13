@@ -1,6 +1,4 @@
-import { ComponentChildren } from 'preact'
-import { MutableRef } from 'preact/hooks'
-import { JSXInternal } from 'preact/src/jsx'
+import { MutableRefObject } from 'react'
 
 type Alignment =
   | 'start'
@@ -16,18 +14,17 @@ type Alignment =
   | 'space-evenly'
 
 interface Props {
-  children: ComponentChildren
-  ref?: MutableRef<HTMLDivElement | null>
-  onClick?: JSXInternal.MouseEventHandler<HTMLDivElement> | undefined
+  ref?: MutableRefObject<HTMLDivElement | null>
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
   className?: string
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse'
   justifyContent?: Alignment
   alignItems?: Alignment
   gap?: string | number | null | undefined
-  style?: JSXInternal.CSSProperties
+  style?: React.CSSProperties
 }
 
-const Flex = ({ children, ref, onClick, className, style, ...rest }: Props) => {
+const Flex = ({ children, ref, onClick, className, style, ...rest }: React.PropsWithChildren<Props>) => {
   return (
     <div ref={ref} onClick={onClick} className={className} style={{ display: 'flex', ...rest, ...style }}>
       {children}

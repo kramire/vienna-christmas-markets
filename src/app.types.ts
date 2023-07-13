@@ -33,6 +33,5 @@ export enum Routes {
   HOME = '/',
   MARKETS = '/markets',
   EVENTS = '/events',
-  FAVORITES = '/favorites',
   VISITS = '/visits',
 }
