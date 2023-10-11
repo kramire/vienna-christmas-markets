@@ -1,9 +1,7 @@
 'use client'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { Market } from '../../app.types'
-import Flex from '../../components/flex'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import { hasStarted } from '../../utils/hasStarted'
 import Image from 'next/image'
 
 const CircleCheckSolid = '/circleCheckSolid.svg'
@@ -57,7 +55,7 @@ const VisitProgress = ({ markets }: Props) => {
   }, [])
 
   return (
-    <Flex flexDirection="column" justifyContent="center" alignItems="center" gap="12px">
+    <div className="flex flex-col justify-center items-center gap-3">
       <h2 style={{ fontSize: '16px', textAlign: 'center' }}>Which markets have you visited?</h2>
       <div
         className="result-item"
@@ -67,11 +65,11 @@ const VisitProgress = ({ markets }: Props) => {
           lineHeight: '20px',
         }}
       >
-        <Flex flexDirection="column" gap="12px">
+        <div className="flex flex-col gap-3">
           {markets.map((market) => {
             const hasVisited = checkHasVisitedMarket(market.id)
             return (
-              <Flex key={market.id} gap="16px">
+              <div key={market.id} className="flex gap-4">
                 {/* <p style={{ flexBasis: '24px', textAlign: 'center' }}>{market.id}.</p> */}
                 <div style={{ flex: 1 }}>
                   <p>{market.name}</p>
@@ -93,12 +91,12 @@ const VisitProgress = ({ markets }: Props) => {
                     alt={hasVisited ? 'Checked' : 'Unchecked'}
                   />
                 </div>
-              </Flex>
+              </div>
             )
           })}
-        </Flex>
+        </div>
       </div>
-    </Flex>
+    </div>
   )
 }
 

@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 }
 
 export default function VisitsPage() {
-  const results: Array<Market | Event> = data
-  const marketResults: Array<Market> = results.filter((result) => result.type === ResultType.MARKET && result.isActive)
+  const results = data as Array<Market | Event>
+  const marketResults = results.filter((result) => result.type === ResultType.MARKET && result.isActive) as Array<Market>
 
   return <VisitProgress markets={marketResults} />
 }

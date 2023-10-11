@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 const MissingImageIcon = '/gingerbread-house.png'
 interface Props {
-  imgSrc: string
+  imgSrc: StaticImageData
   altText: string
 }
 

@@ -33,8 +33,8 @@ export default function EventsPage() {
 
   const { getItem } = useLocalStorage()
 
-  const results: Array<Market | Event> = data
-  const eventResults: Array<Event> = results.filter((result) => result.type === ResultType.EVENT && result.isActive)
+  const results = data as Array<Market | Event>
+  const eventResults = results.filter((result) => result.type === ResultType.EVENT && result.isActive) as Array<Event>
 
   useEffect(() => {
     const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY)

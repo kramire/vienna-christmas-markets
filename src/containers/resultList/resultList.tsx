@@ -9,7 +9,7 @@ import useLocalStorage from '../../hooks/useLocalStorage'
 import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import Filters from './filters'
 import { getIsOpen } from '../../utils/get-is-open'
-// import Map from './map'
+import Map from './map'
 import HeaderText from '../../components/headerText'
 
 interface Props {

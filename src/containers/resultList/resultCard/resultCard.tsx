@@ -109,7 +109,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
               height={16}
               style={{ width: '16px', height: '16px' }}
             />
-            <a href={website} target="_blank" alt={`Homepage for the ${name} event.`}>
+            <a href={website} target="_blank" aria-label={`Homepage for the ${name} event.`}>
               Website
             </a>
           </div>
