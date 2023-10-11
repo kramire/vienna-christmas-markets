@@ -3,7 +3,7 @@ import Header from '../components/header'
 import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '../app.constants'
 import { Metadata } from 'next'
 
-const META_TITLE = 'Vienna Christmas Markets 2022'
+const META_TITLE = 'Vienna Christmas Markets 2023'
 const META_DESCRIPTION = "A list of this year's Christmas markets in Vienna, Austria."
 
 export const metadata: Metadata = {
