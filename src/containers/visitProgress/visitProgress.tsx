@@ -3,15 +3,13 @@ import { useState, useEffect, useMemo } from 'react'
 import { Market } from '../../app.types'
 import Flex from '../../components/flex'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import buildSquares from '../../utils/build-square'
 import { hasStarted } from '../../utils/hasStarted'
 import Image from 'next/image'
 
-const SurpriseImage = '/christmas-sparkler.webp'
 const CircleCheckSolid = '/circleCheckSolid.svg'
 const CircleCheck = '/circleCheck.svg'
 
-const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets'
+const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2023'
 
 interface Props {
   markets: Array<Market>
@@ -20,34 +18,28 @@ interface Props {
 const VisitProgress = ({ markets }: Props) => {
   const [visitedMarketsIds, setVisitedMarketsIds] = useState<number[]>([])
 
-  const squares = useMemo(() => buildSquares(markets), [markets])
-
   const { getItem, setItem } = useLocalStorage()
 
   const checkHasVisitedMarket = (marketId: number) => visitedMarketsIds.includes(marketId)
 
-  const handleOrnamentClick = (ornamentId: number | undefined) => () => {
-    if (!ornamentId || !visitedMarketsIds) return
-
-    const market = markets.find((market) => market.id === ornamentId)
+  const handleCheck = (marketId: number) => () => {
+    const market = markets.find((market) => market.id === marketId)
 
     if (!market || !market.start || !market.end) {
       return
     }
 
-    if (hasStarted(market.start)) {
-      let newVisitedMarketIds: number[] = []
+    let newVisitedMarketIds: number[] = []
 
-      if (visitedMarketsIds.includes(ornamentId)) {
-        newVisitedMarketIds = visitedMarketsIds.filter((id) => id !== ornamentId)
-        setVisitedMarketsIds(newVisitedMarketIds)
-      } else {
-        newVisitedMarketIds = visitedMarketsIds.concat(ornamentId)
-        setVisitedMarketsIds(newVisitedMarketIds)
-      }
-
-      setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
+    if (visitedMarketsIds.includes(marketId)) {
+      newVisitedMarketIds = visitedMarketsIds.filter((id) => id !== marketId)
+      setVisitedMarketsIds(newVisitedMarketIds)
+    } else {
+      newVisitedMarketIds = visitedMarketsIds.concat(marketId)
+      setVisitedMarketsIds(newVisitedMarketIds)
     }
+
+    setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
   }
 
   useEffect(() => {
@@ -66,77 +58,7 @@ const VisitProgress = ({ markets }: Props) => {
 
   return (
     <Flex flexDirection="column" justifyContent="center" alignItems="center" gap="12px">
-      <Flex
-        flexDirection="column"
-        gap="12px"
-        style={{
-          margin: '24px',
-          fontSize: '13px',
-          lineHeight: '20px',
-        }}
-      >
-        <h2 style={{ fontSize: '16px', textAlign: 'center' }}>Visit the markets to reveal the image!</h2>
-        <div style={{ maxWidth: '100%' }}>
-          <p>Rules:</p>
-          <ul style={{ paddingLeft: '20px', margin: '8px 0px' }}>
-            <li style={{ marginBottom: '8px' }}>When you visit a market, click its corresponding box on the grid.</li>
-            <li>You can only click the ornament after that market has opened this season.</li>
-          </ul>
-        </div>
-      </Flex>
-      <Flex
-        className="image-reveal"
-        flexDirection="column"
-        alignItems="center"
-        style={{
-          backgroundImage: `url(${SurpriseImage})`,
-          backgroundSize: '100vw',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          width: '100vw',
-          height: '412px',
-        }}
-      >
-        {squares.map((branch, idx) => (
-          <div
-            key={`square_${idx}`}
-            style={{
-              display: 'flex',
-            }}
-          >
-            {branch.map((ornament, idx) => {
-              const hasVisited = ornament === null || (ornament && visitedMarketsIds.includes(ornament.id))
-              return (
-                <Flex
-                  key={`ornament_${idx}`}
-                  justifyContent="center"
-                  alignItems="center"
-                  onClick={handleOrnamentClick(ornament?.id)}
-                  style={{
-                    width: 'calc(100vw / 5)',
-                    height: 'calc(412px / 4)',
-                    backgroundColor: hasVisited ? 'transparent' : 'white',
-                    transition: 'background-color 1s ease',
-                    cursor: 'pointer',
-                    // '-webkit-tap-highlight-color': 'transparent',
-                  }}
-                >
-                  {!hasVisited ? (
-                    <p
-                      style={{
-                        fontSize: '24px',
-                        fontWeight: !hasVisited ? 'semi-bold' : 'inherit',
-                      }}
-                    >
-                      {ornament?.id}
-                    </p>
-                  ) : null}
-                </Flex>
-              )
-            })}
-          </div>
-        ))}
-      </Flex>
+      <h2 style={{ fontSize: '16px', textAlign: 'center' }}>Which markets have you visited?</h2>
       <div
         className="result-item"
         style={{
@@ -145,19 +67,18 @@ const VisitProgress = ({ markets }: Props) => {
           lineHeight: '20px',
         }}
       >
-        <h3 style={{ textDecoration: 'underline' }}>Legend</h3>
         <Flex flexDirection="column" gap="12px">
           {markets.map((market) => {
             const hasVisited = checkHasVisitedMarket(market.id)
             return (
               <Flex key={market.id} gap="16px">
-                <p style={{ flexBasis: '24px', textAlign: 'center' }}>{market.id}.</p>
+                {/* <p style={{ flexBasis: '24px', textAlign: 'center' }}>{market.id}.</p> */}
                 <div style={{ flex: 1 }}>
                   <p>{market.name}</p>
                   <p style={{ fontSize: '11px' }}>{market.district}</p>
                 </div>
                 <div
-                  onClick={handleOrnamentClick(market.id)}
+                  onClick={handleCheck(market.id)}
                   style={{
                     flexBasis: '16px',
                     cursor: 'pointer',
