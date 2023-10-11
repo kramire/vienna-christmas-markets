@@ -40,7 +40,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
       <div className="flex flex-col justify-between w-full px-4 py-6 gap-3">
         <div className="flex justify-between gap-3">
           <h3 className="text-xl font-semibold" style={{ color: theme.colors.darkGreen }}>
-            {type === ResultType.MARKET ? `${id}. ${name}` : name}
+            {name}
           </h3>
           <FavoriteButton isFavorite={isFavorite} handleClick={toggleFavoriteResult(id)} />
         </div>
@@ -61,22 +61,22 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
             <p className="decoration-solid cursor-pointer">{district}</p>
           </a>
         </div>
-        {start && end && (
-          <div className="flex items-center gap-4">
-            <Image
-              src={CalendarIcon}
-              loading="lazy"
-              alt="Opening dates"
-              width={16}
-              height={16}
-              style={{ width: '16px', height: '16px' }}
-            />
-            <p>
-              {localizeDate(start, language)} - {localizeDate(end, language)}
-            </p>
-          </div>
-        )}
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
+          <Image
+            src={CalendarIcon}
+            loading="lazy"
+            alt="Opening dates"
+            width={16}
+            height={16}
+            style={{ width: '16px', height: '16px' }}
+          />
+          <p>
+            {start ? localizeDate(start, language) : 'TBD'}
+            {" - "}
+            {end ? localizeDate(end, language) : 'TBD'}
+          </p>
+        </div>
+        {times.length > 0 && <div className="flex gap-4">
           <Image
             src={ClockIcon}
             loading="lazy"
@@ -98,7 +98,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
               </div>
             ))}
           </div>
-        </div>
+        </div>}
         {website && (
           <div className="flex items-center gap-4">
             <Image

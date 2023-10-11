@@ -2,10 +2,11 @@
   {
     "id": 1,
     "name": "Winter MQ",
+    "isActive": true,
     "district": "1070",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "start": "11/10/2022",
-    "end": "12/23/2022",
+    "start": null,
+    "end": null,
     "times": [
       ["16:00", "23:00"],
       ["16:00", "23:00"],
@@ -17,15 +18,17 @@
     ],
     "website": "http://www.mqw.at",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_CURLING"]
   },
   {
     "id": 2,
     "name": "Weihnachtsmarkt am Spittelberg",
+    "isActive": true,
     "district": "1070",
     "coordinates": { "lat": 48.203344, "lng": 16.355455 },
-    "start": "11/11/2022",
-    "end": "12/23/2022",
+    "start": "11/16/2023",
+    "end": "12/23/2023",
     "times": [
       ["14:00", "21:00"],
       ["14:00", "21:00"],
@@ -37,35 +40,39 @@
     ],
     "website": "https://spittelberg.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 3,
     "name": "Weihnachtsmarkt im Türkenschanzpark",
+    "isActive": true,
     "district": "1180",
     "coordinates": { "lat": 48.234781, "lng": 16.333768 },
-    "start": "11/11/2022",
-    "end": "12/23/2022",
+    "start": "11/10/2023",
+    "end": "12/23/2023",
     "times": [
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["12:00", "21:00"],
-      ["12:00", "21:00"]
+      ["15:00", "22:00"],
+      ["15:00", "22:00"],
+      ["15:00", "22:00"],
+      ["15:00", "22:00"],
+      ["15:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"]
     ],
     "website": "https://www.weihnachtimpark.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 4,
     "name": "Weihnachtsdorf am Stephansplatz",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.20824, "lng": 16.37247 },
-    "start": "11/11/2022",
-    "end": "12/26/2022",
+    "start": "11/10/2023",
+    "end": "12/26/2023",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
@@ -77,11 +84,13 @@
     ],
     "website": "https://www.weihnachtsdorf.at/stephansplatz/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 5,
     "name": "Advent-Genussmarkt bei der Oper",
+    "isActive": false,
     "district": "1010",
     "coordinates": { "lat": 48.202518, "lng": 16.371 },
     "start": "11/11/2022",
@@ -97,15 +106,17 @@
     ],
     "website": "http://www.adventgenussmarkt.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_CURLING"]
   },
   {
     "id": 6,
     "name": "Weihnachtsdorf am Campus der Universität Wien",
+    "isActive": true,
     "district": "1090",
     "coordinates": { "lat": 48.215582, "lng": 16.352607 },
-    "start": "11/11/2022",
-    "end": "12/23/2022",
+    "start": "11/10/2023",
+    "end": "12/23/2023",
     "times": [
       ["14:00", "22:00"],
       ["14:00", "22:00"],
@@ -117,15 +128,17 @@
     ],
     "website": "https://www.weihnachtsdorf.at/campus-universitaet-wien/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING"]
   },
   {
     "id": 7,
     "name": "Weihnachtsmarkt Am Hof",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.210857, "lng": 16.367494 },
-    "start": "11/11/2022",
-    "end": "12/23/2022",
+    "start": "11/10/2023",
+    "end": "12/23/2023",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
@@ -137,15 +150,17 @@
     ],
     "website": "https://www.weihnachtsmarkt-hof.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 8,
     "name": "Weihnachtsdorf Maria-Theresien-Platz",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.204682, "lng": 16.361063 },
-    "start": "11/16/2022",
-    "end": "12/26/2022",
+    "start": "11/15/2023",
+    "end": "12/31/2023",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
@@ -157,39 +172,45 @@
     ],
     "website": "https://www.weihnachtsdorf.at/weihnachtsdorf-maria-theresien-platz/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 9,
     "name": "Weihnacht im Wald",
+    "isActive": true,
     "district": "1020",
     "coordinates": { "lat": 48.207493, "lng": 16.401838 },
-    "start": "11/17/2022",
-    "end": "12/31/2022",
+    "start": null,
+    "end": null,
     "times": [null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"]],
     "website": " https://www.weihnachtimwald.com/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": []
   },
   {
     "id": 10,
     "name": "Weihnachtsmarkt in den Blumengärten Hirschstetten",
+    "isActive": true,
     "district": "1220",
     "coordinates": { "lat": 48.238924, "lng": 16.474131 },
-    "start": "11/17/2022",
-    "end": "12/23/2022",
+    "start": "11/23/2023",
+    "end": "12/23/2023",
     "times": [null, null, null, ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"]],
     "website": "https://www.wien.gv.at/umwelt/parks/blumengaerten-hirschstetten/weihnachten.html",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 11,
     "name": "Weihnachtsdorf Schloss Belvedere",
+    "isActive": true,
     "district": "1030",
     "coordinates": { "lat": 48.191807, "lng": 16.380843 },
-    "start": "11/18/2022",
-    "end": "12/26/2022",
+    "start": "11/17/2023",
+    "end": "12/31/2023",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
@@ -201,35 +222,39 @@
     ],
     "website": "https://www.weihnachtsdorf.at/schloss-belvedere/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 12,
     "name": "Advent im Gartenpalais Liechtenstein",
+    "isActive": true,
     "district": "1090",
     "coordinates": { "lat": 48.22227, "lng": 16.359773 },
-    "start": "11/18/2022",
-    "end": "12/23/2022",
+    "start": "11/17/2023",
+    "end": "12/23/2023",
     "times": [
-      ["13:00", "21:00"],
-      ["13:00", "21:00"],
-      ["13:00", "21:00"],
-      ["13:00", "21:00"],
-      ["10:00", "21:00"],
-      ["10:00", "21:00"],
-      ["10:00", "21:00"]
+      ["14:00", "21:00"],
+      ["14:00", "21:00"],
+      ["14:00", "21:00"],
+      ["14:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"]
     ],
     "website": "https://www.adventimgartenpalais.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 13,
     "name": "Altwiener Christkindlmarkt Freyung",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.211618, "lng": 16.36557 },
-    "start": "11/18/2022",
-    "end": "12/23/2022",
+    "start": "11/17/2023",
+    "end": "12/23/2023",
     "times": [
       ["10:00", "21:00"],
       ["10:00", "21:00"],
@@ -241,15 +266,17 @@
     ],
     "website": "https://altwiener-markt.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 14,
     "name": "Art Advent - Kunst & Handwerk am Karlsplatz",
+    "isActive": true,
     "district": "1040",
     "coordinates": { "lat": 48.19861, "lng": 16.371617 },
-    "start": "11/18/2022",
-    "end": "12/23/2022",
+    "start": "11/24/2023",
+    "end": "12/23/2023",
     "times": [
       ["12:00", "20:00"],
       ["12:00", "20:00"],
@@ -261,35 +288,39 @@
     ],
     "website": "https://divinaart.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 15,
     "name": "Almadvent",
+    "isActive": true,
     "district": "1020",
     "coordinates": { "lat": 48.217274, "lng": 16.40742 },
-    "start": "11/18/2022",
-    "end": "12/23/2022",
+    "start": "11/23/2023",
+    "end": "12/22/2023",
     "times": [
-      ["14:00", "22:00"],
-      ["14:00", "22:00"],
-      ["14:00", "22:00"],
-      ["14:00", "22:00"],
-      ["14:00", "22:00"],
-      ["14:00", "22:00"],
-      ["11:00", "21:00"]
+      ["15:00", "20:00"],
+      ["15:00", "20:00"],
+      ["15:00", "20:00"],
+      ["15:00", "20:00"],
+      ["15:00", "20:00"],
+      ["15:00", "20:00"],
+      ["11:00", "20:00"]
     ],
     "website": "https://www.almadvent.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING"]
   },
   {
     "id": 16,
     "name": "Kultur- und Weihnachtsmarkt Schloss Schönbrunn",
+    "isActive": true,
     "district": "1130",
     "coordinates": { "lat": 48.186191, "lng": 16.312962 },
-    "start": "11/19/2022",
-    "end": "1/4/2023",
+    "start": "11/18/2023",
+    "end": "1/4/2024",
     "times": [
       ["10:00", "21:00"],
       ["10:00", "21:00"],
@@ -301,35 +332,39 @@
     ],
     "website": "https://www.schoenbrunn.at/veranstaltungen/alle-veranstaltungen/event/kultur-und-weihnachtsmarkt-schloss-schoenbrunn",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 17,
     "name": "Wiener Christkindlmarkt auf dem Rathausplatz",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.210641, "lng": 16.358914 },
-    "start": "11/19/2022",
-    "end": "12/26/2022",
+    "start": "11/10/2023",
+    "end": "12/26/2023",
     "times": [
-      ["10:00", "21:30"],
-      ["10:00", "21:30"],
-      ["10:00", "21:30"],
-      ["10:00", "21:30"],
-      ["10:00", "21:30"],
-      ["10:00", "21:30"],
-      ["10:00", "21:30"]
+      ["10:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"]
     ],
     "website": "https://www.christkindlmarkt.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   },
   {
     "id": 18,
     "name": "Wintermarkt am Riesenradplatz",
+    "isActive": true,
     "district": "1020",
     "coordinates": { "lat": 48.216976, "lng": 16.396323 },
-    "start": "11/19/2022",
-    "end": "1/8/2023",
+    "start": "11/18/2023",
+    "end": "1/7/2024",
     "times": [
       ["12:00", "22:00"],
       ["12:00", "22:00"],
@@ -341,47 +376,45 @@
     ],
     "website": "https://www.wintermarkt.at/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY"]
   },
   {
     "id": 19,
     "name": "Ottakringer Weihnachtszauber",
+    "isActive": true,
     "district": "1160",
     "coordinates": { "lat": 48.212359, "lng": 16.3242538 },
-    "start": "11/24/2022",
-    "end": "12/23/2022",
-    "times": [null, null, null, ["15:00", "22:00"], ["15:00", "22:00"], ["11:00", "22:00"], ["11:00", "20:00"]],
-    "website": "https://www.vienna.at/neuer-christkindlmarkt-in-wien-der-ottakringer-weihnachtszauber/7723477",
+    "start": "11/23/2023",
+    "end": null,
+    "times": [null, null, null, ["15:00", "21:00"], ["15:00", "21:00"], ["12:00", "21:00"], ["12:00", "19:00"]],
+    "website": "https://www.weihnachtszauber.wien/",
     "imgUrl": "",
-    "type": "MARKET"
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING"]
   },
   {
     "id": 20,
-    "name": "Badeschiff ParadEis",
+    "name": "Badeschiff - ParadEis",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.21163, "lng": 16.381463 },
-    "start": "11/1/2022",
-    "end": "03/31/2023",
-    "times": [
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"]
-    ],
-    "website": "https://www.badeschiff.at/#eisstock",
+    "start": null,
+    "end": null,
+    "times": [],
+    "website": "https://www.badeschiff.at/",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 21,
-    "name": "Winter in the City",
+    "name": "Haas & Haas - Winter in the City",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.20794, "lng": 16.374048 },
-    "start": "11/4/2022",
-    "end": "12/31/2022",
+    "start": "11/4/2023",
+    "end": "12/31/2023",
     "times": [
       ["16:00", "20:00"],
       ["16:00", "20:00"],
@@ -393,99 +426,87 @@
     ],
     "website": "http://www.winterinthecity.at/",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"]
   },
   {
     "id": 22,
-    "name": "Punsch am Wasser",
+    "name": "USUS - Punsch am Wasser",
+    "isActive": true,
     "district": "1210",
     "coordinates": { "lat": 48.241072, "lng": 16.398425 },
-    "start": "11/04/2022",
-    "end": "12/18/2022",
-    "times": [null, null, null, ["15:00", "21:00"], ["15:00", "21:00"], ["15:00", "21:00"], ["15:00", "21:00"]],
+    "start": null,
+    "end": null,
+    "times": [],
     "website": "https://viennawurstelstand.com/event/punsch-am-wasser/",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 23,
-    "name": "Urban après ski - Atmosphere Rooftop Bar",
+    "name": "Atmosphere Rooftop Bar - Urban après ski",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.2022967, "lng": 16.3764527 },
-    "start": "11/07/2022",
-    "end": "12/31/2022",
-    "times": [
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"]
-    ],
+    "start": null,
+    "end": null,
+    "times": [],
     "website": "https://www.ritzcarlton.com/de/hotels/europe/vienna/dining/atmosphere-rooftop-bar",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 24,
     "name": "k.u.k. Weihnachtsmarkt am Michaelerplatz",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.2079208, "lng": 16.3668509 },
-    "start": "11/11/2022",
-    "end": "1/6/2023",
-    "times": [
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"],
-      ["10:00", "20:00"]
-    ],
+    "start": null,
+    "end": null,
+    "times": [],
     "website": "https://kuk-weihnachtsmarkt.at/en/home-en/",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 25,
-    "name": "IKEA Weihnachtsmarkt",
+    "name": "IKEA - Weihnachtsmarkt",
+    "isActive": true,
     "district": "1150",
     "coordinates": { "lat": 48.1957757, "lng": 16.3380544 },
-    "start": "11/18/2022",
-    "end": "12/23/2022",
-    "times": [
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["16:00", "20:00"],
-      ["14:00", "20:00"],
-      ["14:00", "20:00"],
-      null
-    ],
+    "start": null,
+    "end": null,
+    "times": [],
     "website": "https://www.ikea.com/at/de/stores/wien-westbahnhof/events-und-aktivitaeten-im-ikea-einrichtungshaus-wien-westbahnhof-pub404b7a70",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 26,
-    "name": "Punsch im Winterwonderland",
+    "name": "Das Boothaus - Punsch im Winterwonderland",
+    "isActive": true,
     "district": "1220",
     "coordinates": { "lat": 48.2320506, "lng": 16.4341442 },
-    "start": "11/18/2022",
-    "end": "12/23/2022",
-    "times": [null, null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["15:00", "21:00"], null],
+    "start": null,
+    "end": null,
+    "times": [],
     "website": "https://www.dasbootshaus.at/",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 27,
-    "name": "Klyo Punschterrassen",
+    "name": "Kylo - Punschterrassen",
+    "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.21164, "lng": 16.383692 },
-    "start": "11/19/2022",
-    "end": "12/23/2022",
+    "start": "11/18/2023",
+    "end": "12/23/2023",
     "times": [
       ["17:00", "22:00"],
       ["17:00", "22:00"],
@@ -497,31 +518,27 @@
     ],
     "website": "https://klyo.at/urania-wien/",
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"]
   },
   {
     "id": 28,
-    "name": "Pop Up Wintermarket @ Lucullus",
+    "name": "Lucullus - Pop Up Wintermarket",
+    "isActive": true,
     "district": "1030",
     "coordinates": { "lat": 48.198788, "lng": 16.385051 },
-    "start": "11/21/2022",
-    "end": "12/22/2022",
-    "times": [
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      null,
-      null
-    ],
+    "start": null,
+    "end": null,
+    "times": [],
     "website": null,
     "imgUrl": "",
-    "type": "EVENT"
+    "type": "EVENT",
+    "offerings": []
   },
   {
     "id": 29,
-    "name": "Kleinod Wintergarten",
+    "name": "Kleinoid - Wintergarten",
+    "isActive": false,
     "district": "1010",
     "coordinates": { "lat": 48.2031461, "lng": 16.3783354 },
     "start": null,
