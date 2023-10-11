@@ -1,6 +1,6 @@
 import { Market, Event, ResultType } from '../../app.types'
 import VisitProgress from '../../containers/visitProgress'
-import data from '../../data/data.json'
+import data from '../../data.json'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

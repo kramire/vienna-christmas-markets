@@ -1,21 +1,23 @@
+import { StaticImageData } from 'next/image'
+
 export const MAX_CONTENT_WIDTH = 1130
 export const HEADER_HEIGHT = 56
 
 export const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
 
-import IMG_SRC_1 from './data/images/Musuem-Quartier-Christmas-market.webp'
-import IMG_SRC_3 from './data/images/Tuerkenschanzpark-Christmas-market.webp'
-import IMG_SRC_4 from './data/images/Saint-Stephens-Cathedral-at-Christmas.webp'
-import IMG_SRC_5 from './data/images/Genuss-Christmas-market.webp'
-import IMG_SRC_6 from './data/images/Altes-AKH-Christmas-market.webp'
-import IMG_SRC_8 from './data/images/Maria-Theresien-Platz-Christmas-market.webp'
-import IMG_SRC_12 from './data/images/Liechtenstein-Christmas-market.webp'
-import IMG_SRC_14 from './data/images/Karlsplatz-Christmas-market.webp'
-import IMG_SRC_16 from './data/images/Schoenbrunn-Christmas-market.webp'
-import IMG_SRC_17 from './data/images/Rathaus-Christmas-market.webp'
-import IMG_SRC_18 from './data/images/Prater-Christmas-market.webp'
+import IMG_SRC_1 from '../public/Musuem-Quartier-Christmas-market.webp'
+import IMG_SRC_3 from '../public/Tuerkenschanzpark-Christmas-market.webp'
+import IMG_SRC_4 from '../public/Saint-Stephens-Cathedral-at-Christmas.webp'
+import IMG_SRC_5 from '../public/Genuss-Christmas-market.webp'
+import IMG_SRC_6 from '../public/Altes-AKH-Christmas-market.webp'
+import IMG_SRC_8 from '../public/Maria-Theresien-Platz-Christmas-market.webp'
+import IMG_SRC_12 from '../public/Liechtenstein-Christmas-market.webp'
+import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
+import IMG_SRC_16 from '../public/Schoenbrunn-Christmas-market.webp'
+import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
+import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
 
-export const resultToImgUrlMapping: { [key in number]: string } = {
+export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   1: IMG_SRC_1,
   3: IMG_SRC_3,
   4: IMG_SRC_4,

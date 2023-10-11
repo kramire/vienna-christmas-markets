@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Market, Event, ResultType, Coordinate } from '../../app.types'
 import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import ResultList from '../../containers/resultList'
-import data from '../../data/data.json'
+import data from '../../data.json'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { Metadata } from 'next'
 
