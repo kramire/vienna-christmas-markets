@@ -5,6 +5,8 @@ import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import ResultList from '../../containers/resultList'
 import data from '../../data.json'
 import useLocalStorage from '../../hooks/useLocalStorage'
+import { sortRedultsByDate } from '../../utils/sort-results-by-date'
+
 
 export default function EventsPage() {
   const [favorites, setFavorites] = useState<number[]>([])
@@ -13,7 +15,7 @@ export default function EventsPage() {
   const { getItem } = useLocalStorage()
 
   const results = data as Array<Market | Event>
-  const eventResults = results.filter((result) => result.type === ResultType.EVENT && result.isActive) as Array<Event>
+  const eventResults = results.filter((result) => result.type === ResultType.EVENT && result.isActive).sort(sortRedultsByDate) as Array<Event>
 
   useEffect(() => {
     const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY)

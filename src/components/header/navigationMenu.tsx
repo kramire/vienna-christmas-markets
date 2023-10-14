@@ -12,12 +12,12 @@ interface Props {
 
 const NavigationMenu = ({ isOpen, handleClose }: Props) => (
   <>
-    {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={handleClose}></div>}
+    {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-50 cursor-pointer" onClick={handleClose}></div>}
     <div
       className="fixed left-0 top-0 h-full w-4/5 sm:w-2/5 md:w-1/5 bg-white z-50 transform transition-transform ease-in-out duration-300"
       style={{ transform: isOpen ? 'translateX(0)' : 'translateX(-100%)', transition: 'transform 300ms ease-in-out' }}
     >
-      <div className="flex justify-end w-full p-6 pb-1">
+      <div className="flex justify-end w-full p-6 pb-1 cursor-pointer">
         <Image
           src={CloseIcon}
           width={24}

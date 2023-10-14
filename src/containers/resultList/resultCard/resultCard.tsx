@@ -2,13 +2,13 @@
 import { useState, useEffect } from 'react'
 
 import { localizeDate } from '../../../utils/localizeDate'
-import { Event, Market, ResultType } from '../../../app.types'
+import { Event, Market } from '../../../app.types'
 import { theme } from '../../../theme'
 import { GOOGLE_MAPS_LINK, weekDays } from '../resultList.constants'
 import { resultToImgUrlMapping } from '../../../app.constants'
 import Image from 'next/image'
 
-// import OpenStatusLabel from '../../../components/openStatusLabel'
+import OpenStatusLabel from '../../../components/openStatusLabel'
 import CardImage from './cardImage'
 import FavoriteButton from './favoriteButton'
 
@@ -115,7 +115,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </div>
         )}
       </div>
-      {/* <OpenStatusLabel start={start} end={end} times={times} /> */}
+      <OpenStatusLabel start={start} end={end} times={times} />
     </li>
   )
 }

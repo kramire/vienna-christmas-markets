@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { useState } from 'react'
 import NavigationMenu from './navigationMenu'
-import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '../../app.constants'
+import { HEADER_HEIGHT } from '../../app.constants'
 import Link from 'next/link'
 import { Routes } from '../../app.types'
 
@@ -27,8 +27,7 @@ const Header = () => {
         }}
       >
         <div
-          className="flex justify-between items-center h-full"
-          style={{ maxWidth: `${MAX_CONTENT_WIDTH}px`, margin: '0 auto' }}
+          className="flex justify-between items-center h-full cursor-pointer my-0 mx-auto max-w-[1130px]"
         >
           <Image
             src={MenuIcon}

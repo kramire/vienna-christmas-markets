@@ -30,18 +30,3 @@ const formatAsDate = (date: string | Date) => {
   }
   return date
 }
-
-// const setTimeOnDate = (date: Date, timeString: string) => {
-//   const [hours, minutes] = timeString.split(':');
-
-//   // if it goes til midnight, the end is really the next day
-//   // technically we should check if it's the last day of the month / year and also handle
-//   if (Number(hours) === 24) {
-//     date.setDate(date.getDate() + 1);
-//   }
-
-//   date.setHours(Number(hours));
-//   date.setMinutes(Number(minutes));
-
-//   return date;
-// };
