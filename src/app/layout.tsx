@@ -1,7 +1,7 @@
 import '../globals.css'
 import Header from '../components/header'
-import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '../app.constants'
 import { Metadata } from 'next'
+import { MaxWidthContainer } from '@/components/MaxWidthContainer'
 
 const META_TITLE = 'Vienna Christmas Markets 2023'
 const META_DESCRIPTION = "A list of this year's Christmas markets in Vienna, Austria."
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className="m-0 min-w-[320px] min-h-screen overflow-x-hidden">
         <Header />
-        <div style={{ maxWidth: `${MAX_CONTENT_WIDTH}px`, margin: '0 auto', marginTop: `${HEADER_HEIGHT}px` }}>
-          <main>{children}</main>
-        </div>
+        <main>
+          <MaxWidthContainer>{children}</MaxWidthContainer>
+        </main>
       </body>
     </html>
   )

@@ -16,7 +16,7 @@ interface Props {
 const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, showMap, toggleMap }: Props) => {
   return (
     <div className="flex flex-wrap md:flex-nowrap justify-between w-full gap-3">
-      <div className="flex gap-3" style={{ color: theme.colors.darkGreen }}>
+      <div className="flex gap-3 text-green-950">
         <FilterItem label="Open Now" isSelected={activeFilters.openNow} handleClick={toggleFilter('openNow')} />
         <FilterItem
           label="Near Me"
@@ -26,7 +26,7 @@ const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, showMap, togg
         />
         <FilterItem label="My Favorites" isSelected={activeFilters.favorited} handleClick={toggleFilter('favorited')} />
       </div>
-      {/* <div className="flex gap-2 items-center" style={{ color: theme.colors.darkGreen }}>
+      {/* <div className="flex gap-2 items-cente text-green-950r">
         <div onClick={toggleMap} className="text-xl cursor-pointer">
           {showMap ? (
             <Image src={ListIcon} width={20} height={20} loading="lazy" alt="Show list" />

@@ -16,12 +16,6 @@ const FavoriteButton = ({ isFavorite, handleClick }: Props) => (
     loading="lazy"
     width={20}
     height={20}
-    style={{
-      marginTop: '6px',
-      width: '20px',
-      height: '20px',
-      outline: 'none',
-    }}
   />
 )
 

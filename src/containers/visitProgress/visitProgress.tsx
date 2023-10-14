@@ -55,34 +55,19 @@ const VisitProgress = ({ markets }: Props) => {
   }, [])
 
   return (
-    <div className="flex flex-col justify-center items-center gap-3">
-      <h2 style={{ fontSize: '16px', textAlign: 'center' }}>Which markets have you visited?</h2>
-      <div
-        className="result-item"
-        style={{
-          margin: '24px',
-          fontSize: '13px',
-          lineHeight: '20px',
-        }}
-      >
+    <div className="flex flex-col justify-center items-center gap-3 pt-3">
+      <h2 className="text-lg align-center font-bold">Which markets have you visited?</h2>
+      <div className="m-6 text-base">
         <div className="flex flex-col gap-3">
           {markets.map((market) => {
             const hasVisited = checkHasVisitedMarket(market.id)
             return (
               <div key={market.id} className="flex gap-4">
-                {/* <p style={{ flexBasis: '24px', textAlign: 'center' }}>{market.id}.</p> */}
-                <div style={{ flex: 1 }}>
-                  <p>{market.name}</p>
-                  <p style={{ fontSize: '11px' }}>{market.district}</p>
+                <div className="flex-1">
+                  {market.name}
+                  <p className="text-sm">{market.district}</p>
                 </div>
-                <div
-                  onClick={handleCheck(market.id)}
-                  style={{
-                    flexBasis: '16px',
-                    cursor: 'pointer',
-                    // '-webkit-tap-highlight-color': 'transparent',
-                  }}
-                >
+                <div onClick={handleCheck(market.id)} className="cursor-pointer">
                   <Image
                     src={hasVisited ? CircleCheckSolid : CircleCheck}
                     width={16}

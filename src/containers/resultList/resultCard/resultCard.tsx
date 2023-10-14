@@ -35,24 +35,15 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   }, [])
 
   return (
-    <li key={id} className="gap-3 w-full relative" style={{ boxShadow: 'rgb(223 220 220 / 55%) 0px 1px 6px 2px' }}>
+    <li key={id} className="gap-3 w-full relative shadow-md">
       <CardImage imgSrc={imgSrc} altText={name} />
       <div className="flex flex-col justify-between w-full px-4 py-6 gap-3">
         <div className="flex justify-between gap-3">
-          <h3 className="text-xl font-semibold" style={{ color: theme.colors.darkGreen }}>
-            {name}
-          </h3>
+          <h3 className="text-xl font-semibold text-green-950">{name}</h3>
           <FavoriteButton isFavorite={isFavorite} handleClick={toggleFavoriteResult(id)} />
         </div>
         <div className="flex items-center gap-4">
-          <Image
-            src={LocationIcon}
-            loading="lazy"
-            alt="Neighborhood location"
-            width={16}
-            height={16}
-            style={{ width: '16px', height: '16px' }}
-          />
+          <Image src={LocationIcon} loading="lazy" alt="Neighborhood location" width={16} height={16} />
           <a
             href={`${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`}
             target="_blank"
@@ -62,53 +53,33 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
           </a>
         </div>
         <div className="flex items-center gap-4">
-          <Image
-            src={CalendarIcon}
-            loading="lazy"
-            alt="Opening dates"
-            width={16}
-            height={16}
-            style={{ width: '16px', height: '16px' }}
-          />
+          <Image src={CalendarIcon} loading="lazy" alt="Opening dates" width={16} height={16} />
           <p>
             {start ? localizeDate(start, language) : 'TBD'}
-            {" - "}
+            {' - '}
             {end ? localizeDate(end, language) : 'TBD'}
           </p>
         </div>
-        {times.length > 0 && <div className="flex gap-4">
-          <Image
-            src={ClockIcon}
-            loading="lazy"
-            alt="Opening hours"
-            width={16}
-            height={16}
-            className="mt-2"
-            style={{ width: '16px', height: '16px' }}
-          />
-          <div className="h-24 flex flex-col flex-wrap gap-x-6">
-            {times.map((time, timeIdx) => (
-              <div key={`${id}_${timeIdx}`} className="flex gap-3 text-sm">
-                <p className="w-3.5 text-center">{weekDays[timeIdx]}</p>
-                {Array.isArray(time) ? (
-                  <p className="text-sm">{`${time[0]} - ${time[1]}`}</p>
-                ) : (
-                  <p className="text-sm">Closed</p>
-                )}
-              </div>
-            ))}
+        {times.length > 0 && (
+          <div className="flex gap-4">
+            <Image src={ClockIcon} loading="lazy" alt="Opening hours" width={16} height={16} className="mt-2" />
+            <div className="h-24 flex flex-col flex-wrap gap-x-6">
+              {times.map((time, timeIdx) => (
+                <div key={`${id}_${timeIdx}`} className="flex gap-3 text-sm">
+                  <p className="w-3.5 text-center">{weekDays[timeIdx]}</p>
+                  {Array.isArray(time) ? (
+                    <p className="text-sm">{`${time[0]} - ${time[1]}`}</p>
+                  ) : (
+                    <p className="text-sm">Closed</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>}
+        )}
         {website && (
           <div className="flex items-center gap-4">
-            <Image
-              src={InfoIcon}
-              loading="lazy"
-              alt="Website info"
-              width={16}
-              height={16}
-              style={{ width: '16px', height: '16px' }}
-            />
+            <Image src={InfoIcon} loading="lazy" alt="Website info" width={16} height={16} />
             <a href={website} target="_blank" aria-label={`Homepage for the ${name} event.`}>
               Website
             </a>

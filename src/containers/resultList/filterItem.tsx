@@ -10,20 +10,11 @@ interface Props {
 const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
   <button
     onClick={handleClick}
-    style={{
-      height: '34px',
-      minWidth: '80px',
-      padding: '0px 8px',
-      borderRadius: '20px',
-      border: '1px solid',
-      borderColor: theme.colors.darkGreen,
-      color: isSelected ? 'white' : theme.colors.darkGreen,
-      background: isSelected || isLoading ? theme.colors.darkGreen : 'white',
-      fontSize: '14px',
-      fontFamily: 'sans-serif',
-    }}
+    className={`h-8 min-w-20 px-2 py-0 rounded-2xl border-solid border border-green-950 text-sm font-sans ${
+      isSelected ? 'text-white' : 'text-green-950'
+    } ${isSelected || isLoading ? 'bg-green-950' : 'bg-white'}`}
   >
-    {isLoading ? <span className="loader"></span> : label}
+    {label}
   </button>
 )
 

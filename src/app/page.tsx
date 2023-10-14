@@ -17,13 +17,14 @@ export default function HomePage() {
           </h1>
         </div>
         <div className="md:flex-1">
-          <div className="md:py-8 md:pr-4 w-full h-full" style={{ backgroundColor: 'rgb(4 49 4)' }}>
+          <div className="md:py-8 md:pr-4 w-full h-full bg-green-950">
             <Image
               src={HeroImage}
               width={500}
               height={300}
               alt="Saint Stephan's Cathedral and Christmas"
               className="md:relative"
+              fetchPriority="high"
               style={{
                 width: '100%',
                 height: 'auto',
