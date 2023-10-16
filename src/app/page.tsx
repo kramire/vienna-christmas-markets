@@ -25,6 +25,7 @@ export default function HomePage() {
               alt="Saint Stephan's Cathedral and Christmas"
               className="md:relative"
               fetchPriority="high"
+              loading="eager"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -32,8 +33,6 @@ export default function HomePage() {
                 boxShadow: 'rgb(0 0 0 / 48%) 0px 2px 5px 1px',
                 right: '20px',
               }}
-              loading="eager"
-              priority
             />
           </div>
         </div>

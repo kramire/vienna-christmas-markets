@@ -39,7 +39,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
       <CardImage imgSrc={imgSrc} altText={name} />
       <div className="flex flex-col justify-between w-full px-4 py-6 gap-3">
         <div className="flex justify-between gap-3">
-          <h3 className="text-xl font-semibold text-green-950">{name}</h3>
+          <h2 className="text-xl font-semibold text-green-950">{name}</h2>
           <FavoriteButton isFavorite={isFavorite} handleClick={toggleFavoriteResult(id)} />
         </div>
         <div className="flex items-center gap-4">
