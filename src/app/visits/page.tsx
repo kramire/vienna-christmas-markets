@@ -1,6 +1,6 @@
 import { Market, Event, ResultType } from '../../app.types'
 import data from '../../data.json'
-import { sortRedultsByDate } from '../../utils/sort-results-by-date'
+import sortResultsByDate from '../../utils/sort-results-by-date'
 import VisitedToggle from './components/visitedToggle'
 import { groupByDistrict } from './helpers/group-by-district'
 
@@ -8,7 +8,7 @@ export default function VisitsPage() {
   const results = data as Array<Market | Event>
   const markets = results
     .filter((result) => result.type === ResultType.MARKET && result.isActive)
-    .sort(sortRedultsByDate) as Array<Market>
+    .sort(sortResultsByDate) as Array<Market>
 
   const marketsByDistrict = groupByDistrict(markets)
   const districts = Object.keys(marketsByDistrict).sort()

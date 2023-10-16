@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Market, Event, FilterType, Coordinate } from '../../app.types'
+import { Market, Event, FilterType, Coordinate, SortType } from '../../app.types'
 import { getNavigatorLocation } from '../../utils/get-navigator-location'
 import ResultCard from './resultCard/resultCard'
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
@@ -11,6 +11,7 @@ import Filters from './filters'
 import { getIsOpen } from '../../utils/get-is-open'
 import Map from './map'
 import HeaderText from '../../components/headerText'
+import SortSelect from '../../components/SortSelect'
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
@@ -18,9 +19,19 @@ interface Props {
   setFavorites: (value: Array<number>) => void
   deviceLocation: Coordinate | undefined
   setDeviceLocation: (value: Coordinate) => void
+  sortType: SortType
+  handleSort: (value: SortType) => void
 }
 
-const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDeviceLocation }: Props) => {
+const ResultList = ({
+  results,
+  favorites,
+  setFavorites,
+  deviceLocation,
+  setDeviceLocation,
+  sortType,
+  handleSort,
+}: Props) => {
   const [activeFilters, setActiveFilters] = useState<{
     [key in FilterType]: boolean
   }>({
@@ -134,7 +145,7 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
           {/* <Map results={shownResults} /> */}
         </>
       ) : (
-        <div className="w-full flex flex-col gap-6 md:gap-9 m-auto px-6 lg:px-0  py-4 ">
+        <div className="w-full flex flex-col gap-4 md:gap-6 m-auto px-6 lg:px-0  py-4 ">
           <div className="flex flex-col gap-3 md:gap-4">
             <div className="flex flex-col md:gap-3">
               <HeaderText />
@@ -150,6 +161,7 @@ const ResultList = ({ results, favorites, setFavorites, deviceLocation, setDevic
               showMap={showMap}
               toggleMap={toggleMap}
             />
+            <SortSelect sortType={sortType} handleChange={handleSort} />
           </div>
           <ul
             className="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"

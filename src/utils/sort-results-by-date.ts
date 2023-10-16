@@ -1,6 +1,6 @@
 import { Market, Event } from '../app.types'
 
-export function sortRedultsByDate(resultA: Market | Event, resultB: Market | Event) {
+export default function sortResultsByDate(resultA: Market | Event, resultB: Market | Event) {
   if (!resultA.start && resultB.start) {
     return 1
   }

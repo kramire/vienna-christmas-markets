@@ -16,6 +16,7 @@ import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
 import IMG_SRC_16 from '../public/Schoenbrunn-Christmas-market.webp'
 import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
 import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
+import { SortType } from './app.types'
 
 export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   1: IMG_SRC_1,
@@ -29,4 +30,9 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   16: IMG_SRC_16,
   17: IMG_SRC_17,
   18: IMG_SRC_18,
+}
+
+export const sortSelectOptions = {
+  [SortType.DATE]: { label: 'Start Date' },
+  [SortType.DISTRICT]: { label: 'District' },
 }

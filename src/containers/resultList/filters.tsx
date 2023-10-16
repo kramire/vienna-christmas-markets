@@ -1,6 +1,6 @@
 import { FilterType } from '../../app.types'
 import FilterItem from './filterItem'
-import { theme } from '../../theme'
+// import { theme } from '../../theme'
 
 // const MapIcon = '/mapicon.svg'
 // const ListIcon = '/listicon.svg'

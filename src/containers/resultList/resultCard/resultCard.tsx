@@ -48,8 +48,9 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
             href={`${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`}
             target="_blank"
             aria-label="Google maps link"
+            className="underline"
           >
-            <p className="decoration-solid cursor-pointer">{district}</p>
+            {district}
           </a>
         </div>
         <div className="flex items-center gap-4">
@@ -80,7 +81,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
         {website && (
           <div className="flex items-center gap-4">
             <Image src={InfoIcon} loading="lazy" alt="Website info" width={16} height={16} />
-            <a href={website} target="_blank" aria-label={`Homepage for the ${name} event.`}>
+            <a href={website} target="_blank" aria-label={`Homepage for the ${name} event.`} className="underline">
               Website
             </a>
           </div>

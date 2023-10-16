@@ -43,3 +43,8 @@ export enum Routes {
   EVENTS = '/events',
   VISITS = '/visits',
 }
+
+export enum SortType {
+  DATE = 'DATE',
+  DISTRICT = 'DISTRICT',
+}
