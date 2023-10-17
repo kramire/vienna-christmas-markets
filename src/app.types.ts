@@ -11,7 +11,7 @@ interface Result {
   offerings: Array<Offering>
 }
 
-enum Offering {
+export enum Offering {
   OFFERING_GASTRONOMY = 'OFFERING_GASTRONOMY',
   OFFERING_SHOPPING = 'OFFERING_SHOPPING',
   OFFERING_CURLING = 'OFFERING_CURLING',

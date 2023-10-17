@@ -1,9 +1,5 @@
 import { StaticImageData } from 'next/image'
-
-export const MAX_CONTENT_WIDTH = 1130
-export const HEADER_HEIGHT = 56
-
-export const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
+import { Offering, SortType } from './app.types'
 
 import IMG_SRC_1 from '../public/Musuem-Quartier-Christmas-market.webp'
 import IMG_SRC_3 from '../public/Tuerkenschanzpark-Christmas-market.webp'
@@ -16,7 +12,15 @@ import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
 import IMG_SRC_16 from '../public/Schoenbrunn-Christmas-market.webp'
 import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
 import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
-import { SortType } from './app.types'
+
+import EISSTOCK from '../public/eisstock.png'
+import GASTRONOMY from '../public/gastronomy.png'
+import SHOPPING from '../public/shopping.png'
+
+export const MAX_CONTENT_WIDTH = 1130
+export const HEADER_HEIGHT = 56
+
+export const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
 
 export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   1: IMG_SRC_1,
@@ -35,4 +39,10 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
 export const sortSelectOptions = {
   [SortType.DATE]: { label: 'Start Date' },
   [SortType.DISTRICT]: { label: 'District' },
+}
+
+export const offeringsIconMapping: { [key in Offering]: StaticImageData } = {
+  [Offering.OFFERING_GASTRONOMY]: GASTRONOMY,
+  [Offering.OFFERING_SHOPPING]: SHOPPING,
+  [Offering.OFFERING_CURLING]: EISSTOCK,
 }
