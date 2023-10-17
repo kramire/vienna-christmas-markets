@@ -11,7 +11,7 @@ import sortResultsByDistrict from '../../utils/sort-results-by-district'
 export default function MarketsPage() {
   const [favorites, setFavorites] = useState<number[]>([])
   const [deviceLocation, setDeviceLocation] = useState<Coordinate | undefined>(undefined)
-  const [sortBy, setSortBy] = useState<SortType>(SortType.DATE)
+  const [sortBy, setSortBy] = useState<SortType>(SortType.DISTRICT)
 
   const { getItem } = useLocalStorage()
 

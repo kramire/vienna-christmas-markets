@@ -37,8 +37,8 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
 }
 
 export const sortSelectOptions = {
-  [SortType.DATE]: { label: 'Start Date' },
   [SortType.DISTRICT]: { label: 'District' },
+  [SortType.DATE]: { label: 'Start Date' },
 }
 
 export const offeringsIconMapping: { [key in Offering]: StaticImageData } = {
