@@ -1,53 +1,85 @@
-// import { useEffect, useState } from 'react'
-// import { Event, Market } from '../../app.types'
+'use client'
 
-// interface Props {
-//   results: Array<Market> | Array<Event> | Array<Market | Event>
-// }
+import getScript from '../../components/map/helpers/getScript'
+import loadStyles from '../../components/map/helpers/loadStyles'
+import { useEffect, useState } from 'react'
+import { Event, Market } from '../../app.types'
 
-const Map = () => { return null }
+interface Props {
+  results: Array<Market> | Array<Event> | Array<Market | Event>
+}
 
-// const Map = ({ results }: Props) => {
-//   const [map, setMap] = useState<any>(null)
-//   const [mapMarkers, setMapMarkers] = useState<any>(null)
+const Map = ({ results }: Props) => {
+  const [isCSSLoaded, setIsCSSLoaded] = useState(false)
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false)
+  const [map, setMap] = useState<any>(null)
+  const [mapMarkerLayer, setMapMarkerLayer] = useState<any>(null)
 
-//   useEffect(() => {
-//     const map = L.map('map', {
-//       center: [48.2089366, 16.3625921],
-//       zoom: 13,
-//     })
+  // Load CSS - this must happen first
+  useEffect(() => {
+    if (isCSSLoaded) return
+    loadStyles()
+    setIsCSSLoaded(true)
+  }, [])
 
-//     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//       maxZoom: 19,
-//       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-//     }).addTo(map)
+  // Then load script
+  useEffect(() => {
+    if (!isCSSLoaded) return
+    const script = getScript()
+    document.getElementsByTagName('head')[0].appendChild(script)
+    script.onload = () => setIsScriptLoaded(true)
+  }, [isCSSLoaded])
 
-//     setMap(map)
-//   }, [])
+  // Once script is loaded, initiate map
+  useEffect(() => {
+    if (!isScriptLoaded) return
 
-//   useEffect(() => {
-//     if (!map && !mapMarkers) {
-//       setMapMarkers(L.layerGroup([]))
-//     }
-//   }, [map])
+    //@ts-ignore
+    const map = window.L.map('map', {
+      center: [48.2089366, 16.3625921],
+      zoom: 13,
+    })
 
-//   useEffect(() => {
-//     if (!map && !mapMarkers) return
+    //@ts-ignore
+    window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map)
 
-//     mapMarkers.clearLayers()
+    setMap(map)
+  }, [isScriptLoaded])
 
-//     results.forEach((result) => {
-//       const marker = L.marker([result.coordinates.lat, result.coordinates.lng]).bindPopup(
-//         `${result.id}. ${result.name}`,
-//       )
+  // Once we have a map, initiate the layer for the markers
+  useEffect(() => {
+    if (map) {
+      //@ts-ignore
+      setMapMarkerLayer(window.L.layerGroup([]))
+    }
+  }, [map])
 
-//       mapMarkers.addLayer(marker)
-//     })
+  // Clear any previous markers, and add the results as markers.
+  useEffect(() => {
+    if (!mapMarkerLayer) return
 
-//     map.addLayer(mapMarkers)
-//   }, [map, mapMarkers, results])
+    mapMarkerLayer.clearLayers()
 
-//   return <div id="map" style={{ height: 'calc(100vh - 200px)', zIndex: 1 }}></div>
-// }
+    results.forEach((result) => {
+      //@ts-ignore
+      const marker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).bindPopup(
+        `${result.id}. ${result.name}`,
+      )
+
+      mapMarkerLayer.addLayer(marker)
+    })
+
+    map.addLayer(mapMarkerLayer)
+  }, [mapMarkerLayer, results])
+
+  if (!isCSSLoaded && !isScriptLoaded) {
+    return null
+  }
+
+  return <div id="map" className="h-[65vh] z-10 w-screen md:w-full -translate-x-6 md:translate-x-0" />
+}
 
 export default Map

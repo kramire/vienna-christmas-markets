@@ -9,9 +9,11 @@ import useLocalStorage from '../../hooks/useLocalStorage'
 import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
 import Filters from './filters'
 import { getIsOpen } from '../../utils/get-is-open'
-import Map from './map'
+import dynamic from 'next/dynamic'
 import HeaderText from '../../components/headerText'
 import SortSelect from '../../components/SortSelect'
+
+const Map = dynamic(() => import('./map'))
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
@@ -131,38 +133,27 @@ const ResultList = ({
 
   return (
     <div className="h-full flex flex-col md:gap-3">
-      {showMap ? (
-        <>
-          <div className="px-6 py-4">
-            <Filters
-              activeFilters={activeFilters}
-              toggleFilter={toggleFilter}
-              isLoadingLocation={isLoadingLocation}
-              showMap={showMap}
-              toggleMap={toggleMap}
-            />
+      <div className="w-full flex flex-col gap-4 md:gap-6 m-auto px-6 lg:px-0  py-4 ">
+        <div className="flex flex-col gap-3 md:gap-4">
+          <div className="flex flex-col md:gap-3">
+            <HeaderText />
+            <p>
+              {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
+              {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+            </p>
           </div>
-          {/* <Map results={shownResults} /> */}
-        </>
-      ) : (
-        <div className="w-full flex flex-col gap-4 md:gap-6 m-auto px-6 lg:px-0  py-4 ">
-          <div className="flex flex-col gap-3 md:gap-4">
-            <div className="flex flex-col md:gap-3">
-              <HeaderText />
-              <p>
-                {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-                {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-              </p>
-            </div>
-            <Filters
-              activeFilters={activeFilters}
-              toggleFilter={toggleFilter}
-              isLoadingLocation={isLoadingLocation}
-              showMap={showMap}
-              toggleMap={toggleMap}
-            />
-            <SortSelect sortType={sortType} handleChange={handleSort} />
-          </div>
+          <Filters
+            activeFilters={activeFilters}
+            toggleFilter={toggleFilter}
+            isLoadingLocation={isLoadingLocation}
+            showMap={showMap}
+            toggleMap={toggleMap}
+          />
+          {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
+        </div>
+        {showMap ? (
+          <Map results={shownResults} />
+        ) : (
           <ul
             className="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
             style={{
@@ -178,8 +169,8 @@ const ResultList = ({
               />
             ))}
           </ul>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }

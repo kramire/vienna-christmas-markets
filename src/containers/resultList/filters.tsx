@@ -1,9 +1,9 @@
+import Image from 'next/image'
 import { FilterType } from '../../app.types'
 import FilterItem from './filterItem'
-// import { theme } from '../../theme'
 
-// const MapIcon = '/mapicon.svg'
-// const ListIcon = '/listicon.svg'
+const MapIcon = '/mapicon.svg'
+const ListIcon = '/listicon.svg'
 
 interface Props {
   activeFilters: { [key in FilterType]: boolean }
@@ -26,16 +26,10 @@ const Filters = ({ activeFilters, toggleFilter, isLoadingLocation, showMap, togg
         />
         <FilterItem label="My Favorites" isSelected={activeFilters.favorited} handleClick={toggleFilter('favorited')} />
       </div>
-      {/* <div className="flex gap-2 items-cente text-green-950r">
-        <div onClick={toggleMap} className="text-xl cursor-pointer">
-          {showMap ? (
-            <Image src={ListIcon} width={20} height={20} loading="lazy" alt="Show list" />
-          ) : (
-            <Image src={MapIcon} width={20} height={20} loading="lazy" alt="Show map" />
-          )}
-        </div>
+      <div onClick={toggleMap} className="flex gap-2 items-center text-green-950 cursor-pointer">
+        <Image src={showMap ? ListIcon : MapIcon} width={20} height={20} alt="" />
         <p className="text-sm md:text-base">{showMap ? 'View List' : 'View Map'}</p>
-      </div> */}
+      </div>
     </div>
   )
 }
