@@ -23,10 +23,9 @@ const VisitedToggle = ({ marketId }: Props) => {
 
   const handleCheck = (marketId: number) => () => {
     const storedVisitedMarketIds = getItem(VISITED_MARKETS_LOCAL_STORAGE_KEY)
-    if (!storedVisitedMarketIds) return
 
     try {
-      const parsedMarketeIddData = JSON.parse(storedVisitedMarketIds) as Array<number>
+      const parsedMarketeIddData = storedVisitedMarketIds ? (JSON.parse(storedVisitedMarketIds) as Array<number>) : []
 
       let newVisitedMarketIds: number[] = []
 
