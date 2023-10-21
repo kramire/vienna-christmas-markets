@@ -399,13 +399,21 @@
     "isActive": true,
     "district": "1010",
     "coordinates": { "lat": 48.21163, "lng": 16.381463 },
-    "start": null,
-    "end": null,
-    "times": [],
+    "start": "11/1/2023",
+    "end": "3/31/2024",
+    "times": [
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["12:00", "16:00"]
+    ],
     "website": "https://www.badeschiff.at/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": []
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
   },
   {
     "id": 21,
@@ -435,10 +443,10 @@
     "isActive": true,
     "district": "1210",
     "coordinates": { "lat": 48.241072, "lng": 16.398425 },
-    "start": null,
+    "start": "11/24/2023",
     "end": null,
     "times": [],
-    "website": "https://viennawurstelstand.com/event/punsch-am-wasser/",
+    "website": "https://amwasser.wien/",
     "imgUrl": "",
     "type": "EVENT",
     "offerings": []
@@ -446,7 +454,7 @@
   {
     "id": 23,
     "name": "Atmosphere Rooftop Bar - Urban après ski",
-    "isActive": true,
+    "isActive": false,
     "district": "1010",
     "coordinates": { "lat": 48.2022967, "lng": 16.3764527 },
     "start": null,
@@ -460,7 +468,7 @@
   {
     "id": 24,
     "name": "k.u.k. Weihnachtsmarkt am Michaelerplatz",
-    "isActive": true,
+    "isActive": false,
     "district": "1010",
     "coordinates": { "lat": 48.2079208, "lng": 16.3668509 },
     "start": null,
@@ -477,9 +485,17 @@
     "isActive": true,
     "district": "1150",
     "coordinates": { "lat": 48.1957757, "lng": 16.3380544 },
-    "start": null,
-    "end": null,
-    "times": [],
+    "start": "11/17/2023",
+    "end": "12/23/2023",
+    "times": [
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["16:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "18:00"],
+      null
+    ],
     "website": "https://www.ikea.com/at/de/stores/wien-westbahnhof/events-und-aktivitaeten-im-ikea-einrichtungshaus-wien-westbahnhof-pub404b7a70",
     "imgUrl": "",
     "type": "EVENT",
@@ -488,7 +504,7 @@
   {
     "id": 26,
     "name": "Das Boothaus - Punsch im Winterwonderland",
-    "isActive": true,
+    "isActive": false,
     "district": "1220",
     "coordinates": { "lat": 48.2320506, "lng": 16.4341442 },
     "start": null,
@@ -524,7 +540,7 @@
   {
     "id": 28,
     "name": "Lucullus - Pop Up Wintermarket",
-    "isActive": true,
+    "isActive": false,
     "district": "1030",
     "coordinates": { "lat": 48.198788, "lng": 16.385051 },
     "start": null,
@@ -553,6 +569,19 @@
       null
     ],
     "website": "https://www.kleinod-stadtgarten.wien/",
+    "imgUrl": "",
+    "type": "EVENT"
+  },
+  {
+    "id": 30,
+    "name": "Aurora Rooftop - Winter Vibes",
+    "isActive": true,
+    "district": "1100",
+    "coordinates": { "lat": 48.1851114, "lng": 16.3831616 },
+    "start": "12/3/2023",
+    "end": "12/24/2023",
+    "times": [null, null, null, null, null, null, ["16:00", "22:00"]],
+    "website": "https://www.bar-aurora.at/specials",
     "imgUrl": "",
     "type": "EVENT"
   }
