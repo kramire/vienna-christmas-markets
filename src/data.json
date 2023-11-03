@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "mq",
     "name": "Winter MQ",
     "isActive": true,
     "district": "1070",
@@ -23,6 +24,7 @@
   },
   {
     "id": 2,
+    "slug": "spittelberg",
     "name": "Weihnachtsmarkt am Spittelberg",
     "isActive": true,
     "district": "1070",
@@ -45,6 +47,7 @@
   },
   {
     "id": 3,
+    "slug": "tuerkenschanzpark",
     "name": "Weihnachtsmarkt im Türkenschanzpark",
     "isActive": true,
     "district": "1180",
@@ -67,6 +70,7 @@
   },
   {
     "id": 4,
+    "slug": "stephansplatz",
     "name": "Weihnachtsdorf am Stephansplatz",
     "isActive": true,
     "district": "1010",
@@ -89,6 +93,7 @@
   },
   {
     "id": 5,
+    "slug": "genussmarkt",
     "name": "Advent-Genussmarkt bei der Oper",
     "isActive": false,
     "district": "1010",
@@ -111,6 +116,7 @@
   },
   {
     "id": 6,
+    "slug": "altes-akh",
     "name": "Weihnachtsdorf am Campus der Universität Wien",
     "isActive": true,
     "district": "1090",
@@ -133,6 +139,7 @@
   },
   {
     "id": 7,
+    "slug": "am-hof",
     "name": "Weihnachtsmarkt Am Hof",
     "isActive": true,
     "district": "1010",
@@ -155,6 +162,7 @@
   },
   {
     "id": 8,
+    "slug": "maria-theresian-platz",
     "name": "Weihnachtsdorf Maria-Theresien-Platz",
     "isActive": true,
     "district": "1010",
@@ -177,6 +185,7 @@
   },
   {
     "id": 9,
+    "slug": "im-wald",
     "name": "Weihnacht im Wald",
     "isActive": true,
     "district": "1020",
@@ -191,6 +200,7 @@
   },
   {
     "id": 10,
+    "slug": "hirschstetten",
     "name": "Weihnachtsmarkt in den Blumengärten Hirschstetten",
     "isActive": true,
     "district": "1220",
@@ -205,6 +215,7 @@
   },
   {
     "id": 11,
+    "slug": "belvedere",
     "name": "Weihnachtsdorf Schloss Belvedere",
     "isActive": true,
     "district": "1030",
@@ -227,6 +238,7 @@
   },
   {
     "id": 12,
+    "slug": "liechtenstein",
     "name": "Advent im Gartenpalais Liechtenstein",
     "isActive": true,
     "district": "1090",
@@ -249,6 +261,7 @@
   },
   {
     "id": 13,
+    "slug": "freyung",
     "name": "Altwiener Christkindlmarkt Freyung",
     "isActive": true,
     "district": "1010",
@@ -271,6 +284,7 @@
   },
   {
     "id": 14,
+    "slug": "karlsplatz",
     "name": "Art Advent - Kunst & Handwerk am Karlsplatz",
     "isActive": true,
     "district": "1040",
@@ -293,6 +307,7 @@
   },
   {
     "id": 15,
+    "slug": "almadvent",
     "name": "Almadvent",
     "isActive": true,
     "district": "1020",
@@ -315,6 +330,7 @@
   },
   {
     "id": 16,
+    "slug": "schoenbrunn",
     "name": "Kultur- und Weihnachtsmarkt Schloss Schönbrunn",
     "isActive": true,
     "district": "1130",
@@ -337,6 +353,7 @@
   },
   {
     "id": 17,
+    "slug": "rathausplatz",
     "name": "Wiener Christkindlmarkt auf dem Rathausplatz",
     "isActive": true,
     "district": "1010",
@@ -359,6 +376,7 @@
   },
   {
     "id": 18,
+    "slug": "riesenradplatz",
     "name": "Wintermarkt am Riesenradplatz",
     "isActive": true,
     "district": "1020",
@@ -381,6 +399,7 @@
   },
   {
     "id": 19,
+    "slug": "ottakringer",
     "name": "Ottakringer Weihnachtszauber",
     "isActive": true,
     "district": "1160",
@@ -395,6 +414,7 @@
   },
   {
     "id": 20,
+    "slug": "badeschiff",
     "name": "Badeschiff - ParadEis",
     "isActive": true,
     "district": "1010",
@@ -417,6 +437,7 @@
   },
   {
     "id": 21,
+    "slug": "haas-und-haas",
     "name": "Haas & Haas - Winter in the City",
     "isActive": true,
     "district": "1010",
@@ -439,6 +460,7 @@
   },
   {
     "id": 22,
+    "slug": "usus",
     "name": "USUS - Punsch am Wasser",
     "isActive": true,
     "district": "1210",
@@ -453,6 +475,7 @@
   },
   {
     "id": 23,
+    "slug": "atmosphere-bar",
     "name": "Atmosphere Rooftop Bar - Urban après ski",
     "isActive": false,
     "district": "1010",
@@ -467,6 +490,7 @@
   },
   {
     "id": 24,
+    "slug": "michaelerplatz",
     "name": "k.u.k. Weihnachtsmarkt am Michaelerplatz",
     "isActive": false,
     "district": "1010",
@@ -481,6 +505,7 @@
   },
   {
     "id": 25,
+    "slug": "ikea",
     "name": "IKEA - Weihnachtsmarkt",
     "isActive": true,
     "district": "1150",
@@ -503,6 +528,7 @@
   },
   {
     "id": 26,
+    "slug": "boothaus",
     "name": "Das Boothaus - Punsch im Winterwonderland",
     "isActive": false,
     "district": "1220",
@@ -517,6 +543,7 @@
   },
   {
     "id": 27,
+    "slug": "kylo",
     "name": "Kylo - Punschterrassen",
     "isActive": true,
     "district": "1010",
@@ -539,6 +566,7 @@
   },
   {
     "id": 28,
+    "slug": "lucullus",
     "name": "Lucullus - Pop Up Wintermarket",
     "isActive": false,
     "district": "1030",
@@ -553,6 +581,7 @@
   },
   {
     "id": 29,
+    "slug": "kleinoid",
     "name": "Kleinoid - Wintergarten",
     "isActive": false,
     "district": "1010",
@@ -574,6 +603,7 @@
   },
   {
     "id": 30,
+    "slug": "aurora-bar",
     "name": "Aurora Rooftop - Winter Vibes",
     "isActive": true,
     "district": "1100",

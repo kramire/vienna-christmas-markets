@@ -1,5 +1,6 @@
 interface Result {
   id: number
+  slug: string
   name: string
   isActive: boolean
   coordinates: Coordinate
