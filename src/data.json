@@ -5,8 +5,8 @@
     "isActive": true,
     "district": "1070",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "start": null,
-    "end": null,
+    "start": "11/8/2023",
+    "end": "12/23/2023",
     "times": [
       ["16:00", "23:00"],
       ["16:00", "23:00"],
@@ -16,10 +16,10 @@
       ["14:00", "23:00"],
       ["14:00", "23:00"]
     ],
-    "website": "http://www.mqw.at",
+    "website": "https://www.mqw.at/winter-2023",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_CURLING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
   },
   {
     "id": 2,
@@ -178,7 +178,7 @@
   {
     "id": 9,
     "name": "Weihnacht im Wald",
-    "isActive": true,
+    "isActive": false,
     "district": "1020",
     "coordinates": { "lat": 48.207493, "lng": 16.401838 },
     "start": null,
