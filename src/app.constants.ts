@@ -6,6 +6,7 @@ import IMG_SRC_3 from '../public/Tuerkenschanzpark-Christmas-market.webp'
 import IMG_SRC_4 from '../public/Saint-Stephens-Cathedral-at-Christmas.webp'
 import IMG_SRC_5 from '../public/Genuss-Christmas-market.webp'
 import IMG_SRC_6 from '../public/Altes-AKH-Christmas-market.webp'
+import IMG_SRC_7 from '../public/Am-Hof-Christmas-Market.webp'
 import IMG_SRC_8 from '../public/Maria-Theresien-Platz-Christmas-market.webp'
 import IMG_SRC_12 from '../public/Liechtenstein-Christmas-market.webp'
 import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
@@ -28,6 +29,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   4: IMG_SRC_4,
   5: IMG_SRC_5,
   6: IMG_SRC_6,
+  7: IMG_SRC_7,
   8: IMG_SRC_8,
   12: IMG_SRC_12,
   14: IMG_SRC_14,
