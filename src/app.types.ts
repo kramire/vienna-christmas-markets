@@ -5,6 +5,7 @@ interface Result {
   isActive: boolean
   coordinates: Coordinate
   district: string
+  address: string
   start: string | null
   end: string | null
   times: Array<Array<string> | null> // this is Array<[string, string] | null> but TS complains about JSON

@@ -1,19 +1,33 @@
 'use client'
 
-import getScript from '../../components/map/helpers/getScript'
-import loadStyles from '../../components/map/helpers/loadStyles'
+import getScript from './helpers/getScript'
+import loadStyles from './helpers/loadStyles'
 import { useEffect, useState } from 'react'
-import { Event, Market } from '../../app.types'
+import { Coordinate, Event, Market } from '../../app.types'
+
+const WIEN_CENTER = { lat: 48.2089366, lng: 16.3625921 }
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
+  className: string
+  center?: Coordinate
+  zoom?: number
 }
 
-const Map = ({ results }: Props) => {
+const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => {
   const [isCSSLoaded, setIsCSSLoaded] = useState(false)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
   const [mapMarkerLayer, setMapMarkerLayer] = useState<any>(null)
+
+  // Check if maps was loaded
+  useEffect(() => {
+    //@ts-ignore
+    if (window?.L) {
+      setIsCSSLoaded(true)
+      setIsScriptLoaded(true)
+    }
+  }, [])
 
   // Load CSS - this must happen first
   useEffect(() => {
@@ -36,8 +50,8 @@ const Map = ({ results }: Props) => {
 
     //@ts-ignore
     const map = window.L.map('map', {
-      center: [48.2089366, 16.3625921],
-      zoom: 13,
+      center: [center.lat, center.lng],
+      zoom,
     })
 
     //@ts-ignore
@@ -79,7 +93,7 @@ const Map = ({ results }: Props) => {
     return null
   }
 
-  return <div id="map" className="h-[65vh] z-10 w-screen md:w-full -translate-x-6 md:translate-x-0" />
+  return <div id="map" className={className} />
 }
 
 export default Map

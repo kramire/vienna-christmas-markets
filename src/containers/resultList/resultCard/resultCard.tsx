@@ -8,7 +8,7 @@ import OpenStatusLabel from '../../../components/openStatusLabel'
 import CardImage from './cardImage'
 import FavoriteButton from './favoriteButton'
 import { OpeningHours } from './openingHours'
-import { Location } from './location'
+import District from '../../../components/district'
 import { Dates } from './dates'
 import Link from 'next/link'
 
@@ -21,7 +21,7 @@ interface Props {
 const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
-  const { id, name, type, coordinates, district, start, end, times, website, offerings } = result
+  const { id, name, coordinates, district, start, end, times } = result
 
   const imgSrc = resultToImgUrlMapping[id]
 
@@ -38,7 +38,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
             <h2 className="text-xl font-semibold text-green-950">{name}</h2>
             <FavoriteButton isFavorite={isFavorite} handleClick={toggleFavoriteResult(id)} />
           </div>
-          <Location coordinates={coordinates} district={district} />
+          <District coordinates={coordinates} district={district} />
           <Dates start={start} end={end} language={language} />
           <OpeningHours marketId={id} times={times} />
           <p className="text-center text-sm">View details</p>

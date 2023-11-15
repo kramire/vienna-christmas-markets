@@ -13,7 +13,7 @@ import dynamic from 'next/dynamic'
 import HeaderText from '../../components/headerText'
 import SortSelect from '../../components/SortSelect'
 
-const Map = dynamic(() => import('./map'))
+const Map = dynamic(() => import('../../components/Map'))
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
@@ -152,7 +152,7 @@ const ResultList = ({
           {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
         </div>
         {showMap ? (
-          <Map results={shownResults} />
+          <Map results={shownResults} className="h-[65vh] z-10 w-screen md:w-full -translate-x-6 md:translate-x-0" />
         ) : (
           <ul
             className="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"

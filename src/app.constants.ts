@@ -23,6 +23,8 @@ export const HEADER_HEIGHT = 56
 
 export const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
 
+export const GOOGLE_MAPS_LINK = 'https://www.google.com/maps/search/?api=1'
+
 export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   1: IMG_SRC_1,
   3: IMG_SRC_3,
@@ -43,8 +45,8 @@ export const sortSelectOptions = {
   [SortType.DATE]: { label: 'Start Date' },
 }
 
-export const offeringsIconMapping: { [key in Offering]: StaticImageData } = {
-  [Offering.OFFERING_GASTRONOMY]: GASTRONOMY,
-  [Offering.OFFERING_SHOPPING]: SHOPPING,
-  [Offering.OFFERING_CURLING]: EISSTOCK,
+export const offeringsMapping: { [key in Offering]: { name: string; icon: StaticImageData } } = {
+  [Offering.OFFERING_GASTRONOMY]: { name: 'Food & Drink', icon: GASTRONOMY },
+  [Offering.OFFERING_SHOPPING]: { name: 'Shopping', icon: SHOPPING },
+  [Offering.OFFERING_CURLING]: { name: 'Curling', icon: EISSTOCK },
 }

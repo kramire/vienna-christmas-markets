@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import { GOOGLE_MAPS_LINK } from '../resultList.constants'
-import { Coordinate } from '../../../app.types'
-import LocationIcon from '../../../../public/location.svg'
+import { Coordinate } from '../app.types'
+import LocationIcon from '../../public/location.svg'
+import { GOOGLE_MAPS_LINK } from '../app.constants'
 
 interface Props {
   coordinates: Coordinate
@@ -10,7 +10,7 @@ interface Props {
   isLinkedToMaps?: boolean
 }
 
-export const Location = ({ coordinates, district, isLinkedToMaps = false }: Props) => {
+const District = ({ coordinates, district, isLinkedToMaps = false }: Props) => {
   if (isLinkedToMaps) {
     return (
       <div className="flex items-center gap-4">
@@ -34,3 +34,5 @@ export const Location = ({ coordinates, district, isLinkedToMaps = false }: Prop
     </div>
   )
 }
+
+export default District
