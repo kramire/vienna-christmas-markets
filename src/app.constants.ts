@@ -13,6 +13,8 @@ import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
 import IMG_SRC_16 from '../public/Schoenbrunn-Christmas-market.webp'
 import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
 import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
+import IMG_SRC_20 from '../public/Badeschiff.webp'
+import IMG_SRC_21 from '../public/Haas_und_Hass.webp'
 
 import EISSTOCK from '../public/eisstock.png'
 import GASTRONOMY from '../public/gastronomy.png'
@@ -38,6 +40,8 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   16: IMG_SRC_16,
   17: IMG_SRC_17,
   18: IMG_SRC_18,
+  20: IMG_SRC_20,
+  21: IMG_SRC_21,
 }
 
 export const sortSelectOptions = {
