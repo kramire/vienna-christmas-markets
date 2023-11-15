@@ -13,7 +13,7 @@ import dynamic from 'next/dynamic'
 import HeaderText from '../../components/headerText'
 import SortSelect from '../../components/SortSelect'
 
-const Map = dynamic(() => import('../../components/Map'))
+const Map = dynamic(() => import('../../components/map'))
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>

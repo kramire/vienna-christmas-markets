@@ -3,7 +3,7 @@ import React from 'react'
 import { Event, Market } from '../../../app.types'
 import LocationIcon from '../../../../public/location.svg'
 import { GOOGLE_MAPS_LINK } from '../../../app.constants'
-import Map from '../../../components/Map'
+import Map from '../../../components/map'
 
 interface Props {
   result: Market | Event
