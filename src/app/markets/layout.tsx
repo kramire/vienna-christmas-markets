@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-const META_TITLE = 'Vienna Christmas Markets - Updated 2023'
+const META_TITLE = 'Vienna Christmas Markets - Updated 2024'
 const META_DESCRIPTION = "Discover over 15 seasonal markets this year in Vienna. Read about each market's offerings, opening hours, location."
 
 export const metadata: Metadata = {

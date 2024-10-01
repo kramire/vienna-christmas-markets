@@ -8,7 +8,7 @@ import Image from 'next/image'
 const CircleCheckSolid = '/circleCheckSolid.svg'
 const CircleCheck = '/circleCheck.svg'
 
-const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2023'
+const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2024'
 
 interface Props {
   marketId: number
