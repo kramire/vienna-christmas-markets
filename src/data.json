@@ -7,6 +7,7 @@
     "district": "1070",
     "address": "Museumsplatz 1",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "transportation": ["U3", "57A"],
     "start": "11/8/2023",
     "end": "12/23/2023",
     "times": [
@@ -31,6 +32,7 @@
     "district": "1070",
     "address": "Spittelberggasse",
     "coordinates": { "lat": 48.203344, "lng": 16.355455 },
+    "transportation": ["48A", "49"],
     "start": "11/16/2024",
     "end": "12/23/2024",
     "times": [
@@ -55,6 +57,7 @@
     "district": "1180",
     "address": "Hasenauerstraße",
     "coordinates": { "lat": 48.234781, "lng": 16.333768 },
+    "transportation": ["10A", "40A"],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -79,6 +82,7 @@
     "district": "1010",
     "address": "Stephansplatz",
     "coordinates": { "lat": 48.20824, "lng": 16.37247 },
+    "transportation": ["U1", "U3"],
     "start": "11/8/2024",
     "end": "12/26/2024",
     "times": [
@@ -99,10 +103,11 @@
     "id": 5,
     "slug": "genussmarkt",
     "name": "Advent-Genussmarkt bei der Oper",
-    "isActive": true,
+    "isActive": false,
     "district": "1010",
     "address": "",
     "coordinates": { "lat": 48.202518, "lng": 16.371 },
+    "transportation": ["U1", "U4", "D", "1", "2", "71"],
     "start": "11/15/2024",
     "end": "12/31/2024",
     "times": [
@@ -127,6 +132,7 @@
     "district": "1090",
     "address": "Alser Straße & Spitalgasse",
     "coordinates": { "lat": 48.215582, "lng": 16.352607 },
+    "transportation": ["5", "33", "43", "44"],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -151,6 +157,7 @@
     "district": "1010",
     "address": "Am Hof",
     "coordinates": { "lat": 48.210857, "lng": 16.367494 },
+    "transportation": [],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -175,6 +182,7 @@
     "district": "1010",
     "address": "Burgring",
     "coordinates": { "lat": 48.204682, "lng": 16.361063 },
+    "transportation": ["U3", "D", "1", "2", "57A", "71"],
     "start": "11/13/2024",
     "end": "12/31/2024",
     "times": [
@@ -199,6 +207,7 @@
     "district": "1020",
     "address": "",
     "coordinates": { "lat": 48.207493, "lng": 16.401838 },
+    "transportation": [],
     "start": null,
     "end": null,
     "times": [null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"]],
@@ -215,6 +224,7 @@
     "district": "1220",
     "address": "Quadenstraße 15",
     "coordinates": { "lat": 48.238924, "lng": 16.474131 },
+    "transportation": ["26", "22A", "95A", "95B"],
     "start": "11/14/2024",
     "end": "12/22/2024",
     "times": [null, null, null, ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"]],
@@ -231,6 +241,7 @@
     "district": "1030",
     "address": "Prinz-Eugen-Straße 27",
     "coordinates": { "lat": 48.191807, "lng": 16.380843 },
+    "transportation": ["D", "0", "18", "71", "S-BAHN"],
     "start": "11/15/2024",
     "end": "12/31/2024",
     "times": [
@@ -255,6 +266,7 @@
     "district": "1090",
     "address": "Fürstengasse 1",
     "coordinates": { "lat": 48.22227, "lng": 16.359773 },
+    "transportation": ["D", "5", "33"],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -279,6 +291,7 @@
     "district": "1010",
     "address": "Freyung 7",
     "coordinates": { "lat": 48.211618, "lng": 16.36557 },
+    "transportation": [],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -303,6 +316,7 @@
     "district": "1040",
     "address": "Karlsplatz 13",
     "coordinates": { "lat": 48.19861, "lng": 16.371617 },
+    "transportation": ["U1", "U4", "D"],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -327,6 +341,7 @@
     "district": "1020",
     "address": "Messeplatz 1",
     "coordinates": { "lat": 48.217274, "lng": 16.40742 },
+    "transportation": [],
     "start": "11/23/2023",
     "end": "12/22/2023",
     "times": [
@@ -351,6 +366,7 @@
     "district": "1130",
     "address": "Schönbrunner Schloßstraße 47",
     "coordinates": { "lat": 48.186191, "lng": 16.312962 },
+    "transportation": ["U4", "10", "56A", "58B"],
     "start": "11/8/2024",
     "end": "1/6/2025",
     "times": [
@@ -375,6 +391,7 @@
     "district": "1010",
     "address": "Rathausplatz",
     "coordinates": { "lat": 48.210641, "lng": 16.358914 },
+    "transportation": ["D", "1", "71"],
     "start": "11/16/2024",
     "end": "12/26/2024",
     "times": [],
@@ -391,6 +408,7 @@
     "district": "1020",
     "address": "Riesenradplatz",
     "coordinates": { "lat": 48.216976, "lng": 16.396323 },
+    "transportation": ["U1", "U2"],
     "start": "11/16/2024",
     "end": "1/6/2025",
     "times": [
@@ -415,6 +433,7 @@
     "district": "1160",
     "address": "Ottakringer Platz 1",
     "coordinates": { "lat": 48.212359, "lng": 16.3242538 },
+    "transportation": ["2", "9"],
     "start": "11/23/2023",
     "end": null,
     "times": [null, null, null, ["15:00", "21:00"], ["15:00", "21:00"], ["12:00", "21:00"], ["12:00", "19:00"]],
@@ -431,6 +450,7 @@
     "district": "1010",
     "address": "Wolfgang-Schmitz-Promenade",
     "coordinates": { "lat": 48.21163, "lng": 16.381463 },
+    "transportation": ["U1", "U4", "1", "2"],
     "start": "11/1/2023",
     "end": "3/31/2024",
     "times": [
@@ -455,6 +475,7 @@
     "district": "1010",
     "address": "Stephansplatz 4",
     "coordinates": { "lat": 48.20794, "lng": 16.374048 },
+    "transportation": ["U1", "U3"],
     "start": "11/8/2024",
     "end": "12/31/2024",
     "times": [
@@ -479,6 +500,7 @@
     "district": "1210",
     "address": "An der Neuen Donau 1",
     "coordinates": { "lat": 48.241072, "lng": 16.398425 },
+    "transportation": ["20A"],
     "start": "11/24/2023",
     "end": "12/30/2023",
     "times": [
@@ -503,6 +525,7 @@
     "district": "1010",
     "address": "",
     "coordinates": { "lat": 48.2022967, "lng": 16.3764527 },
+    "transportation": [],
     "start": null,
     "end": null,
     "times": [],
@@ -519,6 +542,7 @@
     "district": "1010",
     "address": "",
     "coordinates": { "lat": 48.2079208, "lng": 16.3668509 },
+    "transportation": ["U3"],
     "start": null,
     "end": null,
     "times": [],
@@ -535,6 +559,7 @@
     "district": "1150",
     "address": "Europaplatz 1",
     "coordinates": { "lat": 48.1957757, "lng": 16.3380544 },
+    "transportation": ["U3", "U6", "5", "9", "18", "S-BAHN"],
     "start": "11/17/2023",
     "end": "12/23/2023",
     "times": [
@@ -559,6 +584,7 @@
     "district": "1220",
     "address": "An der unteren Alten Donau 61",
     "coordinates": { "lat": 48.2320506, "lng": 16.4341442 },
+    "transportation": ["25"],
     "start": null,
     "end": null,
     "times": [],
@@ -575,6 +601,7 @@
     "district": "1010",
     "address": "Uraniastraße 1",
     "coordinates": { "lat": 48.21164, "lng": 16.383692 },
+    "transportation": ["U1", "U4", "1", "2"],
     "start": "11/15/2024",
     "end": "12/23/2024",
     "times": [
@@ -599,6 +626,7 @@
     "district": "1030",
     "address": "Neulinggasse 29",
     "coordinates": { "lat": 48.198788, "lng": 16.385051 },
+    "transportation": ["0", "4A"],
     "start": null,
     "end": null,
     "times": [],
@@ -615,6 +643,7 @@
     "district": "1010",
     "address": "",
     "coordinates": { "lat": 48.2031461, "lng": 16.3783354 },
+    "transportation": [],
     "start": null,
     "end": null,
     "times": [
@@ -639,9 +668,18 @@
     "district": "1100",
     "address": "Arsenalstraße 10",
     "coordinates": { "lat": 48.1851114, "lng": 16.3831616 },
+    "transportation": ["D", "69A"],
     "start": "12/15/2024",
     "end": "12/26/2024",
-    "times": [["17:00", "21:00"], ["17:00", "21:00"], ["17:00", "21:00"], ["17:00", "21:00"], ["17:00", "21:00"], ["17:00", "21:00"], ["17:00", "21:00"]],
+    "times": [
+      ["17:00", "21:00"],
+      ["17:00", "21:00"],
+      ["17:00", "21:00"],
+      ["17:00", "21:00"],
+      ["17:00", "21:00"],
+      ["17:00", "21:00"],
+      ["17:00", "21:00"]
+    ],
     "website": "https://www.bar-aurora.at/weihnachten-2024-silvester-2024",
     "imgUrl": "",
     "type": "EVENT",
@@ -655,9 +693,18 @@
     "district": "1010",
     "address": "Donau Kanal, Freda-Meissner-Blau-Promenade 1",
     "coordinates": { "lat": 48.215714, "lng": 16.3721804 },
+    "transportation": [],
     "start": "11/01/2024",
     "end": "12/31/2024",
-    "times": [null, null, ["17:00", "22:00"], ["17:00", "22:00"], ["17:00", "22:00"], ["11:30", "22:00"], ["11:30", "22:00"]],
+    "times": [
+      null,
+      null,
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["17:00", "22:00"],
+      ["11:30", "22:00"],
+      ["11:30", "22:00"]
+    ],
     "website": "https://www.feuerdorf.at/donaukanal/",
     "imgUrl": "",
     "type": "EVENT",

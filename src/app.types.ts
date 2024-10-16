@@ -4,6 +4,7 @@ interface Result {
   name: string
   isActive: boolean
   coordinates: Coordinate
+  transportation: Array<string>
   district: string
   address: string
   start: string | null

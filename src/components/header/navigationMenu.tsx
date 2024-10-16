@@ -29,9 +29,9 @@ const NavigationMenu = () => {
         </div>
         <ul className="z-1 sticky top-0 flex flex-col bg-white px-6">
           {menuItems.map((item) => (
-            <li key={item.name} onClick={toggleMenu} className="p-2 hover:cursor-pointer">
-              <Link href={item.to}>
-                <p className="text-lg font-semibold">{item.name}</p>
+            <li key={item.name} onClick={toggleMenu} className="">
+              <Link href={item.to} className="block cursor-pointer p-2 text-lg font-semibold">
+                {item.name}
               </Link>
             </li>
           ))}

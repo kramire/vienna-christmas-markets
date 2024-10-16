@@ -1,16 +1,18 @@
 import Image from 'next/image'
 import React from 'react'
 import { Event, Market } from '../../../App.types'
-import LocationIcon from '../../../../public/location.svg'
 import { GOOGLE_MAPS_LINK } from '../../../App.constants'
-import Map from '../../../components/map'
+import Map from '../../../components/Map'
+
+const LocationIcon = '/location.svg'
+const TrainIcon = '/train.png'
 
 interface Props {
   result: Market | Event
 }
 
 export const Location = ({ result }: Props) => {
-  const { coordinates, district, address } = result
+  const { coordinates, district, address, transportation } = result
 
   const googleMapsLink = `${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`
 
@@ -23,6 +25,12 @@ export const Location = ({ result }: Props) => {
           {district} - {address}
         </a>
       </div>
+      {transportation.length > 0 && (
+        <div className="flex items-center gap-4">
+          <Image src={TrainIcon} alt="" width={16} height={16} />
+          {transportation.join(' ')}
+        </div>
+      )}
       <a href={googleMapsLink} target="_blank">
         <Map results={[result]} center={coordinates} zoom={14} className="z-0 h-40 w-full rounded-md shadow" />
       </a>

@@ -10,7 +10,10 @@ interface Props {
 
 const FavoriteButton = ({ isFavorite, handleClick }: Props) => (
   <Image
-    onClick={handleClick}
+    onClick={(e) => {
+      e.preventDefault()
+      handleClick()
+    }}
     src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
     alt={isFavorite ? 'Favorite Venue' : 'Not a favorited venue'}
     loading="lazy"

@@ -133,7 +133,7 @@ const ResultList = ({
 
   return (
     <div className="flex h-full flex-col md:gap-3">
-      <div className="m-auto flex w-full flex-col gap-4 px-6 py-4 md:gap-6 lg:px-0">
+      <div className="m-auto flex w-full flex-col gap-4 px-6 py-4 md:gap-6 lg:px-4">
         <div className="flex flex-col gap-3 md:gap-4">
           <div className="flex flex-col md:gap-3">
             <HeaderText />
