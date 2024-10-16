@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import { Event, Market } from '../../../app.types'
+import { Event, Market } from '../../../App.types'
 import LocationIcon from '../../../../public/location.svg'
-import { GOOGLE_MAPS_LINK } from '../../../app.constants'
+import { GOOGLE_MAPS_LINK } from '../../../App.constants'
 import Map from '../../../components/map'
 
 interface Props {
@@ -24,7 +24,7 @@ export const Location = ({ result }: Props) => {
         </a>
       </div>
       <a href={googleMapsLink} target="_blank">
-        <Map results={[result]} center={coordinates} zoom={14} className="h-40 w-full rounded-md shadow z-0" />
+        <Map results={[result]} center={coordinates} zoom={14} className="z-0 h-40 w-full rounded-md shadow" />
       </a>
     </>
   )

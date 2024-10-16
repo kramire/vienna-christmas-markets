@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Offering } from '../../../app.types'
-import { offeringsMapping } from '../../../app.constants'
+import { Offering } from '../../../App.types'
+import { offeringsMapping } from '../../../App.constants'
 
 interface Props {
   offerings: Array<Offering>

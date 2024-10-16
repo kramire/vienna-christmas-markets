@@ -14,14 +14,13 @@ const CardImage = ({ imgSrc, altText }: Props) => {
         alt={altText}
         width={300}
         height={256}
-        className="w-full h-64 object-cover border border-solid border-gray-300"
+        className="h-64 w-full border border-solid border-gray-300 object-cover"
       />
     )
   }
-
   return (
-    <div className="w-full h-64 flex justify-center items-center border border-solid border-gray-200 bg-gray-100">
-      <Image src={MissingImageIcon} width={56} height={56} alt="Gingergread house" />
+    <div className="flex h-64 w-full items-center justify-center border border-solid border-gray-200 bg-gray-100">
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
     </div>
   )
 }

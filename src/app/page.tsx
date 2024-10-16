@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Routes } from '../app.types'
-import LinkedSection from './components/LinkedSection'
+import { Routes } from '../App.types'
+import LinkedSection from '../components/LinkedSection'
 
 const HeroImage = '/Vienna-City-Center-Christmas-Lights.webp'
 const ChristmasMugIcon = '/christmas-mug.png'

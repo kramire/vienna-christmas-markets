@@ -1,4 +1,4 @@
-import { Market, Event, ResultType } from '../../app.types'
+import { Market, Event, ResultType } from '../../App.types'
 import data from '../../data.json'
 import sortResultsByDate from '../../utils/sort-results-by-date'
 import VisitedToggle from './components/visitedToggle'
@@ -14,14 +14,14 @@ export default function VisitsPage() {
   const districts = Object.keys(marketsByDistrict).sort()
 
   return (
-    <div className="flex flex-col justify-center items-center gap-8 p-6">
-      <h2 className="text-lg align-center font-bold text-green-950">Which markets have you visited?</h2>
+    <div className="flex flex-col items-center justify-center gap-8 p-6">
+      <h2 className="align-center text-lg font-bold text-green-950">Which markets have you visited?</h2>
       <div className="flex flex-col gap-4">
         {districts.map((district) => (
-          <div key={`district_${district}`} className="shadow-md p-4">
-            <h3 className="font-bold text-lg text-green-950 mb-4">{district}</h3>
+          <div key={`district_${district}`} className="p-4 shadow-md">
+            <h3 className="mb-4 text-lg font-bold text-green-950">{district}</h3>
             {marketsByDistrict[district].map((market) => (
-              <div key={market.id} className="flex gap-4 text-base mb-4">
+              <div key={market.id} className="mb-4 flex gap-4 text-base">
                 <div className="flex-1">{market.name}</div>
                 <VisitedToggle marketId={market.id} />
               </div>

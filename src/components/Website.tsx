@@ -1,13 +1,13 @@
 import Image from 'next/image'
 
-import InfoIcon from '../../../../public/info.svg'
+import InfoIcon from '../../public/info.svg'
 
 interface Props {
   website: string | null
   marketName: string
 }
 
-export const Website = ({ website, marketName }: Props) => {
+const Website = ({ website, marketName }: Props) => {
   if (!website) {
     return null
   }
@@ -20,3 +20,5 @@ export const Website = ({ website, marketName }: Props) => {
     </div>
   )
 }
+
+export default Website

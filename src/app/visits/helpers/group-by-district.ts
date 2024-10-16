@@ -1,4 +1,4 @@
-import { Market } from '../../../app.types'
+import { Market } from '../../../App.types'
 
 export function groupByDistrict(markets: Array<Market>) {
   const districts: { [key in string]: Array<Market> } = {}

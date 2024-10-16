@@ -3,7 +3,7 @@
 import getScript from './helpers/getScript'
 import loadStyles from './helpers/loadStyles'
 import { useEffect, useState } from 'react'
-import { Coordinate, Event, Market } from '../../app.types'
+import { Coordinate, Event, Market } from '../../App.types'
 
 const WIEN_CENTER = { lat: 48.2089366, lng: 16.3625921 }
 

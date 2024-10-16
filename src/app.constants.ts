@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-import { Offering, SortType } from './app.types'
+import { Offering, SortType } from './App.types'
 
 import IMG_SRC_1 from '../public/Musuem-Quartier-Christmas-market.webp'
 import IMG_SRC_3 from '../public/Tuerkenschanzpark-Christmas-market.webp'
@@ -54,3 +54,5 @@ export const offeringsMapping: { [key in Offering]: { name: string; icon: Static
   [Offering.OFFERING_SHOPPING]: { name: 'Shopping', icon: SHOPPING },
   [Offering.OFFERING_CURLING]: { name: 'Curling', icon: EISSTOCK },
 }
+
+export const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S']

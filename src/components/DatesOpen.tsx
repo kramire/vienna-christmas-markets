@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import CalendarIcon from '../../../../public/calendar.svg'
-import { localizeDate } from '../../../utils/localizeDate'
+import CalendarIcon from '../../public/calendar.svg'
+import { localizeDate } from '../utils/localizeDate'
 
 interface Props {
   start: string | null
@@ -8,7 +8,7 @@ interface Props {
   language: string
 }
 
-export const Dates = ({ start, end, language }: Props) => {
+const DatesOpen = ({ start, end, language }: Props) => {
   const startDate = start ? localizeDate(start, language) : 'TBD'
   const endDate = end ? localizeDate(end, language) : 'TBD'
   return (
@@ -18,3 +18,5 @@ export const Dates = ({ start, end, language }: Props) => {
     </div>
   )
 }
+
+export default DatesOpen

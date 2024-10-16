@@ -1,5 +1,5 @@
-import { sortSelectOptions } from '../app.constants'
-import { SortType } from '../app.types'
+import { sortSelectOptions } from '../App.constants'
+import { SortType } from '../App.types'
 
 interface Props {
   sortType: SortType
@@ -12,7 +12,7 @@ const SortSelect = ({ sortType, handleChange }: Props) => {
     <select
       value={sortType}
       onChange={(e) => handleChange(e.target.value as SortType)}
-      className="border border-green-950  text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block py-1 px-2 w-min mt-2"
+      className="mt-2 block w-min rounded-2xl border border-green-950 px-2 py-1 text-sm focus:border-blue-500 focus:ring-blue-500"
     >
       {sortOptionKeys.map((sortOption) => {
         const { label } = sortSelectOptions[sortOption as SortType]

@@ -1,19 +1,19 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Market, Event, FilterType, Coordinate, SortType } from '../../app.types'
+import { Market, Event, FilterType, Coordinate, SortType } from '../../App.types'
 import { getNavigatorLocation } from '../../utils/get-navigator-location'
-import ResultCard from './resultCard/resultCard'
+import ResultCard from './ResultCard'
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
-import { NEAR_ME_KM_DISTANCE_AWAY } from './resultList.constants'
+import { NEAR_ME_KM_DISTANCE_AWAY } from './ResultList.constants'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../app.constants'
-import Filters from './filters'
+import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../App.constants'
+import Filters from './Filters'
 import { getIsOpen } from '../../utils/get-is-open'
 import dynamic from 'next/dynamic'
-import HeaderText from '../../components/headerText'
+import HeaderText from '../../components/HeaderText'
 import SortSelect from '../../components/SortSelect'
 
-const Map = dynamic(() => import('../../components/map'))
+const Map = dynamic(() => import('../../components/Map'))
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
@@ -132,8 +132,8 @@ const ResultList = ({
   }, [])
 
   return (
-    <div className="h-full flex flex-col md:gap-3">
-      <div className="w-full flex flex-col gap-4 md:gap-6 m-auto px-6 lg:px-0  py-4 ">
+    <div className="flex h-full flex-col md:gap-3">
+      <div className="m-auto flex w-full flex-col gap-4 px-6 py-4 md:gap-6 lg:px-0">
         <div className="flex flex-col gap-3 md:gap-4">
           <div className="flex flex-col md:gap-3">
             <HeaderText />
@@ -152,10 +152,10 @@ const ResultList = ({
           {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
         </div>
         {showMap ? (
-          <Map results={shownResults} className="h-[65vh] z-10 w-screen md:w-full -translate-x-6 md:translate-x-0" />
+          <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
         ) : (
           <ul
-            className="list-none grid justify-between p-0 m-0 gap-7 gap-y-9"
+            className="m-0 grid list-none justify-between gap-7 gap-y-9 p-0"
             style={{
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
             }}

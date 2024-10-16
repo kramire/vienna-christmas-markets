@@ -1,4 +1,4 @@
-import { Routes } from '../../app.types'
+import { Routes } from '../../App.types'
 
 interface MenuItem {
   name: string

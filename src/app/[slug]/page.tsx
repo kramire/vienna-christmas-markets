@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
-import { Market, Event } from '../../app.types'
+import { Market, Event } from '../../App.types'
 import data from '../../data.json'
-import { Dates } from '../../containers/resultList/resultCard/dates'
-import { OpeningHours } from '../../containers/resultList/resultCard/openingHours'
-import { resultToImgUrlMapping } from '../../app.constants'
+import DatesOpen from '../../components/DatesOpen'
+import HoursOpen from '../../components/HoursOpen'
+import { resultToImgUrlMapping } from '../../App.constants'
 import { Offerings } from './components/Offerings'
 import { Location } from './components/Location'
 import District from '../../components/district'
@@ -24,13 +24,13 @@ export default function ResultPage({ params }: { params: { slug: string } }) {
   return (
     <div className="flex flex-col lg:flex-row">
       <MainImage imgSrc={imgSrc} altText={name} />
-      <div className="px-4 py-6 md:p-12 md:pt-8 flex flex-col justify-between w-full gap-5 flex-1">
+      <div className="flex w-full flex-1 flex-col justify-between gap-5 px-4 py-6 md:p-12 md:pt-8">
         <div className="flex justify-between gap-3">
           <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
         </div>
         <District coordinates={coordinates} district={district} />
-        <Dates start={start} end={end} language={'en'} />
-        <OpeningHours marketId={id} times={times} />
+        <DatesOpen start={start} end={end} language={'en'} />
+        <HoursOpen marketId={id} times={times} />
         <hr />
         <Offerings offerings={offerings} />
         <hr />
