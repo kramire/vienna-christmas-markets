@@ -1,5 +1,5 @@
 import '../globals.css'
-import Header from '../components/header'
+import Header from '../components/Header'
 import { Metadata } from 'next'
 import { MaxWidthContainer } from '../components/MaxWidthContainer'
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="m-0 min-w-[320px] min-h-screen overflow-x-hidden">
+      <body className="m-0 min-h-screen min-w-[320px] overflow-x-hidden">
         <Header />
         <main>
           <MaxWidthContainer>{children}</MaxWidthContainer>
