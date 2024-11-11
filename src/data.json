@@ -3,13 +3,13 @@
     "id": 1,
     "slug": "mq",
     "name": "Winter MQ",
-    "isActive": false,
+    "isActive": true,
     "district": "1070",
     "address": "Museumsplatz 1",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
     "transportation": ["U3", "57A"],
-    "start": "11/8/2023",
-    "end": "12/23/2023",
+    "start": "11/14/2024",
+    "end": "12/23/2024",
     "times": [
       ["16:00", "23:00"],
       ["16:00", "23:00"],
@@ -19,7 +19,7 @@
       ["14:00", "23:00"],
       ["14:00", "23:00"]
     ],
-    "website": "https://www.mqw.at/winter-2023",
+    "website": "https://www.mqw.at/winter-im-mq",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
@@ -381,7 +381,7 @@
     "website": "https://www.imperial-markets.at/maerkte/weihnachtsmarkt-schloss-schoenbrunn",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_SHOPPING"]
   },
   {
     "id": 17,
@@ -709,5 +709,30 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
+  },
+  {
+    "id": 32,
+    "slug": "franz-jonas-platz",
+    "name": "Weihnachtsmarkt am Franz-Jonas-Platz",
+    "isActive": true,
+    "district": "1210",
+    "address": "Franz-Jonas-Platz",
+    "coordinates": { "lat": 48.2569587, "lng": 16.3965029 },
+    "transportation": ["S-BAHN", "U6", "2", "25", "26", "30", "31", "33", "29A", "29B", "33A", "34A"],
+    "start": "11/7/2024",
+    "end": "12/24/2024",
+    "times": [
+      ["8:00", "20:00"],
+      ["8:00", "20:00"],
+      ["8:00", "20:00"],
+      ["8:00", "20:00"],
+      ["8:00", "20:00"],
+      ["8:00", "20:00"],
+      ["8:00", "20:00"]
+    ],
+    "website": null,
+    "imgUrl": "",
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
   }
 ]

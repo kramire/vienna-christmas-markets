@@ -36,7 +36,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
   }, [])
 
   return (
-    <li key={id} className="flex w-full flex-col gap-3 shadow-md">
+    <li key={id} className="relative flex w-full flex-col gap-3 shadow-md">
       <Link href={`/${result.slug}`}>
         <CardImage imgSrc={imgSrc} altText={name} />
         <div className="flex w-full flex-1 flex-col justify-between space-y-4 px-4 py-6">
@@ -68,9 +68,11 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
               </div>
             </div>
           </dl>
-          <OpenStatusLabel start={start} end={end} times={times} />
         </div>
       </Link>
+      <div className="absolute -right-2 -top-2">
+        <OpenStatusLabel start={start} end={end} times={times} />
+      </div>
     </li>
   )
 }
