@@ -23,10 +23,7 @@ export async function generateMetadata({ params: { slug } }: { params: { slug: s
 
   const { name, type } = result
 
-  const title =
-    type === ResultType.MARKET
-      ? `Vienna Christmas Markets - ${result.name}`
-      : `Vienna Christmas Events - ${result.name}`
+  const title = type === ResultType.MARKET ? `Vienna Christmas Markets - ${name}` : `Vienna Christmas Events - ${name}`
 
   return {
     title,

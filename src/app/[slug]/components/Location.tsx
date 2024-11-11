@@ -28,7 +28,7 @@ export const Location = ({ result }: Props) => {
       {transportation.length > 0 && (
         <div className="flex items-center gap-4">
           <Image src={TrainIcon} alt="" width={16} height={16} />
-          {transportation.join(' ')}
+          {transportation.join(' • ')}
         </div>
       )}
       <a href={googleMapsLink} target="_blank">
