@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { Market, Event } from '../../App.types'
+import { Market, Event, ResultType } from '../../App.types'
 import data from '../../data.json'
 import { resultToImgUrlMapping, weekDays } from '../../App.constants'
 import { Offerings } from './components/Offerings'
@@ -8,10 +8,40 @@ import MainImage from './components/MainImage'
 import Image from 'next/image'
 import OpenStatusLabel from '../../components/OpenStatusLabel'
 import { localizeDate } from '../../utils/localizeDate'
+import { Metadata } from 'next'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
 const ClockIcon = '/clock.svg'
+
+export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
+  const result = data.find((result) => result.slug === slug) as Market | Event
+
+  if (!result) {
+    notFound()
+  }
+
+  const { name, type } = result
+
+  const title =
+    type === ResultType.MARKET
+      ? `Vienna Christmas Markets - ${result.name}`
+      : `Vienna Christmas Events - ${result.name}`
+
+  return {
+    title,
+    openGraph: {
+      title,
+      type: 'website',
+      images: ['/meta-christmas-mug.webp'],
+    },
+    twitter: {
+      title,
+      card: 'summary_large_image',
+      images: ['/meta-christmas-mug.webp'],
+    },
+  }
+}
 
 export default function ResultPage({ params }: { params: { slug: string } }) {
   const { slug } = params
