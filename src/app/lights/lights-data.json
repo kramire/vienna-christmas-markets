@@ -166,7 +166,7 @@
     "slug": "neubaugasse",
     "name": "Neubaugasse",
     "isActive": true,
-    "district": "1010",
+    "district": "1070",
     "address": "Neubaugasse",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
   },
@@ -175,7 +175,7 @@
     "slug": "josefstaedterstrasse",
     "name": "Josefstädterstraße",
     "isActive": true,
-    "district": "1010",
+    "district": "1080",
     "address": "Josefstädterstraße",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
   },
