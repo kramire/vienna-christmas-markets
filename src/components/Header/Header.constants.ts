@@ -9,5 +9,6 @@ export const menuItems: Array<MenuItem> = [
   { name: 'Home', to: Routes.HOME },
   { name: 'Markets', to: Routes.MARKETS },
   { name: 'Events', to: Routes.EVENTS },
+  { name: 'Lights', to: Routes.LIGHTS },
   { name: 'Visits', to: Routes.VISITS },
 ]

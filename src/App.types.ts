@@ -14,6 +14,16 @@ interface Result {
   offerings: Array<Offering>
 }
 
+export interface StreetLights {
+  id: number
+  slug: string
+  name: string
+  isActive: boolean
+  coordinates: Coordinate
+  district: string
+  address: string
+}
+
 export enum Offering {
   OFFERING_GASTRONOMY = 'OFFERING_GASTRONOMY',
   OFFERING_SHOPPING = 'OFFERING_SHOPPING',
@@ -45,6 +55,7 @@ export enum Routes {
   MARKETS = '/markets',
   EVENTS = '/events',
   VISITS = '/visits',
+  LIGHTS = '/lights',
 }
 
 export enum SortType {
