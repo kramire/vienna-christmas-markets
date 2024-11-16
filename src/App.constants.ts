@@ -9,6 +9,7 @@ import IMG_SRC_6 from '../public/Altes-AKH-Christmas-market.webp'
 import IMG_SRC_7 from '../public/Am-Hof-Christmas-Market.webp'
 import IMG_SRC_8 from '../public/Maria-Theresien-Platz-Christmas-market.webp'
 import IMG_SRC_12 from '../public/Liechtenstein-Christmas-market.webp'
+import IMG_SRC_13 from '../public/Freyung-Market.webp'
 import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
 import IMG_SRC_16 from '../public/Schoenbrunn-Christmas-market.webp'
 import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
@@ -36,6 +37,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   7: IMG_SRC_7,
   8: IMG_SRC_8,
   12: IMG_SRC_12,
+  13: IMG_SRC_13,
   14: IMG_SRC_14,
   16: IMG_SRC_16,
   17: IMG_SRC_17,
