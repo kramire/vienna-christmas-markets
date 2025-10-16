@@ -20,6 +20,7 @@ import IMG_SRC_20 from '../public/Badeschiff.webp'
 import IMG_SRC_21 from '../public/Haas_und_Hass.webp'
 
 import EISSTOCK from '../public/eisstock.png'
+import ICE_SKATE from '../public/ice-skate.png'
 import GASTRONOMY from '../public/gastronomy.png'
 import SHOPPING from '../public/shopping.png'
 
@@ -59,6 +60,7 @@ export const offeringsMapping: { [key in Offering]: { name: string; icon: Static
   [Offering.OFFERING_GASTRONOMY]: { name: 'Food & Drink', icon: GASTRONOMY },
   [Offering.OFFERING_SHOPPING]: { name: 'Shopping', icon: SHOPPING },
   [Offering.OFFERING_CURLING]: { name: 'Curling', icon: EISSTOCK },
+  [Offering.OFFERING_ICE_SKATING]: { name: 'Ice Skating', icon: ICE_SKATE },
 }
 
 export const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S']
