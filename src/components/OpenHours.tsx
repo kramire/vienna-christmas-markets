@@ -43,7 +43,7 @@ const OpenHours = ({ start, end, times }: Props) => {
       <p className="sm:hidden">•</p>
       <div className="flex items-center gap-3">
         <dt>
-          {Array.isArray(times[todayIdx]) && times[todayIdx] && times[todayIdx].length === 2
+          {times[todayIdx] && Array.isArray(times[todayIdx])
             ? `${times[todayIdx]![0]} - ${times[todayIdx]![1]}`
             : 'TBD'}
         </dt>
