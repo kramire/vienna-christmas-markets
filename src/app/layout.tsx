@@ -2,8 +2,14 @@ import '../globals.css'
 import Header from '../components/Header'
 import { Metadata } from 'next'
 import { MaxWidthContainer } from '../components/MaxWidthContainer'
+import { Poppins } from 'next/font/google'
 
-const META_TITLE = 'Vienna Christmas Markets 2024'
+const poppins = Poppins({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+})
+
+const META_TITLE = 'Vienna Christmas Markets 2025'
 const META_DESCRIPTION = "A list of this year's Christmas markets in Vienna, Austria."
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <body className="m-0 min-h-screen min-w-[320px] overflow-x-hidden">
         <Header />
         <main>

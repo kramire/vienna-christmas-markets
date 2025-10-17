@@ -1,8 +1,8 @@
 export const localizeDate = (date: string | Date, language: string) => {
-  if (typeof date === 'string') {
-    const dateFromString = new Date(date)
-    return dateFromString.toLocaleDateString(language)
-  }
-
-  return date.toLocaleDateString(language)
+  const dateObj = typeof date === 'string' ? new Date(date) : date
+  return dateObj.toLocaleDateString(language, {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
 }

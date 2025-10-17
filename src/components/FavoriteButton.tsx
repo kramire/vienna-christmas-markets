@@ -5,21 +5,26 @@ const EmptyHeartIcon = '/emptyHeart.svg'
 
 interface Props {
   isFavorite: boolean
-  handleClick: () => void
+  onClick: () => void
 }
 
-const FavoriteButton = ({ isFavorite, handleClick }: Props) => (
-  <Image
-    onClick={(e) => {
-      e.preventDefault()
-      handleClick()
-    }}
-    src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
-    alt={isFavorite ? 'Favorite Venue' : 'Not a favorited venue'}
-    loading="lazy"
-    width={20}
-    height={20}
-  />
-)
+const FavoriteButton = ({ isFavorite, onClick }: Props) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    onClick()
+  }
+  return (
+    <button onClick={handleClick} className="absolute right-3 top-3 z-10 flex rounded-full bg-white p-2">
+      <Image
+        src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
+        alt={isFavorite ? 'Favorite Venue' : 'Not a favorited venue'}
+        className="flex-shrink-0"
+        loading="lazy"
+        width={16}
+        height={16}
+      />
+    </button>
+  )
+}
 
 export default FavoriteButton

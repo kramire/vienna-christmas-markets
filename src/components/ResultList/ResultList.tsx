@@ -133,7 +133,7 @@ const ResultList = ({
 
   return (
     <div className="flex h-full flex-col md:gap-3">
-      <div className="m-auto flex w-full flex-col gap-4 px-6 py-4 md:gap-6 lg:px-4">
+      <div className="m-auto flex w-full flex-col gap-4 p-4 md:gap-6">
         <div className="flex flex-col gap-3 md:gap-4">
           <div className="flex flex-col md:gap-3">
             <HeaderText />
@@ -155,7 +155,7 @@ const ResultList = ({
           <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
         ) : (
           <ul
-            className="m-0 grid list-none justify-between gap-7 gap-y-9 p-0"
+            className="m-0 grid list-none justify-between gap-4 p-0 sm:gap-7 sm:gap-y-9"
             style={{
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
             }}

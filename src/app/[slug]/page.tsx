@@ -6,7 +6,6 @@ import { Offerings } from './components/Offerings'
 import { Location } from './components/Location'
 import MainImage from './components/MainImage'
 import Image from 'next/image'
-import OpenStatusLabel from '../../components/OpenStatusLabel'
 import { localizeDate } from '../../utils/localizeDate'
 import { Metadata } from 'next'
 
@@ -87,7 +86,6 @@ export default function ResultPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </dl>
-        <OpenStatusLabel start={start} end={end} times={times} />
         <hr />
         <Offerings offerings={offerings} />
         <hr />
