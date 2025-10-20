@@ -357,13 +357,13 @@
     "id": 13,
     "slug": "freyung",
     "name": "Altwiener Christkindlmarkt Freyung",
-    "isActive": false,
+    "isActive": true,
     "district": "1010",
     "address": "Freyung 7",
     "coordinates": { "lat": 48.211618, "lng": 16.36557 },
     "transportation": [],
-    "start": "11/15/2024",
-    "end": "12/23/2024",
+    "start": "11/14/2025",
+    "end": "12/23/2025",
     "times": [
       ["10:00", "21:00"],
       ["10:00", "21:00"],
@@ -373,7 +373,7 @@
       ["10:00", "21:00"],
       ["10:00", "21:00"]
     ],
-    "website": "https://altwiener-markt.at/",
+    "website": "https://altwiener-markt.at/de/christmas",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
