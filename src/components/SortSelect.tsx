@@ -1,6 +1,6 @@
 import { sortSelectOptions } from '../App.constants'
 import { SortType } from '../App.types'
-
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ux/Select'
 interface Props {
   sortType: SortType
   handleChange: (value: SortType) => void
@@ -8,21 +8,21 @@ interface Props {
 
 const SortSelect = ({ sortType, handleChange }: Props) => {
   const sortOptionKeys = Object.keys(sortSelectOptions)
+  const selectedLabel = sortSelectOptions[sortType].label
   return (
-    <select
-      value={sortType}
-      onChange={(e) => handleChange(e.target.value as SortType)}
-      className="block w-min rounded-2xl border border-green-950 px-2 py-1 text-sm text-green-950 focus:border-blue-500 focus:ring-blue-500 md:text-base"
-    >
-      {sortOptionKeys.map((sortOption) => {
-        const { label } = sortSelectOptions[sortOption as SortType]
-        return (
-          <option key={`sort-option-${sortOption}`} value={sortOption}>
-            {`Sort by: ${label}`}
-          </option>
-        )
-      })}
-    </select>
+    <Select value={sortType} onValueChange={(value) => handleChange(value as SortType)}>
+      <SelectTrigger className="border-none p-0 px-0 font-medium underline md:text-base md:font-normal">{`Sort by: ${selectedLabel}`}</SelectTrigger>
+      <SelectContent className="bg-white">
+        {sortOptionKeys.map((sortOption) => {
+          const { label } = sortSelectOptions[sortOption as SortType]
+          return (
+            <SelectItem key={`sort-option-${sortOption}`} value={sortOption} className="bg-white md:text-base">
+              {label}
+            </SelectItem>
+          )
+        })}
+      </SelectContent>
+    </Select>
   )
 }
 

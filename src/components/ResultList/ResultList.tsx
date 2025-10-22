@@ -13,6 +13,7 @@ import dynamic from 'next/dynamic'
 import HeaderText from '../../components/HeaderText'
 import SortSelect from '../../components/SortSelect'
 import MapToggle from './components/MapToggle'
+import { cn } from '../../utils/cn'
 
 const Map = dynamic(() => import('../../components/Map'))
 
@@ -134,21 +135,19 @@ const ResultList = ({
 
   return (
     <div className="flex h-full flex-col md:gap-3">
-      <div className="m-auto flex w-full flex-col gap-4 p-4 md:gap-6">
-        <div className="flex flex-col gap-3 md:gap-4">
-          <div className="flex flex-col md:gap-3">
-            <HeaderText />
-            <p>
-              {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-              {activeFilters[FilterType.NEAR_ME] && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-            </p>
-          </div>
-          <div className="flex flex-col justify-between gap-3 sm:flex-row">
-            <Filters activeFilters={activeFilters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
-            <div className={`flex gap-2 ${showMap ? 'justify-end' : 'justify-between'}`}>
-              {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
-              <MapToggle showMap={showMap} toggleMap={toggleMap} />
-            </div>
+      <div className="m-auto flex w-full flex-col gap-3 p-4 md:gap-6">
+        <div className="flex flex-col gap-1 md:gap-3">
+          <HeaderText />
+          <p className="text-sm md:text-base">
+            {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
+            {activeFilters[FilterType.NEAR_ME] && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+          </p>
+        </div>
+        <div className="flex flex-col justify-between gap-4 sm:flex-row">
+          <Filters activeFilters={activeFilters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
+          <div className={cn('flex gap-4', showMap ? 'justify-end' : 'justify-between')}>
+            {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
+            <MapToggle showMap={showMap} toggleMap={toggleMap} />
           </div>
         </div>
         {showMap ? (

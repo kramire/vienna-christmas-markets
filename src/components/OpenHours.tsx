@@ -30,29 +30,25 @@ const OpenHours = ({ start, end, times }: Props) => {
 
   if (isClosedForSeason) {
     return (
-      <span className="mx-auto w-fit rounded bg-red-700 px-5 py-1 text-sm font-bold text-white">
+      <div className="mx-auto w-fit rounded bg-red-700/80 px-5 py-1 text-sm font-bold text-white">
         Closed for the season
-      </span>
+      </div>
     )
   }
 
   return (
-    <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
+    <div className="flex grid-cols-[12px_1fr] flex-wrap items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
       <Image src={ClockIcon} width={12} height={12} alt="" />
-      <dd>Hours Today</dd>
+      <dd>Hours</dd>
       <p className="sm:hidden">•</p>
-      <div className="flex items-center gap-3">
-        <dt>
-          {times[todayIdx] && Array.isArray(times[todayIdx])
-            ? `${times[todayIdx]![0]} - ${times[todayIdx]![1]}`
-            : 'TBD'}
-        </dt>
-        {isOpen && (
-          <span className="mx-auto rounded bg-green-100 px-2 py-1 text-xs font-medium text-green-800 sm:mx-0">
-            Open now!
-          </span>
-        )}
-      </div>
+      <dt>
+        {times[todayIdx] && Array.isArray(times[todayIdx]) ? `${times[todayIdx]![0]} - ${times[todayIdx]![1]}` : 'TBD'}
+      </dt>
+      {isOpen && (
+        <span className="mx-auto rounded bg-green-100 px-4 py-1 text-xs font-medium text-green-800 sm:mx-0">
+          Open now!
+        </span>
+      )}
     </div>
   )
 }
