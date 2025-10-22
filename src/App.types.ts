@@ -44,7 +44,11 @@ export interface Event extends Result {
   type: ResultType.EVENT
 }
 
-export type FilterType = 'openNow' | 'favorited' | 'nearMe'
+export enum FilterType {
+  OPEN_NOW = 'OPEN_NOW',
+  FAVORITE = 'FAVORITE',
+  NEAR_ME = 'NEAR_ME',
+}
 
 export interface Coordinate {
   lat: number

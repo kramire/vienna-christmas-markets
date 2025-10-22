@@ -12,6 +12,7 @@ import { getIsOpen } from '../../utils/get-is-open'
 import dynamic from 'next/dynamic'
 import HeaderText from '../../components/HeaderText'
 import SortSelect from '../../components/SortSelect'
+import MapToggle from './components/MapToggle'
 
 const Map = dynamic(() => import('../../components/Map'))
 
@@ -37,9 +38,9 @@ const ResultList = ({
   const [activeFilters, setActiveFilters] = useState<{
     [key in FilterType]: boolean
   }>({
-    openNow: false,
-    favorited: false,
-    nearMe: false,
+    [FilterType.OPEN_NOW]: false,
+    [FilterType.FAVORITE]: false,
+    [FilterType.NEAR_ME]: false,
   })
   const [isLoadingLocation, setIsLoadingLocation] = useState(false)
   const [showMap, setShowMap] = useState(false)
@@ -73,7 +74,7 @@ const ResultList = ({
   const filterResults = (results: Array<Market> | Array<Event> | Array<Market | Event>) => {
     let newResults = results
 
-    if (activeFilters.openNow) {
+    if (activeFilters[FilterType.OPEN_NOW]) {
       newResults = newResults.filter((result) => {
         if (!result.start || !result.end) {
           return false
@@ -82,11 +83,11 @@ const ResultList = ({
       })
     }
 
-    if (activeFilters.favorited) {
+    if (activeFilters[FilterType.FAVORITE]) {
       newResults = newResults.filter((result) => favorites.includes(result.id))
     }
 
-    if (activeFilters.nearMe && deviceLocation) {
+    if (activeFilters[FilterType.NEAR_ME] && deviceLocation) {
       newResults = newResults.filter((result) => {
         const distanceAway = getDistanceFromLatLonInKm(
           result.coordinates.lat,
@@ -113,20 +114,20 @@ const ResultList = ({
           setIsLoadingLocation(false)
         }
       } catch {
-        setActiveFilters({ ...activeFilters, nearMe: false })
+        setActiveFilters({ ...activeFilters, [FilterType.NEAR_ME]: false })
         setIsLoadingLocation(false)
       }
     }
-    if (activeFilters.nearMe && !deviceLocation) {
+    if (activeFilters[FilterType.NEAR_ME] && !deviceLocation) {
       getResult()
     }
-  }, [activeFilters.nearMe])
+  }, [activeFilters[FilterType.NEAR_ME]])
 
   useEffect(() => {
     setActiveFilters({
-      openNow: false,
-      favorited: false,
-      nearMe: false,
+      [FilterType.OPEN_NOW]: false,
+      [FilterType.FAVORITE]: false,
+      [FilterType.NEAR_ME]: false,
     })
     setShowMap(false)
   }, [])
@@ -139,17 +140,16 @@ const ResultList = ({
             <HeaderText />
             <p>
               {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-              {activeFilters.nearMe && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+              {activeFilters[FilterType.NEAR_ME] && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
             </p>
           </div>
-          <Filters
-            activeFilters={activeFilters}
-            toggleFilter={toggleFilter}
-            isLoadingLocation={isLoadingLocation}
-            showMap={showMap}
-            toggleMap={toggleMap}
-          />
-          {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
+          <div className="flex flex-col justify-between gap-3 sm:flex-row">
+            <Filters activeFilters={activeFilters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
+            <div className={`flex gap-2 ${showMap ? 'justify-end' : 'justify-between'}`}>
+              {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
+              <MapToggle showMap={showMap} toggleMap={toggleMap} />
+            </div>
+          </div>
         </div>
         {showMap ? (
           <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
