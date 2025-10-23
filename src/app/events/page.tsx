@@ -1,44 +1,23 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Market, Event, ResultType, Coordinate, SortType } from '../../App.types'
-import { FAVORITED_MARKETS_LOCAL_STORAGE_KEY } from '../../App.constants'
-import ResultList from '../../components/ResultList'
+import { Event, ResultType } from '../../App.types'
+import { FAVORITE_MARKETS_LOCAL_STORAGE_KEY } from '../../App.constants'
+import ResultsContent from '../../components/ResultsContent'
 import data from '../../data.json'
-import useLocalStorage from '../../hooks/useLocalStorage'
-import sortResultsByDate from '../../utils/sort-results-by-date'
-import sortResultsByDistrict from '../../utils/sort-results-by-district'
+import useLocalStorage from '../../hooks/use-local-storage'
 
+// Very similar to Markets page.tsx
 export default function EventsPage() {
   const [favorites, setFavorites] = useState<number[]>([])
-  const [deviceLocation, setDeviceLocation] = useState<Coordinate | undefined>(undefined)
-  const [sortBy, setSortBy] = useState<SortType>(SortType.DISTRICT)
 
   const { getItem } = useLocalStorage()
 
-  const results = data as Array<Market | Event>
-
-  const eventResults = results
-    .filter((result) => result.type === ResultType.EVENT && result.isActive)
-    .sort(sortBy === SortType.DATE ? sortResultsByDate : sortResultsByDistrict) as Array<Market>
-
-  const handleSort = (sortType: SortType) => setSortBy(sortType)
+  const results = (data as Array<Event>).filter((result) => result.type === ResultType.EVENT && result.isActive)
 
   useEffect(() => {
-    const storedFavoritedMarkets = getItem(FAVORITED_MARKETS_LOCAL_STORAGE_KEY)
-    if (storedFavoritedMarkets) {
-      setFavorites(JSON.parse(storedFavoritedMarkets))
-    }
+    const savedFavorites = getItem(FAVORITE_MARKETS_LOCAL_STORAGE_KEY)
+    savedFavorites && setFavorites(JSON.parse(savedFavorites))
   }, [])
 
-  return (
-    <ResultList
-      results={eventResults}
-      favorites={favorites}
-      setFavorites={setFavorites}
-      deviceLocation={deviceLocation}
-      setDeviceLocation={setDeviceLocation}
-      sortType={sortBy}
-      handleSort={handleSort}
-    />
-  )
+  return <ResultsContent results={results} favorites={favorites} setFavorites={setFavorites} />
 }

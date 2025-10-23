@@ -27,7 +27,7 @@ import SHOPPING from '../public/shopping.png'
 export const MAX_CONTENT_WIDTH = 1130
 export const HEADER_HEIGHT = 56
 
-export const FAVORITED_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
+export const FAVORITE_MARKETS_LOCAL_STORAGE_KEY = 'favoritedMarkets'
 
 export const GOOGLE_MAPS_LINK = 'https://www.google.com/maps/search/?api=1'
 

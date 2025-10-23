@@ -36,15 +36,6 @@
     "coordinates": { "lat": 48.2088721, "lng": 16.3696762 }
   },
   {
-    "id": 28,
-    "slug": "jasomirgottstrasse",
-    "name": "Jasomirgottstraße",
-    "isActive": true,
-    "district": "1010",
-    "address": "Jasomirgottstraße",
-    "coordinates": { "lat": 48.2091031, "lng": 16.3707837 }
-  },
-  {
     "id": 5,
     "slug": "graben",
     "name": "Graben",
@@ -52,15 +43,6 @@
     "district": "1010",
     "address": "Graben",
     "coordinates": { "lat": 48.208681, "lng": 16.3671597 }
-  },
-  {
-    "id": 29,
-    "slug": "trattnerhof",
-    "name": "Trattnerhof",
-    "isActive": true,
-    "district": "1010",
-    "address": "Trattnerhof",
-    "coordinates": { "lat": 48.2089066, "lng": 16.3683167 }
   },
   {
     "id": 6,
@@ -270,7 +252,7 @@
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
   },
   {
-    "id": 24,
+    "id": 29,
     "slug": "waehringer-strasse",
     "name": "Währinger Straße",
     "isActive": true,
@@ -279,7 +261,7 @@
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
   },
   {
-    "id": 25,
+    "id": 30,
     "slug": "obkirchergasse",
     "name": "Obkirchergasse",
     "isActive": true,
@@ -288,7 +270,7 @@
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
   },
   {
-    "id": 26,
+    "id": 31,
     "slug": "seestadt-aspern",
     "name": "Seestadt Aspern",
     "isActive": true,
@@ -297,12 +279,30 @@
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
   },
   {
-    "id": 27,
+    "id": 32,
     "slug": "maurer-hauptplatz",
     "name": "Maurer Hauptplatz",
     "isActive": true,
     "district": "1230",
     "address": "Maurer Hauptplatz",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 }
+  },
+  {
+    "id": 33,
+    "slug": "jasomirgottstrasse",
+    "name": "Jasomirgottstraße",
+    "isActive": true,
+    "district": "1010",
+    "address": "Jasomirgottstraße",
+    "coordinates": { "lat": 48.2091031, "lng": 16.3707837 }
+  },
+  {
+    "id": 34,
+    "slug": "trattnerhof",
+    "name": "Trattnerhof",
+    "isActive": true,
+    "district": "1010",
+    "address": "Trattnerhof",
+    "coordinates": { "lat": 48.2089066, "lng": 16.3683167 }
   }
 ]

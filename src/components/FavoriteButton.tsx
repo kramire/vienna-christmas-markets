@@ -13,6 +13,7 @@ const FavoriteButton = ({ isFavorite, onClick }: Props) => {
     e.preventDefault()
     onClick()
   }
+
   return (
     <button onClick={handleClick} className="absolute right-3 top-3 z-10 flex rounded-full bg-white p-2">
       <Image

@@ -1,4 +1,6 @@
-export const getIsOpen = (startDate: string, endDate: string, times: Array<Array<string> | null>) => {
+export const getIsOpen = (startDate: string | null, endDate: string | null, times: Array<Array<string> | null>) => {
+  if (!startDate || !endDate) return false
+
   // Localize current date and time to Vienna timezone
   const now = new Date()
   const localizedDateString = now.toLocaleString('en-US', { timeZone: 'Europe/Vienna' })

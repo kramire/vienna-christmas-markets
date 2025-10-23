@@ -17,10 +17,10 @@ const CalendarIcon = '/calendar.svg'
 interface Props {
   result: Market | Event
   isFavorite: boolean
-  toggleFavoriteResult: (id: number) => () => void
+  updateFavorite: (id: number, isActiveFavorite: boolean) => () => void
 }
 
-const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
+const ResultCard = ({ result, isFavorite, updateFavorite }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
   const { id, name, district, start, end, times } = result
@@ -38,7 +38,7 @@ const ResultCard = ({ result, isFavorite, toggleFavoriteResult }: Props) => {
     <li key={id} className="relative flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
-          <FavoriteButton isFavorite={isFavorite} onClick={toggleFavoriteResult(id)} />
+          <FavoriteButton isFavorite={isFavorite} onClick={updateFavorite(id, isFavorite)} />
           <CardImage imgSrc={imgSrc} altText={name} />
         </div>
         <div className="flex w-full flex-1 flex-col space-y-4 p-4">

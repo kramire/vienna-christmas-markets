@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import useLocalStorage from '../../../hooks/useLocalStorage'
+import useLocalStorage from '../../../hooks/use-local-storage'
 import Image from 'next/image'
 
 const CircleCheckSolid = '/circleCheckSolid.svg'
