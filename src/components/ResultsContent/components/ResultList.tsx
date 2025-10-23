@@ -1,6 +1,7 @@
 import React from 'react'
 import ResultCard from './ResultCard'
 import { Event, Market } from '../../../App.types'
+import ResultsListWrapper from '../../../components/ResultsWrapper'
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
@@ -10,12 +11,7 @@ interface Props {
 
 const ResultList = ({ results, favorites, updateFavorite }: Props) => {
   return (
-    <ul
-      className="m-0 grid list-none justify-between gap-4 p-0 sm:gap-7 sm:gap-y-9"
-      style={{
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
-      }}
-    >
+    <ResultsListWrapper>
       {results.map((result, idx) => (
         <ResultCard
           key={idx}
@@ -24,7 +20,7 @@ const ResultList = ({ results, favorites, updateFavorite }: Props) => {
           updateFavorite={updateFavorite}
         />
       ))}
-    </ul>
+    </ResultsListWrapper>
   )
 }
 

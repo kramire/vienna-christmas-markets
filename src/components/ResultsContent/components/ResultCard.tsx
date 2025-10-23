@@ -35,7 +35,7 @@ const ResultCard = ({ result, isFavorite, updateFavorite }: Props) => {
   }, [])
 
   return (
-    <li key={id} className="relative flex overflow-hidden rounded-lg shadow-md">
+    <li key={id} className="flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
           <FavoriteButton isFavorite={isFavorite} onClick={updateFavorite(id, isFavorite)} />

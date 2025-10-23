@@ -37,15 +37,15 @@ const OpenHours = ({ start, end, times }: Props) => {
   }
 
   return (
-    <div className="flex grid-cols-[12px_1fr] flex-wrap items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
+    <div className="flex grid-cols-[12px_1fr_1fr] flex-wrap items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
       <Image src={ClockIcon} width={12} height={12} alt="" />
-      <dd>Hours</dd>
+      <dd className="col-span-2">Hours</dd>
       <p className="sm:hidden">•</p>
       <dt>
         {times[todayIdx] && Array.isArray(times[todayIdx]) ? `${times[todayIdx]![0]} - ${times[todayIdx]![1]}` : 'TBD'}
       </dt>
       {isOpen && (
-        <span className="mx-auto rounded bg-green-100 px-4 py-1 text-xs font-medium text-green-800 sm:mx-0">
+        <span className="mx-auto rounded bg-green-100 px-4 py-1 text-xs font-medium text-green-800 sm:mx-0 sm:w-fit">
           Open now!
         </span>
       )}
