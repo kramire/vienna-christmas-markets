@@ -9,15 +9,22 @@ interface Props {
 const MainImage = ({ imgSrc, altText }: Props) => {
   if (imgSrc) {
     return (
-      <div className="flex flex-1 justify-center lg:pt-8">
-        <Image src={imgSrc} alt={altText} style={{ objectFit: 'cover', width: '100%', height: '320px' }} />
+      <div className="relative flex h-72 w-full lg:mt-8 lg:h-80 lg:flex-1">
+        <Image
+          src={imgSrc}
+          alt={altText}
+          fetchPriority="high"
+          fill
+          sizes="(max-width: 1047px) 100vw, 50vw"
+          className="object-cover"
+        />
       </div>
     )
   }
 
   return (
     <div className="flex-2 flex h-64 w-full items-center justify-center border border-solid border-gray-200 bg-gray-100">
-      <Image src={MissingImageIcon} width={56} height={56} alt="Gingergread house" />
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
     </div>
   )
 }

@@ -77,7 +77,7 @@ const ResultsContent = ({ results, favorites, setFavorites }: Props) => {
 
   return (
     <div className="flex h-full flex-col md:gap-3">
-      <div className="m-auto flex w-full flex-col gap-3 p-4 md:gap-6">
+      <div className="m-auto flex w-full flex-col gap-4 p-4 md:gap-6">
         <div className="flex flex-col gap-1 md:gap-3">
           <HeaderText />
           <p className="text-sm md:text-base">

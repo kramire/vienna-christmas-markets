@@ -8,7 +8,15 @@ interface Props {
 
 const CardImage = ({ imgSrc, altText }: Props) => {
   if (imgSrc) {
-    return <Image src={imgSrc} alt={altText} fill className="border-b border-gray-300 object-cover" />
+    return (
+      <Image
+        src={imgSrc}
+        alt={altText}
+        fill
+        sizes="(max-width: 699px) 100vw, (max-width: 1047px) 50vw, 33vw"
+        className="border-b border-gray-300 object-cover"
+      />
+    )
   }
   return (
     <div className="flex h-full items-center justify-center border border-solid border-gray-200 bg-gray-100">

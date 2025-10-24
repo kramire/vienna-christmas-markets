@@ -38,13 +38,13 @@ export default function HomePage() {
           to={Routes.MARKETS}
           img={{ src: ChristmasMugIcon, alt: 'Christmas drinking mug' }}
           title="Traditional Markets"
-          description="Enjoy the seasonal delicacies, including the famous punch and mulled wine."
+          description="Enjoy seasonal delicacies, including the famous punch and mulled wine."
         />
         <LinkedSection
           to={Routes.EVENTS}
           img={{ src: ChristmasLightsIcon, alt: 'Christmas lights' }}
-          title="Pop up Events"
-          description="Check out festive popup restaurants, bars, and curling venues around the city."
+          title="Pop-Ups"
+          description="Check out festive pop-up events, drink stands, curling and more around the city."
         />
         <LinkedSection
           to={Routes.VISITS}
