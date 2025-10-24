@@ -76,28 +76,26 @@ const ResultsContent = ({ results, favorites, setFavorites }: Props) => {
     .sort(sortType === SortType.DATE ? sortResultsByDate : sortResultsByDistrict)
 
   return (
-    <div className="flex h-full flex-col md:gap-3">
-      <div className="m-auto flex w-full flex-col gap-4 p-4 md:gap-6">
-        <div className="flex flex-col gap-1 md:gap-3">
-          <HeaderText />
-          <p className="text-sm md:text-base">
-            {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-            {filters.NEAR_ME && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
-          </p>
-        </div>
-        <div className="flex flex-col justify-between gap-4 sm:flex-row">
-          <Filters filters={filters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
-          <div className={cn('flex gap-4', showMap ? 'justify-end' : 'justify-between')}>
-            {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
-            <MapToggle showMap={showMap} toggleMap={toggleMap} />
-          </div>
-        </div>
-        {showMap ? (
-          <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
-        ) : (
-          <ResultList results={shownResults} favorites={favorites} updateFavorite={updateFavorite} />
-        )}
+    <div className="m-auto flex h-full w-full flex-col p-4 lg:py-6">
+      <div className="flex flex-col gap-1 md:gap-3">
+        <HeaderText />
+        <p className="text-sm md:text-base">
+          {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
+          {filters.NEAR_ME && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
+        </p>
       </div>
+      <div className="sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-5 shadow-sm sm:flex-row lg:py-6">
+        <Filters filters={filters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
+        <div className={cn('flex gap-4', showMap ? 'justify-end' : 'justify-between')}>
+          {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}
+          <MapToggle showMap={showMap} toggleMap={toggleMap} />
+        </div>
+      </div>
+      {showMap ? (
+        <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
+      ) : (
+        <ResultList results={shownResults} favorites={favorites} updateFavorite={updateFavorite} />
+      )}
     </div>
   )
 }
