@@ -1,9 +1,9 @@
 'use client'
-
 import getScript from './helpers/getScript'
 import loadStyles from './helpers/loadStyles'
 import { useEffect, useState } from 'react'
-import { Coordinate, Event, Market } from '../../App.types'
+import { Coordinate, Event, Market, Result } from '../../App.types'
+import MapResultPopup from './components/MapResultPopup'
 
 const WIEN_CENTER = { lat: 48.2089366, lng: 16.3625921 }
 
@@ -19,6 +19,9 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => 
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
   const [mapMarkerLayer, setMapMarkerLayer] = useState<any>(null)
+  const [popupResult, setPopupResult] = useState<Result | null>(null)
+
+  const handleClosePopup = () => setPopupResult(null)
 
   // Check if maps was loaded
   useEffect(() => {
@@ -79,9 +82,9 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => 
 
     results.forEach((result) => {
       //@ts-ignore
-      const marker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).bindPopup(
-        `${result.id}. ${result.name}`,
-      )
+      const marker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).on('click', function () {
+        setPopupResult(result)
+      })
 
       mapMarkerLayer.addLayer(marker)
     })
@@ -93,7 +96,12 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => 
     return null
   }
 
-  return <div id="map" className={className} />
+  return (
+    <div className="relative">
+      <div id="map" className={className} />
+      {popupResult && <MapResultPopup result={popupResult} onClose={handleClosePopup} />}
+    </div>
+  )
 }
 
 export default Map
