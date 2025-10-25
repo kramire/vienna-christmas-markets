@@ -23,7 +23,7 @@ const MainImage = ({ imgSrc, altText }: Props) => {
   }
 
   return (
-    <div className="flex-2 flex h-64 w-full items-center justify-center border border-solid border-gray-200 bg-gray-100">
+    <div className="flex h-72 w-full items-center justify-center border border-solid border-gray-200 bg-gray-100 lg:mt-8 lg:h-80 lg:flex-1">
       <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
     </div>
   )

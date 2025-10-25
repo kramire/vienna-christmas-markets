@@ -12,8 +12,8 @@ export const Offerings = ({ offerings }: Props) => (
     {offerings.map((offering) => {
       const { name, icon } = offeringsMapping[offering]
       return (
-        <div key={offering} className="flex gap-3">
-          <Image src={icon} width={20} alt="" />
+        <div key={offering} className="flex items-center gap-3">
+          <Image src={icon} width={24} height={24} alt="" className="h-5 w-5 sm:h-6 sm:w-6" />
           {name}
         </div>
       )

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { resultToImgUrlMapping } from '../../../App.constants'
 import { Result } from '../../../App.types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { localizeDate } from '../../../utils/localizeDate'
+import MapResultImage from './MapResultImage'
 
 const CloseIcon = '/close.svg'
 
@@ -16,7 +16,6 @@ const MapResultPopup = ({ result, onClose }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
   const { id, name, district, start, end, slug } = result
-  const imgSrc = resultToImgUrlMapping[id]
 
   const startDate = start ? localizeDate(start, language) : 'TBD'
   const endDate = end ? localizeDate(end, language) : 'TBD'
@@ -35,13 +34,7 @@ const MapResultPopup = ({ result, onClose }: Props) => {
       href={`/${slug}`}
       className="absolute bottom-4 z-10 flex w-full gap-2 rounded bg-white p-3 sm:left-1/2 sm:w-1/2 sm:-translate-x-1/2 sm:gap-3 sm:p-4"
     >
-      <Image
-        src={imgSrc}
-        alt={name}
-        width={128}
-        height={128}
-        className="h-20 w-20 flex-shrink-0 rounded object-cover sm:h-32 sm:w-32"
-      />
+      <MapResultImage resultId={id} />
       <div className="flex-1 space-y-1 sm:space-y-2">
         <h2 className="text-base font-semibold text-green-950 sm:text-lg">{name}</h2>
         <dl className="space-y-1 text-sm sm:space-y-2 sm:text-base">

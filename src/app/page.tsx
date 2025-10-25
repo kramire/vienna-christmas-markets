@@ -50,7 +50,7 @@ export default function HomePage() {
           to={Routes.VISITS}
           img={{ src: ChristmasPresentIcon, alt: 'Christmas present' }}
           title="Track your Progress"
-          description="Interested in visiting over 12 Christmas markets in Vienna? Track your progress!"
+          description="Interested in visiting over 15 Christmas markets in Vienna? Track your progress!"
         />
       </div>
     </div>

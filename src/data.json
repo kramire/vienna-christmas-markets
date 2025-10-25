@@ -7,7 +7,7 @@
     "district": "1070",
     "address": "Museumsplatz 1",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "transportation": ["U3", "57A"],
+    "transportation": ["U2", "U3", "49", "57A"],
     "start": "11/13/2025",
     "end": "12/23/2025",
     "times": [
@@ -167,7 +167,7 @@
     "website": "https://www.weihnachtsdorf.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"]
   },
   {
     "id": 7,
@@ -525,7 +525,13 @@
     "website": "https://www.imperial-markets.at/maerkte/weihnachtsmarkt-schloss-schoenbrunn",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_SHOPPING"]
+    "offerings": [
+      "OFFERING_ICE_SKATING",
+      "OFFERING_GASTRONOMY",
+      "OFFERING_CURLING",
+      "OFFERING_SHOPPING",
+      "OFFERING_KIDS_RIDES"
+    ]
   },
   {
     "id": 17,
@@ -535,7 +541,7 @@
     "district": "1010",
     "address": "Rathausplatz",
     "coordinates": { "lat": 48.210641, "lng": 16.358914 },
-    "transportation": ["D", "1", "71"],
+    "transportation": ["D", "1", "71", "2"],
     "start": "11/14/2025",
     "end": "12/26/2025",
     "times": [
@@ -550,7 +556,7 @@
     "website": "https://www.christkindlmarkt.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"]
   },
   {
     "id": 18,
@@ -560,7 +566,7 @@
     "district": "1020",
     "address": "Riesenradplatz",
     "coordinates": { "lat": 48.216976, "lng": 16.396323 },
-    "transportation": ["U1", "U2"],
+    "transportation": ["U1", "U2", "S-BAHN", "80A", "O", "5"],
     "start": "11/21/2025",
     "end": "1/6/2026",
     "times": [
@@ -589,7 +595,7 @@
     "website": "https://www.wintermarkt.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_KIDS_RIDES"]
   },
   {
     "id": 19,
@@ -689,7 +695,7 @@
     "name": "Atmosphere Rooftop - Winter Terrace",
     "isActive": true,
     "district": "1010",
-    "address": "",
+    "address": "Ritz Carlton - Schubertring 5/7",
     "coordinates": { "lat": 48.2022967, "lng": 16.3764527 },
     "transportation": [],
     "start": "11/07/2025",
@@ -840,7 +846,7 @@
     "name": "Hot Punch Above Vienna",
     "isActive": true,
     "district": "1100",
-    "address": "Arsenalstraße 10",
+    "address": "Aurora Rooftop Bar - Arsenalstraße 10",
     "coordinates": { "lat": 48.1851114, "lng": 16.3831616 },
     "transportation": ["D", "69A"],
     "start": "11/15/2025",
@@ -888,13 +894,13 @@
     "id": 32,
     "slug": "franz-jonas-platz",
     "name": "Weihnachtsmarkt am Franz-Jonas-Platz",
-    "isActive": false,
+    "isActive": true,
     "district": "1210",
     "address": "Franz-Jonas-Platz",
     "coordinates": { "lat": 48.2569587, "lng": 16.3965029 },
     "transportation": ["S-BAHN", "U6", "2", "25", "26", "30", "31", "33", "29A", "29B", "33A", "34A"],
-    "start": "11/7/2024",
-    "end": "12/24/2024",
+    "start": "11/6/2025",
+    "end": "12/24/2025",
     "times": [
       ["8:00", "20:00"],
       ["8:00", "20:00"],
@@ -908,5 +914,204 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+  },
+  {
+    "id": 33,
+    "slug": "wienter-zauber",
+    "name": "WIENterzauber - Marx Halle",
+    "isActive": true,
+    "district": "1030",
+    "address": "Marx Halle",
+    "coordinates": { "lat": 48.187911, "lng": 16.404197 },
+    "transportation": ["S7", "U3", "18", "71", "74A", "80A"],
+    "start": "11/22/2025",
+    "end": "1/5/2026",
+    "times": [
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["14:00", "21:00"],
+      ["14:00", "21:00"]
+    ],
+    "website": "https://www.wienterzauber.com/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+  },
+  {
+    "id": 34,
+    "slug": "winterzauber-boehmischer-prater",
+    "name": "Winterzauber im Böhmischen Prater",
+    "isActive": true,
+    "district": "1100",
+    "address": "Böhmischen Prater",
+    "coordinates": { "lat": 48.166513, "lng": 16.40005 },
+    "transportation": ["S-BAHN", "68A", "68B"],
+    "start": "11/28/2025",
+    "end": "12/28/2025",
+    "times": [null, null, null, null, ["14:00", null], ["11:00", null], ["11:00", null]],
+    "website": "https://www.boehmischer-prater.com/winterzauber",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_KIDS_RIDES"]
+  },
+  {
+    "id": 35,
+    "slug": "weihnachten-am-hauptbahnhof",
+    "name": "Weihnachten am Hauptbahnhof",
+    "isActive": true,
+    "district": "1100",
+    "address": "am Vorplatz des Hauptbahnhofs",
+    "coordinates": { "lat": 48.185799, "lng": 16.375524 },
+    "transportation": ["S-BAHN", "U1", "13A", "69A", "0"],
+    "start": "11/13/2025",
+    "end": "12/20/2025",
+    "times": [
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"],
+      ["14:00", "20:00"]
+    ],
+    "website": "https://www.volxfest.at/weihnachten-am-hauptbahnhof-2025/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"]
+  },
+  {
+    "id": 36,
+    "slug": "weihnachten-am-westbahnhof",
+    "name": "Weihnachten am Westbahnhof",
+    "isActive": true,
+    "district": "1100",
+    "address": "am Vorplatz des Westbahnhofs",
+    "coordinates": { "lat": 48.196929, "lng": 16.338628 },
+    "transportation": ["U3", "U6", "5", "6", "9", "18", "49", "52", "60"],
+    "start": "11/20/2025",
+    "end": "12/20/2025",
+    "times": [null, null, null, ["14:00", "20:00"], ["14:00", "20:00"], ["14:00", "20:00"], ["14:00", "20:00"]],
+    "website": "https://www.volxfest.at/weihnachten-am-westbahnhof-2025/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
+  },
+  {
+    "id": 37,
+    "slug": "adventmarkt-verkehrsmuseum",
+    "name": "Adventmarkt im Verkehrsmuseum Remise 2025",
+    "isActive": true,
+    "district": "1030",
+    "address": "Fruethstraße 2",
+    "coordinates": { "lat": 48.196427, "lng": 16.409049 },
+    "transportation": ["U3", "77A"],
+    "start": "11/28/2025",
+    "end": "12/14/2025",
+    "times": [null, null, null, null, ["14:00", "21:00"], ["14:00", "21:00"], ["14:00", "21:00"]],
+    "website": "https://www.wien.info/de/aktuell/veranstaltungen/adventmarkt-im-verkehrsmuseum-remise-2023-1001412",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+  },
+  {
+    "id": 38,
+    "slug": "simmeringer-christkindlmarkt",
+    "name": "Simmeringer Christkindlmarkt",
+    "isActive": true,
+    "district": "1110",
+    "address": "Enkplatz",
+    "coordinates": { "lat": 48.176023, "lng": 16.413582 },
+    "transportation": ["U3", "71", "76A", "76B"],
+    "start": "11/13/2025",
+    "end": null,
+    "times": [null, null, null, ["16:00", "21:30"], ["16:00", "21:30"], ["16:00", "21:30"], ["16:00", "21:30"]],
+    "website": "https://www.facebook.com/SimmeringerChristkindlmarkt/",
+    "imgUrl": "",
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY"]
+  },
+  {
+    "id": 39,
+    "slug": "weihnachtszauber-meidlinger-platzl",
+    "name": "Weihnachtszauber Meidlinger Platzl",
+    "isActive": true,
+    "district": "1120",
+    "address": "Meidlinger Platzl",
+    "coordinates": { "lat": 48.181572, "lng": 16.330063 },
+    "transportation": ["U4", "U6", "10A", "63A"],
+    "start": "11/14/2025",
+    "end": "12/26/2025",
+    "times": [
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"],
+      ["10:00", "20:00"]
+    ],
+    "alternateTimes": [
+      {
+        "date": "12/24/2025",
+        "time": ["10:00", "17:00"]
+      }
+    ],
+    "website": "https://www.viennawinterwonderland.at/",
+    "imgUrl": "",
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"]
+  },
+  {
+    "id": 40,
+    "slug": "lions-club-punschstand",
+    "name": "Lions Club Punschstand",
+    "isActive": true,
+    "district": "1010",
+    "address": "Habsburgergasse 14",
+    "coordinates": { "lat": 48.207676, "lng": 16.367847 },
+    "transportation": ["U3", "1A", "2A"],
+    "start": "11/14/2025",
+    "end": "1/6/2026",
+    "times": [
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["15:00", "21:00"]
+    ],
+    "website": "https://www.fuchsundfreude.at/punschstand/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"]
+  },
+  {
+    "id": 41,
+    "slug": "landstrasser-hauptstrasse-punschstand",
+    "name": "Bärlipunsch - Puschhütte",
+    "isActive": true,
+    "district": "1010",
+    "address": "Landstraßer Hauptstraße 33",
+    "coordinates": { "lat": 48.203601, "lng": 16.389498 },
+    "transportation": ["U3", "74A"],
+    "start": "11/13/2025",
+    "end": "12/24/2025",
+    "times": [
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["15:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["15:00", "21:00"]
+    ],
+    "website": null,
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"]
   }
 ]

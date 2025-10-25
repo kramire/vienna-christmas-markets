@@ -8,10 +8,12 @@ import MainImage from './components/MainImage'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { localizeDate } from '../../utils/localizeDate'
+import Link from 'next/link'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
 const ClockIcon = '/clock.svg'
+const InfoIcon = '/info.svg'
 
 interface Props {
   result: Market | Event
@@ -60,6 +62,14 @@ function Content({ result }: Props) {
               ))}
             </div>
           </div>
+          {result.website && (
+            <div>
+              <Image src={InfoIcon} width={16} height={16} alt="" />
+              <Link href={result.website} target="_blank" rel="noopener noreferrer" className="w-fit underline">
+                Website
+              </Link>
+            </div>
+          )}
         </dl>
         <hr />
         <Offerings offerings={offerings} />

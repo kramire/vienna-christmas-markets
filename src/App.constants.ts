@@ -23,6 +23,7 @@ import EISSTOCK from '../public/eisstock.png'
 import ICE_SKATE from '../public/ice-skate.png'
 import GASTRONOMY from '../public/gastronomy.png'
 import SHOPPING from '../public/shopping.png'
+import FERRIS_WHEEL from '../public/ferris-wheel.svg'
 
 export const MAX_CONTENT_WIDTH = 1130
 export const HEADER_HEIGHT = 56
@@ -61,6 +62,7 @@ export const offeringsMapping: { [key in Offering]: { name: string; icon: Static
   [Offering.OFFERING_SHOPPING]: { name: 'Shopping', icon: SHOPPING },
   [Offering.OFFERING_CURLING]: { name: 'Curling', icon: EISSTOCK },
   [Offering.OFFERING_ICE_SKATING]: { name: 'Ice Skating', icon: ICE_SKATE },
+  [Offering.OFFERING_KIDS_RIDES]: { name: 'Kids Rides', icon: FERRIS_WHEEL },
 }
 
 export const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S']
