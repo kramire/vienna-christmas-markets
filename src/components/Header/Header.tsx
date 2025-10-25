@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { menuItems } from './Header.constants'
 import { usePathname } from 'next/navigation'
-import { cn } from '@/utils/cn'
+import { cn } from '../../utils/cn'
 
 const Header = () => {
   const pathname = usePathname()

@@ -3,10 +3,10 @@ import sortResultsByDistrict from '../../utils/sort-results-by-district'
 import CardImage from '../../components/CardImage'
 import Image from 'next/image'
 import { resultToImgUrlMapping } from './Lights.constants'
-import HeaderText from '@/components/HeaderText'
+import HeaderText from '../../components/HeaderText'
 import data from './lights-data.json'
 import ResultsListWrapper from '../../components/ResultsWrapper'
-import { GOOGLE_MAPS_LINK } from '@/App.constants'
+import { GOOGLE_MAPS_LINK } from '../../App.constants'
 
 const LocationIcon = '/location.svg'
 
