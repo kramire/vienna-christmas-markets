@@ -19,10 +19,6 @@ export default function WalkingRoutesPage({ params }: { params: { slug: string }
     Market | Event | StreetLights
   >
 
-  const routePath = stops
-    .map((stop) => resultsForMap.find((result) => result.id === stop.id)?.coordinates)
-    .filter((coord) => coord !== undefined) as Array<{ lat: number; lng: number }>
-
   const firstStop = stops.find((stop) => stop.order === 1)
   const firstStopCoordinates = resultsForMap.find((result) => result.id === firstStop?.id)?.coordinates
 
@@ -58,7 +54,6 @@ export default function WalkingRoutesPage({ params }: { params: { slug: string }
           zoom={mapZoom}
           center={firstStopCoordinates}
           popUpVariant="text"
-          path={routePath}
         />
       </div>
     </div>
