@@ -13,10 +13,9 @@ interface Props {
   center?: Coordinate
   zoom?: number
   popUpVariant?: 'card' | 'text'
-  path?: Array<Coordinate>
 }
 
-const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, popUpVariant = 'card', path }: Props) => {
+const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, popUpVariant = 'card' }: Props) => {
   const [isCSSLoaded, setIsCSSLoaded] = useState(false)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
@@ -83,49 +82,18 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, popUpVariant
     mapMarkerLayer.clearLayers()
     results.forEach((result) => {
       //@ts-ignore
-      const popUpMarker = window.L.circleMarker([result.coordinates.lat, result.coordinates.lng], {
-        color: 'crimson',
-        radius: 8,
-        fill: true,
-        fillColor: 'crimson',
-        fillOpacity: 1,
-      }).on('click', function () {
+      const popUpMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).on('click', function () {
         setPopupResult(result)
       })
 
       //@ts-ignore
-      const textMarker = window.L.circleMarker([result.coordinates.lat, result.coordinates.lng], {
-        color: 'crimson',
-        radius: 8,
-        fill: true,
-        fillColor: 'crimson',
-        fillOpacity: 1,
-      }).bindPopup(`${result.name}`)
+      const textMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).bindPopup(`${result.name}`)
 
       mapMarkerLayer.addLayer(popUpVariant === 'card' ? popUpMarker : textMarker)
     })
 
-    // Draw a walking route path if provided
-    if (path) {
-      const coordinates = path.map((coord) => [coord.lat, coord.lng])
-      //@ts-ignore
-      window.L.polyline(coordinates, { color: 'crimson' }).addTo(map)
-
-      // Show tooltip for stop number
-      coordinates.forEach((coord, idx) => {
-        const isEven = idx % 2 === 0
-        //@ts-ignore
-        window.L.tooltip(coord, {
-          content: `${idx + 1}`,
-          permanent: true,
-          offset: isEven ? [8, 0] : [-8, 0],
-          direction: isEven ? 'right' : 'left',
-        }).addTo(map)
-      })
-    }
-
     map.addLayer(mapMarkerLayer)
-  }, [mapMarkerLayer, results, path])
+  }, [mapMarkerLayer, results])
 
   if (!isCSSLoaded && !isScriptLoaded) {
     return null
