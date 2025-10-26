@@ -58,6 +58,7 @@ export enum Routes {
   EVENTS = '/events',
   VISITS = '/visits',
   LIGHTS = '/lights',
+  ROUTES = '/routes',
 }
 
 export enum SortType {
@@ -77,7 +78,9 @@ export interface Route {
   slug: string
   name: string
   district: string
-  coverImg: string
+  coverImgResultId: number
   distance: string
+  description: string
   stops: Array<RouteStop>
+  mapZoom: number
 }

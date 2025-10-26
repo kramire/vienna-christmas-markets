@@ -8,13 +8,14 @@ import MapResultPopup from './components/MapResultPopup'
 const WIEN_CENTER = { lat: 48.2089366, lng: 16.3625921 }
 
 interface Props {
-  results: Array<Market> | Array<Event> | Array<Market | Event> | Array<StreetLights>
+  results: Array<Market> | Array<Event> | Array<Market | Event | StreetLights> | Array<StreetLights>
   className: string
   center?: Coordinate
   zoom?: number
+  popUpVariant?: 'card' | 'text'
 }
 
-const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => {
+const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, popUpVariant = 'card' }: Props) => {
   const [isCSSLoaded, setIsCSSLoaded] = useState(false)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
@@ -79,14 +80,16 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => 
     if (!mapMarkerLayer) return
 
     mapMarkerLayer.clearLayers()
-
     results.forEach((result) => {
       //@ts-ignore
-      const marker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).on('click', function () {
+      const popUpMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).on('click', function () {
         setPopupResult(result)
       })
 
-      mapMarkerLayer.addLayer(marker)
+      //@ts-ignore
+      const textMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).bindPopup(`${result.name}`)
+
+      mapMarkerLayer.addLayer(popUpVariant === 'card' ? popUpMarker : textMarker)
     })
 
     map.addLayer(mapMarkerLayer)

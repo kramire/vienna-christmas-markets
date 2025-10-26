@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "slug": "classic-city-center",
+    "name": "Classic City Center",
+    "district": "1010",
+    "coverImgResultId": 42,
+    "distance": "1,4km",
+    "description": "See the most famous Vienna sights and Christmas markets on this short walking tour through the center.",
+    "mapZoom": 15,
+    "stops": [
+      {
+        "id": 4,
+        "type": "MARKET",
+        "order": 1,
+        "description": "Start with the market at Stephansplatz. While this easily gets crowded, the backdrop of the cathedral is unbeatable."
+      },
+      {
+        "id": 21,
+        "type": "EVENT",
+        "order": 2,
+        "description": "Sneak away from the crowds and stop at Haas & Haas. Their courtyard popup includes a Punschstand, Christmas trees, warm fires, and stove tops to cook Würstel."
+      },
+      {
+        "id": 42,
+        "type": "STREET_LIGHTS",
+        "order": 3,
+        "description": "Walk along the Graben towards Am Hof. Gaze in awe at the chandelier lights above! At the end of the street, peek left down the Kohlmarkt to see the dangling lights."
+      },
+      {
+        "id": 7,
+        "type": "MARKET",
+        "order": 4,
+        "description": "Enjoy some medieval flair at the Christmas market at Am Hof. Note the unique mugs, while standing under a tree of lights."
+      },
+      {
+        "id": 13,
+        "type": "MARKET",
+        "order": 5,
+        "description": "Continue to the market at Freyung. While small, the trick is to enjoy a drink at the fountain rather than stuck in the crowds."
+      },
+      {
+        "id": 17,
+        "type": "MARKET",
+        "order": 6,
+        "description": "Finish the tour at the famous Christkindlmarkt at Rathausplatz. This is the best market for Christmas lights!"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "punsch-shopping-fun",
+    "name": "Punsch, Shopping, & Fun",
+    "district": "1040 • 1070 • 1090",
+    "coverImgResultId": 14,
+    "distance": "3,2km",
+    "description": "Whether your into unique Punsch recipes, or shopping for special gifts, this route has it all - plus animals and curling!",
+    "mapZoom": 14,
+    "stops": [
+      {
+        "id": 14,
+        "type": "MARKET",
+        "order": 1,
+        "description": "Begin at Karlsplatz where you'll find artisan crafts, as well as a petting zoo. This large market is in front of the beautiful Karlskirche church."
+      },
+      {
+        "id": 57,
+        "type": "STREET_LIGHTS",
+        "order": 2,
+        "description": "Head towards the Museums Quartier. When crossing Mahü, look up for their Christmas lights on display."
+      },
+      {
+        "id": 1,
+        "type": "MARKET",
+        "order": 3,
+        "description": "Continue to the MQ for a break from the crowds. There are multiple Punschstands with unique offerings, as well as curling to watch or play."
+      },
+      {
+        "id": 2,
+        "type": "MARKET",
+        "order": 4,
+        "description": "A few steps brings you to the market at Spittelberg. The narrow streets offer special shopping, food, and drinks. It can get busy, so stop at Amerling Beisl's courtyard."
+      },
+      {
+        "id": 59,
+        "type": "STREET_LIGHTS",
+        "order": 5,
+        "description": "While on the way to Altes AKH, look up and down Josefstädter Strasse to see the blue circular lights."
+      },
+      {
+        "id": 6,
+        "type": "MARKET",
+        "order": 6,
+        "description": "Finish with the market at Altes AKH. With plenty of space to accommodate all, this is the perfect place to relax and enjoy the festive atmosphere."
+      }
+    ]
+  }
+]

@@ -1267,10 +1267,10 @@
   {
     "id": 57,
     "slug": "innere-mariahilferstrasse",
-    "name": "Innere Mariahilferstraße",
+    "name": "Mariahilferstraße",
     "isActive": true,
     "district": "1060",
-    "address": "Innere Mariahilferstraße",
+    "address": "Mariahilferstraße",
     "coordinates": { "lat": 48.198291, "lng": 16.350145 },
     "type": "STREET_LIGHTS"
   },
