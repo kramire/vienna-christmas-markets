@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
-import { Market, Event, Route, StreetLights } from '../../../App.types'
+import { Market, Event, Route, StreetLights, ResultType } from '../../../App.types'
 import RouteData from '../data.json'
 import ResultsData from '../../../data.json'
 import RouteStopCard from '../components/RouteStopCard'
 import Map from '../../../components/Map'
+import Link from 'next/link'
 
 export default function WalkingRoutesPage({ params }: { params: { slug: string } }) {
   const result = (RouteData as Array<Route>).find((route) => route.slug === params.slug)
@@ -31,9 +32,18 @@ export default function WalkingRoutesPage({ params }: { params: { slug: string }
         <ul className="flex h-full w-full flex-col gap-4 md:-mx-1 md:w-[60%] md:overflow-y-auto md:px-1">
           {stops
             .sort((a, b) => a.order - b.order)
-            .map(({ id, description }, idx) => (
-              <RouteStopCard key={id} stopId={id} stopDescription={description} idx={idx} />
-            ))}
+            .map((result, idx) => {
+              const { id, description, type } = result
+              if (type === ResultType.MARKET || type === ResultType.EVENT) {
+                const result = resultsForMap.find((res) => res.id === id) as Market | Event
+                return (
+                  <Link href={`/${result.slug}`}>
+                    <RouteStopCard key={id} stopId={id} stopDescription={description} idx={idx} />
+                  </Link>
+                )
+              }
+              return <RouteStopCard key={id} stopId={id} stopDescription={description} idx={idx} />
+            })}
         </ul>
         <Map
           results={resultsForMap}
