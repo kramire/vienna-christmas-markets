@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Result } from '../../../App.types'
+import { Event, Market, ResultType, StreetLights } from '../../../App.types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { localizeDate } from '../../../utils/localizeDate'
@@ -8,17 +8,28 @@ import MapResultImage from './MapResultImage'
 const CloseIcon = '/close.svg'
 
 interface Props {
-  result: Result
+  result: Market | Event | StreetLights
   onClose: () => void
 }
 
 const MapResultPopup = ({ result, onClose }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
-  const { id, name, district, start, end, slug } = result
+  const { id, name, district, slug, type } = result
 
-  const startDate = start ? localizeDate(start, language) : 'TBD'
-  const endDate = end ? localizeDate(end, language) : 'TBD'
+  const startDate =
+    type === ResultType.MARKET || type === ResultType.EVENT
+      ? result.start
+        ? localizeDate(result.start, language)
+        : 'TBD'
+      : null
+
+  const endDate =
+    type === ResultType.MARKET || type === ResultType.EVENT
+      ? result.end
+        ? localizeDate(result.end, language)
+        : 'TBD'
+      : null
 
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -43,11 +54,13 @@ const MapResultPopup = ({ result, onClose }: Props) => {
             <p>•</p>
             <dt>{district}</dt>
           </div>
-          <div className="flex flex-wrap gap-x-1 sm:gap-x-2">
-            <dd>Dates</dd>
-            <p>•</p>
-            <dt>{`${startDate} - ${endDate}`}</dt>
-          </div>
+          {startDate && (
+            <div className="flex flex-wrap gap-x-1 sm:gap-x-2">
+              <dd>Dates</dd>
+              <p>•</p>
+              <dt>{`${startDate} - ${endDate}`}</dt>
+            </div>
+          )}
         </dl>
       </div>
       <button onClick={handleClose} className="h-5 w-5 flex-shrink-0">

@@ -18,6 +18,14 @@ import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
 import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
 import IMG_SRC_20 from '../public/Badeschiff.webp'
 import IMG_SRC_21 from '../public/Haas_und_Hass.webp'
+import IMG_SRC_46 from '../public/bauernmarkt.webp'
+import IMG_SRC_42 from '../public/graben.webp'
+import IMG_SRC_43 from '../public/kaertner-strasse.webp'
+import IMG_SRC_44 from '../public/kohlmarkt.webp'
+import IMG_SRC_45 from '../public/neuer-markt.webp'
+import IMG_SRC_47 from '../public/rotenturmstrasse.webp'
+import IMG_SRC_58 from '../public/neubaugasse.webp'
+import IMG_SRC_60 from '../public/servitenviertel.webp'
 
 import EISSTOCK from '../public/eisstock.png'
 import ICE_SKATE from '../public/ice-skate.png'
@@ -50,6 +58,14 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   18: IMG_SRC_18,
   20: IMG_SRC_20,
   21: IMG_SRC_21,
+  46: IMG_SRC_46,
+  42: IMG_SRC_42,
+  43: IMG_SRC_43,
+  44: IMG_SRC_44,
+  45: IMG_SRC_45,
+  47: IMG_SRC_47,
+  58: IMG_SRC_58,
+  60: IMG_SRC_60,
 }
 
 export const sortSelectOptions = {

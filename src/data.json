@@ -1113,5 +1113,345 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"]
+  },
+  {
+    "id": 42,
+    "slug": "graben",
+    "name": "Graben",
+    "isActive": true,
+    "district": "1010",
+    "address": "Graben",
+    "coordinates": { "lat": 48.208707, "lng": 16.369699 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 43,
+    "slug": "kaerntner-strasse",
+    "name": "Kärntner Straße",
+    "isActive": true,
+    "district": "1010",
+    "address": "Kärntner Straße",
+    "coordinates": { "lat": 48.204704, "lng": 16.370744 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 44,
+    "slug": "kohlmarkt",
+    "name": "Kohlmarkt",
+    "isActive": true,
+    "district": "1010",
+    "address": "Kohlmarkt",
+    "coordinates": { "lat": 48.208925, "lng": 16.367812 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 45,
+    "slug": "neuer-markt",
+    "name": "Neuer Markt",
+    "isActive": true,
+    "district": "1010",
+    "address": "Neuer Markt",
+    "coordinates": { "lat": 48.206278, "lng": 16.370709 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 46,
+    "slug": "tuchlauben",
+    "name": "Tuchlauben",
+    "isActive": true,
+    "district": "1010",
+    "address": "Tuchlauben",
+    "coordinates": { "lat": 48.21009, "lng": 16.369752 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 47,
+    "slug": "rotenturmstrasse",
+    "name": "Rotenturmstraße",
+    "isActive": true,
+    "district": "1010",
+    "address": "Rotenturmstraße",
+    "coordinates": { "lat": 48.210604, "lng": 16.374767 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 48,
+    "slug": "annagasse",
+    "name": "Annagasse",
+    "isActive": true,
+    "district": "1010",
+    "address": "Annagasse",
+    "coordinates": { "lat": 48.204222, "lng": 16.37238 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 49,
+    "slug": "dorotheergasse",
+    "name": "Dorotheergasse",
+    "isActive": true,
+    "district": "1010",
+    "address": "Dorotheergasse",
+    "coordinates": { "lat": 48.206965, "lng": 16.369019 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 50,
+    "slug": "goldschmiedgasse",
+    "name": "Goldschmiedgasse",
+    "isActive": true,
+    "district": "1010",
+    "address": "Goldschmiedgasse",
+    "coordinates": { "lat": 48.208722, "lng": 16.371281 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 51,
+    "slug": "herrengasse",
+    "name": "Herrengasse",
+    "isActive": true,
+    "district": "1010",
+    "address": "Herrengasse",
+    "coordinates": { "lat": 48.209796, "lng": 16.365692 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 52,
+    "slug": "palaisviertel",
+    "name": "Palaisviertel",
+    "isActive": false,
+    "district": "1010",
+    "address": "Palaisviertel",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 53,
+    "slug": "spiegelgasse",
+    "name": "Spiegelgasse",
+    "isActive": true,
+    "district": "1010",
+    "address": "Spiegelgasse",
+    "coordinates": { "lat": 48.20705, "lng": 16.369955 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 54,
+    "slug": "wallnerstrasse-fahnengasse",
+    "name": "Wallnerstraße/Fahnengasse",
+    "isActive": true,
+    "district": "1010",
+    "address": "Wallnerstraße/Fahnengasse",
+    "coordinates": { "lat": 48.209794, "lng": 16.366589 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 55,
+    "slug": "wollzeile",
+    "name": "Wollzeile",
+    "isActive": true,
+    "district": "1010",
+    "address": "Wollzeile",
+    "coordinates": { "lat": 48.208413, "lng": 16.376217 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 56,
+    "slug": "landstrasser-hauptstrasse",
+    "name": "Landstraßer Hauptstraße",
+    "isActive": true,
+    "district": "1030",
+    "address": "Landstraßer Hauptstraße",
+    "coordinates": { "lat": 48.203652, "lng": 16.389356 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 57,
+    "slug": "innere-mariahilferstrasse",
+    "name": "Innere Mariahilferstraße",
+    "isActive": true,
+    "district": "1060",
+    "address": "Innere Mariahilferstraße",
+    "coordinates": { "lat": 48.198291, "lng": 16.350145 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 58,
+    "slug": "neubaugasse",
+    "name": "Neubaugasse",
+    "isActive": true,
+    "district": "1070",
+    "address": "Neubaugasse",
+    "coordinates": { "lat": 48.199891, "lng": 16.349294 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 59,
+    "slug": "josefstaedterstrasse",
+    "name": "Josefstädterstraße",
+    "isActive": true,
+    "district": "1080",
+    "address": "Josefstädterstraße",
+    "coordinates": { "lat": 48.208278, "lng": 16.352529 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 60,
+    "slug": "servitenviertel",
+    "name": "Servitenviertel",
+    "isActive": true,
+    "district": "1090",
+    "address": "Servitenviertel",
+    "coordinates": { "lat": 48.220805, "lng": 16.364392 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 61,
+    "slug": "volksopernviertel",
+    "name": "Volksopernviertel",
+    "isActive": true,
+    "district": "1090",
+    "address": "Volksopernviertel",
+    "coordinates": { "lat": 48.224262, "lng": 16.35015 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 62,
+    "slug": "simmeringer-hauptstrasse",
+    "name": "Simmeringer Hauptstraße",
+    "isActive": false,
+    "district": "1110",
+    "address": "Simmeringer Hauptstraße",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 63,
+    "slug": "meidlinger-hauptstrasse",
+    "name": "Meidlinger Hauptstraße",
+    "isActive": false,
+    "district": "1130",
+    "address": "Meidlinger Hauptstraße",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 64,
+    "slug": "huetteldorfer-strasse",
+    "name": "Hütteldorfer Straße",
+    "isActive": false,
+    "district": "1140",
+    "address": "Hütteldorfer Straße",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 65,
+    "slug": "nisselgasse",
+    "name": "Nisselgasse",
+    "isActive": false,
+    "district": "1140",
+    "address": "Nisselgasse",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 66,
+    "slug": "aeussere-mariahilferstrasse",
+    "name": "Äußere Mariahilferstraße",
+    "isActive": false,
+    "district": "1150",
+    "address": "Äußere Mariahilferstraße",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 67,
+    "slug": "gablenzgasse",
+    "name": "Gablenzgasse",
+    "isActive": false,
+    "district": "1150",
+    "address": "Gablenzgasse",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 68,
+    "slug": "reindorfgasse",
+    "name": "Reindorfgasse",
+    "isActive": false,
+    "district": "1150",
+    "address": "Reindorfgasse",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 69,
+    "slug": "kalvarienberggasse",
+    "name": "Kalvarienberggasse",
+    "isActive": false,
+    "district": "1170",
+    "address": "Kalvarienberggasse",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 70,
+    "slug": "waehringer-strasse",
+    "name": "Währinger Straße",
+    "isActive": false,
+    "district": "1180",
+    "address": "Währinger Straße",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 71,
+    "slug": "obkirchergasse",
+    "name": "Obkirchergasse",
+    "isActive": false,
+    "district": "1190",
+    "address": "Obkirchergasse",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 72,
+    "slug": "seestadt-aspern",
+    "name": "Seestadt Aspern",
+    "isActive": false,
+    "district": "1220",
+    "address": "Seestadt Aspern",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 73,
+    "slug": "maurer-hauptplatz",
+    "name": "Maurer Hauptplatz",
+    "isActive": false,
+    "district": "1230",
+    "address": "Maurer Hauptplatz",
+    "coordinates": { "lat": 48.202836, "lng": 16.358979 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 74,
+    "slug": "jasomirgottstrasse",
+    "name": "Jasomirgottstraße",
+    "isActive": true,
+    "district": "1010",
+    "address": "Jasomirgottstraße",
+    "coordinates": { "lat": 48.209157, "lng": 16.371778 },
+    "type": "STREET_LIGHTS"
+  },
+  {
+    "id": 75,
+    "slug": "trattnerhof",
+    "name": "Trattnerhof",
+    "isActive": true,
+    "district": "1010",
+    "address": "Trattnerhof",
+    "coordinates": { "lat": 48.208868, "lng": 16.370836 },
+    "type": "STREET_LIGHTS"
   }
 ]

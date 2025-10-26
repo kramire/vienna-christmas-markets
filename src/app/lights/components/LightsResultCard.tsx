@@ -1,8 +1,7 @@
 import { StreetLights } from '../../../App.types'
 import CardImage from '../../../components/CardImage'
 import Image from 'next/image'
-import { resultToImgUrlMapping } from '../Lights.constants'
-import { GOOGLE_MAPS_LINK } from '../../../App.constants'
+import { GOOGLE_MAPS_LINK, resultToImgUrlMapping } from '../../../App.constants'
 
 const LocationIcon = '/location.svg'
 

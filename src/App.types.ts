@@ -1,4 +1,4 @@
-export interface Result {
+interface Result {
   id: number
   slug: string
   name: string
@@ -14,14 +14,9 @@ export interface Result {
   offerings: Array<Offering>
 }
 
-export interface StreetLights {
-  id: number
-  slug: string
-  name: string
-  isActive: boolean
-  coordinates: Coordinate
-  district: string
-  address: string
+export interface StreetLights
+  extends Pick<Result, 'id' | 'slug' | 'name' | 'isActive' | 'coordinates' | 'district' | 'address'> {
+  type: ResultType.STREET_LIGHTS
 }
 
 export enum Offering {
@@ -35,6 +30,7 @@ export enum Offering {
 export enum ResultType {
   MARKET = 'MARKET',
   EVENT = 'EVENT',
+  STREET_LIGHTS = 'STREET_LIGHTS',
 }
 
 export interface Market extends Result {
@@ -67,4 +63,21 @@ export enum Routes {
 export enum SortType {
   DATE = 'DATE',
   DISTRICT = 'DISTRICT',
+}
+
+interface RouteStop {
+  id: number
+  type: ResultType
+  description: string
+  order: number
+}
+
+export interface Route {
+  id: number
+  slug: string
+  name: string
+  district: string
+  coverImg: string
+  distance: string
+  stops: Array<RouteStop>
 }

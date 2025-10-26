@@ -2,13 +2,13 @@
 import getScript from './helpers/getScript'
 import loadStyles from './helpers/loadStyles'
 import { useEffect, useState } from 'react'
-import { Coordinate, Event, Market, Result } from '../../App.types'
+import { Coordinate, Event, Market, StreetLights } from '../../App.types'
 import MapResultPopup from './components/MapResultPopup'
 
 const WIEN_CENTER = { lat: 48.2089366, lng: 16.3625921 }
 
 interface Props {
-  results: Array<Market> | Array<Event> | Array<Market | Event>
+  results: Array<Market> | Array<Event> | Array<Market | Event> | Array<StreetLights>
   className: string
   center?: Coordinate
   zoom?: number
@@ -19,7 +19,7 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13 }: Props) => 
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
   const [mapMarkerLayer, setMapMarkerLayer] = useState<any>(null)
-  const [popupResult, setPopupResult] = useState<Result | null>(null)
+  const [popupResult, setPopupResult] = useState<Market | Event | StreetLights | null>(null)
 
   const handleClosePopup = () => setPopupResult(null)
 
