@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Event, Market, ResultType, StreetLights } from '../../../App.types'
 import Image from 'next/image'
 import Link from 'next/link'
-import { localizeDate } from '../../../utils/localizeDate'
+import { localizeDate } from '../../../utils/localize-date'
 import MapResultImage from './MapResultImage'
 
 const CloseIcon = '/close.svg'

@@ -9,7 +9,7 @@ import CardImage from '../../CardImage'
 import FavoriteButton from '../../FavoriteButton'
 import Link from 'next/link'
 import Image from 'next/image'
-import { localizeDate } from '../../../utils/localizeDate'
+import { localizeDate } from '../../../utils/localize-date'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
@@ -17,10 +17,10 @@ const CalendarIcon = '/calendar.svg'
 interface Props {
   result: Market | Event
   isFavorite: boolean
-  updateFavorite: (id: number, isActiveFavorite: boolean) => () => void
+  toggleFavorite: (id: number) => () => void
 }
 
-const ResultCard = ({ result, isFavorite, updateFavorite }: Props) => {
+const ResultCard = ({ result, isFavorite, toggleFavorite }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
   const { id, name, district, start, end, times } = result
@@ -38,7 +38,7 @@ const ResultCard = ({ result, isFavorite, updateFavorite }: Props) => {
     <li key={id} className="flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
-          <FavoriteButton isFavorite={isFavorite} onClick={updateFavorite(id, isFavorite)} />
+          <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
           <CardImage imgSrc={imgSrc} altText={name} />
         </div>
         <div className="flex w-full flex-1 flex-col space-y-4 p-4">

@@ -7,8 +7,10 @@ import { Location } from './components/Location'
 import MainImage from './components/MainImage'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { localizeDate } from '../../utils/localizeDate'
+import { localizeDate } from '../../utils/localize-date'
 import Link from 'next/link'
+import FavoriteButton from '../../components/FavoriteButton'
+import useFavorites from '../../hooks/use-favorites'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
@@ -21,6 +23,7 @@ interface Props {
 
 function Content({ result }: Props) {
   const [language, setLanguage] = useState('en-GB')
+  const { getIsFavorite, toggleFavorite } = useFavorites()
 
   const { name, district, start, end, id, times, offerings } = result
   const imgSrc = resultToImgUrlMapping[id]
@@ -33,7 +36,8 @@ function Content({ result }: Props) {
   }, [])
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="relative flex flex-col lg:flex-row">
+      <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
       <MainImage imgSrc={imgSrc} altText={name} />
       <div className="flex w-full flex-1 flex-col justify-between gap-5 p-6 md:p-12 md:pt-8">
         <div className="flex justify-between gap-3">

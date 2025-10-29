@@ -6,10 +6,10 @@ import ResultsListWrapper from '../../../components/ResultsWrapper'
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
   favorites: Array<number>
-  updateFavorite: (marketId: number, isActiveFavorite: boolean) => () => void
+  toggleFavorite: (id: number) => () => void
 }
 
-const ResultList = ({ results, favorites, updateFavorite }: Props) => {
+const ResultList = ({ results, favorites, toggleFavorite }: Props) => {
   return (
     <ResultsListWrapper>
       {results.map((result, idx) => (
@@ -17,7 +17,7 @@ const ResultList = ({ results, favorites, updateFavorite }: Props) => {
           key={idx}
           result={result}
           isFavorite={favorites.includes(result.id)}
-          updateFavorite={updateFavorite}
+          toggleFavorite={toggleFavorite}
         />
       ))}
     </ResultsListWrapper>

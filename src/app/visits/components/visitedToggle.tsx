@@ -22,42 +22,19 @@ const VisitedToggle = ({ marketId }: Props) => {
   const { getItem, setItem } = useLocalStorage()
 
   const handleCheck = (marketId: number) => () => {
-    const storedVisitedMarketIds = getItem(VISITED_MARKETS_LOCAL_STORAGE_KEY)
+    const storedVisitedMarketIds = getItem<Array<number>>(VISITED_MARKETS_LOCAL_STORAGE_KEY) || []
 
-    try {
-      const parsedMarketeIddData = storedVisitedMarketIds ? (JSON.parse(storedVisitedMarketIds) as Array<number>) : []
+    const newVisitedMarketIds = hasVisited
+      ? storedVisitedMarketIds.filter((id) => id !== marketId)
+      : [...storedVisitedMarketIds, marketId]
 
-      let newVisitedMarketIds: number[] = []
-
-      if (hasVisited) {
-        newVisitedMarketIds = parsedMarketeIddData?.slice().filter((id) => id !== marketId)
-        setHasVisited(!hasVisited)
-      } else {
-        newVisitedMarketIds = parsedMarketeIddData?.slice().concat(marketId)
-        setHasVisited(!hasVisited)
-      }
-
-      setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
-    } catch (error) {
-      console.error('Error parsing visited market data')
-    }
+    setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
+    setHasVisited(!hasVisited)
   }
 
   useEffect(() => {
-    const storedVisitedMarketIds = getItem(VISITED_MARKETS_LOCAL_STORAGE_KEY)
-
-    if (!storedVisitedMarketIds) return
-
-    try {
-      const parsedMarketeIddData = JSON.parse(storedVisitedMarketIds)
-      const hasVisited = parsedMarketeIddData.includes(marketId)
-
-      if (hasVisited) {
-        setHasVisited(hasVisited)
-      }
-    } catch (error) {
-      console.error('Error parsing visited market data')
-    }
+    const storedVisitedMarketIds = getItem<Array<number>>(VISITED_MARKETS_LOCAL_STORAGE_KEY) || []
+    setHasVisited(storedVisitedMarketIds.includes(marketId))
   }, [])
 
   return (

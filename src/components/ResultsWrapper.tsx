@@ -5,7 +5,7 @@ const ResultsListWrapper = ({ children }: { children: React.ReactNode }) => {
     <ul
       className="m-0 grid list-none justify-between gap-4 p-0 sm:gap-7 sm:gap-y-9"
       style={{
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
+        gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', // TODO - need this responsive rather than auto-fit
       }}
     >
       {children}

@@ -12,9 +12,13 @@ const RouteIcon = '/route.svg'
 export default function HomePage() {
   return (
     <div className="flex flex-col pb-10 md:p-5">
-      <div className="flex flex-col items-center justify-end md:flex-row md:justify-start md:gap-20">
-        <h1 className="px-3 py-8 text-center text-3xl font-bold text-gray-800 md:flex-1 md:px-5 md:text-5xl lg:text-6xl">
-          Discover the magic of Christmas in Vienna
+      <div className="relative flex flex-col items-center justify-end md:flex-row md:justify-start md:gap-20">
+        <h1 className="px-3 py-8 text-center text-3xl font-bold text-green-950 md:flex-1 md:px-5 md:text-5xl lg:text-6xl">
+          Discover the
+          <span className="align-middle text-lg md:text-2xl"> ✨</span>
+          <span className="text-red-500">Magic</span>
+          <span className="align-middle text-lg md:text-2xl">✨ </span>
+          of Christmas in Vienna
         </h1>
         <div className="h-full w-full bg-green-950 md:flex-1 md:py-8 md:pr-4">
           <Image
@@ -35,7 +39,7 @@ export default function HomePage() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 justify-around gap-4 px-6 sm:grid-cols-2 md:gap-6 md:px-0 lg:grid-cols-3">
+      <div className="grid grid-cols-1 justify-around gap-4 px-6 text-green-950 sm:grid-cols-2 md:gap-6 md:px-0 lg:grid-cols-3">
         <LinkedSection
           to={Routes.MARKETS}
           img={{ src: ChristmasMugIcon, alt: 'Christmas drinking mug' }}
@@ -58,7 +62,7 @@ export default function HomePage() {
           to={Routes.ROUTES}
           img={{ src: RouteIcon, alt: 'Route path' }}
           title="Walking Routes"
-          description="Follow curated Christmas walking routes through the city."
+          description="Follow curated Christmas walking routes through the festive city."
         />
         <LinkedSection
           to={Routes.VISITS}

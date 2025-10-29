@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react'
 import { Market, Event, FilterType, SortType } from '../../App.types'
 import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
 import { NEAR_ME_KM_DISTANCE_AWAY } from './ResultsContent.constants'
-import useLocalStorage from '../../hooks/use-local-storage'
-import { FAVORITE_MARKETS_LOCAL_STORAGE_KEY } from '../../App.constants'
 import Filters from './Filters'
 import { getIsOpen } from '../../utils/get-is-open'
 import dynamic from 'next/dynamic'
@@ -17,16 +15,15 @@ import sortResultsByDate from '../../utils/sort-results-by-date'
 import sortResultsByDistrict from '../../utils/sort-results-by-district'
 import useDeviceLocation from '../../hooks/use-device-location'
 import ResultList from './components/ResultList'
+import useFavorites from '../../hooks/use-favorites'
 
 const Map = dynamic(() => import('../../components/Map'))
 
 interface Props {
   results: Array<Market> | Array<Event> | Array<Market | Event>
-  favorites: Array<number>
-  setFavorites: (value: Array<number>) => void
 }
 
-const ResultsContent = ({ results, favorites, setFavorites }: Props) => {
+const ResultsContent = ({ results }: Props) => {
   const { filters, toggleFilter, resetFilters } = useFilters()
   const [showMap, setShowMap] = useState(false)
   const [sortType, setSortType] = useState<SortType>(SortType.DISTRICT)
@@ -35,13 +32,7 @@ const ResultsContent = ({ results, favorites, setFavorites }: Props) => {
   const toggleMap = () => setShowMap((prev) => !prev)
 
   const { deviceLocation, isLoading: isLoadingLocation, getDeviceLocation } = useDeviceLocation()
-  const { setItem } = useLocalStorage()
-
-  const updateFavorite = (marketId: number, isActiveFavorite: boolean) => () => {
-    const newFavorites = isActiveFavorite ? favorites.filter((id) => id !== marketId) : favorites.concat(marketId)
-    setFavorites(newFavorites)
-    setItem(FAVORITE_MARKETS_LOCAL_STORAGE_KEY, newFavorites)
-  }
+  const { favorites, toggleFavorite } = useFavorites()
 
   const applyFilters = (result: Market | Event) => {
     if (filters.OPEN_NOW && !getIsOpen(result.start, result.end, result.times)) {
@@ -94,7 +85,7 @@ const ResultsContent = ({ results, favorites, setFavorites }: Props) => {
       {showMap ? (
         <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
       ) : (
-        <ResultList results={shownResults} favorites={favorites} updateFavorite={updateFavorite} />
+        <ResultList results={shownResults} favorites={favorites} toggleFavorite={toggleFavorite} />
       )}
     </div>
   )

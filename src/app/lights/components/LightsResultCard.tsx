@@ -10,7 +10,7 @@ interface Props {
 }
 
 function LightsResultCard({ result }: Props) {
-  const { id, name, district, coordinates } = result
+  const { id, name, district, coordinates, locationType } = result
 
   const imgSrc = resultToImgUrlMapping[id]
 
@@ -22,12 +22,15 @@ function LightsResultCard({ result }: Props) {
         <CardImage imgSrc={imgSrc} altText={name} />
       </div>
       <div className="flex w-full flex-1 flex-col justify-between space-y-4 p-4">
-        <h2 className="text-xl font-semibold text-green-950">{name}</h2>
-        <dl className="space-y-3 text-base sm:[&_dd]:font-semibold sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
-          <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
+        <div className="flex items-center gap-2">
+          <h2 className="text-xl font-semibold text-green-950">{name}</h2>
+          <p className="text-sm">{`(${locationType === 'STREET' ? 'Street' : 'Square'})`}</p>
+        </div>
+        <dl className="space-y-3 text-base sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
+          <div className="flex items-center gap-2">
             <Image src={LocationIcon} width={12} height={12} alt="" />
             <dd>District</dd>
-            <p className="sm:hidden">•</p>
+            <p>•</p>
             <dt>
               <a href={googleMapsLink} className="underline" target="_blank">
                 {district}

@@ -775,8 +775,8 @@
   },
   {
     "id": 27,
-    "slug": "kylo",
-    "name": "Kylo - Punschterrassen",
+    "slug": "klyo",
+    "name": "Klyo - Punschterrassen",
     "isActive": true,
     "district": "1010",
     "address": "Uraniastraße 1",
@@ -1122,7 +1122,8 @@
     "district": "1010",
     "address": "Graben",
     "coordinates": { "lat": 48.208707, "lng": 16.369699 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "SQUARE"
   },
   {
     "id": 43,
@@ -1132,7 +1133,8 @@
     "district": "1010",
     "address": "Kärntner Straße",
     "coordinates": { "lat": 48.204704, "lng": 16.370744 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 44,
@@ -1142,7 +1144,8 @@
     "district": "1010",
     "address": "Kohlmarkt",
     "coordinates": { "lat": 48.208925, "lng": 16.367812 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 45,
@@ -1152,7 +1155,8 @@
     "district": "1010",
     "address": "Neuer Markt",
     "coordinates": { "lat": 48.206278, "lng": 16.370709 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "SQUARE"
   },
   {
     "id": 46,
@@ -1162,7 +1166,8 @@
     "district": "1010",
     "address": "Tuchlauben",
     "coordinates": { "lat": 48.21009, "lng": 16.369752 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 47,
@@ -1172,7 +1177,8 @@
     "district": "1010",
     "address": "Rotenturmstraße",
     "coordinates": { "lat": 48.210604, "lng": 16.374767 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 48,
@@ -1182,7 +1188,8 @@
     "district": "1010",
     "address": "Annagasse",
     "coordinates": { "lat": 48.204222, "lng": 16.37238 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 49,
@@ -1192,7 +1199,8 @@
     "district": "1010",
     "address": "Dorotheergasse",
     "coordinates": { "lat": 48.206965, "lng": 16.369019 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 50,
@@ -1202,7 +1210,8 @@
     "district": "1010",
     "address": "Goldschmiedgasse",
     "coordinates": { "lat": 48.208722, "lng": 16.371281 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 51,
@@ -1212,7 +1221,8 @@
     "district": "1010",
     "address": "Herrengasse",
     "coordinates": { "lat": 48.209796, "lng": 16.365692 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 52,
@@ -1222,7 +1232,8 @@
     "district": "1010",
     "address": "Palaisviertel",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 53,
@@ -1232,7 +1243,8 @@
     "district": "1010",
     "address": "Spiegelgasse",
     "coordinates": { "lat": 48.20705, "lng": 16.369955 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 54,
@@ -1242,7 +1254,8 @@
     "district": "1010",
     "address": "Wallnerstraße/Fahnengasse",
     "coordinates": { "lat": 48.209794, "lng": 16.366589 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 55,
@@ -1252,7 +1265,8 @@
     "district": "1010",
     "address": "Wollzeile",
     "coordinates": { "lat": 48.208413, "lng": 16.376217 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 56,
@@ -1262,7 +1276,8 @@
     "district": "1030",
     "address": "Landstraßer Hauptstraße",
     "coordinates": { "lat": 48.203652, "lng": 16.389356 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 57,
@@ -1272,7 +1287,8 @@
     "district": "1060",
     "address": "Mariahilferstraße",
     "coordinates": { "lat": 48.200978, "lng": 16.358649 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 58,
@@ -1282,7 +1298,8 @@
     "district": "1070",
     "address": "Neubaugasse",
     "coordinates": { "lat": 48.199891, "lng": 16.349294 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 59,
@@ -1292,7 +1309,8 @@
     "district": "1080",
     "address": "Josefstädterstraße",
     "coordinates": { "lat": 48.208278, "lng": 16.352529 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 60,
@@ -1302,7 +1320,8 @@
     "district": "1090",
     "address": "Servitenviertel",
     "coordinates": { "lat": 48.220805, "lng": 16.364392 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 61,
@@ -1312,7 +1331,8 @@
     "district": "1090",
     "address": "Volksopernviertel",
     "coordinates": { "lat": 48.224262, "lng": 16.35015 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 62,
@@ -1322,7 +1342,8 @@
     "district": "1110",
     "address": "Simmeringer Hauptstraße",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 63,
@@ -1332,7 +1353,8 @@
     "district": "1130",
     "address": "Meidlinger Hauptstraße",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 64,
@@ -1342,7 +1364,8 @@
     "district": "1140",
     "address": "Hütteldorfer Straße",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 65,
@@ -1352,7 +1375,8 @@
     "district": "1140",
     "address": "Nisselgasse",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 66,
@@ -1362,7 +1386,8 @@
     "district": "1150",
     "address": "Äußere Mariahilferstraße",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 67,
@@ -1372,7 +1397,8 @@
     "district": "1150",
     "address": "Gablenzgasse",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 68,
@@ -1382,7 +1408,8 @@
     "district": "1150",
     "address": "Reindorfgasse",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 69,
@@ -1392,7 +1419,8 @@
     "district": "1170",
     "address": "Kalvarienberggasse",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 70,
@@ -1402,7 +1430,8 @@
     "district": "1180",
     "address": "Währinger Straße",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 71,
@@ -1412,7 +1441,8 @@
     "district": "1190",
     "address": "Obkirchergasse",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 72,
@@ -1422,7 +1452,8 @@
     "district": "1220",
     "address": "Seestadt Aspern",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 73,
@@ -1432,7 +1463,8 @@
     "district": "1230",
     "address": "Maurer Hauptplatz",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 74,
@@ -1442,7 +1474,8 @@
     "district": "1010",
     "address": "Jasomirgottstraße",
     "coordinates": { "lat": 48.209157, "lng": 16.371778 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   },
   {
     "id": 75,
@@ -1452,6 +1485,7 @@
     "district": "1010",
     "address": "Trattnerhof",
     "coordinates": { "lat": 48.208868, "lng": 16.370836 },
-    "type": "STREET_LIGHTS"
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   }
 ]

@@ -1,15 +1,25 @@
 interface Result {
-  getItem: (key: string) => string | null
-  setItem: (key: string, value: any) => void
+  getItem: <T>(key: string) => T | null
+  setItem: <T>(key: string, value: T) => void
 }
 
 const useLocalStorage = (): Result => {
-  const getItem = (key: string) => {
-    return localStorage.getItem(key)
+  const getItem = <T>(key: string): T | null => {
+    try {
+      const item = localStorage.getItem(key)
+      return item ? JSON.parse(item) : null
+    } catch (error) {
+      console.error(`Error parsing localStorage item "${key}":`, error)
+      return null
+    }
   }
 
-  const setItem = (key: string, value: any) => {
-    localStorage.setItem(key, JSON.stringify(value))
+  const setItem = <T>(key: string, value: T) => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+    } catch (error) {
+      console.error(`Error setting localStorage item "${key}":`, error)
+    }
   }
 
   return {

@@ -17,6 +17,7 @@ interface Result {
 export interface StreetLights
   extends Pick<Result, 'id' | 'slug' | 'name' | 'isActive' | 'coordinates' | 'district' | 'address'> {
   type: ResultType.STREET_LIGHTS
+  locationType: 'STREET' | 'SQUARE'
 }
 
 export enum Offering {
