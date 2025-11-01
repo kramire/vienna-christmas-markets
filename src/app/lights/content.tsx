@@ -36,7 +36,7 @@ function Content({ results }: Props) {
       </div>
       {showMap ? (
         <Map
-          className="z-10 h-[65vh] w-[calc(100vw+32px)] -translate-x-4 md:w-full md:translate-x-0"
+          className="z-10 h-[60vh] w-[calc(100vw+32px)] -translate-x-4 md:h-[65vh] md:w-full md:translate-x-0"
           results={results}
           markerVariant="card"
         />
