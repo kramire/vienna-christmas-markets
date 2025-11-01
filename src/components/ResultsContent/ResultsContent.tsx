@@ -83,7 +83,11 @@ const ResultsContent = ({ results }: Props) => {
         </div>
       </div>
       {showMap ? (
-        <Map results={shownResults} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
+        <Map
+          results={shownResults}
+          className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0"
+          markerVariant="card"
+        />
       ) : (
         <ResultList results={shownResults} favorites={favorites} toggleFavorite={toggleFavorite} />
       )}

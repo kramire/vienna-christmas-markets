@@ -53,7 +53,7 @@ export default function WalkingRoutesPage({ params }: { params: { slug: string }
           className="z-10 h-96 w-full md:h-full"
           zoom={mapZoom}
           center={firstStopCoordinates}
-          popUpVariant="text"
+          markerVariant="text"
         />
       </div>
     </div>

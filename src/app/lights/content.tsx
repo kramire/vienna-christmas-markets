@@ -35,7 +35,11 @@ function Content({ results }: Props) {
         <MapToggle showMap={showMap} toggleMap={toggleMap} />
       </div>
       {showMap ? (
-        <Map results={results} className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0" />
+        <Map
+          results={results}
+          className="z-10 h-[65vh] w-screen -translate-x-6 md:w-full md:translate-x-0"
+          markerVariant="card"
+        />
       ) : (
         <ResultsListWrapper>
           {results.map((result) => (

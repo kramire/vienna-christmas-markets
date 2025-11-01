@@ -12,10 +12,10 @@ interface Props {
   className: string
   center?: Coordinate
   zoom?: number
-  popUpVariant?: 'card' | 'text'
+  markerVariant?: 'card' | 'text'
 }
 
-const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, popUpVariant = 'card' }: Props) => {
+const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVariant }: Props) => {
   const [isCSSLoaded, setIsCSSLoaded] = useState(false)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
@@ -80,20 +80,35 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, popUpVariant
     if (!mapMarkerLayer) return
 
     mapMarkerLayer.clearLayers()
+
+    // Add markers
     results.forEach((result) => {
       //@ts-ignore
-      const popUpMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).on('click', function () {
-        setPopupResult(result)
-      })
-
-      //@ts-ignore
-      const textMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng]).bindPopup(`${result.name}`)
-
-      mapMarkerLayer.addLayer(popUpVariant === 'card' ? popUpMarker : textMarker)
+      const basicMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng])
+      switch (markerVariant) {
+        case 'card': {
+          //@ts-ignore
+          basicMarker.on('click', function () {
+            setPopupResult(result)
+          })
+          mapMarkerLayer.addLayer(basicMarker)
+          break
+        }
+        case 'text': {
+          //@ts-ignore
+          basicMarker.bindPopup(`${result.name}`)
+          mapMarkerLayer.addLayer(basicMarker)
+          break
+        }
+        default: {
+          mapMarkerLayer.addLayer(basicMarker)
+          break
+        }
+      }
     })
 
     map.addLayer(mapMarkerLayer)
-  }, [mapMarkerLayer, results])
+  }, [mapMarkerLayer, results, markerVariant])
 
   if (!isCSSLoaded && !isScriptLoaded) {
     return null
