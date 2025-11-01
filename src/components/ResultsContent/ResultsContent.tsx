@@ -1,10 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Market, Event, FilterType, SortType } from '../../App.types'
-import { getDistanceFromLatLonInKm } from '../../utils/get-distance-between-coordinates'
-import { NEAR_ME_KM_DISTANCE_AWAY } from './ResultsContent.constants'
 import Filters from './Filters'
-import { getIsOpen } from '../../utils/get-is-open'
 import dynamic from 'next/dynamic'
 import HeaderText from '../../components/HeaderText'
 import SortSelect from '../../components/SortSelect'
@@ -16,6 +13,7 @@ import sortResultsByDistrict from '../../utils/sort-results-by-district'
 import useDeviceLocation from '../../hooks/use-device-location'
 import ResultList from './components/ResultList'
 import useFavorites from '../../hooks/use-favorites'
+import { NEAR_ME_KM_DISTANCE_AWAY } from '../../App.constants'
 
 const Map = dynamic(() => import('../../components/Map'))
 
@@ -24,7 +22,7 @@ interface Props {
 }
 
 const ResultsContent = ({ results }: Props) => {
-  const { filters, toggleFilter, resetFilters } = useFilters()
+  const { filters, toggleFilter, resetFilters, applyFilters } = useFilters()
   const [showMap, setShowMap] = useState(false)
   const [sortType, setSortType] = useState<SortType>(SortType.DISTRICT)
 
@@ -33,22 +31,6 @@ const ResultsContent = ({ results }: Props) => {
 
   const { deviceLocation, isLoading: isLoadingLocation, getDeviceLocation } = useDeviceLocation()
   const { favorites, toggleFavorite } = useFavorites()
-
-  const applyFilters = (result: Market | Event) => {
-    if (filters.OPEN_NOW && !getIsOpen(result.start, result.end, result.times)) {
-      return false
-    }
-    if (filters.FAVORITE && !favorites.includes(result.id)) {
-      return false
-    }
-    if (filters.NEAR_ME && deviceLocation) {
-      const distanceAway = getDistanceFromLatLonInKm(result.coordinates, deviceLocation)
-      if (distanceAway > NEAR_ME_KM_DISTANCE_AWAY) {
-        return false
-      }
-    }
-    return true
-  }
 
   useEffect(() => {
     if (deviceLocation || !filters.NEAR_ME) return
@@ -63,7 +45,7 @@ const ResultsContent = ({ results }: Props) => {
   }, [])
 
   const shownResults = results
-    .filter(applyFilters)
+    .filter((result) => applyFilters({ result, favorites, deviceLocation }))
     .sort(sortType === SortType.DATE ? sortResultsByDate : sortResultsByDistrict)
 
   return (

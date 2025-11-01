@@ -615,31 +615,6 @@
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING"]
   },
   {
-    "id": 20,
-    "slug": "badeschiff",
-    "name": "Badeschiff - ParadEis",
-    "isActive": true,
-    "district": "1010",
-    "address": "Wolfgang-Schmitz-Promenade",
-    "coordinates": { "lat": 48.21163, "lng": 16.381463 },
-    "transportation": ["U1", "U4", "1", "2"],
-    "start": "10/17/2025",
-    "end": "12/15/2025",
-    "times": [
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"]
-    ],
-    "website": "https://www.badeschiff.at/eisstockschiessen/",
-    "imgUrl": "",
-    "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
-  },
-  {
     "id": 21,
     "slug": "haas-und-haas",
     "name": "Haas & Haas - Winter in the City",
@@ -663,6 +638,31 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"]
+  },
+  {
+    "id": 20,
+    "slug": "badeschiff",
+    "name": "Badeschiff - ParadEis",
+    "isActive": true,
+    "district": "1010",
+    "address": "Wolfgang-Schmitz-Promenade",
+    "coordinates": { "lat": 48.21163, "lng": 16.381463 },
+    "transportation": ["U1", "U4", "1", "2"],
+    "start": "10/17/2025",
+    "end": "12/15/2025",
+    "times": [
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["16:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"]
+    ],
+    "website": "https://www.badeschiff.at/eisstockschiessen/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
   },
   {
     "id": 22,
