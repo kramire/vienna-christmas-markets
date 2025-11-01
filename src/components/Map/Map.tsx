@@ -5,6 +5,10 @@ import { useEffect, useState } from 'react'
 import { Coordinate, Event, Market, StreetLights } from '../../App.types'
 import MapResultPopup from './components/MapResultPopup'
 
+const MugIcon = '/christmas-mug.png'
+const LightsIcon = '/christmas-lights.svg'
+const OpenPresentIcon = '/open-gift.svg'
+
 const WIEN_CENTER = { lat: 48.2089366, lng: 16.3625921 }
 
 interface Props {
@@ -13,9 +17,10 @@ interface Props {
   center?: Coordinate
   zoom?: number
   markerVariant?: 'card' | 'text'
+  hasCustomIcons?: boolean
 }
 
-const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVariant }: Props) => {
+const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVariant, hasCustomIcons = false }: Props) => {
   const [isCSSLoaded, setIsCSSLoaded] = useState(false)
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [map, setMap] = useState<any>(null)
@@ -84,7 +89,17 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVarian
     // Add markers
     results.forEach((result) => {
       //@ts-ignore
-      const basicMarker = window.L.marker([result.coordinates.lat, result.coordinates.lng])
+      const customIcon = window.L.icon({
+        iconUrl: result.type === 'MARKET' ? MugIcon : result.type === 'STREET_LIGHTS' ? LightsIcon : OpenPresentIcon,
+        iconSize: [48, 48], // size of the icon
+      })
+
+      //@ts-ignore
+      const basicMarker = window.L.marker(
+        [result.coordinates.lat, result.coordinates.lng],
+        hasCustomIcons ? { icon: customIcon } : {},
+      )
+
       switch (markerVariant) {
         case 'card': {
           //@ts-ignore

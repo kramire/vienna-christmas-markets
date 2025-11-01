@@ -8,6 +8,7 @@ const ChristmasLightsIcon = '/christmas-lights.svg'
 const OpenPresentIcon = '/open-gift.svg'
 const GreenCheckMarkIcon = '/green-check-mark.svg'
 const RouteIcon = '/route.svg'
+const MapIcon = '/christmas-map.svg'
 
 export default function HomePage() {
   return (
@@ -63,6 +64,12 @@ export default function HomePage() {
           img={{ src: RouteIcon, alt: 'Route path' }}
           title="Walking Routes"
           description="Follow curated Christmas walking routes through the festive city."
+        />
+        <LinkedSection
+          to={Routes.MAP}
+          img={{ src: MapIcon, alt: 'Map icon' }}
+          title="Map of Everything"
+          description="Explore all Christmas activities nearby."
         />
         <LinkedSection
           to={Routes.VISITS}

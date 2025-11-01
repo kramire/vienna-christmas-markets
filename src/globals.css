@@ -19,3 +19,8 @@
 * {
   box-sizing: border-box;
 }
+
+#map .leaflet-pane.leaflet-tile-pane {
+  filter: grayscale(60%);
+  opacity: 0.7;
+}

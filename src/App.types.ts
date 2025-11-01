@@ -60,6 +60,7 @@ export enum Routes {
   VISITS = '/visits',
   LIGHTS = '/lights',
   ROUTES = '/routes',
+  MAP = '/map',
 }
 
 export enum SortType {
