@@ -37,7 +37,7 @@ function Content({ result }: Props) {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="relative flex h-72 w-full md:sticky md:top-8 md:mt-8 md:h-80 md:flex-1">
+      <div className="relative flex h-72 w-full md:sticky md:top-8 md:mt-8 md:h-96 md:flex-1">
         <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
         <MainImage imgSrc={imgSrc} altText={name} />
       </div>
@@ -45,12 +45,8 @@ function Content({ result }: Props) {
         <div className="flex justify-between gap-3">
           <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
         </div>
+        <hr />
         <dl className="space-y-4 [&>div]:grid [&>div]:grid-cols-[16px_1fr] [&>div]:gap-x-4 [&_dd]:font-semibold [&_img]:row-span-2 [&_img]:mt-1">
-          <div>
-            <Image src={LocationIcon} width={16} height={16} alt="" />
-            <dd>District</dd>
-            <dt>{district}</dt>
-          </div>
           <div>
             <Image src={CalendarIcon} width={16} height={16} alt="" />
             <dd>Dates</dd>
@@ -71,7 +67,7 @@ function Content({ result }: Props) {
           {alternateTimes && (
             <div>
               <Image src={ClockIcon} width={16} height={16} alt="" />
-              <span className="font-semibold">Special Times</span>
+              <span className="font-semibold">Special Dates & Times</span>
               <div className="mt-1 flex flex-col gap-2">
                 {alternateTimes.map(({ date, time }) => {
                   return (

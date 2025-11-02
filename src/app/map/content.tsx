@@ -49,7 +49,7 @@ export default function Content({ results }: Props) {
       </div>
       <Map
         results={shownResults}
-        className="z-10 h-[60vh] w-screen -translate-x-4 md:h-[65vh] md:w-full md:translate-x-0"
+        className="z-10 h-[60vh] w-screen -translate-x-4 md:w-full md:translate-x-0"
         markerVariant="card"
         hasCustomIcons
         zoom={14}
