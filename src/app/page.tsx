@@ -69,7 +69,7 @@ export default function HomePage() {
           to={Routes.MAP}
           img={{ src: MapIcon, alt: 'Map icon' }}
           title="Map of Everything"
-          description="Explore all Christmas activities nearby."
+          description="Explore all Christmas festivities nearby."
         />
         <LinkedSection
           to={Routes.VISITS}

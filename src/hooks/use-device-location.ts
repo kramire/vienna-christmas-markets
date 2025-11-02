@@ -15,7 +15,7 @@ function useDeviceLocation() {
         setIsLoading(false)
       }
     } catch {
-      throw new Error('Could not get device location')
+      console.error('Could not get device location')
     } finally {
       setIsLoading(false)
     }
