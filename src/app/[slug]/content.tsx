@@ -25,20 +25,22 @@ function Content({ result }: Props) {
   const [language, setLanguage] = useState('en-GB')
   const { getIsFavorite, toggleFavorite } = useFavorites()
 
-  const { name, district, start, end, id, times, offerings } = result
+  const { name, district, start, end, id, times, offerings, alternateTimes } = result
   const imgSrc = resultToImgUrlMapping[id]
 
-  const startDate = start ? localizeDate(start, language) : 'TBD'
-  const endDate = end ? localizeDate(end, language) : 'TBD'
+  const startDate = start ? localizeDate({ date: start, language }) : 'TBD'
+  const endDate = end ? localizeDate({ date: end, language }) : 'TBD'
 
   useEffect(() => {
     setLanguage(navigator.language)
   }, [])
 
   return (
-    <div className="relative flex flex-col lg:flex-row">
-      <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
-      <MainImage imgSrc={imgSrc} altText={name} />
+    <div className="flex flex-col lg:flex-row">
+      <div className="relative flex h-72 w-full lg:sticky lg:top-8 lg:mt-8 lg:h-80 lg:flex-1">
+        <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
+        <MainImage imgSrc={imgSrc} altText={name} />
+      </div>
       <div className="flex w-full flex-1 flex-col justify-between gap-5 p-6 md:p-12 md:pt-8">
         <div className="flex justify-between gap-3">
           <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
@@ -66,10 +68,34 @@ function Content({ result }: Props) {
               ))}
             </div>
           </div>
+          {alternateTimes && (
+            <div>
+              <Image src={ClockIcon} width={16} height={16} alt="" />
+              <span className="font-semibold">Special Times</span>
+              <div className="mt-1 flex flex-col gap-2">
+                {alternateTimes.map(({ date, time }) => {
+                  return (
+                    <div key={date} className="flex items-center gap-2">
+                      <span>{localizeDate({ date, language, variant: 'short' })}</span>
+                      <span>•</span>
+                      <span>
+                        {time?.[0]} - {time?.[1]}
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )}
           {result.website && (
             <div>
               <Image src={InfoIcon} width={16} height={16} alt="" />
-              <Link href={result.website} target="_blank" rel="noopener noreferrer" className="w-fit underline">
+              <Link
+                href={result.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit font-semibold underline"
+              >
                 Website
               </Link>
             </div>

@@ -20,14 +20,14 @@ const MapResultPopupContent = ({ result, onClose }: Props) => {
   const startDate =
     type === ResultType.MARKET || type === ResultType.EVENT
       ? result.start
-        ? localizeDate(result.start, language)
+        ? localizeDate({ date: result.start, language })
         : 'TBD'
       : null
 
   const endDate =
     type === ResultType.MARKET || type === ResultType.EVENT
       ? result.end
-        ? localizeDate(result.end, language)
+        ? localizeDate({ date: result.end, language })
         : 'TBD'
       : null
 

@@ -2,14 +2,15 @@ import { StaticImageData } from 'next/image'
 import { Offering, SortType } from './App.types'
 
 import IMG_SRC_1 from '../public/Musuem-Quartier-Christmas-market.webp'
-import IMG_SRC_2 from '../public/Spittelberg-Market.jpg'
+import IMG_SRC_2 from '../public/Spittelberg-Market.webp'
 import IMG_SRC_3 from '../public/Tuerkenschanzpark-Christmas-market.webp'
 import IMG_SRC_4 from '../public/Saint-Stephens-Cathedral-at-Christmas.webp'
 import IMG_SRC_5 from '../public/Genuss-Christmas-market.webp'
 import IMG_SRC_6 from '../public/Altes-AKH-Christmas-market.webp'
 import IMG_SRC_7 from '../public/Am-Hof-Christmas-Market.webp'
 import IMG_SRC_8 from '../public/Maria-Theresien-Platz-Christmas-market.webp'
-import IMG_SRC_11 from '../public/Belvedere-Market.jpg'
+import IMG_SRC_10 from '../public/Hirschstetten.webp'
+import IMG_SRC_11 from '../public/Belvedere-Market.webp'
 import IMG_SRC_12 from '../public/Liechtenstein-Christmas-market.webp'
 import IMG_SRC_13 from '../public/Freyung-Market.webp'
 import IMG_SRC_14 from '../public/Karlsplatz-Christmas-market.webp'
@@ -24,8 +25,11 @@ import IMG_SRC_43 from '../public/kaertner-strasse.webp'
 import IMG_SRC_44 from '../public/kohlmarkt.webp'
 import IMG_SRC_45 from '../public/neuer-markt.webp'
 import IMG_SRC_47 from '../public/rotenturmstrasse.webp'
+import IMG_SRC_51 from '../public/Herrengasse.webp'
+import IMG_SRC_52 from '../public/palais.webp'
 import IMG_SRC_58 from '../public/neubaugasse.webp'
-import IMG_SRC_60 from '../public/servitenviertel.webp'
+import IMG_SRC_60 from '../public/Servitenviertel.webp'
+import IMG_SRC_76 from '../public/Skybar.webp'
 
 import EISSTOCK from '../public/eisstock.png'
 import ICE_SKATE from '../public/ice-skate.png'
@@ -49,6 +53,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   6: IMG_SRC_6,
   7: IMG_SRC_7,
   8: IMG_SRC_8,
+  10: IMG_SRC_10,
   11: IMG_SRC_11,
   12: IMG_SRC_12,
   13: IMG_SRC_13,
@@ -64,8 +69,11 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   44: IMG_SRC_44,
   45: IMG_SRC_45,
   47: IMG_SRC_47,
+  51: IMG_SRC_51,
+  52: IMG_SRC_52,
   58: IMG_SRC_58,
   60: IMG_SRC_60,
+  76: IMG_SRC_76,
 }
 
 export const sortSelectOptions = {

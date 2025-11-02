@@ -1,4 +1,4 @@
-interface Result {
+export interface Result {
   id: number
   slug: string
   name: string
@@ -12,6 +12,7 @@ interface Result {
   times: Array<Array<string> | null> // this is Array<[string, string] | null> but TS complains about JSON
   website: string | null
   offerings: Array<Offering>
+  alternateTimes?: Array<{ date: string; time: Array<Array<string> | null> }>
 }
 
 export interface StreetLights

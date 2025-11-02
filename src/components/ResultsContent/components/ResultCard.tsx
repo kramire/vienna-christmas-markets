@@ -27,8 +27,8 @@ const ResultCard = ({ result, isFavorite, toggleFavorite }: Props) => {
 
   const imgSrc = resultToImgUrlMapping[id]
 
-  const startDate = start ? localizeDate(start, language) : 'TBD'
-  const endDate = end ? localizeDate(end, language) : 'TBD'
+  const startDate = start ? localizeDate({ date: start, language }) : 'TBD'
+  const endDate = end ? localizeDate({ date: end, language }) : 'TBD'
 
   useEffect(() => {
     setLanguage(navigator.language)
