@@ -1,51 +1,37 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-import useLocalStorage from '../../../hooks/use-local-storage'
 import Image from 'next/image'
+import { cn } from '../../../utils/cn'
 
-const CircleCheckSolid = '/circleCheckSolid.svg'
-const CircleCheck = '/circleCheck.svg'
-
-const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2025'
+const GreenCheck = '/green-check-mark.svg'
 
 interface Props {
   marketId: number
+  hasVisited: boolean
+  toggleVisit: (marketId: number) => void
 }
 
-// TODO - revisit about simplifying this logic with the localstorage
-
-const VisitedToggle = ({ marketId }: Props) => {
-  const [hasVisited, setHasVisited] = useState<boolean>(false)
-
-  const { getItem, setItem } = useLocalStorage()
-
-  const handleCheck = (marketId: number) => () => {
-    const storedVisitedMarketIds = getItem<Array<number>>(VISITED_MARKETS_LOCAL_STORAGE_KEY) || []
-
-    const newVisitedMarketIds = hasVisited
-      ? storedVisitedMarketIds.filter((id) => id !== marketId)
-      : [...storedVisitedMarketIds, marketId]
-
-    setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
-    setHasVisited(!hasVisited)
-  }
-
-  useEffect(() => {
-    const storedVisitedMarketIds = getItem<Array<number>>(VISITED_MARKETS_LOCAL_STORAGE_KEY) || []
-    setHasVisited(storedVisitedMarketIds.includes(marketId))
-  }, [])
-
+const VisitedToggle = ({ marketId, hasVisited, toggleVisit }: Props) => {
   return (
-    <div onClick={handleCheck(marketId)} className="cursor-pointer">
+    <div
+      onClick={(e) => {
+        e.preventDefault()
+        toggleVisit(marketId)
+      }}
+      className={cn(
+        'flex w-fit cursor-pointer items-center gap-2 rounded-2xl border border-green-950 px-4 py-1 text-xs',
+        hasVisited ? 'border-green-600 bg-green-100' : 'border-gray-400 grayscale',
+      )}
+    >
       <Image
-        src={hasVisited ? CircleCheckSolid : CircleCheck}
+        src={GreenCheck}
         width={16}
         height={16}
         loading="lazy"
         alt={hasVisited ? 'Checked' : 'Unchecked'}
+        className="h-3 w-3 sm:h-4 sm:w-4"
       />
+      <span>{hasVisited ? 'Visited' : 'Click to Visit'}</span>
     </div>
   )
 }

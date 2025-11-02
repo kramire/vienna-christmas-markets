@@ -15,7 +15,7 @@ interface Props {
 const MapResultPopupContent = ({ result, onClose }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
-  const { id, name, district, slug, type } = result
+  const { id, name, district, type } = result
 
   const startDate =
     type === ResultType.MARKET || type === ResultType.EVENT

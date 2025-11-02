@@ -20,8 +20,9 @@ const HeaderText = () => {
       )
     case Routes.MAP:
       return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Christmas Map of Vienna</h1>
-    case Routes.HOME:
     case Routes.VISITS:
+      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Track your Christmas Progress</h1>
+    case Routes.HOME:
     default:
       return null
   }

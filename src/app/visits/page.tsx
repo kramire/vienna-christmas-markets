@@ -1,34 +1,34 @@
-import { Market, Event, ResultType } from '../../App.types'
+'use client'
+
+import { Market, Event, ResultType, StreetLights } from '../../App.types'
 import data from '../../data.json'
-import sortResultsByDate from '../../utils/sort-results-by-date'
-import VisitedToggle from './components/visitedToggle'
-import { groupByDistrict } from './helpers/group-by-district'
+import { useEffect, useState } from 'react'
+import Content from './content'
+import useLocalStorage from '../../hooks/use-local-storage'
+
+const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2025'
 
 export default function VisitsPage() {
-  const results = data as Array<Market | Event>
-  const markets = results
-    .filter((result) => result.type === ResultType.MARKET && result.isActive)
-    .sort(sortResultsByDate) as Array<Market>
+  const [visitedMarkets, setVisitedMarkets] = useState<Array<number>>([])
 
-  const marketsByDistrict = groupByDistrict(markets)
-  const districts = Object.keys(marketsByDistrict).sort()
+  const { getItem, setItem } = useLocalStorage()
 
-  return (
-    <div className="flex flex-col items-center justify-center gap-8 p-6">
-      <h2 className="align-center text-lg font-bold text-green-950">Which markets have you visited?</h2>
-      <div className="flex flex-col gap-4">
-        {districts.map((district) => (
-          <div key={`district_${district}`} className="p-4 shadow-md">
-            <h3 className="mb-4 text-lg font-bold text-green-950">{district}</h3>
-            {marketsByDistrict[district].map((market) => (
-              <div key={market.id} className="mb-4 flex gap-4 text-base">
-                <div className="flex-1">{market.name}</div>
-                <VisitedToggle marketId={market.id} />
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  )
+  const results = data as Array<Market | Event | StreetLights>
+  const markets = results.filter((result) => result.type === ResultType.MARKET && result.isActive) as Array<Market>
+
+  const toggleVisit = (marketId: number) => {
+    const newVisitedMarketIds = visitedMarkets.includes(marketId)
+      ? visitedMarkets.filter((id) => id !== marketId)
+      : [...visitedMarkets, marketId]
+
+    setItem(VISITED_MARKETS_LOCAL_STORAGE_KEY, newVisitedMarketIds)
+    setVisitedMarkets([...newVisitedMarketIds])
+  }
+
+  useEffect(() => {
+    const storedVisitedMarketIds = getItem<Array<number>>(VISITED_MARKETS_LOCAL_STORAGE_KEY) || []
+    setVisitedMarkets([...storedVisitedMarketIds])
+  }, [])
+
+  return <Content markets={markets} visitedMarkets={visitedMarkets} toggleVisit={toggleVisit} />
 }
