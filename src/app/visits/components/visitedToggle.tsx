@@ -19,8 +19,8 @@ const VisitedToggle = ({ marketId, hasVisited, toggleVisit }: Props) => {
         toggleVisit(marketId)
       }}
       className={cn(
-        'flex w-fit cursor-pointer items-center gap-2 rounded-2xl border border-green-950 px-4 py-1 text-xs',
-        hasVisited ? 'border-green-600 bg-green-100' : 'border-gray-400 grayscale',
+        'flex w-40 cursor-pointer items-center justify-center gap-2 rounded-2xl border border-green-950 py-1 text-xs sm:text-base',
+        hasVisited ? 'border-green-600 text-green-700' : 'border-gray-400 grayscale',
       )}
     >
       <Image

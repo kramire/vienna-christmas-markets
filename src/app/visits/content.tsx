@@ -50,7 +50,7 @@ export default function Content({ markets, visitedMarkets, toggleVisit }: Props)
             {percentVisited}%
           </div>
         </div>
-        <p className="text-xs sm:text-sm">{getProgressText(visitedMarkets.length, markets.length)}</p>
+        <p className="text-sm sm:text-base">{getProgressText(visitedMarkets.length, markets.length)}</p>
       </div>
       <div className="flex flex-col gap-8">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
