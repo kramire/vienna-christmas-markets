@@ -46,6 +46,7 @@ export enum FilterType {
   OPEN_NOW = 'OPEN_NOW',
   FAVORITE = 'FAVORITE',
   NEAR_ME = 'NEAR_ME',
+  CURLING = 'CURLING',
 }
 
 export interface Coordinate {

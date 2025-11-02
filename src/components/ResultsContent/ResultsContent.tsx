@@ -57,7 +57,12 @@ const ResultsContent = ({ results }: Props) => {
           {filters.NEAR_ME && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
         </p>
       </div>
-      <div className="sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-5 shadow-sm sm:flex-row lg:py-6">
+      <div
+        className={cn(
+          'sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-5 shadow-sm sm:flex-row lg:py-6',
+          !shownResults.length && 'shadow-none',
+        )}
+      >
         <Filters filters={filters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
         <div className={cn('flex gap-4', showMap ? 'justify-end' : 'justify-between')}>
           {!showMap && <SortSelect sortType={sortType} handleChange={handleSort} />}

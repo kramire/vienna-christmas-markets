@@ -9,7 +9,7 @@ interface Props {
 
 const Filters = ({ filters, toggleFilter, isLoadingLocation }: Props) => {
   return (
-    <div className="flex gap-3 overflow-x-auto text-green-950">
+    <div className="flex gap-2 overflow-x-auto text-green-950">
       <FilterItem label="Open Now" isSelected={filters.OPEN_NOW} handleClick={toggleFilter(FilterType.OPEN_NOW)} />
       <FilterItem
         label="Near Me"
@@ -18,6 +18,7 @@ const Filters = ({ filters, toggleFilter, isLoadingLocation }: Props) => {
         isLoading={isLoadingLocation}
       />
       <FilterItem label="My Favorites" isSelected={filters.FAVORITE} handleClick={toggleFilter(FilterType.FAVORITE)} />
+      <FilterItem label="Curling" isSelected={filters.CURLING} handleClick={toggleFilter(FilterType.CURLING)} />
     </div>
   )
 }

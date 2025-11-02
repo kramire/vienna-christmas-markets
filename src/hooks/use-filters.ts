@@ -1,17 +1,22 @@
 import { getIsOpen } from '../utils/get-is-open'
-import { FilterType, Market, Event, StreetLights, ResultType } from '../App.types'
+import { FilterType, Market, Event, StreetLights, ResultType, Offering } from '../App.types'
 import { useState } from 'react'
 import { getDistanceFromLatLonInKm } from '../utils/get-distance-between-coordinates'
 import { NEAR_ME_KM_DISTANCE_AWAY } from '../App.constants'
 
+type FilterState = {
+  [key in FilterType]: boolean
+}
+
+const INITIAL_FILTER_STATE: FilterState = {
+  [FilterType.OPEN_NOW]: false,
+  [FilterType.FAVORITE]: false,
+  [FilterType.NEAR_ME]: false,
+  [FilterType.CURLING]: false,
+}
+
 function useFilters() {
-  const [filters, setFilters] = useState<{
-    [key in FilterType]: boolean
-  }>({
-    [FilterType.OPEN_NOW]: false,
-    [FilterType.FAVORITE]: false,
-    [FilterType.NEAR_ME]: false,
-  })
+  const [filters, setFilters] = useState<FilterState>({ ...INITIAL_FILTER_STATE })
 
   const toggleFilter = (filterKey: FilterType) => () => {
     setFilters({
@@ -21,11 +26,7 @@ function useFilters() {
   }
 
   const resetFilters = () => {
-    setFilters({
-      [FilterType.OPEN_NOW]: false,
-      [FilterType.FAVORITE]: false,
-      [FilterType.NEAR_ME]: false,
-    })
+    setFilters({ ...INITIAL_FILTER_STATE })
   }
 
   const applyFilters = ({
@@ -50,6 +51,10 @@ function useFilters() {
       if (distanceAway > NEAR_ME_KM_DISTANCE_AWAY) {
         return false
       }
+    }
+    if (filters.CURLING) {
+      if (result.type === ResultType.STREET_LIGHTS) return false
+      return result.offerings.includes(Offering.OFFERING_CURLING)
     }
     return true
   }
