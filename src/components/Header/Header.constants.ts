@@ -19,7 +19,7 @@ export const menuItems: Array<MenuItem> = [
   { name: 'Markets', to: Routes.MARKETS, icon: ChristmasMugIcon },
   { name: 'Pop-Ups', to: Routes.EVENTS, icon: OpenPresentIcon },
   { name: 'Lights (New!)', to: Routes.LIGHTS, icon: ChristmasLightsIcon },
-  { name: 'Walking Routes (New!)', to: Routes.ROUTES, icon: RouteIcon },
+  { name: 'Self-Guided Tours (New!)', to: Routes.ROUTES, icon: RouteIcon },
   { name: 'Map (New!)', to: Routes.MAP, icon: MapIcon },
   { name: 'Visits', to: Routes.VISITS, icon: GreenCheckMarkIcon },
 ]

@@ -3,10 +3,9 @@ import { Event, Market, StreetLights } from '../../../App.types'
 import ResultsData from '../../../data.json'
 import Image from 'next/image'
 import RouteCardImage from './RouteCardImage'
-import { resultToImgUrlMapping } from '@/App.constants'
+import { resultToImgUrlMapping } from '../../../App.constants'
 
 const LocationIcon = '/location.svg'
-const CalendarIcon = '/calendar.svg'
 
 interface Props {
   stopId: number

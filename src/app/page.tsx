@@ -62,8 +62,8 @@ export default function HomePage() {
         <LinkedSection
           to={Routes.ROUTES}
           img={{ src: RouteIcon, alt: 'Route path' }}
-          title="Walking Routes"
-          description="Follow curated Christmas walking routes through the festive city."
+          title="Self-Guided Tours"
+          description="Follow curated Christmas routes through the festive city."
         />
         <LinkedSection
           to={Routes.MAP}

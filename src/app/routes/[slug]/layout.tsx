@@ -12,7 +12,7 @@ export async function generateMetadata({ params: { slug } }: { params: { slug: s
 
   const { name, description } = result
 
-  const title = `Vienna Christmas Walking Route - ${name}`
+  const title = `Vienna Christmas Self-Guided Tour - ${name}`
 
   return {
     title,

@@ -13,6 +13,7 @@ const INITIAL_FILTER_STATE: FilterState = {
   [FilterType.FAVORITE]: false,
   [FilterType.NEAR_ME]: false,
   [FilterType.CURLING]: false,
+  [FilterType.FAMILY_ORIENTED]: false,
 }
 
 function useFilters() {
@@ -29,6 +30,7 @@ function useFilters() {
     setFilters({ ...INITIAL_FILTER_STATE })
   }
 
+  // Filters should be inclusive - a result is included if it meets all active filters
   const applyFilters = ({
     result,
     favorites,
@@ -38,24 +40,29 @@ function useFilters() {
     favorites: Array<number>
     deviceLocation?: { lat: number; lng: number }
   }) => {
-    if (filters.OPEN_NOW) {
-      if (result.type === ResultType.STREET_LIGHTS) return false
-      return getIsOpen(result.start, result.end, result.times)
+    // Helper to skip STREET_LIGHTS for certain filters
+    const isStreetLights = result.type === ResultType.STREET_LIGHTS
+
+    if (filters.OPEN_NOW && !isStreetLights) {
+      if (!getIsOpen(result.start, result.end, result.times)) return false
     }
-    if (filters.FAVORITE) {
-      if (result.type === ResultType.STREET_LIGHTS) return false
-      return favorites.includes(result.id)
+
+    if (filters.FAVORITE && !isStreetLights) {
+      if (!favorites.includes(result.id)) return false
     }
+
     if (filters.NEAR_ME && deviceLocation) {
-      const distanceAway = getDistanceFromLatLonInKm(result.coordinates, deviceLocation)
-      if (distanceAway > NEAR_ME_KM_DISTANCE_AWAY) {
-        return false
-      }
+      if (getDistanceFromLatLonInKm(result.coordinates, deviceLocation) > NEAR_ME_KM_DISTANCE_AWAY) return false
     }
-    if (filters.CURLING) {
-      if (result.type === ResultType.STREET_LIGHTS) return false
-      return result.offerings.includes(Offering.OFFERING_CURLING)
+
+    if (filters.CURLING && !isStreetLights) {
+      if (!result.offerings.includes(Offering.OFFERING_CURLING)) return false
     }
+
+    if (filters.FAMILY_ORIENTED && !isStreetLights) {
+      if (!result.offerings.includes(Offering.OFFERING_KIDS_RIDES)) return false
+    }
+
     return true
   }
 

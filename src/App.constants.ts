@@ -86,7 +86,7 @@ export const offeringsMapping: { [key in Offering]: { name: string; icon: Static
   [Offering.OFFERING_SHOPPING]: { name: 'Shopping', icon: SHOPPING },
   [Offering.OFFERING_CURLING]: { name: 'Curling', icon: EISSTOCK },
   [Offering.OFFERING_ICE_SKATING]: { name: 'Ice Skating', icon: ICE_SKATE },
-  [Offering.OFFERING_KIDS_RIDES]: { name: 'Kids Rides', icon: FERRIS_WHEEL },
+  [Offering.OFFERING_KIDS_RIDES]: { name: 'Rides for Children', icon: FERRIS_WHEEL },
 }
 
 export const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S']

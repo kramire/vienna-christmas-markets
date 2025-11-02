@@ -36,8 +36,8 @@ function Content({ result }: Props) {
   }, [])
 
   return (
-    <div className="flex flex-col lg:flex-row">
-      <div className="relative flex h-72 w-full lg:sticky lg:top-8 lg:mt-8 lg:h-80 lg:flex-1">
+    <div className="flex flex-col md:flex-row">
+      <div className="relative flex h-72 w-full md:sticky md:top-8 md:mt-8 md:h-80 md:flex-1">
         <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
         <MainImage imgSrc={imgSrc} altText={name} />
       </div>

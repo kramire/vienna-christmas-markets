@@ -48,6 +48,7 @@ export enum FilterType {
   FAVORITE = 'FAVORITE',
   NEAR_ME = 'NEAR_ME',
   CURLING = 'CURLING',
+  FAMILY_ORIENTED = 'FAMILY_ORIENTED',
 }
 
 export interface Coordinate {

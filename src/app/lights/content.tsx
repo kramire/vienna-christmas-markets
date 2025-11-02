@@ -31,12 +31,12 @@ function Content({ results }: Props) {
           {resultCount} {resultCount === 1 ? 'result' : 'results'} found
         </p>
       </div>
-      <div className="sticky top-0 z-20 -mx-1 flex justify-end gap-4 bg-white px-1 py-5 shadow-sm sm:flex-row lg:py-6">
+      <div className="sticky top-0 z-20 flex justify-end gap-4 bg-white px-1 py-5 sm:flex-row lg:py-6">
         <MapToggle showMap={showMap} toggleMap={toggleMap} />
       </div>
       {showMap ? (
         <Map
-          className="z-10 h-[60vh] w-[calc(100vw+32px)] -translate-x-4 md:h-[65vh] md:w-full md:translate-x-0"
+          className="z-10 h-[60vh] w-screen -translate-x-4 md:h-[65vh] md:w-full md:translate-x-0"
           results={results}
           markerVariant="card"
         />

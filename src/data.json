@@ -1322,7 +1322,7 @@
     "isActive": true,
     "district": "1030",
     "address": "Landstraßer Hauptstraße",
-    "coordinates": { "lat": 48.203652, "lng": 16.389356 },
+    "coordinates": { "lat": 48.205596, "lng": 16.386242 },
     "type": "STREET_LIGHTS",
     "locationType": "STREET"
   },

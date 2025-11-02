@@ -59,7 +59,7 @@ const ResultsContent = ({ results }: Props) => {
       </div>
       <div
         className={cn(
-          'sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-5 shadow-sm sm:flex-row lg:py-6',
+          'sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-5 shadow-sm lg:flex-row lg:py-6',
           !shownResults.length && 'shadow-none',
         )}
       >
@@ -72,7 +72,7 @@ const ResultsContent = ({ results }: Props) => {
       {showMap ? (
         <Map
           results={shownResults}
-          className="z-10 h-[60vh] w-[calc(100vw+32px)] -translate-x-4 md:h-[65vh] md:w-full md:translate-x-0"
+          className="z-10 h-[60vh] w-screen -translate-x-4 md:h-[65vh] md:w-full md:translate-x-0"
           markerVariant="card"
         />
       ) : (
