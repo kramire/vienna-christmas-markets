@@ -25,7 +25,7 @@ function Content({ result }: Props) {
   const [language, setLanguage] = useState('en-GB')
   const { getIsFavorite, toggleFavorite } = useFavorites()
 
-  const { name, district, start, end, id, times, offerings, alternateTimes } = result
+  const { name, start, end, id, times, offerings, alternateTimes } = result
   const imgSrc = resultToImgUrlMapping[id]
 
   const startDate = start ? localizeDate({ date: start, language }) : 'TBD'
