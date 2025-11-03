@@ -8,13 +8,12 @@ import MainImage from './components/MainImage'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { localizeDate } from '../../utils/localize-date'
-import Link from 'next/link'
 import FavoriteButton from '../../components/FavoriteButton'
 import useFavorites from '../../hooks/use-favorites'
 import Hours from './components/Hours'
+import { cn } from '../../utils/cn'
 
 const CalendarIcon = '/calendar.svg'
-const InfoIcon = '/info.svg'
 
 interface Props {
   result: Market | Event
@@ -24,7 +23,7 @@ function Content({ result }: Props) {
   const [language, setLanguage] = useState('en-GB')
   const { getIsFavorite, toggleFavorite } = useFavorites()
 
-  const { name, start, end, id, offerings } = result
+  const { name, start, end, id, offerings, description } = result
   const imgSrc = resultToImgUrlMapping[id]
 
   const startDate = start ? localizeDate({ date: start, language }) : 'TBD'
@@ -41,10 +40,10 @@ function Content({ result }: Props) {
         <MainImage imgSrc={imgSrc} altText={name} />
       </div>
       <div className="flex w-full flex-1 flex-col justify-between gap-5 p-6 md:p-12 md:pt-8">
-        <div className="flex justify-between gap-3">
-          <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
-        </div>
-        <hr className="hidden sm:block" />
+        <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
+        {description && <p className="pb-2 text-sm sm:text-base">{description}</p>}
+        <hr />
+        <h2 className="text-xl font-semibold text-green-950">When it is</h2>
         <dl className="space-y-4 [&>div]:grid [&>div]:grid-cols-[16px_1fr] [&>div]:gap-x-4 [&_dd]:font-semibold [&_img]:row-span-2 [&_img]:mt-1">
           <div>
             <Image src={CalendarIcon} width={16} height={16} alt="" />
@@ -52,19 +51,6 @@ function Content({ result }: Props) {
             <dt>{`${startDate} - ${endDate}`}</dt>
           </div>
           <Hours result={result} />
-          {result.website && (
-            <div>
-              <Image src={InfoIcon} width={16} height={16} alt="" />
-              <Link
-                href={result.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit font-semibold underline"
-              >
-                Website
-              </Link>
-            </div>
-          )}
         </dl>
         <hr />
         <Offerings offerings={offerings} />

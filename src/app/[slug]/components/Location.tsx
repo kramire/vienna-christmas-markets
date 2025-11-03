@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import { Event, Market } from '../../../App.types'
 import { GOOGLE_MAPS_LINK } from '../../../App.constants'
 import Map from '../../../components/Map'
@@ -12,7 +11,7 @@ interface Props {
 }
 
 export const Location = ({ result }: Props) => {
-  const { coordinates, district, address, transportation } = result
+  const { coordinates, district, address, transportation, website } = result
 
   const googleMapsLink = `${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`
 

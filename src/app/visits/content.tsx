@@ -2,26 +2,8 @@ import HeaderText from '../../components/HeaderText'
 import { Market } from '../../App.types'
 import VisitedToggle from './components/visitedToggle'
 import MapResultImage from '../../components/Map/components/MapResultImage'
-import React from 'react'
 import Link from 'next/link'
-
-function getProgressText(visitedCount: number, totalCount: number): string {
-  if (visitedCount === 0) {
-    return 'No markets visited yet 🥺'
-  } else if (visitedCount === totalCount) {
-    return 'Congrats! You are a Market Rally Champion! 🏆'
-  } else if (visitedCount < 4) {
-    return "That's a start, but don't let that mulled wine get cold! 🥶"
-  } else if (visitedCount < 9) {
-    return 'Good going! Fuel up on gingerbread and keep exploring! 🎄'
-  } else if (visitedCount < 13) {
-    return 'More than halfway there! Keep it up Christmas elf! 🌟'
-  } else if (visitedCount < totalCount) {
-    return 'So close! If Santa can do it, you can too! 🎅'
-  } else {
-    return `You have visited ${visitedCount} out of ${totalCount} markets.`
-  }
-}
+import { getProgressText } from './helpers/get-progress-text'
 
 interface Props {
   markets: Array<Market>

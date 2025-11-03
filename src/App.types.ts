@@ -13,6 +13,7 @@ export interface Result {
   website: string | null
   offerings: Array<Offering>
   alternateTimes?: Array<{ date: string; time: Array<Array<string> | null> }>
+  description?: string
 }
 
 export interface StreetLights

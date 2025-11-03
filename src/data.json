@@ -22,7 +22,8 @@
     "website": "https://www.mqw.at/winter-im-mq",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
+    "description": "A chill winter market with good music, unique punch, and curling - all while surrounded by museums."
   },
   {
     "id": 2,
@@ -47,7 +48,8 @@
     "website": "https://spittelberg.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "A local favorite! This cozy market winds through narrow cobblestone streets, offering shopping at artisan stalls, plus plenty of food and drink. Go early before it gets crowded."
   },
   {
     "id": 3,
@@ -72,7 +74,8 @@
     "website": "https://www.weihnachtimpark.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "A true locals' market in a quiet neighborhood park. The gastronomy is the star here, with offers ranging from traditional Christmas treats, to Spanish tapas - look out for pineapple punch!"
   },
   {
     "id": 4,
@@ -111,7 +114,8 @@
     "website": "https://www.weihnachtsdorf.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "Enjoy the backdrop of the famous St. Stephen's Cathedral at this centrally-located market. Either go early to avoid the crowds, or sneak away to the nearby Haas & Haas."
   },
   {
     "id": 5,
@@ -167,7 +171,8 @@
     "website": "https://www.weihnachtsdorf.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"],
+    "description": "Tucked away in the courtyard of the university, this low-key market is great for group gatherings. There's a bit of shopping, a few kids rides, and curling, making it perfect for everyone."
   },
   {
     "id": 7,
@@ -192,7 +197,8 @@
     "website": "https://www.weihnachtsmarkt-hof.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "This central market has some unique traits, including medieval-style mugs, a champagne bar, and a tree of dangling lights."
   },
   {
     "id": 8,
@@ -251,7 +257,8 @@
     "website": "https://www.wien.gv.at/umwelt/parks/blumengaerten-hirschstetten/weihnachten.html",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "The trek to this locals-only market is worth it - both the indoor and outdoor gardens are decorated, and the drinks are on the cheaper side."
   },
   {
     "id": 11,
@@ -295,22 +302,6 @@
         "time": ["11:00", "20:00"]
       },
       {
-        "date": "12/25/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/26/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/27/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/28/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
         "date": "12/29/2025",
         "time": ["11:00", "20:00"]
       },
@@ -326,7 +317,8 @@
     "website": "https://www.weihnachtsdorf.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "The highlight of this market is the beautiful backdrop of the Belvedere Palace. Check out the reflection of the facade and Christmas lights on the garden's pond."
   },
   {
     "id": 12,
@@ -376,7 +368,8 @@
     "website": "https://altwiener-markt.at/de/christmas",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "Insider tip: grab a drink, and enjoy it by the adjacent fountain. You'll have more space while enjoying the festive atmosphere."
   },
   {
     "id": 14,
@@ -401,7 +394,8 @@
     "website": "https://divinaart.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "This massive market offers something for everyone. There are shopping stalls with handcrafted items, stands with food and drink, and farm animals!"
   },
   {
     "id": 15,
@@ -515,7 +509,8 @@
       "OFFERING_CURLING",
       "OFFERING_SHOPPING",
       "OFFERING_KIDS_RIDES"
-    ]
+    ],
+    "description": "This famous Christmas market is one of the largest. From ice skating to kids rides, to shopping and curling, there's plenty to do. Plus it's on the grounds of Vienna's top tourist attraction - the Schönbrunn Palace!"
   },
   {
     "id": 17,
@@ -540,7 +535,8 @@
     "website": "https://www.christkindlmarkt.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"]
+    "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"],
+    "description": "The most famous Christmas market in Vienna. Best to go at night when the Christmas lights are on full display!"
   },
   {
     "id": 18,
@@ -579,7 +575,8 @@
     "website": "https://www.wintermarkt.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_KIDS_RIDES"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_KIDS_RIDES"],
+    "description": "This smaller market is located directly in the amusement park, and looks on to the famous Ferris Wheel."
   },
   {
     "id": 19,
@@ -621,7 +618,8 @@
     "website": "http://www.winterinthecity.at/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "description": "A hidden gem right next to the cathedral! This small cozy courtyard has decorations, fireplaces, and a small stove top to grill your own würstel!"
   },
   {
     "id": 20,

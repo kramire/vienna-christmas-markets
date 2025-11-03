@@ -41,7 +41,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite }: Props) => {
           <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
           <CardImage imgSrc={imgSrc} altText={name} />
         </div>
-        <div className="flex w-full flex-1 flex-col space-y-4 p-4">
+        <div className="flex w-full flex-1 flex-col space-y-2 p-4">
           <h2 className="text-lg font-semibold text-green-950 sm:text-xl">{name}</h2>
           <dl className="space-y-3 text-base sm:[&_dd]:font-semibold sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
