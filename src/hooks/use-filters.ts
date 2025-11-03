@@ -43,24 +43,24 @@ function useFilters() {
     // Helper to skip STREET_LIGHTS for certain filters
     const isStreetLights = result.type === ResultType.STREET_LIGHTS
 
-    if (filters.OPEN_NOW && !isStreetLights) {
-      if (!getIsOpen(result.start, result.end, result.times)) return false
+    if (filters.OPEN_NOW) {
+      if (isStreetLights || !getIsOpen(result.start, result.end, result.times)) return false
     }
 
-    if (filters.FAVORITE && !isStreetLights) {
-      if (!favorites.includes(result.id)) return false
+    if (filters.FAVORITE) {
+      if (isStreetLights || !favorites.includes(result.id)) return false
     }
 
     if (filters.NEAR_ME && deviceLocation) {
       if (getDistanceFromLatLonInKm(result.coordinates, deviceLocation) > NEAR_ME_KM_DISTANCE_AWAY) return false
     }
 
-    if (filters.CURLING && !isStreetLights) {
-      if (!result.offerings.includes(Offering.OFFERING_CURLING)) return false
+    if (filters.CURLING) {
+      if (isStreetLights || !result.offerings.includes(Offering.OFFERING_CURLING)) return false
     }
 
-    if (filters.FAMILY_ORIENTED && !isStreetLights) {
-      if (!result.offerings.includes(Offering.OFFERING_KIDS_RIDES)) return false
+    if (filters.FAMILY_ORIENTED) {
+      if (isStreetLights || !result.offerings.includes(Offering.OFFERING_KIDS_RIDES)) return false
     }
 
     return true
