@@ -6,8 +6,12 @@ import RouteStopCard from '../components/RouteStopCard'
 import Map from '../../../components/Map'
 import Link from 'next/link'
 
-export default function WalkingRoutesPage({ params }: { params: { slug: string } }) {
-  const result = (RouteData as Array<Route>).find((route) => route.slug === params.slug)
+type Params = Promise<{ slug: string }>
+
+export default async function WalkingRoutesPage({ params }: { params: Params }) {
+  const { slug } = await params
+
+  const result = (RouteData as Array<Route>).find((route) => route.slug === slug)
 
   if (!result) {
     notFound()

@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function GlobalError() {
   return (
     <html>
-      <body className="mx-auto flex h-screen w-full flex-col items-center justify-center gap-4 md:w-1/2">
+      <body className="h-dvh mx-auto flex w-full flex-col items-center justify-center gap-4 md:w-1/2">
         <h1 className="text-xl font-semibold lg:text-3xl">Something went wrong!</h1>
         <p className="text-base">Try another page:</p>
         <div className="flex flex-col gap-3">

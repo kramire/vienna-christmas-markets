@@ -4,8 +4,10 @@ import data from '../../data.json'
 
 import Content from './content'
 
-export default function ResultPage({ params }: { params: { slug: string } }) {
-  const { slug } = params
+type Params = Promise<{ slug: string }>
+
+export default async function ResultPage({ params }: { params: Params }) {
+  const { slug } = await params
 
   const result = data.find((result) => result.slug === slug) as Market | Event
 
