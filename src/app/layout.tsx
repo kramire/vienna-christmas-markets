@@ -15,6 +15,7 @@ const META_DESCRIPTION = "A list of this year's Christmas markets in Vienna, Aus
 export const metadata: Metadata = {
   title: META_TITLE,
   description: META_DESCRIPTION,
+  metadataBase: new URL('https://vienna-christmas-markets.netlify.app'),
   openGraph: {
     title: META_TITLE,
     description: META_DESCRIPTION,

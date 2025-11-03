@@ -3,7 +3,11 @@ import data from '../data.json'
 import { Route } from '../../../App.types'
 import { Metadata } from 'next'
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
+type Params = Promise<{ slug: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = await params
+
   const result = data.find((result) => result.slug === slug) as Route
 
   if (!result) {
