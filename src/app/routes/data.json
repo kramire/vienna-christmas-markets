@@ -6,8 +6,10 @@
     "district": "1010",
     "coverImgResultId": 42,
     "distance": "1,4km",
+    "estimatedTime": "2-3 hours",
     "description": "See the most famous Vienna sights and Christmas markets on this short walking tour through the center.",
     "mapZoom": 15,
+    "hasPublicTransport": false,
     "stops": [
       {
         "id": 4,
@@ -54,8 +56,10 @@
     "district": "1040 • 1070 • 1090",
     "coverImgResultId": 14,
     "distance": "3,2km",
+    "estimatedTime": "2-3 hours",
     "description": "Whether you're into unique Punsch recipes, or shopping for special gifts, this route has it all - plus animals and curling!",
     "mapZoom": 14,
+    "hasPublicTransport": false,
     "stops": [
       {
         "id": 14,
@@ -92,6 +96,61 @@
         "type": "MARKET",
         "order": 6,
         "description": "Finish with the market at Altes AKH. With plenty of space to accommodate all, this is the perfect place to relax and enjoy the festive atmosphere."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "top-vienna-attractions",
+    "name": "Top Vienna Attractions",
+    "district": "1150 • 1040 • 1030 • 1020 • 1010",
+    "coverImgResultId": 16,
+    "distance": "3,6km + Public Transport",
+    "estimatedTime": "4.5-6 hours",
+    "description": "Take half a day to enjoy both Vienna's tourist sites and Christmas markets!",
+    "mapZoom": 12,
+    "hasPublicTransport": true,
+    "stops": [
+      {
+        "id": 16,
+        "type": "MARKET",
+        "order": 1,
+        "description": "Begin at Vienna's top attraction - the Schönbrunn Palace. There's an extensive Christmas market with food, shopping, and activities. If time allows, explore the public gardens behind the palace.",
+        "nextDirections": "U4 Schönbrunn → Karlsplatz"
+      },
+      {
+        "id": 14,
+        "type": "MARKET",
+        "order": 2,
+        "description": "The market at Karlsplatz has much to offer, from specialty shopping to a small zoo. The attraction here is the St. Charles Church.",
+        "nextDirections": "Walk 15 minutes to Schloss Belvedere"
+      },
+      {
+        "id": 11,
+        "type": "MARKET",
+        "order": 2,
+        "description": "This market is located on the grounds of the Belvedere Palace, next to a beautiful reflecting pool. If there's time, visit the palace to see Klimt's famous painting 'The Kiss'.",
+        "nextDirections": "Train at Quartier Belvedere → Praterstern"
+      },
+      {
+        "id": 18,
+        "type": "MARKET",
+        "order": 3,
+        "description": "Enjoy the amusement park atmosphere at this small winter market in the Prater. The highlight is the view of the iconic Ferris Wheel!",
+        "nextDirections": "U1 Praterstern → Stephansplatz"
+      },
+      {
+        "id": 4,
+        "type": "MARKET",
+        "order": 4,
+        "description": "Now time for the city center. Stop by the market at Stephansplatz at the base of the famous cathedral. If the market gets too crowded, enter the cathedral for a break.",
+        "nextDirections": "U3 Stephansplatz → Volkstheater"
+      },
+      {
+        "id": 17,
+        "type": "MARKET",
+        "order": 5,
+        "description": "Finish your tour at city hall, home to Vienna's most famous Christmas market. The grounds are covered with magnificent Christmas lights, making it the perfect way to end your day!"
       }
     ]
   }

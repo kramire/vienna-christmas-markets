@@ -10,6 +10,7 @@ const LocationIcon = '/location.svg'
 interface Props {
   stopId: number
   stopDescription: string
+  nextDirections?: string
   idx: number
 }
 

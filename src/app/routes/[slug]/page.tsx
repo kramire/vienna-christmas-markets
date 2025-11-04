@@ -5,6 +5,7 @@ import ResultsData from '../../../data.json'
 import RouteStopCard from '../components/RouteStopCard'
 import Map from '../../../components/Map'
 import Link from 'next/link'
+import React from 'react'
 
 type Params = Promise<{ slug: string }>
 
@@ -40,13 +41,25 @@ export default async function WalkingRoutesPage({ params }: { params: Params }) 
           {stops
             .sort((a, b) => a.order - b.order)
             .map((result, idx) => {
-              const { id, description, type } = result
+              const { id, description, type, nextDirections } = result
               if (type === ResultType.MARKET || type === ResultType.EVENT) {
                 const result = resultsForMap.find((res) => res.id === id) as Market | Event
                 return (
-                  <Link key={id} href={`/${result.slug}`}>
-                    <RouteStopCard stopId={id} stopDescription={description} idx={idx} />
-                  </Link>
+                  <React.Fragment key={id}>
+                    <Link href={`/${result.slug}`}>
+                      <RouteStopCard stopId={id} stopDescription={description} idx={idx} />
+                    </Link>
+                    {nextDirections && (
+                      <div className="relative my-3 flex flex-col items-center justify-center text-sm">
+                        <p className="text-xs before:absolute before:-top-6 before:left-1/2 before:h-0 before:w-4 before:border-l-2 before:border-dotted before:border-l-gray-500 before:content-[''] sm:before:h-5">
+                          Transit to next stop:
+                        </p>
+                        <p className="font-medium after:absolute after:-bottom-6 after:left-1/2 after:h-0 after:w-4 after:border-l-2 after:border-dotted after:border-l-gray-500 after:content-[''] sm:after:h-5">
+                          {nextDirections}
+                        </p>
+                      </div>
+                    )}
+                  </React.Fragment>
                 )
               }
               return <RouteStopCard key={id} stopId={id} stopDescription={description} idx={idx} />

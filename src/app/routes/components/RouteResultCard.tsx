@@ -7,13 +7,14 @@ import CardImage from '../../../components/CardImage'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
+const ClockIcon = '/clock.svg'
 
 interface Props {
   result: Route
 }
 
 const RouteResultCard = ({ result }: Props) => {
-  const { id, name, district, distance, coverImgResultId, description } = result
+  const { id, name, district, distance, coverImgResultId, description, estimatedTime } = result
 
   const imgSrc = resultToImgUrlMapping[coverImgResultId]
 
@@ -40,6 +41,12 @@ const RouteResultCard = ({ result }: Props) => {
               <dd>Distance</dd>
               <p className="sm:hidden">•</p>
               <dt>{distance}</dt>
+            </div>
+            <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
+              <Image src={ClockIcon} width={12} height={12} alt="" />
+              <dd>Estimated Time</dd>
+              <p className="sm:hidden">•</p>
+              <dt>{estimatedTime}</dt>
             </div>
           </dl>
         </div>

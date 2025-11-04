@@ -77,6 +77,7 @@ interface RouteStop {
   type: ResultType
   description: string
   order: number
+  nextDirections?: string
 }
 
 export interface Route {
@@ -86,6 +87,8 @@ export interface Route {
   district: string
   coverImgResultId: number
   distance: string
+  hasPublicTransport: boolean
+  estimatedTime: string
   description: string
   stops: Array<RouteStop>
   mapZoom: number
