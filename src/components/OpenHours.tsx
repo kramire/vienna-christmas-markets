@@ -38,7 +38,7 @@ const OpenHours = ({ start, end, times }: Props) => {
 
   return (
     <div className="flex grid-cols-[12px_1fr_1fr] flex-wrap items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-      <Image src={ClockIcon} width={12} height={12} alt="" />
+      <Image src={ClockIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
       <dd className="col-span-2">Hours</dd>
       <p className="sm:hidden">•</p>
       <dt>

@@ -17,7 +17,7 @@ export const Offerings = ({ offerings }: Props) => (
         const isAvailable = offerings.includes(offering as Offering)
         return (
           <div key={offering} className={cn('flex items-center gap-3', !isAvailable && 'line-through opacity-30')}>
-            <Image src={icon} width={24} height={24} alt="" className="h-5 w-5 sm:h-6 sm:w-6" />
+            <Image src={icon} width={24} height={24} alt="" className="h-5 w-5 sm:h-6 sm:w-6" unoptimized />
             {name}
           </div>
         )

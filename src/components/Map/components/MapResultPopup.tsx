@@ -61,7 +61,7 @@ const MapResultPopupContent = ({ result, onClose }: Props) => {
         </dl>
       </div>
       <button onClick={handleClose} className="h-5 w-5 flex-shrink-0">
-        <Image src={CloseIcon} width={16} height={16} alt="Close popup" className="h-5 w-5 opacity-50" />
+        <Image src={CloseIcon} width={16} height={16} alt="Close popup" className="h-4 w-4 opacity-50" unoptimized />
       </button>
     </div>
   )

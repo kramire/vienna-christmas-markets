@@ -50,7 +50,7 @@ function Content({ result }: Props) {
         <h2 className="text-xl font-semibold text-green-950">When it is</h2>
         <dl className="space-y-4 [&>div]:grid [&>div]:grid-cols-[16px_1fr] [&>div]:gap-x-4 [&_dd]:font-semibold [&_img]:row-span-2 [&_img]:mt-1">
           <div>
-            <Image src={CalendarIcon} width={16} height={16} alt="" />
+            <Image src={CalendarIcon} width={16} height={16} alt="" className="h-4 w-4" unoptimized />
             <dd>Dates</dd>
             <dt>{`${startDate} - ${endDate}`}</dt>
           </div>

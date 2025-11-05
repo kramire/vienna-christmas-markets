@@ -32,19 +32,19 @@ const RouteResultCard = ({ result, resultIdx }: Props) => {
           </div>
           <dl className="space-y-3 text-base sm:[&_dd]:font-semibold sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={LocationIcon} width={12} height={12} alt="" />
+              <Image src={LocationIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
               <dd>Districts</dd>
               <p className="sm:hidden">•</p>
               <dt>{district}</dt>
             </div>
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={CalendarIcon} width={12} height={12} alt="" />
+              <Image src={CalendarIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
               <dd>Distance</dd>
               <p className="sm:hidden">•</p>
               <dt>{distance}</dt>
             </div>
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={ClockIcon} width={12} height={12} alt="" />
+              <Image src={ClockIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
               <dd>Estimated Time</dd>
               <p className="sm:hidden">•</p>
               <dt>{estimatedTime}</dt>
