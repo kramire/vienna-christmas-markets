@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ViewTransition } from 'react'
 
 import { Event, Market } from '../../../App.types'
 import { resultToImgUrlMapping } from '../../../App.constants'
@@ -38,8 +38,12 @@ const ResultCard = ({ result, isFavorite, toggleFavorite }: Props) => {
     <li key={id} className="flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
-          <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
-          <CardImage imgSrc={imgSrc} altText={name} />
+          <ViewTransition name={`view-transition-favorite-button-${id}`}>
+            <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
+          </ViewTransition>
+          <ViewTransition name={`view-transition-image-${id}`}>
+            <CardImage imgSrc={imgSrc} altText={name} />
+          </ViewTransition>
         </div>
         <div className="flex w-full flex-1 flex-col space-y-2 p-4">
           <h2 className="text-lg font-semibold text-green-950 sm:text-xl">{name}</h2>
