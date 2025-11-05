@@ -4,14 +4,16 @@ const MissingImageIcon = '/gingerbread-house.png'
 interface Props {
   imgSrc: StaticImageData
   altText: string
+  imageLoading?: 'eager' | 'lazy'
 }
 
-const CardImage = ({ imgSrc, altText }: Props) => {
+const CardImage = ({ imgSrc, altText, imageLoading = 'lazy' }: Props) => {
   if (imgSrc) {
     return (
       <Image
         src={imgSrc}
         alt={altText}
+        loading={imageLoading}
         fill
         sizes="(max-width: 699px) 100vw, (max-width: 1047px) 50vw, 33vw"
         className="border-b border-gray-300 object-cover"

@@ -7,9 +7,10 @@ const LocationIcon = '/location.svg'
 
 interface Props {
   result: StreetLights
+  resultIdx: number
 }
 
-function LightsResultCard({ result }: Props) {
+function LightsResultCard({ result, resultIdx }: Props) {
   const { id, name, district, coordinates, locationType } = result
 
   const imgSrc = resultToImgUrlMapping[id]
@@ -19,7 +20,7 @@ function LightsResultCard({ result }: Props) {
   return (
     <li key={id} className="flex w-full flex-col overflow-hidden rounded-lg shadow-md">
       <div className="relative h-64 w-full">
-        <CardImage imgSrc={imgSrc} altText={name} />
+        <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
       </div>
       <div className="flex w-full flex-1 flex-col justify-between space-y-4 p-4">
         <div className="flex items-center gap-2">
@@ -28,7 +29,7 @@ function LightsResultCard({ result }: Props) {
         </div>
         <dl className="space-y-3 text-base sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
           <div className="flex items-center gap-2">
-            <Image src={LocationIcon} width={12} height={12} alt="" />
+            <Image src={LocationIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
             <dd>District</dd>
             <p>•</p>
             <dt>

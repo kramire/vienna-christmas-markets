@@ -20,7 +20,16 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
     )}
   >
     {label}
-    {isSelected && <Image src={CloseWhiteIcon} width={20} height={20} alt={`Remove ${label} filter`} />}
+    {isSelected && (
+      <Image
+        src={CloseWhiteIcon}
+        width={20}
+        height={20}
+        alt={`Remove ${label} filter`}
+        className="h-5 w-5"
+        unoptimized
+      />
+    )}
   </button>
 )
 

@@ -11,9 +11,10 @@ const ClockIcon = '/clock.svg'
 
 interface Props {
   result: Route
+  resultIdx: number
 }
 
-const RouteResultCard = ({ result }: Props) => {
+const RouteResultCard = ({ result, resultIdx }: Props) => {
   const { id, name, district, distance, coverImgResultId, description, estimatedTime } = result
 
   const imgSrc = resultToImgUrlMapping[coverImgResultId]
@@ -22,7 +23,7 @@ const RouteResultCard = ({ result }: Props) => {
     <li key={id} className="flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/routes/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
-          <CardImage imgSrc={imgSrc} altText={name} />
+          <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
         </div>
         <div className="flex w-full flex-1 flex-col space-y-4 p-4">
           <div className="space-y-1">
@@ -31,19 +32,19 @@ const RouteResultCard = ({ result }: Props) => {
           </div>
           <dl className="space-y-3 text-base sm:[&_dd]:font-semibold sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={LocationIcon} width={12} height={12} alt="" />
+              <Image src={LocationIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
               <dd>Districts</dd>
               <p className="sm:hidden">•</p>
               <dt>{district}</dt>
             </div>
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={CalendarIcon} width={12} height={12} alt="" />
+              <Image src={CalendarIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
               <dd>Distance</dd>
               <p className="sm:hidden">•</p>
               <dt>{distance}</dt>
             </div>
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={ClockIcon} width={12} height={12} alt="" />
+              <Image src={ClockIcon} width={12} height={12} alt="" className="h-3 w-3" unoptimized />
               <dd>Estimated Time</dd>
               <p className="sm:hidden">•</p>
               <dt>{estimatedTime}</dt>

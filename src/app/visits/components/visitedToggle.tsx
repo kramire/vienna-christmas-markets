@@ -19,15 +19,14 @@ const VisitedToggle = ({ marketId, hasVisited, toggleVisit }: Props) => {
         toggleVisit(marketId)
       }}
       className={cn(
-        'flex w-40 cursor-pointer items-center justify-center gap-2 rounded-2xl border border-green-950 py-1 text-xs sm:text-base',
-        hasVisited ? 'border-green-600 text-green-700' : 'border-gray-400 grayscale',
+        'flex w-36 cursor-pointer items-center justify-center gap-2 rounded-2xl border border-green-950 py-1 text-xs sm:text-sm',
+        hasVisited ? 'border-green-600 bg-green-50 font-medium text-green-800' : 'border-gray-400 grayscale',
       )}
     >
       <Image
         src={GreenCheck}
         width={16}
         height={16}
-        loading="lazy"
         alt={hasVisited ? 'Checked' : 'Unchecked'}
         className="h-3 w-3 sm:h-4 sm:w-4"
       />

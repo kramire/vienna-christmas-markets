@@ -42,8 +42,8 @@ function Content({ results }: Props) {
         />
       ) : (
         <ResultsListWrapper>
-          {results.map((result) => (
-            <LightsResultCard key={result.id} result={result} />
+          {results.map((result, idx) => (
+            <LightsResultCard key={result.id} result={result} resultIdx={idx} />
           ))}
         </ResultsListWrapper>
       )}

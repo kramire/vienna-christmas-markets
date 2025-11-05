@@ -6,7 +6,7 @@ import { Offerings } from './components/Offerings'
 import { Location } from './components/Location'
 import MainImage from './components/MainImage'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ViewTransition } from 'react'
 import { localizeDate } from '../../utils/localize-date'
 import FavoriteButton from '../../components/FavoriteButton'
 import useFavorites from '../../hooks/use-favorites'
@@ -36,8 +36,12 @@ function Content({ result }: Props) {
   return (
     <div className="flex flex-col md:flex-row">
       <div className="relative flex h-72 w-full md:sticky md:top-8 md:mt-8 md:h-96 md:flex-1">
-        <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
-        <MainImage imgSrc={imgSrc} altText={name} />
+        <ViewTransition name={`view-transition-favorite-button-${id}`}>
+          <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
+        </ViewTransition>
+        <ViewTransition name={`view-transition-image-${id}`}>
+          <MainImage imgSrc={imgSrc} altText={name} />
+        </ViewTransition>
       </div>
       <div className="flex w-full flex-1 flex-col justify-between gap-5 p-6 md:p-12 md:pt-8">
         <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
@@ -46,7 +50,7 @@ function Content({ result }: Props) {
         <h2 className="text-xl font-semibold text-green-950">When it is</h2>
         <dl className="space-y-4 [&>div]:grid [&>div]:grid-cols-[16px_1fr] [&>div]:gap-x-4 [&_dd]:font-semibold [&_img]:row-span-2 [&_img]:mt-1">
           <div>
-            <Image src={CalendarIcon} width={16} height={16} alt="" />
+            <Image src={CalendarIcon} width={16} height={16} alt="" className="h-4 w-4" unoptimized />
             <dd>Dates</dd>
             <dt>{`${startDate} - ${endDate}`}</dt>
           </div>

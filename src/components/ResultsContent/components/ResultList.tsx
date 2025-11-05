@@ -26,6 +26,7 @@ const ResultList = ({ results, favorites, toggleFavorite }: Props) => {
           result={result}
           isFavorite={favorites.includes(result.id)}
           toggleFavorite={toggleFavorite}
+          resultIdx={idx}
         />
       ))}
     </ResultsListWrapper>

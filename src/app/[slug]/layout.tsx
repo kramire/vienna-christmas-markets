@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     openGraph: {
       title,
       type: 'website',
-      images: ['/meta-christmas-mug.webp'],
+      images: ['/Vienna-City-Center-Christmas-Lights.webp'],
     },
     twitter: {
       title,
       card: 'summary_large_image',
-      images: ['/meta-christmas-mug.webp'],
+      images: ['/Vienna-City-Center-Christmas-Lights.webp'],
     },
   }
 }

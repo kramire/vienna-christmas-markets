@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { localizeDate } from '../../../utils/localize-date'
 
 const ClockIcon = '/clock.svg'
+const ChevronDownIcon = '/chevron-down.svg'
 
 interface Props {
   result: Market | Event
@@ -24,7 +25,7 @@ function Hours({ result }: Props) {
   return (
     <>
       <div>
-        <Image src={ClockIcon} width={16} height={16} alt="" />
+        <Image src={ClockIcon} width={16} height={16} alt="" className="h-4 w-4" unoptimized />
         <dd>Hours</dd>
         <div className="flex h-24 flex-col flex-wrap gap-x-6">
           {times.map((time, timeIdx) => (
@@ -36,10 +37,19 @@ function Hours({ result }: Props) {
         </div>
       </div>
       {alternateTimes && (
-        <div>
-          <Image src={ClockIcon} width={16} height={16} alt="" />
-          <span className="font-semibold">Special Dates & Times</span>
-          <div className="mt-1 flex flex-col gap-2">
+        <details className="group">
+          <summary className="flex list-none items-center gap-4 font-semibold">
+            <Image
+              src={ChevronDownIcon}
+              width={16}
+              height={16}
+              alt=""
+              className={`h-4 w-4 -rotate-90 transition group-open:rotate-0`}
+              unoptimized
+            />
+            Special Dates & Times
+          </summary>
+          <div className="ml-8 mt-1 flex flex-col gap-2">
             {alternateTimes.map(({ date, time }) => {
               return (
                 <div key={date} className="flex items-center gap-2">
@@ -52,7 +62,7 @@ function Hours({ result }: Props) {
               )
             })}
           </div>
-        </div>
+        </details>
       )}
     </>
   )
