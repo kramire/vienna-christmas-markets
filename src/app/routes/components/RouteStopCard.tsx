@@ -35,7 +35,7 @@ function RouteStopCard({ stopId, stopDescription, idx }: Props) {
         <p className="text-sm">{stopDescription}</p>
         <dl className="space-y-3 text-sm">
           <div className="flex items-center gap-2">
-            <Image src={LocationIcon} width={12} height={12} alt="" />
+            <Image src={LocationIcon} width={12} height={12} alt="" unoptimized />
             <dd>District</dd>
             <p>•</p>
             <dt>{district}</dt>

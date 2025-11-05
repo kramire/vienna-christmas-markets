@@ -22,7 +22,7 @@ const CardImage = ({ imgSrc, altText, imageLoading = 'lazy' }: Props) => {
   }
   return (
     <div className="flex h-full items-center justify-center border border-solid border-gray-200 bg-gray-100">
-      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" unoptimized />
     </div>
   )
 }

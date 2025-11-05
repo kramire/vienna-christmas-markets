@@ -16,8 +16,8 @@ export default function WalkingRoutesPage() {
         </p>
       </div>
       <ResultsListWrapper>
-        {results.map((result) => (
-          <RouteResultCard key={result.id} result={result} />
+        {results.map((result, idx) => (
+          <RouteResultCard key={result.id} result={result} resultIdx={idx} />
         ))}
       </ResultsListWrapper>
     </div>

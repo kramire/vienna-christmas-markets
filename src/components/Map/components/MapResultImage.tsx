@@ -33,7 +33,7 @@ const MapResultImage = ({ resultId, size = 'default' }: Props) => {
         size === 'small' ? 'h-20 w-20' : 'h-20 w-20 sm:h-32 sm:w-32',
       )}
     >
-      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" unoptimized />
     </div>
   )
 }
