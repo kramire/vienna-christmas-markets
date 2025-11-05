@@ -21,7 +21,6 @@ const FavoriteButton = ({ isFavorite, onClick }: Props) => {
         src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
         alt={isFavorite ? 'Favorite Venue' : 'Not a favorited venue'}
         className="flex-shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
-        loading="lazy"
         width={20}
         height={20}
       />

@@ -27,7 +27,6 @@ const VisitedToggle = ({ marketId, hasVisited, toggleVisit }: Props) => {
         src={GreenCheck}
         width={16}
         height={16}
-        loading="lazy"
         alt={hasVisited ? 'Checked' : 'Unchecked'}
         className="h-3 w-3 sm:h-4 sm:w-4"
       />

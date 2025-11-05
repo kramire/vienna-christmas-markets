@@ -24,19 +24,11 @@ export default function HomePage() {
         <div className="h-full w-full bg-green-950 md:flex-1 md:py-8 md:pr-4">
           <Image
             src={HeroImage}
-            width={500}
-            height={300}
+            width={477}
+            height={318}
             alt="Saint Stephan's Cathedral and Christmas"
-            className="md:relative"
-            fetchPriority="high"
-            loading="eager"
-            style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'contain',
-              boxShadow: 'rgb(0 0 0 / 48%) 0px 2px 5px 1px',
-              right: '20px',
-            }}
+            className="right-5 object-contain shadow-xl md:relative"
+            preload
           />
         </div>
       </div>

@@ -18,9 +18,10 @@ interface Props {
   result: Market | Event
   isFavorite: boolean
   toggleFavorite: (id: number) => () => void
+  resultIdx: number
 }
 
-const ResultCard = ({ result, isFavorite, toggleFavorite }: Props) => {
+const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
   const { id, name, district, start, end, times } = result
@@ -42,7 +43,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite }: Props) => {
             <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
           </ViewTransition>
           <ViewTransition name={`view-transition-image-${id}`}>
-            <CardImage imgSrc={imgSrc} altText={name} />
+            <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
           </ViewTransition>
         </div>
         <div className="flex w-full flex-1 flex-col space-y-2 p-4">
