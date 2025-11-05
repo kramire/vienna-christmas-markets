@@ -7,9 +7,10 @@ const MissingImageIcon = '/gingerbread-house.png'
 interface Props {
   resultId: number
   size?: 'small' | 'default'
+  imageLoading?: 'eager' | 'lazy'
 }
 
-const MapResultImage = ({ resultId, size = 'default' }: Props) => {
+const MapResultImage = ({ resultId, size = 'default', imageLoading = 'lazy' }: Props) => {
   const imgSrc = resultToImgUrlMapping[resultId]
 
   if (imgSrc) {
@@ -23,6 +24,7 @@ const MapResultImage = ({ resultId, size = 'default' }: Props) => {
           'flex-shrink-0 rounded object-cover',
           size === 'small' ? 'h-20 w-20' : 'h-20 w-20 sm:h-32 sm:w-32',
         )}
+        loading={imageLoading}
       />
     )
   }
@@ -33,7 +35,7 @@ const MapResultImage = ({ resultId, size = 'default' }: Props) => {
         size === 'small' ? 'h-20 w-20' : 'h-20 w-20 sm:h-32 sm:w-32',
       )}
     >
-      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" unoptimized />
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
     </div>
   )
 }

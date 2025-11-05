@@ -25,7 +25,7 @@ function Hours({ result }: Props) {
   return (
     <>
       <div>
-        <Image src={ClockIcon} width={16} height={16} alt="" unoptimized />
+        <Image src={ClockIcon} width={16} height={16} alt="" />
         <dd>Hours</dd>
         <div className="flex h-24 flex-col flex-wrap gap-x-6">
           {times.map((time, timeIdx) => (
@@ -45,7 +45,6 @@ function Hours({ result }: Props) {
               height={16}
               alt=""
               className={`-rotate-90 transition group-open:rotate-0`}
-              unoptimized
             />
             Special Dates & Times
           </summary>

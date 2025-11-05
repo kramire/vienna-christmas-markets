@@ -23,7 +23,6 @@ const FavoriteButton = ({ isFavorite, onClick }: Props) => {
         className="flex-shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
         width={20}
         height={20}
-        unoptimized
       />
     </button>
   )

@@ -50,13 +50,13 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
           <h2 className="text-lg font-semibold text-green-950 sm:text-xl">{name}</h2>
           <dl className="space-y-3 text-base sm:[&_dd]:font-semibold sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={LocationIcon} width={12} height={12} alt="" unoptimized />
+              <Image src={LocationIcon} width={12} height={12} alt="" />
               <dd>District</dd>
               <p className="sm:hidden">•</p>
               <dt>{district}</dt>
             </div>
             <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
-              <Image src={CalendarIcon} width={12} height={12} alt="" unoptimized />
+              <Image src={CalendarIcon} width={12} height={12} alt="" />
               <dd>Dates</dd>
               <p className="sm:hidden">•</p>
               <dt>{`${startDate} - ${endDate}`}</dt>

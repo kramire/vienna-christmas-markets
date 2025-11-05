@@ -29,7 +29,7 @@ function LightsResultCard({ result, resultIdx }: Props) {
         </div>
         <dl className="space-y-3 text-base sm:[&_dt]:font-normal sm:[&_img]:row-span-2 sm:[&_img]:mt-1">
           <div className="flex items-center gap-2">
-            <Image src={LocationIcon} width={12} height={12} alt="" unoptimized />
+            <Image src={LocationIcon} width={12} height={12} alt="" />
             <dd>District</dd>
             <p>•</p>
             <dt>

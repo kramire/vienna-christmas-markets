@@ -17,7 +17,7 @@ export default function GlobalError() {
               key={to}
               className="flex flex-1 items-center gap-4 rounded border border-green-950 px-3 py-2"
             >
-              <Image src={icon} width={20} height={20} alt="" unoptimized />
+              <Image src={icon} width={20} height={20} alt="" />
               <h2 className="text-base font-medium">{name}</h2>
             </Link>
           ))}

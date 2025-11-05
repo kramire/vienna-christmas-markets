@@ -20,7 +20,7 @@ const RouteCardImage = ({ imgSrc, altText }: Props) => {
   }
   return (
     <div className="flex h-full items-center justify-center border border-solid border-gray-200 bg-gray-100">
-      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" unoptimized />
+      <Image src={MissingImageIcon} width={56} height={56} alt="Gingerbread house" />
     </div>
   )
 }

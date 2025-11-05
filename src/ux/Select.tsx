@@ -41,7 +41,7 @@ function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <Image src={ChevronDownIcon} width={8} height={8} alt="" unoptimized />
+        <Image src={ChevronDownIcon} width={8} height={8} alt="" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -106,7 +106,7 @@ function SelectItem({ className, children, ...props }: React.ComponentProps<type
     >
       <span className="size-3.5 absolute right-2 flex items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <Image src={CheckIcon} width={12} height={12} alt="" unoptimized />
+          <Image src={CheckIcon} width={12} height={12} alt="" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -131,7 +131,7 @@ function SelectScrollUpButton({ className, ...props }: React.ComponentProps<type
       className={cn('flex cursor-default items-center justify-center py-1', className)}
       {...props}
     >
-      <Image src={ChevronDownIcon} width={8} height={8} alt="" className="rotate-180" unoptimized />
+      <Image src={ChevronDownIcon} width={8} height={8} alt="" className="rotate-180" />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -146,7 +146,7 @@ function SelectScrollDownButton({
       className={cn('flex cursor-default items-center justify-center py-1', className)}
       {...props}
     >
-      <Image src={ChevronDownIcon} width={8} height={8} alt="" unoptimized />
+      <Image src={ChevronDownIcon} width={8} height={8} alt="" />
     </SelectPrimitive.ScrollDownButton>
   )
 }

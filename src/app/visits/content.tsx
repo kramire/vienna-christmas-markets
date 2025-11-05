@@ -36,9 +36,9 @@ export default function Content({ markets, visitedMarkets, toggleVisit }: Props)
       </div>
       <div className="flex flex-col gap-8">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {markets.map(({ id, name, district, slug }) => (
+          {markets.map(({ id, name, district, slug }, idx) => (
             <Link key={id} href={`/${slug}`} className="flex w-full gap-4 rounded-lg bg-white p-4 shadow-md">
-              <MapResultImage resultId={id} size="small" />
+              <MapResultImage resultId={id} size="small" imageLoading={idx <= 2 ? 'eager' : 'lazy'} />
               <div className="space-y-1">
                 <h2 className="text-base font-semibold text-green-950 sm:text-lg">{name}</h2>
                 <dl className="flex gap-2">

@@ -19,14 +19,14 @@ export const Location = ({ result }: Props) => {
     <>
       <h2 className="text-xl font-semibold text-green-950">Where to Go</h2>
       <div className="flex items-center gap-4">
-        <Image src={LocationIcon} alt="" width={16} height={16} unoptimized />
+        <Image src={LocationIcon} alt="" width={16} height={16} />
         <a href={googleMapsLink} className="underline" target="_blank">
           {district} - {address}
         </a>
       </div>
       {transportation.length > 0 && (
         <div className="flex items-center gap-4">
-          <Image src={TrainIcon} alt="" width={16} height={16} unoptimized />
+          <Image src={TrainIcon} alt="" width={16} height={16} />
           {transportation.join(' • ')}
         </div>
       )}
