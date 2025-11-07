@@ -11,7 +11,7 @@ import { localizeDate } from '../../utils/localize-date'
 import FavoriteButton from '../../components/FavoriteButton'
 import useFavorites from '../../hooks/use-favorites'
 import Hours from './components/Hours'
-import { cn } from '../../utils/cn'
+import { Prices } from './components/Prices'
 
 const CalendarIcon = '/calendar.svg'
 
@@ -23,7 +23,7 @@ function Content({ result }: Props) {
   const [language, setLanguage] = useState('en-GB')
   const { getIsFavorite, toggleFavorite } = useFavorites()
 
-  const { name, start, end, id, offerings, description } = result
+  const { name, start, end, id, offerings, description, prices } = result
   const imgSrc = resultToImgUrlMapping[id]
 
   const startDate = start ? localizeDate({ date: start, language }) : 'TBD'
@@ -60,6 +60,8 @@ function Content({ result }: Props) {
         <Offerings offerings={offerings} />
         <hr />
         <Location result={result} />
+        <hr />
+        {prices && prices.length > 0 && <Prices prices={prices} />}
       </div>
     </div>
   )

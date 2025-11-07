@@ -14,6 +14,24 @@ export interface Result {
   offerings: Array<Offering>
   alternateTimes?: Array<{ date: string; time: Array<Array<string> | null> }>
   description?: string
+  prices?: Array<Price>
+}
+
+export interface Price {
+  type: PriceType
+  value: number
+  currency: string
+  hasRange?: boolean
+}
+
+export enum PriceType {
+  CURLING_PER_HALF_HOUR = 'CURLING_PER_HALF_HOUR',
+  CURLING_PER_HOUR = 'CURLING_PER_HOUR',
+  ICE_SKATING_ADULTS = 'ICE_SKATING_ADULTS',
+  ICE_SKATING_KIDS = 'ICE_SKATING_KIDS',
+  PUNCH = 'PUNCH',
+  MULLED_WINE = 'MULLED_WINE',
+  NON_ALCOHOLIC = 'NON_ALCOHOLIC',
 }
 
 export interface StreetLights

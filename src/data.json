@@ -11,19 +11,26 @@
     "start": "11/13/2025",
     "end": "12/23/2025",
     "times": [
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["16:00", "22:00"],
-      ["14:00", "22:00"],
-      ["14:00", "22:00"]
+      ["16:00", "23:00"],
+      ["16:00", "23:00"],
+      ["16:00", "23:00"],
+      ["16:00", "23:00"],
+      ["16:00", "23:00"],
+      ["14:00", "23:00"],
+      ["14:00", "23:00"]
     ],
     "website": "https://www.mqw.at/winter-im-mq",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
-    "description": "A chill winter market with good music, unique punch, and curling - all while surrounded by museums."
+    "description": "A chill winter market with good music (check set schedule online), unique punch, and curling - all while surrounded by museums.",
+    "prices": [
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 60,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 2,
@@ -172,7 +179,14 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"],
-    "description": "Tucked away in the courtyard of the university, this low-key market is great for group gatherings. There's a bit of shopping, a few kids rides, and curling, making it perfect for everyone."
+    "description": "Tucked away in the courtyard of the university, this low-key market is great for group gatherings. There's a bit of shopping, a few kids rides, and curling, making it perfect for everyone.",
+    "prices": [
+      {
+        "type": "CURLING_PER_HOUR",
+        "value": 99,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 7,
@@ -510,7 +524,24 @@
       "OFFERING_SHOPPING",
       "OFFERING_KIDS_RIDES"
     ],
-    "description": "This famous Christmas market is one of the largest. From ice skating to kids rides, to shopping and curling, there's plenty to do. Plus it's on the grounds of Vienna's top tourist attraction - the Schönbrunn Palace!"
+    "description": "This famous Christmas market is one of the largest. From ice skating to kids rides, to shopping and curling, there's plenty to do. Plus there's the imperial light show in the palace gardens!",
+    "prices": [
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 70,
+        "currency": "EUR"
+      },
+      {
+        "type": "ICE_SKATING_ADULTS",
+        "value": 6,
+        "currency": "EUR"
+      },
+      {
+        "type": "ICE_SKATING_KIDS",
+        "value": 3,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 17,
@@ -536,7 +567,19 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"],
-    "description": "The most famous Christmas market in Vienna. Best to go at night when the Christmas lights are on full display!"
+    "description": "The most famous Christmas market in Vienna. Best to go at night when the Christmas lights are on full display!",
+    "prices": [
+      {
+        "type": "ICE_SKATING_ADULTS",
+        "value": 10.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "ICE_SKATING_KIDS",
+        "value": 7.4,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 18,
@@ -644,32 +687,15 @@
     "website": "https://www.badeschiff.at/eisstockschiessen/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
-  },
-  {
-    "id": 76,
-    "slug": "sky-bar",
-    "name": "Sky Bar - Winter Wonderland",
-    "isActive": true,
-    "district": "1010",
-    "address": "Kärntner Straße 19 - 7th Floor Steffl",
-    "coordinates": { "lat": 48.206424, "lng": 16.371807 },
-    "transportation": ["U1", "U3"],
-    "start": "11/06/2025",
-    "end": "12/31/2025",
-    "times": [
-      ["12:00", "24:00"],
-      ["12:00", "24:00"],
-      ["12:00", "24:00"],
-      ["12:00", "24:00"],
-      ["12:00", "24:00"],
-      ["12:00", "24:00"],
-      ["12:00", "24:00"]
-    ],
-    "website": "https://skybar.at/",
-    "imgUrl": "",
-    "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
+    "prices": [
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 32,
+        "currency": "EUR",
+        "hasRange": true
+      }
+    ]
   },
   {
     "id": 22,
@@ -719,7 +745,20 @@
     "website": "https://www.sevenrooms.com/experiences/atmosphererooftopbar/winter-terrace-gondolas-4720401638834176",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "description": "This exclusive rooftop has almost 360 views of the city center. Go at dusk to best see Vienna's iconic landmarks, as you sip pricey drinks by Christmas trees and warm heaters.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 11,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 11,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 24,
@@ -895,7 +934,24 @@
     "website": "https://feuerdorf.at/eisstock/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
+    "prices": [
+      {
+        "type": "PUNCH",
+        "value": 4.9,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 3.9,
+        "currency": "EUR"
+      },
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 35,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 32,
@@ -909,13 +965,13 @@
     "start": "11/6/2025",
     "end": "12/31/2025",
     "times": [
-      ["8:30", "20:00"],
-      ["8:30", "20:00"],
-      ["8:30", "20:00"],
-      ["8:30", "20:00"],
-      ["8:30", "20:00"],
-      ["8:30", "20:00"],
-      ["8:30", "20:00"]
+      ["08:30", "20:00"],
+      ["08:30", "20:00"],
+      ["08:30", "20:00"],
+      ["08:30", "20:00"],
+      ["08:30", "20:00"],
+      ["08:30", "20:00"],
+      ["08:30", "20:00"]
     ],
     "alternateTimes": [
       {
@@ -942,7 +998,20 @@
     "website": "https://www.wissenswertes.at/advent-floridsdorf",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "The options at this market are quite limited. If you need to pass through Floridsdorf, it can be seen rather quickly.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 33,
@@ -1009,7 +1078,14 @@
     "website": "https://www.volxfest.at/weihnachten-am-hauptbahnhof-2025/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"],
+    "prices": [
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 25,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 36,
@@ -1026,7 +1102,14 @@
     "website": "https://www.volxfest.at/weihnachten-am-westbahnhof-2025/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
+    "prices": [
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 25,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 37,
@@ -1141,7 +1224,24 @@
     "website": null,
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 3,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 42,
@@ -1516,5 +1616,62 @@
     "coordinates": { "lat": 48.208868, "lng": 16.370836 },
     "type": "STREET_LIGHTS",
     "locationType": "STREET"
+  },
+  {
+    "id": 76,
+    "slug": "sky-bar",
+    "name": "Sky Bar - Winter Wonderland",
+    "isActive": true,
+    "district": "1010",
+    "address": "Kärntner Straße 19 - 7th Floor Steffl",
+    "coordinates": { "lat": 48.206424, "lng": 16.371807 },
+    "transportation": ["U1", "U3"],
+    "start": "11/06/2025",
+    "end": "12/31/2025",
+    "times": [
+      ["12:00", "24:00"],
+      ["12:00", "24:00"],
+      ["12:00", "24:00"],
+      ["12:00", "24:00"],
+      ["12:00", "24:00"],
+      ["12:00", "24:00"],
+      ["12:00", "24:00"]
+    ],
+    "website": "https://skybar.at/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"]
+  },
+  {
+    "id": 77,
+    "slug": "eisstock-bahn-alte-donau",
+    "name": "Eisstock Bahn Alte Donau",
+    "isActive": true,
+    "district": "1220",
+    "address": "Zur Alten Kaisermühle - Fischerstrand 6",
+    "coordinates": { "lat": 48.234632, "lng": 16.426264 },
+    "transportation": ["U1"],
+    "start": "11/01/2025",
+    "end": "12/15/2025",
+    "times": [
+      null,
+      ["15:00", "20:30"],
+      ["15:00", "20:30"],
+      ["15:00", "20:30"],
+      ["15:00", "20:30"],
+      ["14:00", "10:30"],
+      ["13:30", "18:30"]
+    ],
+    "website": "https://www.eisstock-bahn.at/",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
+    "prices": [
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 40,
+        "currency": "EUR"
+      }
+    ]
   }
 ]

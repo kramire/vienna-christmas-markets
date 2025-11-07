@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-import { Offering, SortType } from './App.types'
+import { Offering, PriceType, SortType } from './App.types'
 
 import IMG_SRC_1 from '../public/Musuem-Quartier-Christmas-market.webp'
 import IMG_SRC_2 from '../public/Spittelberg-Market.webp'
@@ -19,7 +19,9 @@ import IMG_SRC_17 from '../public/Rathaus-Christmas-market.webp'
 import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
 import IMG_SRC_20 from '../public/Badeschiff.webp'
 import IMG_SRC_21 from '../public/Haas_und_Hass.webp'
+import IMG_SRC_23 from '../public/atmosphere-rooftop.webp'
 import IMG_SRC_31 from '../public/feuerdorf.webp'
+import IMG_SRC_32 from '../public/franz-jonas-platz.webp'
 import IMG_SRC_46 from '../public/bauernmarkt.webp'
 import IMG_SRC_42 from '../public/graben.webp'
 import IMG_SRC_43 from '../public/kaertner-strasse.webp'
@@ -64,7 +66,9 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   18: IMG_SRC_18,
   20: IMG_SRC_20,
   21: IMG_SRC_21,
+  23: IMG_SRC_23,
   31: IMG_SRC_31,
+  32: IMG_SRC_32,
   46: IMG_SRC_46,
   42: IMG_SRC_42,
   43: IMG_SRC_43,
@@ -94,3 +98,13 @@ export const offeringsMapping: { [key in Offering]: { name: string; icon: Static
 export const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S']
 
 export const NEAR_ME_KM_DISTANCE_AWAY = 2
+
+export const priceTypeMapping: { [key in PriceType]: string } = {
+  [PriceType.CURLING_PER_HALF_HOUR]: 'Curling - 1/2 hour',
+  [PriceType.CURLING_PER_HOUR]: 'Curling - 1 hour',
+  [PriceType.ICE_SKATING_ADULTS]: 'Ice Skating - Adults',
+  [PriceType.ICE_SKATING_KIDS]: 'Ice Skating - Kids',
+  [PriceType.PUNCH]: 'Punch',
+  [PriceType.MULLED_WINE]: 'Mulled Wine',
+  [PriceType.NON_ALCOHOLIC]: 'Non-Alcoholic Option',
+}
