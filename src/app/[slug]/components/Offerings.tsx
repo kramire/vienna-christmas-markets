@@ -9,7 +9,7 @@ interface Props {
 
 export const Offerings = ({ offerings }: Props) => (
   <>
-    <h2 className="text-xl font-semibold text-green-950">What to expect</h2>
+    <h2 className="text-xl font-semibold text-green-950">What to Expect</h2>
     {Object.keys(offeringsMapping)
       .sort((offering) => (offerings.includes(offering as Offering) ? -1 : 1))
       .map((offering) => {

@@ -106,5 +106,5 @@ export const priceTypeMapping: { [key in PriceType]: string } = {
   [PriceType.ICE_SKATING_KIDS]: 'Ice Skating - Kids',
   [PriceType.PUNCH]: 'Punch',
   [PriceType.MULLED_WINE]: 'Mulled Wine',
-  [PriceType.NON_ALCOHOLIC]: 'Non-Alcoholic Option',
+  [PriceType.NON_ALCOHOLIC]: 'Non-Alcoholic Drink',
 }

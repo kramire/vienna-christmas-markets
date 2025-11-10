@@ -20,7 +20,7 @@ const Filters = ({ filters, toggleFilter, isLoadingLocation }: Props) => {
       <FilterItem label="My Favorites" isSelected={filters.FAVORITE} handleClick={toggleFilter(FilterType.FAVORITE)} />
       <FilterItem label="Curling" isSelected={filters.CURLING} handleClick={toggleFilter(FilterType.CURLING)} />
       <FilterItem
-        label="Family-Oriented"
+        label="Kids Rides"
         isSelected={filters.FAMILY_ORIENTED}
         handleClick={toggleFilter(FilterType.FAMILY_ORIENTED)}
       />

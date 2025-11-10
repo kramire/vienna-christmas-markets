@@ -122,7 +122,26 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "Enjoy the backdrop of the famous St. Stephen's Cathedral at this centrally-located market. Either go early to avoid the crowds, or sneak away to the nearby Haas & Haas."
+    "description": "Enjoy the backdrop of the famous St. Stephen's Cathedral at this centrally-located market. Either go early to avoid the crowds, or sneak away to the nearby Haas & Haas.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.9,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 5,
@@ -524,8 +543,26 @@
       "OFFERING_SHOPPING",
       "OFFERING_KIDS_RIDES"
     ],
-    "description": "This famous Christmas market is one of the largest. From ice skating to kids rides, to shopping and curling, there's plenty to do. Plus there's the imperial light show in the palace gardens!",
+    "description": "This famous Christmas market is one of the largest. From ice skating to kids rides, to shopping and curling, there's plenty to do. Plus it's set in front of the beautiful Schönbrunn Palace.",
     "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 3,
+        "currency": "EUR",
+        "hasRange": true
+      },
       {
         "type": "CURLING_PER_HALF_HOUR",
         "value": 70,
@@ -662,7 +699,24 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "description": "A hidden gem right next to the cathedral! This small cozy courtyard has decorations, fireplaces, and a small stove top to grill your own würstel!"
+    "description": "A hidden gem right next to the cathedral! This small cozy courtyard has decorations, fireplaces, and a freshly grilled würstel!",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.8,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 6.9,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.9,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 20,

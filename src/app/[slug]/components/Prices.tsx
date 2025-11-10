@@ -7,7 +7,7 @@ interface Props {
 
 export const Prices = ({ prices }: Props) => (
   <>
-    <h2 className="text-xl font-semibold text-green-950">What you'll Pay</h2>
+    <h2 className="text-xl font-semibold text-green-950">What You'll Pay</h2>
     {prices.map(({ type, value, currency, hasRange = false }) => (
       <div key={type} className="flex items-center justify-between">
         <span>{priceTypeMapping[type]}</span>
