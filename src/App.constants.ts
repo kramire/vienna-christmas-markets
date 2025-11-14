@@ -20,6 +20,7 @@ import IMG_SRC_18 from '../public/Prater-Christmas-market.webp'
 import IMG_SRC_20 from '../public/Badeschiff.webp'
 import IMG_SRC_21 from '../public/Haas_und_Hass.webp'
 import IMG_SRC_23 from '../public/atmosphere-rooftop.webp'
+import IMG_SRC_27 from '../public/klyo.webp'
 import IMG_SRC_31 from '../public/feuerdorf.webp'
 import IMG_SRC_32 from '../public/franz-jonas-platz.webp'
 import IMG_SRC_46 from '../public/bauernmarkt.webp'
@@ -67,6 +68,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   20: IMG_SRC_20,
   21: IMG_SRC_21,
   23: IMG_SRC_23,
+  27: IMG_SRC_27,
   31: IMG_SRC_31,
   32: IMG_SRC_32,
   46: IMG_SRC_46,
