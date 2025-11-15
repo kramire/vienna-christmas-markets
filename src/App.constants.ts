@@ -23,6 +23,9 @@ import IMG_SRC_23 from '../public/atmosphere-rooftop.webp'
 import IMG_SRC_27 from '../public/klyo.webp'
 import IMG_SRC_31 from '../public/feuerdorf.webp'
 import IMG_SRC_32 from '../public/franz-jonas-platz.webp'
+import IMG_SRC_38 from '../public/simmering.webp'
+import IMG_SRC_40 from '../public/lions-club.webp'
+import IMG_SRC_41 from '../public/barlipunsch.webp'
 import IMG_SRC_46 from '../public/bauernmarkt.webp'
 import IMG_SRC_42 from '../public/graben.webp'
 import IMG_SRC_43 from '../public/kaertner-strasse.webp'
@@ -71,6 +74,9 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   27: IMG_SRC_27,
   31: IMG_SRC_31,
   32: IMG_SRC_32,
+  38: IMG_SRC_38,
+  40: IMG_SRC_40,
+  41: IMG_SRC_41,
   46: IMG_SRC_46,
   42: IMG_SRC_42,
   43: IMG_SRC_43,
