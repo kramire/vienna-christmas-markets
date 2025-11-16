@@ -15,6 +15,7 @@ export interface Result {
   alternateTimes?: Array<{ date: string; time: Array<Array<string> | null> }>
   description?: string
   prices?: Array<Price>
+  hasCreditCardPayment?: boolean
 }
 
 export interface Price {
@@ -32,6 +33,7 @@ export enum PriceType {
   PUNCH = 'PUNCH',
   MULLED_WINE = 'MULLED_WINE',
   NON_ALCOHOLIC = 'NON_ALCOHOLIC',
+  MUG_DEPOSIT = 'MUG_DEPOSIT',
 }
 
 export interface StreetLights

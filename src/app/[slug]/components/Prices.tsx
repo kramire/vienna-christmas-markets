@@ -1,4 +1,4 @@
-import { Price } from '../../../App.types'
+import { Price, PriceType } from '../../../App.types'
 import { priceTypeMapping } from '../../../App.constants'
 
 interface Props {
@@ -13,7 +13,9 @@ export const Prices = ({ prices }: Props) => (
         <span>{priceTypeMapping[type]}</span>
         <span>
           {hasRange ? 'From ' : ''}
-          {new Intl.NumberFormat('de-DE', { style: 'currency', currency }).format(value)}
+          {type === PriceType.MUG_DEPOSIT && value === 0
+            ? 'None'
+            : new Intl.NumberFormat('de-DE', { style: 'currency', currency }).format(value)}
         </span>
       </div>
     ))}

@@ -115,4 +115,5 @@ export const priceTypeMapping: { [key in PriceType]: string } = {
   [PriceType.PUNCH]: 'Punch',
   [PriceType.MULLED_WINE]: 'Mulled Wine',
   [PriceType.NON_ALCOHOLIC]: 'Non-Alcoholic Drink',
+  [PriceType.MUG_DEPOSIT]: 'Mug Deposit Fee',
 }

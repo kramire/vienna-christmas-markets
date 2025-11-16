@@ -577,6 +577,11 @@
         "type": "ICE_SKATING_KIDS",
         "value": 3,
         "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
       }
     ]
   },
@@ -896,7 +901,19 @@
     "website": "https://klyo.at/pages/events-wien",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 0,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 28,
@@ -1146,7 +1163,7 @@
     "slug": "weihnachten-am-westbahnhof",
     "name": "Weihnachten am Westbahnhof",
     "isActive": true,
-    "district": "1100",
+    "district": "1150",
     "address": "am Vorplatz des Westbahnhofs",
     "coordinates": { "lat": 48.196929, "lng": 16.338628 },
     "transportation": ["U3", "U6", "5", "6", "9", "18", "49", "52", "60"],
@@ -1190,14 +1207,38 @@
     "district": "1110",
     "address": "Enkplatz",
     "coordinates": { "lat": 48.176023, "lng": 16.413582 },
-    "transportation": ["U3", "71", "76A", "76B"],
+    "transportation": ["U3", "71", "11", "15A", "76A", "76B"],
     "start": "11/13/2025",
     "end": null,
     "times": [null, null, null, ["16:00", "21:30"], ["16:00", "21:30"], ["16:00", "21:30"], ["16:00", "21:30"]],
     "website": "https://www.facebook.com/SimmeringerChristkindlmarkt/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "description": "While small, this local Christmas market is covered in decorations. The church next to it is lit with stars, there's a Christmas tree, and each stand has its own lights and garland. It's cozy and festive!",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 3.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 2,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 39,
@@ -1250,10 +1291,33 @@
       ["11:00", "21:00"],
       ["15:00", "21:00"]
     ],
-    "website": "https://www.fuchsundfreude.at/punschstand/",
+    "website": "https://wien-ostarrichi.lions.at/de/aktivitaeten-1/punschstand-2025.html",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY"]
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 0,
+        "currency": "EUR"
+      }
+    ],
+    "description": "Drink for a good cause! The proceeds made at this stand go towards charitable projects. It's in a quiet spot in the city center, and they offer free snacks."
   },
   {
     "id": 41,
@@ -1294,8 +1358,14 @@
         "type": "NON_ALCOHOLIC",
         "value": 3,
         "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 0,
+        "currency": "EUR"
       }
-    ]
+    ],
+    "description": "A hidden gem! This stand-alone Punsch hut has cute decorations, and sells drinks to go. Or, if there's space, you can go drink inside their well-decorated hut!"
   },
   {
     "id": 42,
@@ -1727,5 +1797,32 @@
         "currency": "EUR"
       }
     ]
+  },
+  {
+    "id": 78,
+    "slug": "piazza-x-mas-winterstories",
+    "name": "PIAZZZA X-MAS Winterstories",
+    "isActive": true,
+    "district": "1010",
+    "address": "Schwarzenbergplatz",
+    "coordinates": { "lat": 48.198896, "lng": 16.375804 },
+    "transportation": ["2", "D", "71", "4A"],
+    "start": "11/13/2025",
+    "end": "12/31/2025",
+    "times": [
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"]
+    ],
+    "website": null,
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "description": "New for 2025! A winter market playing 80's and 90's music right in the city center. Plus there's a Punsch Happy Hour Mon-Thu from 14:00-17:00"
   }
 ]
