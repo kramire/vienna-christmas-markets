@@ -7,7 +7,7 @@ import IMG_SRC_3 from '../public/Tuerkenschanzpark-Christmas-market.webp'
 import IMG_SRC_4 from '../public/Saint-Stephens-Cathedral-at-Christmas.webp'
 import IMG_SRC_5 from '../public/Genuss-Christmas-market.webp'
 import IMG_SRC_6 from '../public/Altes-AKH-Christmas-market.webp'
-import IMG_SRC_7 from '../public/Am-Hof-Christmas-Market.webp'
+import IMG_SRC_7 from '../public/am-hof.webp'
 import IMG_SRC_8 from '../public/Maria-Theresien-Platz-Christmas-market.webp'
 import IMG_SRC_10 from '../public/Hirschstetten.webp'
 import IMG_SRC_11 from '../public/Belvedere-Market.webp'
@@ -23,7 +23,9 @@ import IMG_SRC_23 from '../public/atmosphere-rooftop.webp'
 import IMG_SRC_27 from '../public/klyo.webp'
 import IMG_SRC_31 from '../public/feuerdorf.webp'
 import IMG_SRC_32 from '../public/franz-jonas-platz.webp'
+import IMG_SRC_35 from '../public/hauptbahnhof.webp'
 import IMG_SRC_38 from '../public/simmering.webp'
+import IMG_SRC_39 from '../public/meidling.webp'
 import IMG_SRC_40 from '../public/lions-club.webp'
 import IMG_SRC_41 from '../public/barlipunsch.webp'
 import IMG_SRC_46 from '../public/bauernmarkt.webp'
@@ -37,6 +39,7 @@ import IMG_SRC_52 from '../public/palais.webp'
 import IMG_SRC_58 from '../public/neubaugasse.webp'
 import IMG_SRC_60 from '../public/Servitenviertel.webp'
 import IMG_SRC_76 from '../public/Skybar.webp'
+import IMG_SRC_79 from '../public/punsch-karitativ.webp'
 
 import EISSTOCK from '../public/eisstock.png'
 import ICE_SKATE from '../public/ice-skate.png'
@@ -74,7 +77,9 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   27: IMG_SRC_27,
   31: IMG_SRC_31,
   32: IMG_SRC_32,
+  35: IMG_SRC_35,
   38: IMG_SRC_38,
+  39: IMG_SRC_39,
   40: IMG_SRC_40,
   41: IMG_SRC_41,
   46: IMG_SRC_46,
@@ -88,11 +93,14 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   58: IMG_SRC_58,
   60: IMG_SRC_60,
   76: IMG_SRC_76,
+  79: IMG_SRC_79,
 }
 
 export const sortSelectOptions = {
   [SortType.DISTRICT]: { label: 'District' },
   [SortType.DATE]: { label: 'Start Date' },
+  [SortType.DRINK_PRICE_ASC]: { label: 'Lowest Drink Price' },
+  [SortType.DRINK_PRICE_DESC]: { label: 'Highest Drink Price' },
 }
 
 export const offeringsMapping: { [key in Offering]: { name: string; icon: StaticImageData } } = {

@@ -23,8 +23,31 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
-    "description": "A chill winter market with good music (check set schedule online), unique punch, and curling - all while surrounded by museums.",
+    "description": "NOTE 2025: Due to constructions, the curling is located outside the MQ, by the Mariahilfer Straße. Inside the courtyard there are still a few drink stands and decorative lights.",
     "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 4.6,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 4.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 3.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 3,
+        "currency": "EUR"
+      },
       {
         "type": "CURLING_PER_HALF_HOUR",
         "value": 60,
@@ -56,7 +79,32 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "A local favorite! This cozy market winds through narrow cobblestone streets, offering shopping at artisan stalls, plus plenty of food and drink. Go early before it gets crowded."
+    "description": "A local favorite! This cozy market winds through narrow cobblestone streets, offering shopping at artisan stalls, plus plenty of food and drink. Go early before it gets crowded.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 4.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 4.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 3.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 3,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 3,
@@ -201,6 +249,23 @@
     "description": "Tucked away in the courtyard of the university, this low-key market is great for group gatherings. There's a bit of shopping, a few kids rides, and curling, making it perfect for everyone.",
     "prices": [
       {
+        "type": "MULLED_WINE",
+        "value": 5.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.9,
+        "currency": "EUR"
+      },
+      {
         "type": "CURLING_PER_HOUR",
         "value": 99,
         "currency": "EUR"
@@ -231,7 +296,29 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "This central market has some unique traits, including medieval-style mugs, a champagne bar, and a tree of dangling lights."
+    "description": "This central market has some unique traits, including medieval-style mugs, a champagne bar, and a tree of dangling lights.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 6,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 6,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 8,
@@ -351,7 +438,26 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "The highlight of this market is the beautiful backdrop of the Belvedere Palace. Check out the reflection of the facade and Christmas lights on the garden's pond."
+    "description": "The highlight of this market is the beautiful backdrop of the Belvedere Palace. Check out the reflection of the facade and Christmas lights on the garden's pond.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.8,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.9,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 12,
@@ -402,7 +508,29 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "Insider tip: grab a drink, and enjoy it by the adjacent fountain. You'll have more space while enjoying the festive atmosphere."
+    "description": "Insider tip: grab a drink, and enjoy it by the adjacent fountain. You'll have more space while enjoying the festive atmosphere.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 14,
@@ -611,6 +739,29 @@
     "offerings": ["OFFERING_ICE_SKATING", "OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"],
     "description": "The most famous Christmas market in Vienna. Best to go at night when the Christmas lights are on full display!",
     "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "PUNCH",
+        "value": 6,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
+      },
       {
         "type": "ICE_SKATING_ADULTS",
         "value": 10.5,
@@ -1150,10 +1301,22 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"],
+    "description": "Stop by this small stop before or after your train journey. There's a few drink and food options, and the train station Christmas lights in the background.",
     "prices": [
       {
-        "type": "CURLING_PER_HALF_HOUR",
-        "value": 25,
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.5,
         "currency": "EUR"
       }
     ]
@@ -1269,7 +1432,25 @@
     "website": "https://www.viennawinterwonderland.at/",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"],
+    "description": "The smallest market on this list, with just one drink stand. Not a must, unless you happen to be there.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.5,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 40,
@@ -1824,5 +2005,49 @@
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
     "description": "New for 2025! A winter market playing 80's and 90's music right in the city center. Plus there's a Punsch Happy Hour Mon-Thu from 14:00-17:00"
+  },
+  {
+    "id": 79,
+    "slug": "punsch-karittiv",
+    "name": "Punsch Karittiv",
+    "isActive": true,
+    "district": "1010",
+    "address": "Schottengasse Höhe Nr. 3A",
+    "coordinates": { "lat": 48.212879, "lng": 16.363449 },
+    "transportation": ["U2", "2", "D", "71"],
+    "start": "11/13/2025",
+    "end": "1/4/2026",
+    "times": [
+      ["12:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"],
+      ["12:00", "22:00"]
+    ],
+    "website": null,
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "description": "Enjoy a drink in this cobblestone piazza. This stand offers drinks and snacks, while a stand across from it offers hot chocolate - take you pick!",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 5.5,
+        "currency": "EUR"
+      }
+    ]
   }
 ]

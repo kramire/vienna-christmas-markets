@@ -90,6 +90,8 @@ export enum Routes {
 export enum SortType {
   DATE = 'DATE',
   DISTRICT = 'DISTRICT',
+  DRINK_PRICE_ASC = 'DRINK_PRICE_ASC',
+  DRINK_PRICE_DESC = 'DRINK_PRICE_DESC',
 }
 
 interface RouteStop {
