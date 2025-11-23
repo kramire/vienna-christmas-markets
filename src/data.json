@@ -377,8 +377,41 @@
     "website": "https://www.wien.gv.at/umwelt/parks/blumengaerten-hirschstetten/weihnachten.html",
     "imgUrl": "",
     "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "The trek to this locals-only market is worth it - both the indoor and outdoor gardens are decorated, and the drinks are on the cheaper side."
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES", "OFFERING_CURLING"],
+    "description": "The trek to this locals-only market is worth it - both the indoor and outdoor gardens are decorated, and the drinks are on the cheaper side.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 3,
+        "currency": "EUR"
+      },
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 40,
+        "currency": "EUR"
+      },
+      {
+        "type": "CURLING_PER_HOUR",
+        "value": 70,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 11,
@@ -556,7 +589,31 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "description": "This massive market offers something for everyone. There are shopping stalls with handcrafted items, stands with food and drink, and farm animals!"
+    "description": "This massive market offers something for everyone. There are shopping stalls with handcrafted items, stands with food and drink, and farm animals!",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 15,
@@ -2004,12 +2061,30 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "description": "New for 2025! A winter market playing 80's and 90's music right in the city center. Plus there's a Punsch Happy Hour Mon-Thu from 14:00-17:00"
+    "description": "New for 2025! A winter market playing 80's and 90's music right in the city center. Plus there's a Punsch Happy Hour Mon-Thu from 14:00-17:00",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4.5,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 79,
-    "slug": "punsch-karittiv",
-    "name": "Punsch Karittiv",
+    "slug": "punsch-karitativ",
+    "name": "Punsch Karitativ",
     "isActive": true,
     "district": "1010",
     "address": "Schottengasse Höhe Nr. 3A",
@@ -2049,5 +2124,16 @@
         "currency": "EUR"
       }
     ]
+  },
+  {
+    "id": 80,
+    "slug": "bauernmarkt",
+    "name": "Bauernmarkt",
+    "isActive": true,
+    "district": "1010",
+    "address": "Bauernmarkt",
+    "coordinates": { "lat": 48.209804, "lng": 16.372234 },
+    "type": "STREET_LIGHTS",
+    "locationType": "STREET"
   }
 ]

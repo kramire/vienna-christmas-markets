@@ -28,18 +28,28 @@ import IMG_SRC_38 from '../public/simmering.webp'
 import IMG_SRC_39 from '../public/meidling.webp'
 import IMG_SRC_40 from '../public/lions-club.webp'
 import IMG_SRC_41 from '../public/barlipunsch.webp'
-import IMG_SRC_46 from '../public/bauernmarkt.webp'
 import IMG_SRC_42 from '../public/graben.webp'
 import IMG_SRC_43 from '../public/kaertner-strasse.webp'
 import IMG_SRC_44 from '../public/kohlmarkt.webp'
 import IMG_SRC_45 from '../public/neuer-markt.webp'
+import IMG_SRC_46 from '../public/tuchlauben.webp'
 import IMG_SRC_47 from '../public/rotenturmstrasse.webp'
+import IMG_SRC_48 from '../public/annagasse.webp'
+import IMG_SRC_49 from '../public/dorotheergasse.webp'
+import IMG_SRC_50 from '../public/goldschmiedgasse.webp'
 import IMG_SRC_51 from '../public/Herrengasse.webp'
 import IMG_SRC_52 from '../public/palais.webp'
+import IMG_SRC_53 from '../public/spiegelgasse.webp'
+import IMG_SRC_55 from '../public/wollzeile.webp'
+import IMG_SRC_56 from '../public/landstrasse.webp'
 import IMG_SRC_58 from '../public/neubaugasse.webp'
 import IMG_SRC_60 from '../public/Servitenviertel.webp'
+import IMG_SRC_74 from '../public/jasonmirgottstrasse.webp'
+import IMG_SRC_75 from '../public/trattnerhof.webp'
 import IMG_SRC_76 from '../public/Skybar.webp'
+import IMG_SRC_78 from '../public/schwarzenbergplatz.webp'
 import IMG_SRC_79 from '../public/punsch-karitativ.webp'
+import IMG_SRC_80 from '../public/bauernmarkt.webp'
 
 import EISSTOCK from '../public/eisstock.png'
 import ICE_SKATE from '../public/ice-skate.png'
@@ -88,12 +98,22 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   44: IMG_SRC_44,
   45: IMG_SRC_45,
   47: IMG_SRC_47,
+  48: IMG_SRC_48,
+  49: IMG_SRC_49,
+  50: IMG_SRC_50,
   51: IMG_SRC_51,
   52: IMG_SRC_52,
+  53: IMG_SRC_53,
+  55: IMG_SRC_55,
+  56: IMG_SRC_56,
   58: IMG_SRC_58,
   60: IMG_SRC_60,
+  74: IMG_SRC_74,
+  75: IMG_SRC_75,
   76: IMG_SRC_76,
+  78: IMG_SRC_78,
   79: IMG_SRC_79,
+  80: IMG_SRC_80,
 }
 
 export const sortSelectOptions = {
