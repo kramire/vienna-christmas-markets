@@ -6,23 +6,12 @@ import { cn } from '../../../utils/cn'
 const GreenCheck = '/green-check-mark.svg'
 
 interface Props {
-  marketId: number
   hasVisited: boolean
-  toggleVisit: (marketId: number) => void
 }
 
-const VisitedToggle = ({ marketId, hasVisited, toggleVisit }: Props) => {
+const VisitedToggle = ({ hasVisited }: Props) => {
   return (
-    <div
-      onClick={(e) => {
-        e.preventDefault()
-        toggleVisit(marketId)
-      }}
-      className={cn(
-        'flex w-36 cursor-pointer items-center justify-center gap-2 rounded-2xl border border-green-950 py-1 text-xs sm:text-sm',
-        hasVisited ? 'border-green-600 bg-green-50 font-medium text-green-800' : 'border-gray-400 grayscale',
-      )}
-    >
+    <div className="flex items-center justify-center gap-2 text-xs sm:text-sm">
       <Image
         src={GreenCheck}
         width={16}
@@ -30,7 +19,7 @@ const VisitedToggle = ({ marketId, hasVisited, toggleVisit }: Props) => {
         alt={hasVisited ? 'Checked' : 'Unchecked'}
         className="h-3 w-3 sm:h-4 sm:w-4"
       />
-      <span>{hasVisited ? 'Visited' : 'Click to Visit'}</span>
+      <span>{hasVisited ? 'Visited' : 'Click to mark as visited'}</span>
     </div>
   )
 }

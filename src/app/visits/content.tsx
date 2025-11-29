@@ -4,6 +4,7 @@ import VisitedToggle from './components/visitedToggle'
 import MapResultImage from '../../components/Map/components/MapResultImage'
 import Link from 'next/link'
 import { getProgressText } from './helpers/get-progress-text'
+import { cn } from '../../utils/cn'
 
 interface Props {
   markets: Array<Market>
@@ -36,22 +37,39 @@ export default function Content({ markets, visitedMarkets, toggleVisit }: Props)
       </div>
       <div className="flex flex-col gap-8">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {markets.map(({ id, name, district, slug }, idx) => (
-            <Link key={id} href={`/${slug}`} className="flex w-full gap-4 rounded-lg bg-white p-4 shadow-md">
-              <MapResultImage resultId={id} size="small" imageLoading={idx <= 2 ? 'eager' : 'lazy'} />
-              <div className="space-y-1">
-                <h2 className="text-base font-semibold text-green-950 sm:text-lg">{name}</h2>
-                <dl className="flex gap-2">
-                  <dd>District</dd>
-                  <p>•</p>
-                  <dt>{district}</dt>
-                </dl>
-                <div className="pt-2">
-                  <VisitedToggle marketId={id} hasVisited={visitedMarkets.includes(id)} toggleVisit={toggleVisit} />
+          {markets.map(({ id, name, district, slug }, idx) => {
+            const hasVisited = visitedMarkets.includes(id)
+            return (
+              <div
+                key={id}
+                className={cn(
+                  'flex w-full cursor-pointer gap-4 rounded-lg bg-white p-4 shadow-md hover:shadow-lg',
+                  hasVisited && 'border border-green-500 bg-green-50/50',
+                )}
+                onClick={() => toggleVisit(id)}
+              >
+                <MapResultImage resultId={id} size="small" imageLoading={idx <= 2 ? 'eager' : 'lazy'} />
+                <div className="space-y-1">
+                  <h2 className="text-base font-semibold text-green-950 sm:text-lg">{name}</h2>
+                  <dl className="flex gap-2">
+                    <dd>District</dd>
+                    <p>•</p>
+                    <dt>{district}</dt>
+                  </dl>
+                  <div className="flex w-full gap-5 pt-1">
+                    <Link
+                      href={`/${slug}`}
+                      className="text-xs underline sm:text-sm"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      See details
+                    </Link>
+                    <VisitedToggle hasVisited={hasVisited} />
+                  </div>
                 </div>
               </div>
-            </Link>
-          ))}
+            )
+          })}
         </div>
       </div>
     </div>

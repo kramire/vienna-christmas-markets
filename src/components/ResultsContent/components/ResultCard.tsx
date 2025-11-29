@@ -39,9 +39,9 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
     <li key={id} className="flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
-          <ViewTransition name={`view-transition-favorite-button-${id}`}>
+          <div className="absolute right-3 top-3 z-10 flex gap-2">
             <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
-          </ViewTransition>
+          </div>
           <ViewTransition name={`view-transition-image-${id}`}>
             <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
           </ViewTransition>

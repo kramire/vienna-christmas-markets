@@ -12,6 +12,7 @@ import FavoriteButton from '../../components/FavoriteButton'
 import useFavorites from '../../hooks/use-favorites'
 import Hours from './components/Hours'
 import { Prices } from './components/Prices'
+import ShareButton from '../../components/ShareButton'
 
 const CalendarIcon = '/calendar.svg'
 
@@ -36,9 +37,10 @@ function Content({ result }: Props) {
   return (
     <div className="flex flex-col md:flex-row">
       <div className="relative flex h-72 w-full md:sticky md:top-8 md:mt-8 md:h-96 md:flex-1">
-        <ViewTransition name={`view-transition-favorite-button-${id}`}>
+        <div className="absolute right-3 top-3 z-10 flex gap-3">
+          <ShareButton />
           <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
-        </ViewTransition>
+        </div>
         <ViewTransition name={`view-transition-image-${id}`}>
           <MainImage imgSrc={imgSrc} altText={name} />
         </ViewTransition>
