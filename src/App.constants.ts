@@ -23,7 +23,9 @@ import IMG_SRC_23 from '../public/atmosphere-rooftop.webp'
 import IMG_SRC_27 from '../public/klyo.webp'
 import IMG_SRC_31 from '../public/feuerdorf.webp'
 import IMG_SRC_32 from '../public/franz-jonas-platz.webp'
+import IMG_SRC_33 from '../public/wienter-zauber.webp'
 import IMG_SRC_35 from '../public/hauptbahnhof.webp'
+import IMG_SRC_37 from '../public/verkehrsmuseum.webp'
 import IMG_SRC_38 from '../public/simmering.webp'
 import IMG_SRC_39 from '../public/meidling.webp'
 import IMG_SRC_40 from '../public/lions-club.webp'
@@ -42,6 +44,7 @@ import IMG_SRC_52 from '../public/palais.webp'
 import IMG_SRC_53 from '../public/spiegelgasse.webp'
 import IMG_SRC_55 from '../public/wollzeile.webp'
 import IMG_SRC_56 from '../public/landstrasse.webp'
+import IMG_SRC_57 from '../public/mariahilfestrasse.webp'
 import IMG_SRC_58 from '../public/neubaugasse.webp'
 import IMG_SRC_60 from '../public/Servitenviertel.webp'
 import IMG_SRC_74 from '../public/jasonmirgottstrasse.webp'
@@ -91,7 +94,9 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   27: IMG_SRC_27,
   31: IMG_SRC_31,
   32: IMG_SRC_32,
+  33: IMG_SRC_33,
   35: IMG_SRC_35,
+  37: IMG_SRC_37,
   38: IMG_SRC_38,
   39: IMG_SRC_39,
   40: IMG_SRC_40,
@@ -110,6 +115,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   53: IMG_SRC_53,
   55: IMG_SRC_55,
   56: IMG_SRC_56,
+  57: IMG_SRC_57,
   58: IMG_SRC_58,
   60: IMG_SRC_60,
   74: IMG_SRC_74,

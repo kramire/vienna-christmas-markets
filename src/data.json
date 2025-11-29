@@ -1315,7 +1315,30 @@
     "website": "https://www.wienterzauber.com/",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "description": "This market is focused mainly on the shopping, with several artisanal stands selling unique gifts.",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 0,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 34,
@@ -1382,7 +1405,7 @@
     "id": 36,
     "slug": "weihnachten-am-westbahnhof",
     "name": "Weihnachten am Westbahnhof",
-    "isActive": true,
+    "isActive": false,
     "district": "1150",
     "address": "am Vorplatz des Westbahnhofs",
     "coordinates": { "lat": 48.196929, "lng": 16.338628 },
@@ -1414,10 +1437,38 @@
     "start": "11/28/2025",
     "end": "12/14/2025",
     "times": [null, null, null, null, ["14:00", "21:00"], ["14:00", "21:00"], ["14:00", "21:00"]],
-    "website": "https://www.wien.info/de/aktuell/veranstaltungen/adventmarkt-im-verkehrsmuseum-remise-2023-1001412",
+    "website": "https://www.wienerlinien.at/news/adventmarkt-verkehrsmuseum-remise-2025",
     "imgUrl": "",
     "type": "EVENT",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_SHOPPING"],
+    "description": "A lovely local market in front of the tram museum! There are decorated trams on display, with some offering indoor seating and drinks. There's crafts for children, live music, and a complimentary postcard stand where you can send seasonal postcards throughout Austria free of charge!",
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 4,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
+      },
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 25,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 38,
