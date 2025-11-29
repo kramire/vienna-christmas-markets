@@ -496,26 +496,26 @@
     "id": 12,
     "slug": "liechtenstein",
     "name": "Advent im Gartenpalais Liechtenstein",
-    "isActive": false,
+    "isActive": true,
     "district": "1090",
     "address": "Fürstengasse 1",
     "coordinates": { "lat": 48.22227, "lng": 16.359773 },
     "transportation": ["D", "5", "33"],
-    "start": "11/15/2024",
-    "end": "12/23/2024",
+    "start": "11/13/2025",
+    "end": "12/20/2025",
     "times": [
-      ["14:00", "21:00"],
-      ["14:00", "21:00"],
-      ["14:00", "21:00"],
-      ["14:00", "21:00"],
-      ["11:00", "21:00"],
-      ["11:00", "21:00"],
-      ["11:00", "21:00"]
+      [null, null],
+      [null, null],
+      [null, null],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      ["16:00", "21:00"],
+      [null, null]
     ],
     "website": "https://www.adventimgartenpalais.at/",
     "imgUrl": "",
-    "type": "MARKET",
-    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"]
   },
   {
     "id": 13,

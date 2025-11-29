@@ -47,6 +47,7 @@ import IMG_SRC_60 from '../public/Servitenviertel.webp'
 import IMG_SRC_74 from '../public/jasonmirgottstrasse.webp'
 import IMG_SRC_75 from '../public/trattnerhof.webp'
 import IMG_SRC_76 from '../public/Skybar.webp'
+import IMG_SRC_77 from '../public/eisstock-bahn-alte-donau.webp'
 import IMG_SRC_78 from '../public/schwarzenbergplatz.webp'
 import IMG_SRC_79 from '../public/punsch-karitativ.webp'
 import IMG_SRC_80 from '../public/bauernmarkt.webp'
@@ -111,6 +112,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   74: IMG_SRC_74,
   75: IMG_SRC_75,
   76: IMG_SRC_76,
+  77: IMG_SRC_77,
   78: IMG_SRC_78,
   79: IMG_SRC_79,
   80: IMG_SRC_80,
