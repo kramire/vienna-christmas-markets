@@ -1,4 +1,8 @@
-export const getIsOpen = (startDate: string | null, endDate: string | null, times: Array<Array<string> | null>) => {
+export const getIsOpen = (
+  startDate: string | null,
+  endDate: string | null,
+  times: Array<Array<string | null> | null>,
+) => {
   if (!startDate || !endDate) return false
 
   // Localize current date and time to Vienna timezone
@@ -21,6 +25,7 @@ export const getIsOpen = (startDate: string | null, endDate: string | null, time
 
   // Convert startTime and endTime to today's Date objects for comparison
   const [startTime, endTime] = todayTimes
+  if (!startTime || !endTime) return null // Data not available
   const startDateTime = setTimeOnDate(localizedDate, startTime)
   const endDateTime = setTimeOnDate(localizedDate, endTime)
 

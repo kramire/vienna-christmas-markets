@@ -15,10 +15,7 @@ export default function GlobalError() {
         <p className="text-base">Try another page:</p>
         <div className="flex flex-col gap-3">
           {menuItems.map(({ name, to, icon }) => {
-            if (pathname === to) {
-              router.refresh()
-              return
-            }
+            if (pathname === to) return
             return (
               <Link
                 href={to}
