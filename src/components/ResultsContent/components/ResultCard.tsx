@@ -2,7 +2,7 @@
 import { useState, useEffect, ViewTransition } from 'react'
 
 import { Event, Market } from '../../../App.types'
-import { resultToImgUrlMapping } from '../../../App.constants'
+import { resultToImgUrlMapping, WEBSITE_URL } from '../../../App.constants'
 
 import OpenHours from '../../OpenHours'
 import CardImage from '../../CardImage'
@@ -10,9 +10,12 @@ import FavoriteButton from '../../FavoriteButton'
 import Link from 'next/link'
 import Image from 'next/image'
 import { localizeDate } from '../../../utils/localize-date'
+import ShareButton from '../../ShareButton'
+import { getPriceRating } from '@/utils/get-price-rating'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
+const MoneyBillIcon = '/money-bill-1-wave.svg'
 
 interface Props {
   result: Market | Event
@@ -24,7 +27,7 @@ interface Props {
 const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) => {
   const [language, setLanguage] = useState('en-GB')
 
-  const { id, name, district, start, end, times } = result
+  const { id, name, district, start, end, times, prices } = result
 
   const imgSrc = resultToImgUrlMapping[id]
 
@@ -40,6 +43,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
           <div className="absolute right-3 top-3 z-10 flex gap-2">
+            <ShareButton shareUrl={`${WEBSITE_URL}/${result.slug}`} />
             <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
           </div>
           <ViewTransition name={`view-transition-image-${id}`}>
@@ -62,6 +66,14 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
               <dt>{`${startDate} - ${endDate}`}</dt>
             </div>
             <OpenHours start={start} end={end} times={times} />
+            {prices && getPriceRating(prices) && (
+              <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
+                <Image src={MoneyBillIcon} width={12} height={12} alt="" />
+                <dd>Pricing</dd>
+                <p className="sm:hidden">•</p>
+                <dt>{getPriceRating(prices)?.label}</dt>
+              </div>
+            )}
           </dl>
         </div>
       </Link>

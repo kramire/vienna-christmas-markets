@@ -1,7 +1,7 @@
 'use client'
 
 import { Market, Event } from '../../App.types'
-import { resultToImgUrlMapping } from '../../App.constants'
+import { resultToImgUrlMapping, WEBSITE_URL } from '../../App.constants'
 import { Offerings } from './components/Offerings'
 import { Location } from './components/Location'
 import MainImage from './components/MainImage'
@@ -24,7 +24,7 @@ function Content({ result }: Props) {
   const [language, setLanguage] = useState('en-GB')
   const { getIsFavorite, toggleFavorite } = useFavorites()
 
-  const { name, start, end, id, offerings, description, prices } = result
+  const { id, name, start, end, slug, offerings, description, prices } = result
   const imgSrc = resultToImgUrlMapping[id]
 
   const startDate = start ? localizeDate({ date: start, language }) : 'TBD'
@@ -38,8 +38,8 @@ function Content({ result }: Props) {
     <div className="flex flex-col md:flex-row">
       <div className="relative flex h-72 w-full md:sticky md:top-8 md:mt-8 md:h-96 md:flex-1">
         <div className="absolute right-3 top-3 z-10 flex gap-3">
-          <ShareButton />
-          <FavoriteButton isFavorite={getIsFavorite(result.id)} onClick={toggleFavorite(result.id)} />
+          <ShareButton shareUrl={`${WEBSITE_URL}/${slug}`} />
+          <FavoriteButton isFavorite={getIsFavorite(id)} onClick={toggleFavorite(id)} />
         </div>
         <ViewTransition name={`view-transition-image-${id}`}>
           <MainImage imgSrc={imgSrc} altText={name} />

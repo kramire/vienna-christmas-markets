@@ -1,12 +1,16 @@
 import Image from 'next/image'
-import { MouseEvent } from 'react'
 
 const ShareIcon = '/arrow-up-from-bracket.svg'
 
-const ShareButton = () => {
-  const handleClick = async () => {
+interface Props {
+  shareUrl: string
+}
+
+const ShareButton = ({ shareUrl }: Props) => {
+  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation()
     try {
-      await navigator.share({ url: window.location.href })
+      await navigator.share({ url: shareUrl })
     } catch (err) {
       console.log(`Error: ${err}`)
     }

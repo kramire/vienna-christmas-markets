@@ -1,15 +1,13 @@
 import { Market, Event } from '../App.types'
+import { getPriceRating } from './get-price-rating'
 
 export default function sortResultsByHighestDrinkPrice(resultA: Market | Event, resultB: Market | Event) {
-  const getMulledWinePrice = (result: Market | Event) =>
-    result.prices?.find(({ type }) => type === 'MULLED_WINE')?.value
+  const priceA = getPriceRating(resultA.prices || [])
+  const priceB = getPriceRating(resultB.prices || [])
 
-  const priceA = getMulledWinePrice(resultA)
-  const priceB = getMulledWinePrice(resultB)
+  if (priceA === null && priceB === null) return 0
+  if (priceA === null) return 1
+  if (priceB === null) return -1
 
-  if (priceA === undefined && priceB === undefined) return 0
-  if (priceA === undefined) return 1
-  if (priceB === undefined) return -1
-
-  return priceB - priceA
+  return priceB.averagePrice - priceA.averagePrice
 }
