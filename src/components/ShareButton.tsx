@@ -8,7 +8,7 @@ interface Props {
 
 const ShareButton = ({ shareUrl }: Props) => {
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation()
+    e.preventDefault()
     try {
       await navigator.share({ url: shareUrl })
     } catch (err) {
