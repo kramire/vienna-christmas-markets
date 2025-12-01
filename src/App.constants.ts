@@ -57,6 +57,7 @@ import IMG_SRC_77 from '../public/eisstock-bahn-alte-donau.webp'
 import IMG_SRC_78 from '../public/schwarzenbergplatz.webp'
 import IMG_SRC_79 from '../public/punsch-karitativ.webp'
 import IMG_SRC_80 from '../public/bauernmarkt.webp'
+import IMG_SRC_81 from '../public/obkirchergasse.webp'
 
 import EISSTOCK from '../public/eisstock.png'
 import ICE_SKATE from '../public/ice-skate.png'
@@ -131,6 +132,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   78: IMG_SRC_78,
   79: IMG_SRC_79,
   80: IMG_SRC_80,
+  81: IMG_SRC_81,
 }
 
 export const sortSelectOptions = {
