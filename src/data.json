@@ -503,15 +503,7 @@
     "transportation": ["D", "5", "33"],
     "start": "11/13/2025",
     "end": "12/20/2025",
-    "times": [
-      [null, null],
-      [null, null],
-      [null, null],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      ["16:00", "21:00"],
-      [null, null]
-    ],
+    "times": [null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"], null],
     "website": "https://www.adventimgartenpalais.at/",
     "imgUrl": "",
     "type": "EVENT",
@@ -2151,7 +2143,7 @@
       ["12:00", "22:00"],
       ["12:00", "22:00"],
       ["12:00", "22:00"],
-      ["12:00", "22:00"]
+      null
     ],
     "website": null,
     "imgUrl": "",
@@ -2194,8 +2186,52 @@
     "isActive": true,
     "district": "1190",
     "address": "Obkirchergasse",
-    "coordinates": { "lat": 48.242647, "lng": 16.341749 },
+    "coordinates": { "lat": 48.245461, "lng": 16.342339 },
     "type": "STREET_LIGHTS",
     "locationType": "STREET"
+  },
+  {
+    "id": 82,
+    "slug": "ruckis-punschstand",
+    "name": "Rucki's Punschstand",
+    "isActive": true,
+    "district": "1190",
+    "address": "Sonnbergplatz",
+    "coordinates": { "lat": 48.242455, "lng": 16.34178 },
+    "transportation": ["S-BAHN", "35A", "38", "39A"],
+    "start": "11/14/2025",
+    "end": "1/10/2026",
+    "times": [
+      ["16:00", "20:30"],
+      ["16:00", "20:30"],
+      ["16:00", "20:30"],
+      ["16:00", "20:30"],
+      ["16:00", "20:30"],
+      ["16:00", "20:30"],
+      ["16:00", "20:30"],
+      ["16:00", "20:30"]
+    ],
+    "website": null,
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY"],
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 5.5,
+        "currency": "EUR"
+      }
+    ]
   }
 ]
