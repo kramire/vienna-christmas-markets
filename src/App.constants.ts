@@ -46,7 +46,10 @@ import IMG_SRC_55 from '../public/wollzeile.webp'
 import IMG_SRC_56 from '../public/landstrasse.webp'
 import IMG_SRC_57 from '../public/mariahilfestrasse.webp'
 import IMG_SRC_58 from '../public/neubaugasse.webp'
+import IMG_SRC_59 from '../public/josefstaedterstrasse.webp'
 import IMG_SRC_60 from '../public/Servitenviertel.webp'
+import IMG_SRC_61 from '../public/volksoperviertel.webp'
+import IMG_SRC_70 from '../public/waehringerstrasse.webp'
 import IMG_SRC_74 from '../public/jasonmirgottstrasse.webp'
 import IMG_SRC_75 from '../public/trattnerhof.webp'
 import IMG_SRC_76 from '../public/Skybar.webp'
@@ -117,7 +120,10 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   56: IMG_SRC_56,
   57: IMG_SRC_57,
   58: IMG_SRC_58,
+  59: IMG_SRC_59,
   60: IMG_SRC_60,
+  61: IMG_SRC_61,
+  70: IMG_SRC_70,
   74: IMG_SRC_74,
   75: IMG_SRC_75,
   76: IMG_SRC_76,
