@@ -4,7 +4,8 @@ import { useState, useEffect, ViewTransition } from 'react'
 import { Event, Market } from '../../../App.types'
 import { resultToImgUrlMapping, WEBSITE_URL } from '../../../App.constants'
 
-import OpenHours from '../../OpenHours'
+import Hours from '../../Hours'
+import OpenClosedHighlightText from '../../OpenClosedHighlightText'
 import CardImage from '../../CardImage'
 import FavoriteButton from '../../FavoriteButton'
 import Link from 'next/link'
@@ -65,7 +66,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
               <p className="sm:hidden">•</p>
               <dt>{`${startDate} - ${endDate}`}</dt>
             </div>
-            <OpenHours start={start} end={end} times={times} />
+            <Hours start={start} end={end} times={times} />
             {prices && getPriceRating(prices) && (
               <div className="flex grid-cols-[12px_1fr] items-center gap-2 sm:grid sm:items-start sm:gap-x-3 sm:gap-y-1">
                 <Image src={MoneyBillIcon} width={12} height={12} alt="" />
@@ -74,6 +75,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
                 <dt>{getPriceRating(prices)?.label}</dt>
               </div>
             )}
+            <OpenClosedHighlightText start={start} end={end} times={times} />
           </dl>
         </div>
       </Link>

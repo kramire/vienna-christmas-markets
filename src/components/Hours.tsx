@@ -11,7 +11,7 @@ interface Props {
   times: Array<Array<string> | null>
 }
 
-const OpenHours = ({ start, end, times }: Props) => {
+const Hours = ({ start, end, times }: Props) => {
   const [todayIdx, setTodayIdx] = useState(0)
 
   const isOpen = start && end && getIsOpen(start, end, times)
@@ -24,16 +24,8 @@ const OpenHours = ({ start, end, times }: Props) => {
     setTodayIdx(jsDay === 0 ? 6 : jsDay - 1)
   }, [])
 
-  if (opensInFuture) {
+  if (opensInFuture || isClosedForSeason) {
     return null
-  }
-
-  if (isClosedForSeason) {
-    return (
-      <div className="mx-auto w-fit rounded bg-red-700/80 px-5 py-1 text-sm font-bold text-white">
-        Closed for the season
-      </div>
-    )
   }
 
   return (
@@ -44,13 +36,8 @@ const OpenHours = ({ start, end, times }: Props) => {
       <dt>
         {times[todayIdx] && Array.isArray(times[todayIdx]) ? `${times[todayIdx]![0]} - ${times[todayIdx]![1]}` : 'TBD'}
       </dt>
-      {isOpen && (
-        <span className="mx-auto rounded bg-green-100 px-4 py-1 text-xs font-medium text-green-800 sm:mx-0 sm:w-fit">
-          Open now!
-        </span>
-      )}
     </div>
   )
 }
 
-export default OpenHours
+export default Hours
