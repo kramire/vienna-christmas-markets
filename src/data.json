@@ -8,8 +8,8 @@
     "address": "Museumsplatz 1",
     "coordinates": { "lat": 48.202836, "lng": 16.358979 },
     "transportation": ["U2", "U3", "49", "57A"],
-    "start": "11/13/2025",
-    "end": "12/23/2025",
+    "start": "11/12/2026",
+    "end": "12/23/2026",
     "times": [
       ["16:00", "23:00"],
       ["16:00", "23:00"],
@@ -19,11 +19,11 @@
       ["14:00", "23:00"],
       ["14:00", "23:00"]
     ],
-    "website": "https://www.mqw.at/winter-im-mq",
+    "website": "https://www.mqw.at/en/program/events/museumsquartier/winter-in-mq-2026/20261112-1830/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
-    "description": "NOTE 2025: Due to constructions, the curling is located outside the MQ, by the Mariahilfer Straße. Inside the courtyard there are still a few drink stands and decorative lights.",
+    "description": "Enjoy curling, live DJ sets, concerts, and stands serving drinks. Check the website for the full program schedule.",
     "prices": [
       {
         "type": "MULLED_WINE",
@@ -64,8 +64,8 @@
     "address": "Spittelberggasse",
     "coordinates": { "lat": 48.203344, "lng": 16.355455 },
     "transportation": ["U3", "U2", "48A", "49"],
-    "start": "11/14/2025",
-    "end": "12/23/2025",
+    "start": "11/13/2026",
+    "end": "12/23/2026",
     "times": [
       ["14:00", "21:30"],
       ["14:00", "21:30"],
@@ -115,8 +115,8 @@
     "address": "Hasenauerstraße",
     "coordinates": { "lat": 48.234781, "lng": 16.333768 },
     "transportation": ["10A", "40A"],
-    "start": "11/14/2025",
-    "end": "12/23/2025",
+    "start": "11/13/2026",
+    "end": "12/23/2026",
     "times": [
       ["15:00", "22:00"],
       ["15:00", "22:00"],
@@ -141,8 +141,8 @@
     "address": "Stephansplatz",
     "coordinates": { "lat": 48.20824, "lng": 16.37247 },
     "transportation": ["U1", "U3"],
-    "start": "11/8/2025",
-    "end": "12/26/2025",
+    "start": "11/6/2026",
+    "end": "12/26/2026",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
@@ -154,19 +154,19 @@
     ],
     "alternateTimes": [
       {
-        "date": "12/24/2025",
+        "date": "12/24/2026",
         "time": ["11:00", "16:00"]
       },
       {
-        "date": "12/25/2025",
+        "date": "12/25/2026",
         "time": ["11:00", "19:00"]
       },
       {
-        "date": "12/26/2025",
+        "date": "12/26/2026",
         "time": ["11:00", "19:00"]
       }
     ],
-    "website": "https://www.weihnachtsdorf.at/",
+    "website": "https://www.weihnachtsmarkt.at/markt-stp/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
@@ -225,24 +225,24 @@
     "address": "Alser Straße & Spitalgasse",
     "coordinates": { "lat": 48.215582, "lng": 16.352607 },
     "transportation": ["5", "33", "43", "44"],
-    "start": "11/14/2025",
-    "end": "12/23/2025",
+    "start": "11/13/2026",
+    "end": "12/23/2026",
     "times": [
       ["14:00", "22:00"],
       ["14:00", "22:00"],
       ["14:00", "22:00"],
       ["14:00", "22:00"],
       ["14:00", "23:00"],
-      ["11:00", "22:00"],
+      ["11:00", "23:00"],
       ["11:00", "21:00"]
     ],
     "alternateTimes": [
       {
-        "date": "12/23/2025",
-        "time": ["11:00", "20:00"]
+        "date": "12/23/2026",
+        "time": ["14:00", "20:00"]
       }
     ],
-    "website": "https://www.weihnachtsdorf.at/",
+    "website": "https://www.weihnachtsmarkt.at/markt-akh/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"],
@@ -267,8 +267,9 @@
       },
       {
         "type": "CURLING_PER_HOUR",
-        "value": 99,
-        "currency": "EUR"
+        "value": 89,
+        "currency": "EUR",
+        "hasRange": true
       }
     ]
   },
@@ -281,16 +282,16 @@
     "address": "Am Hof",
     "coordinates": { "lat": 48.210857, "lng": 16.367494 },
     "transportation": [],
-    "start": "11/14/2025",
-    "end": "12/23/2025",
+    "start": "11/13/2026",
+    "end": "12/23/2026",
     "times": [
-      ["11:00", "21:00"],
-      ["11:00", "21:00"],
-      ["11:00", "21:00"],
-      ["11:00", "21:00"],
-      ["10:00", "21:00"],
-      ["10:00", "21:00"],
-      ["10:00", "21:00"]
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["11:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"],
+      ["10:00", "22:00"]
     ],
     "website": "https://www.weihnachtsmarkt-hof.at/",
     "imgUrl": "",
@@ -324,23 +325,37 @@
     "id": 8,
     "slug": "maria-theresian-platz",
     "name": "Weihnachtsdorf Maria-Theresien-Platz",
-    "isActive": false,
+    "isActive": true,
     "district": "1010",
     "address": "Burgring",
     "coordinates": { "lat": 48.204682, "lng": 16.361063 },
     "transportation": ["U3", "D", "1", "2", "57A", "71"],
-    "start": "11/13/2025",
-    "end": "12/31/2025",
+    "start": "11/20/2026",
+    "end": "12/26/2026",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
       ["11:00", "21:00"],
       ["11:00", "21:00"],
-      ["11:00", "22:00"],
-      ["11:00", "22:00"],
-      ["11:00", "21:00"]
+      ["11:00", "21:00"],
+      ["10:00", "21:00"],
+      ["10:00", "21:00"]
     ],
-    "website": "https://www.weihnachtsdorf.at/",
+    "alternateTimes": [
+      {
+        "date": "12/24/2026",
+        "time": ["11:00", "16:00"]
+      },
+      {
+        "date": "12/25/2026",
+        "time": ["11:00", "16:00"]
+      },
+      {
+        "date": "12/26/2026",
+        "time": ["11:00", "16:00"]
+      }
+    ],
+    "website": "https://www.weihnachtsmarkt.at/markt-mtp/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"]
@@ -371,9 +386,19 @@
     "address": "Quadenstraße 15",
     "coordinates": { "lat": 48.238924, "lng": 16.474131 },
     "transportation": ["26", "22A", "95A", "95B"],
-    "start": "11/13/2025",
-    "end": "12/21/2025",
+    "start": "11/12/2026",
+    "end": "12/20/2026",
     "times": [null, null, null, ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"], ["10:00", "20:00"]],
+     "alternateTimes": [
+      {
+        "date": "12/07/2026",
+        "time": ["10:00", "20:00"]
+      },
+      {
+        "date": "12/08/2026",
+        "time": ["10:00", "20:00"]
+      }
+    ],
     "website": "https://www.wien.gv.at/umwelt/parks/blumengaerten-hirschstetten/weihnachten.html",
     "imgUrl": "",
     "type": "MARKET",
@@ -421,9 +446,9 @@
     "district": "1030",
     "address": "Prinz-Eugen-Straße 27",
     "coordinates": { "lat": 48.191807, "lng": 16.380843 },
-    "transportation": ["D", "0", "18", "71", "S-BAHN"],
-    "start": "11/14/2025",
-    "end": "12/31/2025",
+    "transportation": ["D", "O", "18", "62", "71"],
+    "start": "11/20/2026",
+    "end": "12/31/2026",
     "times": [
       ["11:00", "21:00"],
       ["11:00", "21:00"],
@@ -435,39 +460,15 @@
     ],
     "alternateTimes": [
       {
-        "date": "12/24/2025",
-        "time": ["11:00", "16:00"]
+        "date": "12/24/2026",
+        "time": ["11:00", "17:00"]
       },
       {
-        "date": "12/25/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/26/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/27/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/28/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/29/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/30/2025",
-        "time": ["11:00", "20:00"]
-      },
-      {
-        "date": "12/31/2025",
-        "time": ["11:00", "18:00"]
+        "date": "12/31/2026",
+        "time": ["11:00", "17:00"]
       }
     ],
-    "website": "https://www.weihnachtsdorf.at/",
+    "website": "https://kkweihnachtsmarkt.at/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
@@ -496,7 +497,7 @@
     "id": 12,
     "slug": "liechtenstein",
     "name": "Advent im Gartenpalais Liechtenstein",
-    "isActive": true,
+    "isActive": false,
     "district": "1090",
     "address": "Fürstengasse 1",
     "coordinates": { "lat": 48.22227, "lng": 16.359773 },
@@ -518,8 +519,8 @@
     "address": "Freyung 7",
     "coordinates": { "lat": 48.211618, "lng": 16.36557 },
     "transportation": [],
-    "start": "11/14/2025",
-    "end": "12/23/2025",
+    "start": "11/14/2026",
+    "end": "12/23/2026",
     "times": [
       ["10:00", "21:00"],
       ["10:00", "21:00"],
@@ -566,8 +567,8 @@
     "address": "Karlsplatz 13",
     "coordinates": { "lat": 48.19861, "lng": 16.371617 },
     "transportation": ["U1", "U2", "U4", "D"],
-    "start": "11/21/2025",
-    "end": "12/23/2025",
+    "start": "11/13/2026",
+    "end": "12/23/2026",
     "times": [
       ["12:00", "20:00"],
       ["12:00", "20:00"],
@@ -641,8 +642,8 @@
     "address": "Schönbrunner Schloßstraße 47",
     "coordinates": { "lat": 48.186191, "lng": 16.312962 },
     "transportation": ["U4", "10", "56A", "58B"],
-    "start": "11/6/2025",
-    "end": "1/6/2026",
+    "start": "11/6/2026",
+    "end": "1/6/2027",
     "times": [
       ["10:00", "21:00"],
       ["10:00", "21:00"],
@@ -654,63 +655,63 @@
     ],
     "alternateTimes": [
       {
-        "date": "12/24/2025",
+        "date": "12/24/2026",
+        "time": ["10:00", "16:00"]
+      },
+      {
+        "date": "12/25/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "12/26/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "12/27/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "12/28/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "12/29/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "12/30/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "12/31/2026",
+        "time": ["10:00", "19:00"]
+      },
+      {
+        "date": "01/01/2027",
         "time": ["16:00", "16:00"]
       },
       {
-        "date": "12/25/2025",
+        "date": "01/02/2027",
         "time": ["10:00", "19:00"]
       },
       {
-        "date": "12/26/2025",
+        "date": "01/03/2027",
         "time": ["10:00", "19:00"]
       },
       {
-        "date": "12/27/2025",
+        "date": "01/04/2027",
         "time": ["10:00", "19:00"]
       },
       {
-        "date": "12/28/2025",
+        "date": "01/05/2027",
         "time": ["10:00", "19:00"]
       },
       {
-        "date": "12/29/2025",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "12/30/2025",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "12/31/2025",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "01/01/2026",
-        "time": ["16:00", "16:00"]
-      },
-      {
-        "date": "01/02/2026",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "01/03/2026",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "01/04/2026",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "01/05/2026",
-        "time": ["10:00", "19:00"]
-      },
-      {
-        "date": "01/06/2026",
+        "date": "01/06/2027",
         "time": ["10:00", "19:00"]
       }
     ],
-    "website": "https://www.imperial-markets.at/maerkte/weihnachtsmarkt-schloss-schoenbrunn",
+    "website": "https://www.weihnachtsmarkt-schoenbrunn.at/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": [
@@ -771,8 +772,8 @@
     "address": "Rathausplatz",
     "coordinates": { "lat": 48.210641, "lng": 16.358914 },
     "transportation": ["D", "1", "71", "2"],
-    "start": "11/14/2025",
-    "end": "12/26/2025",
+    "start": "11/13/2026",
+    "end": "12/26/2026",
     "times": [
       ["10:00", "22:00"],
       ["10:00", "22:00"],
@@ -781,6 +782,12 @@
       ["10:00", "22:00"],
       ["10:00", "22:00"],
       ["10:00", "22:00"]
+    ],
+    "alternateTimes": [
+      {
+        "date": "12/24/2026",
+        "time": ["10:00", "18:30"]
+      }
     ],
     "website": "https://www.christkindlmarkt.at/",
     "imgUrl": "",
@@ -832,8 +839,8 @@
     "address": "Riesenradplatz",
     "coordinates": { "lat": 48.216976, "lng": 16.396323 },
     "transportation": ["U1", "U2", "S-BAHN", "80A", "O", "5"],
-    "start": "11/21/2025",
-    "end": "1/6/2026",
+    "start": "11/26/2026",
+    "end": "1/6/2027",
     "times": [
       ["12:00", "22:00"],
       ["12:00", "22:00"],
@@ -845,15 +852,15 @@
     ],
     "alternateTimes": [
       {
-        "date": "12/24/2025",
+        "date": "12/24/2026",
         "time": ["10:00", "17:00"]
       },
       {
-        "date": "12/31/2025",
+        "date": "12/31/2026",
         "time": ["12:00", "02:00"]
       },
       {
-        "date": "01/01/2026",
+        "date": "01/01/2027",
         "time": ["12:00", "02:00"]
       }
     ],
@@ -927,7 +934,7 @@
     "id": 20,
     "slug": "badeschiff",
     "name": "Badeschiff - ParadEis",
-    "isActive": true,
+    "isActive": false,
     "district": "1010",
     "address": "Wolfgang-Schmitz-Promenade",
     "coordinates": { "lat": 48.21163, "lng": 16.381463 },
@@ -989,9 +996,9 @@
     "district": "1010",
     "address": "Ritz Carlton - Schubertring 5/7",
     "coordinates": { "lat": 48.2022967, "lng": 16.3764527 },
-    "transportation": [],
-    "start": "11/07/2025",
-    "end": "01/04/2026",
+    "transportation": ["2", "71", "D"],
+    "start": "11/06/2026",
+    "end": "12/31/2026",
     "times": [
       ["16:00", "23:00"],
       ["16:00", "23:00"],
@@ -1001,11 +1008,11 @@
       ["16:00", "23:00"],
       ["16:00", "23:00"]
     ],
-    "website": "https://www.sevenrooms.com/experiences/atmosphererooftopbar/winter-terrace-gondolas-4720401638834176",
+    "website": "https://www.sevenrooms.com/experiences/atmosphererooftopbar/atmosphere-rooftop-bar-6725811268534272",
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "description": "This exclusive rooftop has almost 360 views of the city center. Go at dusk to best see Vienna's iconic landmarks, as you sip pricey drinks by Christmas trees and warm heaters.",
+    "description": "This exclusive rooftop has almost 360 views of the city center. Go at dusk to best see Vienna's iconic landmarks, as you sip pricey drinks by Christmas trees and warm heaters. Upgrade the experience by renting one of the winter gondolas to enjoy drinks and fare.",
     "prices": [
       {
         "type": "MULLED_WINE",
@@ -1087,8 +1094,8 @@
     "address": "Uraniastraße 1",
     "coordinates": { "lat": 48.21164, "lng": 16.383692 },
     "transportation": ["U1", "U4", "1", "2"],
-    "start": "11/14/2025",
-    "end": "12/23/2025",
+    "start": "11/13/2026",
+    "end": "12/23/2026",
     "times": [
       ["17:00", "22:00"],
       ["17:00", "22:00"],
@@ -1166,8 +1173,8 @@
     "address": "Aurora Rooftop Bar - Arsenalstraße 10",
     "coordinates": { "lat": 48.1851114, "lng": 16.3831616 },
     "transportation": ["D", "69A"],
-    "start": "11/15/2025",
-    "end": "12/31/2025",
+    "start": "11/12/2026",
+    "end": "12/31/2026",
     "times": [
       ["15:00", "21:00"],
       ["15:00", "21:00"],
@@ -1177,7 +1184,7 @@
       ["16:00", "21:00"],
       ["16:00", "21:00"]
     ],
-    "website": "https://www.sevenrooms.com/experiences/aurorarooftopbar/hot-punch-above-vienna-6500687562227712",
+    "website": "https://www.bar-aurora.at/weihnachten-2026-silvester-2026?lang=en§",
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"]
@@ -1191,8 +1198,8 @@
     "address": "Donau Kanal, Freda-Meissner-Blau-Promenade 1",
     "coordinates": { "lat": 48.215714, "lng": 16.3721804 },
     "transportation": [],
-    "start": "10/17/2025",
-    "end": "3/22/2026",
+    "start": "10/14/2026",
+    "end": "3/28/2027",
     "times": [
       null,
       null,
@@ -1288,7 +1295,7 @@
     "id": 33,
     "slug": "wienter-zauber",
     "name": "WIENterzauber - Marx Halle",
-    "isActive": true,
+    "isActive": false,
     "district": "1030",
     "address": "Marx Halle",
     "coordinates": { "lat": 48.187911, "lng": 16.404197 },
@@ -1341,8 +1348,8 @@
     "address": "Böhmischen Prater",
     "coordinates": { "lat": 48.166513, "lng": 16.40005 },
     "transportation": ["S-BAHN", "68A", "68B"],
-    "start": "11/28/2025",
-    "end": "12/28/2025",
+    "start": "11/27/2026",
+    "end": "12/20/2026",
     "times": [null, null, null, null, ["14:00", null], ["11:00", null], ["11:00", null]],
     "website": "https://www.boehmischer-prater.com/winterzauber",
     "imgUrl": "",
@@ -1358,8 +1365,8 @@
     "address": "am Vorplatz des Hauptbahnhofs",
     "coordinates": { "lat": 48.185799, "lng": 16.375524 },
     "transportation": ["S-BAHN", "U1", "13A", "69A", "0"],
-    "start": "11/13/2025",
-    "end": "12/20/2025",
+    "start": "11/12/2026",
+    "end": "12/20/2026",
     "times": [
       ["14:00", "20:00"],
       ["14:00", "20:00"],
@@ -1389,6 +1396,11 @@
       {
         "type": "NON_ALCOHOLIC",
         "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "CURLING_PER_HALF_HOUR",
+        "value": 25,
         "currency": "EUR"
       }
     ]
@@ -2056,16 +2068,16 @@
     "address": "Zur Alten Kaisermühle - Fischerstrand 6",
     "coordinates": { "lat": 48.234632, "lng": 16.426264 },
     "transportation": ["U1"],
-    "start": "11/01/2025",
-    "end": "12/15/2025",
+    "start": "11/01/2026",
+    "end": "12/31/2026",
     "times": [
       null,
-      ["15:00", "20:30"],
-      ["15:00", "20:30"],
-      ["15:00", "20:30"],
-      ["15:00", "20:30"],
-      ["14:00", "10:30"],
-      ["13:30", "18:30"]
+      ["15:00", "21:30"],
+      ["15:00", "21:30"],
+      ["15:00", "21:30"],
+      ["15:00", "21:30"],
+      ["15:00", "21:30"],
+      ["15:30", "21:30"]
     ],
     "website": "https://www.eisstock-bahn.at/",
     "imgUrl": "",
@@ -2074,7 +2086,7 @@
     "prices": [
       {
         "type": "CURLING_PER_HALF_HOUR",
-        "value": 40,
+        "value": 50,
         "currency": "EUR"
       }
     ]
@@ -2083,7 +2095,7 @@
     "id": 78,
     "slug": "piazza-x-mas-winterstories",
     "name": "PIAZZZA X-MAS Winterstories",
-    "isActive": true,
+    "isActive": false,
     "district": "1010",
     "address": "Schwarzenbergplatz",
     "coordinates": { "lat": 48.198896, "lng": 16.375804 },
@@ -2233,5 +2245,46 @@
         "currency": "EUR"
       }
     ]
+  },
+  {
+    "id": 83,
+    "slug": "weihnachtszauber-schwarzenbergplatz",
+    "name": "Weihnachtszauber Schwarzenbergplatz",
+    "isActive": true,
+    "district": "1030",
+    "address": "Schwarzenbergplatz",
+    "coordinates": { "lat": 48.198903, "lng": 16.375815 },
+    "transportation": ["D", "71", "2", "4A"],
+    "start": "11/13/2026",
+    "end": "12/26/2026",
+    "times": [
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["11:00", "21:00"],
+      ["10:00", "21:00"],
+      ["10:00", "21:00"]
+    ],
+        "alternateTimes": [
+      {
+        "date": "12/24/2026",
+        "time": ["11:00", "16:00"]
+      },
+      {
+        "date": "12/25/2026",
+        "time": ["11:00", "16:00"]
+      },
+      {
+        "date": "12/26/2026",
+        "time": ["11:00", "16:00"]
+      }
+    ],
+    "website": "https://www.weihnachtsmarkt.at/markt-sbp/",
+    "imgUrl": "",
+    "type": "MARKET",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "prices": []
   }
 ]

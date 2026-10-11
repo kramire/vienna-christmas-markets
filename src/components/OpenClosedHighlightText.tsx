@@ -11,6 +11,14 @@ const OpenClosedHighlightText = ({ start, end, times }: Props) => {
   const isOpen = start && end && getIsOpen(start, end, times)
   const isClosedForSeason = end && getIsClosedForSeason(end)
 
+  if (start && new Date(start).getFullYear() < new Date().getFullYear()) {
+    return (
+      <div className="mx-auto w-fit rounded bg-orange-700/80 px-5 py-1 text-sm font-bold text-white">
+        Opening dates coming soon
+      </div>
+    )
+  }
+
   if (isClosedForSeason) {
     return (
       <div className="mx-auto w-fit rounded bg-red-700/80 px-5 py-1 text-sm font-bold text-white">

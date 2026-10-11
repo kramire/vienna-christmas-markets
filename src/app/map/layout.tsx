@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-const META_TITLE = 'Map of Vienna Christmas Activities - Updated 2025'
+const META_TITLE = 'Map of Vienna Christmas Activities - Updated 2026'
 const META_DESCRIPTION = 'A map of all Christmas festivities nearby.'
 
 export const metadata: Metadata = {

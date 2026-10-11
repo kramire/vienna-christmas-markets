@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import Content from './content'
 import useLocalStorage from '../../hooks/use-local-storage'
 
-const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2025'
+const VISITED_MARKETS_LOCAL_STORAGE_KEY = 'visitedMarkets_2026'
 
 export default function VisitsPage() {
   const [visitedMarkets, setVisitedMarkets] = useState<Array<number>>([])
