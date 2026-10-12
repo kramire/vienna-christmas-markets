@@ -12,7 +12,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { localizeDate } from '../../../utils/localize-date'
 import ShareButton from '../../ShareButton'
-import { getPriceRating } from '@/utils/get-price-rating'
+import { getPriceRating } from '../../../utils/get-price-rating'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'

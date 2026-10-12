@@ -115,3 +115,13 @@ export interface Route {
   stops: Array<RouteStop>
   mapZoom: number
 }
+
+export interface LinkedSection {
+  to: Routes
+  img: {
+    src: string
+    alt: string
+  }
+  title: string
+  description: string
+}

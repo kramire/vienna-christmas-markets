@@ -1,18 +1,24 @@
 import { notFound } from 'next/navigation'
 import { Market, Event, Route, StreetLights, ResultType } from '../../../App.types'
-import RouteData from '../data.json'
+import routeData from '../data.json'
 import ResultsData from '../../../data.json'
 import RouteStopCard from '../components/RouteStopCard'
 import Map from '../../../components/Map'
 import Link from 'next/link'
 import React from 'react'
 
+// Generate static params for the [slug] dynamic route
+export async function generateStaticParams() {
+  return routeData.map(({ slug }) => ({ slug }))
+}
+
+
 type Params = Promise<{ slug: string }>
 
 export default async function WalkingRoutesPage({ params }: { params: Params }) {
   const { slug } = await params
 
-  const result = (RouteData as Array<Route>).find((route) => route.slug === slug)
+  const result = (routeData as Array<Route>).find((route) => route.slug === slug)
 
   if (!result) {
     notFound()

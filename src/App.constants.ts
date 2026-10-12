@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image'
-import { Offering, PriceType, SortType } from './App.types'
+import { LinkedSection, Offering, PriceType, SortType, Routes } from './App.types'
 
 import IMG_SRC_1 from '../public/Musuem-Quartier-Christmas-market.webp'
 import IMG_SRC_2 from '../public/Spittelberg-Market.webp'
@@ -164,3 +164,51 @@ export const priceTypeMapping: { [key in PriceType]: string } = {
   [PriceType.NON_ALCOHOLIC]: 'Non-Alcoholic Drink',
   [PriceType.MUG_DEPOSIT]: 'Mug Deposit Fee',
 }
+
+export const CURRENT_YEAR = 2026
+
+const ChristmasMugIcon = '/christmas-mug.png'
+const ChristmasLightsIcon = '/christmas-lights.svg'
+const OpenPresentIcon = '/open-gift.svg'
+const GreenCheckMarkIcon = '/green-check-mark.svg'
+const RouteIcon = '/route.svg'
+const MapIcon = '/christmas-map.svg'
+
+export const HOME_LINKED_SECTIONS: Array<LinkedSection> = [
+  {
+    to: Routes.MARKETS,
+    img: { src: ChristmasMugIcon, alt: 'Christmas drinking mug' },
+    title: 'Traditional Markets',
+    description: 'Enjoy seasonal delicacies, including the famous punch and mulled wine.',
+  },
+  {
+    to: Routes.EVENTS,
+    img: { src: OpenPresentIcon, alt: 'Open present' },
+    title: 'Pop-Ups',
+    description: 'Check out festive events, drink stands, curling and more.',
+  },
+  {
+    to: Routes.LIGHTS,
+    img: { src: ChristmasLightsIcon, alt: 'Christmas lights' },
+    title: 'Christmas Lights',
+    description: 'Gaze in awe at the stunning Christmas lights.',
+  },
+  {
+    to: Routes.ROUTES,
+    img: { src: RouteIcon, alt: 'Route path' },
+    title: 'Self-Guided Tours',
+    description: 'Follow curated Christmas routes through the festive city.',
+  },
+  {
+    to: Routes.MAP,
+    img: { src: MapIcon, alt: 'Map icon' },
+    title: 'Map of Everything',
+    description: 'Explore all Christmas festivities nearby.',
+  },
+  {
+    to: Routes.VISITS,
+    img: { src: GreenCheckMarkIcon, alt: 'Green check mark' },
+    title: 'Track your Progress',
+    description: 'Try to visit all the Christmas markets in Vienna!',
+  },
+]

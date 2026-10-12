@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 
-const META_TITLE = 'Self-Guided Vienna Christmas Tours - Updated 2026'
+import { CURRENT_YEAR } from '../../App.constants'
+
+const META_TITLE = `Self-Guided Vienna Christmas Tours - Updated ${CURRENT_YEAR}`
 const META_DESCRIPTION =
   'A list of organized self-guided routes through the city. Includes Christmas markets, pop-ups, and lights!'
 

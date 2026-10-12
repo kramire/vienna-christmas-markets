@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 
-const META_TITLE = 'Vienna Christmas Lights - Updated 2026'
+import { CURRENT_YEAR } from '../../App.constants'
+
+const META_TITLE = `Vienna Christmas Lights - Updated ${CURRENT_YEAR}`
 const META_DESCRIPTION = 'A list of Vienna streets featuring hanging Christmas lights.'
 
 export const metadata: Metadata = {

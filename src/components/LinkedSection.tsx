@@ -1,17 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { LinkedSection } from '../App.types'
 
-interface Props {
-  to: string
-  img: {
-    src: string
-    alt: string
-  }
-  title: string
-  description: string
-}
-
-export default function LinkedSection({ to, img, title, description }: Props) {
+export default function LinkedSection({ to, img, title, description }: LinkedSection) {
   return (
     <Link href={to}>
       <div className="group peer flex h-full flex-col items-center gap-3 p-4">
