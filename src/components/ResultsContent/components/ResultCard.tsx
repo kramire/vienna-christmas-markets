@@ -13,6 +13,7 @@ import Image from 'next/image'
 import { localizeDate } from '../../../utils/localize-date'
 import ShareButton from '../../ShareButton'
 import { getPriceRating } from '../../../utils/get-price-rating'
+import { AddToCalendarButton } from '../../AddToCalendarButton'
 
 const LocationIcon = '/location.svg'
 const CalendarIcon = '/calendar.svg'
@@ -46,6 +47,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
           <div className="absolute right-3 top-3 z-10 flex gap-2">
             <ShareButton shareUrl={`${WEBSITE_URL}/${result.slug}`} />
             <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
+            <AddToCalendarButton result={result} />
           </div>
           <ViewTransition name={`view-transition-image-${id}`}>
             <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />

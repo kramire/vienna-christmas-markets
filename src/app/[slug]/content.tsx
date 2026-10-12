@@ -13,6 +13,7 @@ import useFavorites from '../../hooks/use-favorites'
 import Hours from './components/Hours'
 import { Prices } from './components/Prices'
 import ShareButton from '../../components/ShareButton'
+import { AddToCalendarButton } from '../../components/AddToCalendarButton'
 
 const CalendarIcon = '/calendar.svg'
 
@@ -40,6 +41,7 @@ function Content({ result }: Props) {
         <div className="absolute right-3 top-3 z-10 flex gap-3">
           <ShareButton shareUrl={`${WEBSITE_URL}/${slug}`} />
           <FavoriteButton isFavorite={getIsFavorite(id)} onClick={toggleFavorite(id)} />
+          <AddToCalendarButton result={result} />
         </div>
         <ViewTransition name={`view-transition-image-${id}`}>
           <MainImage imgSrc={imgSrc} altText={name} />

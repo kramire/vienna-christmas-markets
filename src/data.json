@@ -2285,6 +2285,7 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "prices": []
+    "prices": [],
+    "description": "New for 2026! More information to come."
   }
 ]
