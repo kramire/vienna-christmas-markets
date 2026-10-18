@@ -497,15 +497,15 @@
     "id": 12,
     "slug": "liechtenstein",
     "name": "Advent im Gartenpalais Liechtenstein",
-    "isActive": false,
+    "isActive": true,
     "district": "1090",
     "address": "Fürstengasse 1",
     "coordinates": { "lat": 48.22227, "lng": 16.359773 },
     "transportation": ["D", "5", "33"],
-    "start": "11/13/2025",
-    "end": "12/20/2025",
-    "times": [null, null, null, ["16:00", "21:00"], ["16:00", "21:00"], ["16:00", "21:00"], null],
-    "website": "https://www.adventimgartenpalais.at/",
+    "start": "11/12/2026",
+    "end": "12/23/2026",
+    "times": [null, null, null, ["16:00", "22:00"], ["16:00", "22:00"], ["16:00", "22:00"], null],
+    "website": null,
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"]
@@ -934,13 +934,13 @@
     "id": 20,
     "slug": "badeschiff",
     "name": "Badeschiff - ParadEis",
-    "isActive": false,
+    "isActive": true,
     "district": "1010",
     "address": "Wolfgang-Schmitz-Promenade",
     "coordinates": { "lat": 48.21163, "lng": 16.381463 },
     "transportation": ["U1", "U4", "1", "2"],
-    "start": "10/17/2025",
-    "end": "12/15/2025",
+    "start": "11/01/2026",
+    "end": "11/30/2026",
     "times": [
       ["16:00", "22:00"],
       ["16:00", "22:00"],
@@ -957,7 +957,7 @@
     "prices": [
       {
         "type": "CURLING_PER_HALF_HOUR",
-        "value": 32,
+        "value": 50,
         "currency": "EUR",
         "hasRange": true
       }
@@ -1234,46 +1234,46 @@
   {
     "id": 32,
     "slug": "franz-jonas-platz",
-    "name": "Weihnachtsmarkt am Franz-Jonas-Platz",
+    "name": "Floridsdorfer Weihnachtsmarkt",
     "isActive": true,
     "district": "1210",
     "address": "Franz-Jonas-Platz",
     "coordinates": { "lat": 48.2569587, "lng": 16.3965029 },
     "transportation": ["S-BAHN", "U6", "2", "25", "26", "30", "31", "33", "29A", "29B", "33A", "34A"],
-    "start": "11/6/2025",
-    "end": "12/31/2025",
+    "start": "11/6/2026",
+    "end": "12/24/2026",
     "times": [
-      ["08:30", "20:00"],
-      ["08:30", "20:00"],
-      ["08:30", "20:00"],
-      ["08:30", "20:00"],
-      ["08:30", "20:00"],
-      ["08:30", "20:00"],
-      ["08:30", "20:00"]
+      ["08:30", "22:00"],
+      ["08:30", "22:00"],
+      ["08:30", "22:00"],
+      ["08:30", "22:00"],
+      ["08:30", "22:00"],
+      ["08:30", "22:00"],
+      ["08:30", "22:00"]
     ],
     "alternateTimes": [
       {
-        "date": "12/27/2025",
-        "time": ["08:30", "21:00"]
+        "date": "12/27/2026",
+        "time": ["08:30", "22:00"]
       },
       {
-        "date": "12/28/2025",
-        "time": ["08:30", "21:00"]
+        "date": "12/28/2026",
+        "time": ["08:30", "22:00"]
       },
       {
-        "date": "12/29/2025",
-        "time": ["08:30", "21:00"]
+        "date": "12/29/2026",
+        "time": ["08:30", "22:00"]
       },
       {
-        "date": "12/30/2025",
-        "time": ["08:30", "21:00"]
+        "date": "12/30/2026",
+        "time": ["08:30", "22:00"]
       },
       {
-        "date": "12/31/2025",
-        "time": ["08:30", "23:00"]
+        "date": "12/31/2026",
+        "time": ["08:30", "22:00"]
       }
     ],
-    "website": "https://www.wissenswertes.at/advent-floridsdorf",
+    "website": "https://wienerleben.wko.at/veranstaltungen/6ad0c27b01b7ba7690dc1bc0/w21-weihnachtsmarkt-2026",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
@@ -1376,7 +1376,7 @@
       ["14:00", "20:00"],
       ["14:00", "20:00"]
     ],
-    "website": "https://www.volxfest.at/weihnachten-am-hauptbahnhof-2025/",
+    "website": "https://www.volxfest.at/weihnachten-am-hauptbahnhof/",
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING", "OFFERING_KIDS_RIDES"],
@@ -1567,24 +1567,30 @@
   {
     "id": 40,
     "slug": "lions-club-punschstand",
-    "name": "Lions Club Punschstand",
+    "name": "Punschstand des Lions Club Wien Belvedere",
     "isActive": true,
     "district": "1010",
-    "address": "Habsburgergasse 14",
-    "coordinates": { "lat": 48.207676, "lng": 16.367847 },
+    "address": "Wiener Graben, vis a vis Erste Bank",
+    "coordinates": { "lat": 48.209346, "lng": 16.368824 },
     "transportation": ["U3", "1A", "2A"],
-    "start": "11/14/2025",
-    "end": "1/6/2026",
+    "start": "11/18/2026",
+    "end": "12/24/2026",
     "times": [
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["15:00", "21:00"],
-      ["11:00", "21:00"],
-      ["11:00", "21:00"],
-      ["15:00", "21:00"]
+      ["10:30", "21:00"],
+      ["10:30", "21:00"],
+      ["10:30", "21:00"],
+      ["10:30", "21:00"],
+      ["10:00", "21:00"],
+      ["10:00", "21:00"],
+      ["10:30", "21:00"]
     ],
-    "website": "https://wien-ostarrichi.lions.at/de/aktivitaeten-1/punschstand-2025.html",
+        "alternateTimes": [
+      {
+        "date": "12/24/2026",
+        "time": ["10:30", "14:00"]
+      }
+    ],
+    "website": "https://wien-host.lions.at/de/veranstaltungen/lions-terminkalender-distriktweit/events/34826/detail.html",
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
@@ -2145,23 +2151,14 @@
     "address": "Schottengasse Höhe Nr. 3A",
     "coordinates": { "lat": 48.212879, "lng": 16.363449 },
     "transportation": ["U2", "2", "D", "71"],
-    "start": "11/13/2025",
-    "end": "1/4/2026",
-    "times": [
-      ["12:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"],
-      ["12:00", "22:00"],
-      null
-    ],
+    "start": "11/19/2026",
+    "end": "1/3/2027",
+    "times": [],
     "website": null,
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "description": "Enjoy a drink in this cobblestone piazza. This stand offers drinks and snacks, while a stand across from it offers hot chocolate - take you pick!",
+    "description": "Charity Stand! Enjoy a drink in this cobblestone piazza. This stand offers drinks and snacks, while a stand across from it offers hot chocolate - take you pick!",
     "prices": [
       {
         "type": "MULLED_WINE",
