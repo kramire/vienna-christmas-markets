@@ -896,8 +896,8 @@
     "address": "Stephansplatz 4",
     "coordinates": { "lat": 48.20794, "lng": 16.374048 },
     "transportation": ["U1", "U3"],
-    "start": "11/8/2025",
-    "end": "12/31/2025",
+    "start": "11/6/2026",
+    "end": "12/31/2026",
     "times": [
       ["15:00", "20:00"],
       ["15:00", "20:00"],
@@ -1432,7 +1432,7 @@
   {
     "id": 37,
     "slug": "adventmarkt-verkehrsmuseum",
-    "name": "Adventmarkt im Verkehrsmuseum Remise 2025",
+    "name": "Adventmarkt im Verkehrsmuseum Remise",
     "isActive": true,
     "district": "1030",
     "address": "Fruethstraße 2",
@@ -1483,10 +1483,10 @@
     "address": "Enkplatz",
     "coordinates": { "lat": 48.176023, "lng": 16.413582 },
     "transportation": ["U3", "71", "11", "15A", "76A", "76B"],
-    "start": "11/13/2025",
-    "end": null,
+    "start": "11/12/2026",
+    "end": "12/20/2026",
     "times": [null, null, null, ["16:00", "21:30"], ["16:00", "21:30"], ["16:00", "21:30"], ["16:00", "21:30"]],
-    "website": "https://www.facebook.com/SimmeringerChristkindlmarkt/",
+    "website": "https://www.instagram.com/simmeringer_weihnachtsmarkt/",
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY"],
@@ -2284,5 +2284,45 @@
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
     "prices": [],
     "description": "New for 2026! More information to come."
+  },
+  {
+    "id": 84,
+    "slug": "advent-im-francis",
+    "name": "Advent im Francis",
+    "isActive": true,
+    "district": "1090",
+    "address": "Franz-Josefs Bahnhof",
+    "coordinates": { "lat": 48.2256771, "lng": 16.3611437 },
+    "transportation": ["D", "5", "33", "S-BAHN"],
+    "start": "11/27/2026",
+    "end": "12/23/2026",
+    "times": [
+      ["15:30", "21:30"],
+      ["15:30", "21:30"],
+      ["15:30", "21:30"],
+      ["15:30", "21:30"],
+      ["15:30", "21:30"],
+      ["15:30", "21:30"],
+      ["15:30", "21:30"]
+    ],
+    "alternateTimes": [
+      {
+        "date": "11/27/2026",
+        "time": ["15:00", "21:30"]
+      },
+      {
+        "date": "11/28/2026",
+        "time": ["11:00", "21:30"]
+      },
+      {
+        "date": "11/29/2026",
+        "time": ["11:00", "21:30"]
+      }
+    ],
+    "website": "https://francis.at/de/news/advent-im-francis-2026",
+    "imgUrl": "",
+    "type": "EVENT",
+    "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
+    "prices": []
   }
 ]
