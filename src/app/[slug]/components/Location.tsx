@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const Location = ({ result }: Props) => {
-  const { coordinates, district, address, transportation, website } = result
+  const { coordinates, district, address, transportation } = result
 
   const googleMapsLink = `${GOOGLE_MAPS_LINK}&query=${coordinates.lat},${coordinates.lng}`
 

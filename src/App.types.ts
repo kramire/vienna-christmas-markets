@@ -85,6 +85,7 @@ export enum Routes {
   LIGHTS = '/lights',
   ROUTES = '/routes',
   MAP = '/map',
+  FAVORITES = '/favorites',
 }
 
 export enum SortType {

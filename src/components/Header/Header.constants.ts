@@ -7,6 +7,7 @@ const GreenCheckMarkIcon = '/green-check-mark.svg'
 const RouteIcon = '/route.svg'
 const MapIcon = '/christmas-map.svg'
 const MistletoeIcon = '/mistletoe.png'
+const HeartIcon = '/emptyHeart.svg'
 
 interface MenuItem {
   name: string
@@ -22,4 +23,5 @@ export const menuItems: Array<MenuItem> = [
   { name: 'Self-Guided Tours', to: Routes.ROUTES, icon: RouteIcon },
   { name: 'Map', to: Routes.MAP, icon: MapIcon },
   { name: 'Visits', to: Routes.VISITS, icon: GreenCheckMarkIcon },
+  { name: 'Favorites', to: Routes.FAVORITES, icon: HeartIcon },
 ]

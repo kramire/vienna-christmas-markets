@@ -1,5 +1,6 @@
 import { StreetLights } from '../../../App.types'
 import CardImage from '../../../components/CardImage'
+import FavoriteButton from '../../../components/FavoriteButton'
 import Image from 'next/image'
 import { GOOGLE_MAPS_LINK, resultToImgUrlMapping } from '../../../App.constants'
 
@@ -8,9 +9,11 @@ const LocationIcon = '/location.svg'
 interface Props {
   result: StreetLights
   resultIdx: number
+  isFavorite: boolean
+  toggleFavorite: (id: number) => () => void
 }
 
-function LightsResultCard({ result, resultIdx }: Props) {
+function LightsResultCard({ result, resultIdx, isFavorite, toggleFavorite }: Props) {
   const { id, name, district, coordinates, locationType } = result
 
   const imgSrc = resultToImgUrlMapping[id]
@@ -20,6 +23,9 @@ function LightsResultCard({ result, resultIdx }: Props) {
   return (
     <li key={id} className="flex w-full flex-col overflow-hidden rounded-lg shadow-md">
       <div className="relative h-64 w-full">
+        <div className="absolute right-3 top-3 z-10 flex gap-2">
+          <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
+        </div>
         <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
       </div>
       <div className="flex w-full flex-1 flex-col justify-between space-y-4 p-4">

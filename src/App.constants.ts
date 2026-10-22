@@ -173,6 +173,7 @@ const OpenPresentIcon = '/open-gift.svg'
 const GreenCheckMarkIcon = '/green-check-mark.svg'
 const RouteIcon = '/route.svg'
 const MapIcon = '/christmas-map.svg'
+const HeartIcon = '/emptyHeart.svg'
 
 export const HOME_LINKED_SECTIONS: Array<LinkedSection> = [
   {
@@ -210,5 +211,11 @@ export const HOME_LINKED_SECTIONS: Array<LinkedSection> = [
     img: { src: GreenCheckMarkIcon, alt: 'Green check mark' },
     title: 'Track your Progress',
     description: 'Try to visit all the Christmas markets in Vienna!',
+  },
+  {
+    to: Routes.FAVORITES,
+    img: { src: HeartIcon, alt: 'Heart icon' },
+    title: 'Your Favorites',
+    description: 'View your saved Christmas places.',
   },
 ]

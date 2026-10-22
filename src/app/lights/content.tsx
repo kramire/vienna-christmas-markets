@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react'
 import { StreetLights } from '../../App.types'
 import HeaderText from '../../components/HeaderText'
 import ResultsListWrapper from '../../components/ResultsWrapper'
-import LightsResultCard from './components/LightsResultCard'
+import LightsResultCard from '../../components/ResultsContent/components/LightsResultCard'
 import Map from '../../components/Map'
 import MapToggle from '../../components/Map/components/MapToggle'
+import useFavorites from '@/hooks/use-favorites'
 
 interface Props {
   results: Array<StreetLights>
@@ -18,6 +19,9 @@ function Content({ results }: Props) {
   const resultCount = results.length
 
   const toggleMap = () => setShowMap((prev) => !prev)
+
+  const { favorites, toggleFavorite } = useFavorites()
+
 
   useEffect(() => {
     setShowMap(false)
@@ -43,7 +47,7 @@ function Content({ results }: Props) {
       ) : (
         <ResultsListWrapper>
           {results.map((result, idx) => (
-            <LightsResultCard key={result.id} result={result} resultIdx={idx} />
+            <LightsResultCard key={result.id} result={result} resultIdx={idx} isFavorite={favorites.includes(result.id)} toggleFavorite={toggleFavorite} />
           ))}
         </ResultsListWrapper>
       )}
