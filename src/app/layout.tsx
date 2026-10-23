@@ -38,6 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="mx-auto my-0 max-w-6xl">
           {children}
         </main>
+        <footer className="w-full bg-green-950 text-white flex flex-col gap-2 py-4 items-center">
+          <p className="text-base font-medium">Made with ❤️ by KK</p>
+          <p className="text-xs">All rights reserved.</p>
+        </footer>
       </body>
     </html>
   )
