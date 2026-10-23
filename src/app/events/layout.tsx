@@ -1,10 +1,14 @@
 import { Metadata } from 'next'
 
 import { CURRENT_YEAR } from '../../App.constants'
+import { HeaderText } from '../../components/HeaderText'
+import { LayoutWrapper } from '../../components/LayoutWrapper'
 
 const META_TITLE = `Vienna Christmas Pop-Ups - Updated ${CURRENT_YEAR}`
 const META_DESCRIPTION =
   "Discover this year's seasonal festivities across Vienna. Read about each pop-up's offerings, opening hours, location."
+
+const HEADER_TEXT = 'Christmas Pop-Ups in Vienna'
 
 export const metadata: Metadata = {
   title: META_TITLE,
@@ -24,5 +28,10 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <LayoutWrapper>
+      <HeaderText text={HEADER_TEXT} />
+      {children}
+    </LayoutWrapper>
+  )
 }

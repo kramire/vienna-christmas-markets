@@ -6,12 +6,12 @@ import RouteStopCard from '../components/RouteStopCard'
 import Map from '../../../components/Map'
 import Link from 'next/link'
 import React from 'react'
+import { HeaderText } from '../../../components/HeaderText'
 
 // Generate static params for the [slug] dynamic route
 export async function generateStaticParams() {
   return routeData.map(({ slug }) => ({ slug }))
 }
-
 
 type Params = Promise<{ slug: string }>
 
@@ -36,7 +36,7 @@ export default async function WalkingRoutesPage({ params }: { params: Params }) 
   return (
     <div className="m-auto flex w-full flex-col gap-4 p-4 md:h-[calc(100vh-52px)] lg:gap-6 lg:py-6">
       <div className="flex flex-col gap-1 md:gap-3">
-        <h1 className="text-xl font-bold text-green-950 sm:text-3xl md:text-4xl">{`Route ${id}: ${name}`}</h1>
+        <HeaderText text={`Route ${id}: ${name}`} />
         <p className="text-sm md:text-base">{description}</p>
         <a href="#map" className="text-right text-sm font-medium text-green-950 underline md:hidden">
           Scroll to map

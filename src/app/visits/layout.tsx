@@ -1,4 +1,8 @@
 import { Metadata } from 'next'
+import { HeaderText } from '../../components/HeaderText'
+import { LayoutWrapper } from '../../components/LayoutWrapper'
+
+const HEADER_TEXT = 'Track your Christmas Progress'
 
 export const metadata: Metadata = {
   robots: {
@@ -7,5 +11,10 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <LayoutWrapper>
+      <HeaderText text={HEADER_TEXT} />
+      {children}
+    </LayoutWrapper>
+  )
 }

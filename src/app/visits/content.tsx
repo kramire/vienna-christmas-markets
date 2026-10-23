@@ -1,4 +1,3 @@
-import HeaderText from '../../components/HeaderText'
 import { Market } from '../../App.types'
 import VisitedToggle from './components/visitedToggle'
 import MapResultImage from '../../components/Map/components/MapResultImage'
@@ -16,12 +15,11 @@ export default function Content({ markets, visitedMarkets, toggleVisit }: Props)
   const percentVisited = Math.round((visitedMarkets.length / markets.length) * 100)
 
   return (
-    <div className="m-auto flex h-full w-full flex-col p-4 lg:py-6">
+    <>
       <div className="flex flex-col gap-1 md:gap-3">
-        <HeaderText />
         <p className="text-sm md:text-base">Which markets have you visited this year?</p>
       </div>
-      <div className="sticky top-0 z-10 -mx-1 space-y-2 bg-white px-1 py-5">
+      <div className="sticky top-0 z-10 -mx-1 space-y-2 bg-white px-1 py-1 lg:py-2">
         <h2 className="text-lg font-semibold text-green-950">
           Markets Visited: {visitedMarkets.length}/{markets.length}
         </h2>
@@ -72,6 +70,6 @@ export default function Content({ markets, visitedMarkets, toggleVisit }: Props)
           })}
         </div>
       </div>
-    </div>
+    </>
   )
 }

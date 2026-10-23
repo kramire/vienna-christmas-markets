@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { StreetLights } from '../../App.types'
-import HeaderText from '../../components/HeaderText'
 import ResultsListWrapper from '../../components/ResultsWrapper'
 import LightsResultCard from '../../components/ResultsContent/components/LightsResultCard'
 import Map from '../../components/Map'
@@ -22,20 +21,16 @@ function Content({ results }: Props) {
 
   const { favorites, toggleFavorite } = useFavorites()
 
-
   useEffect(() => {
     setShowMap(false)
   }, [])
 
   return (
-    <div className="m-auto flex h-full w-full flex-col p-4 lg:py-6">
-      <div className="flex flex-col gap-1 md:gap-3">
-        <HeaderText />
+    <>
+      <div className="sticky top-0 z-20 -mx-1 flex items-end justify-between gap-4 bg-white px-1 py-3 sm:flex-row lg:py-5">
         <p className="text-sm md:text-base">
           {resultCount} {resultCount === 1 ? 'result' : 'results'} found
         </p>
-      </div>
-      <div className="sticky top-0 z-20 flex justify-end gap-4 bg-white px-1 py-5 sm:flex-row lg:py-6">
         <MapToggle showMap={showMap} toggleMap={toggleMap} />
       </div>
       {showMap ? (
@@ -47,11 +42,17 @@ function Content({ results }: Props) {
       ) : (
         <ResultsListWrapper>
           {results.map((result, idx) => (
-            <LightsResultCard key={result.id} result={result} resultIdx={idx} isFavorite={favorites.includes(result.id)} toggleFavorite={toggleFavorite} />
+            <LightsResultCard
+              key={result.id}
+              result={result}
+              resultIdx={idx}
+              isFavorite={favorites.includes(result.id)}
+              toggleFavorite={toggleFavorite}
+            />
           ))}
         </ResultsListWrapper>
       )}
-    </div>
+    </>
   )
 }
 

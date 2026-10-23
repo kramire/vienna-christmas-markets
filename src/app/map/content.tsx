@@ -1,6 +1,5 @@
 'use client'
 
-import HeaderText from '../../components/HeaderText'
 import { StreetLights, Market, Event, FilterType } from '../../App.types'
 import Map from '../../components/Map'
 import Filters from '../../components/ResultsContent/Filters'
@@ -35,25 +34,24 @@ export default function Content({ results }: Props) {
   const shownResults = results.filter((result) => applyFilters({ result, favorites, deviceLocation }))
 
   return (
-    <div className="m-auto flex h-full w-full flex-col p-4 lg:py-6">
+    <>
       <div className="flex flex-col gap-1 md:gap-3">
-        <HeaderText />
         <p className="text-sm md:text-base">
           {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-          {filters.NEAR_ME && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
         </p>
+        {filters.NEAR_ME && deviceLocation && <p>{` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}</p>}
       </div>
-      <div className="space-y-4 py-5 lg:py-6">
+      <div className="space-y-4">
         <Filters filters={filters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
         <Legend />
       </div>
       <Map
         results={shownResults}
-        className="z-10 h-[60vh] w-screen -translate-x-4 md:w-full md:translate-x-0"
+        className="z-10 h-[65vh] w-screen -translate-x-4 md:w-full md:translate-x-0"
         markerVariant="card"
         hasCustomIcons
         zoom={14}
       />
-    </div>
+    </>
   )
 }

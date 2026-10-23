@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { Market, Event, FilterType, SortType } from '../../App.types'
 import Filters from './Filters'
 import dynamic from 'next/dynamic'
-import HeaderText from '../../components/HeaderText'
 import SortSelect from '../../components/SortSelect'
 import MapToggle from '../Map/components/MapToggle'
 import { cn } from '../../utils/cn'
@@ -59,17 +58,16 @@ const ResultsContent = ({ results }: Props) => {
     )
 
   return (
-    <div className="m-auto flex h-full w-full flex-col p-4 lg:py-6">
+    <>
       <div className="flex flex-col gap-1 md:gap-3">
-        <HeaderText />
         <p className="text-sm md:text-base">
           {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
-          {filters.NEAR_ME && deviceLocation && ` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}
         </p>
+        {filters.NEAR_ME && deviceLocation && <p>{` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}</p>}
       </div>
       <div
         className={cn(
-          'sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-5 shadow-sm lg:flex-row lg:py-6',
+          'sticky top-0 z-20 -mx-1 flex flex-col justify-between gap-4 bg-white px-1 py-3 lg:flex-row lg:py-5',
           !shownResults.length && 'shadow-none',
         )}
       >
@@ -88,7 +86,7 @@ const ResultsContent = ({ results }: Props) => {
       ) : (
         <ResultList results={shownResults} favorites={favorites} toggleFavorite={toggleFavorite} />
       )}
-    </div>
+    </>
   )
 }
 

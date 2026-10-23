@@ -1,33 +1,5 @@
-'use client'
-import { usePathname } from 'next/navigation'
-import { Routes } from '../App.types'
-
-const HeaderText = () => {
-  const pathname = usePathname()
-
-  switch (pathname) {
-    case Routes.MARKETS:
-      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Christmas Markets in Vienna</h1>
-    case Routes.EVENTS:
-      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Christmas Pop-Ups in Vienna</h1>
-    case Routes.LIGHTS:
-      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Christmas Lights in Vienna</h1>
-    case Routes.ROUTES:
-      return (
-        <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">
-          Self-Guided Christmas Tours in Vienna
-        </h1>
-      )
-    case Routes.MAP:
-      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Christmas Map of Vienna</h1>
-    case Routes.VISITS:
-      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Track your Christmas Progress</h1>
-    case Routes.FAVORITES:
-      return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">Your Favorites</h1>
-    case Routes.HOME:
-    default:
-      return null
-  }
+function HeaderText({ text }: { text: string }) {
+  return <h1 className="text-xl font-bold text-gray-800 sm:text-3xl md:text-4xl">{text}</h1>
 }
 
-export default HeaderText
+export { HeaderText }
