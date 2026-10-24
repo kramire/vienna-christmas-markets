@@ -1,5 +1,5 @@
 import { ResultType, StreetLights } from '../../App.types'
-import sortResultsByDistrict from '../../utils/sort-results-by-district'
+import { sortResultsByDistrict } from '../../utils/sort-results/sort-results-by-district'
 import data from '../../data.json'
 import Content from './content'
 

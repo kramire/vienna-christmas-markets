@@ -1,6 +1,6 @@
-import { Market, Event, StreetLights } from '../App.types'
+import { Market, Event, StreetLights } from '../../App.types'
 
-export default function sortResultsByDistrict(
+export function sortResultsByDistrict(
   resultA: Market | Event | StreetLights,
   resultB: Market | Event | StreetLights,
 ) {

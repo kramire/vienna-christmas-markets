@@ -1,7 +1,7 @@
-import { Market, Event } from '../App.types'
-import { getPriceRating } from './get-price-rating'
+import { Market, Event } from '../../App.types'
+import { getPriceRating } from '../get-price-rating'
 
-export default function sortResultsByLowestDrinkPrice(resultA: Market | Event, resultB: Market | Event) {
+export function sortResultsByLowestDrinkPrice(resultA: Market | Event, resultB: Market | Event) {
   const priceA = getPriceRating(resultA.prices || [])
   const priceB = getPriceRating(resultB.prices || [])
 

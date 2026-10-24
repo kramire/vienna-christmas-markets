@@ -7,10 +7,7 @@ import SortSelect from '../../components/SortSelect'
 import MapToggle from '../Map/components/MapToggle'
 import { cn } from '../../utils/cn'
 import useFilters from '../../hooks/use-filters'
-import sortResultsByDate from '../../utils/sort-results-by-date'
-import sortResultsByDistrict from '../../utils/sort-results-by-district'
-import sortResultsByLowestDrinkPrice from '../../utils/sort-results-by-lowest-drink-price'
-import sortResultsByHighestDrinkPrice from '../../utils/sort-results-by-highest-drink-price'
+import { sortResults } from '../../utils/sort-results/sort-results'
 import useDeviceLocation from '../../hooks/use-device-location'
 import ResultList from './components/ResultList'
 import useFavorites from '../../hooks/use-favorites'
@@ -47,15 +44,7 @@ const ResultsContent = ({ results }: Props) => {
 
   const shownResults = results
     .filter((result) => applyFilters({ result, favorites, deviceLocation }))
-    .sort(
-      sortType === SortType.DATE
-        ? sortResultsByDate
-        : sortType === SortType.DISTRICT
-          ? sortResultsByDistrict
-          : sortType === SortType.DRINK_PRICE_DESC
-            ? sortResultsByHighestDrinkPrice
-            : sortResultsByLowestDrinkPrice,
-    )
+    .sort(sortResults(sortType))
 
   return (
     <>

@@ -1,6 +1,6 @@
 'use client'
 
-import sortResultsByDistrict from '../../utils/sort-results-by-district'
+import { sortResultsByDistrict } from '../../utils/sort-results/sort-results-by-district'
 import { Market, ResultType } from '../../App.types'
 import ResultsContent from '../../components/ResultsContent'
 import data from '../../data.json'
