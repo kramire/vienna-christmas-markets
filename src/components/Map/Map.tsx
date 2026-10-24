@@ -48,9 +48,22 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVarian
   // Then load script
   useEffect(() => {
     if (!isCSSLoaded) return
-    const script = getScript()
-    document.getElementsByTagName('head')[0].appendChild(script)
-    script.onload = () => setIsScriptLoaded(true)
+
+    let cancelled = false
+
+    getScript()
+      .then(() => {
+        if (!cancelled) {
+          setIsScriptLoaded(true)
+        }
+      })
+      .catch((error) => {
+        console.error('Failed to load Leaflet:', error)
+      })
+
+    return () => {
+      cancelled = true
+    }
   }, [isCSSLoaded])
 
   // Once script is loaded, initiate map
@@ -131,7 +144,6 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVarian
       }
     })
 
-    map.addLayer(mapMarkerLayer)
   }, [mapMarkerLayer, results, markerVariant])
 
   if (!isCSSLoaded && !isScriptLoaded) {

@@ -11,7 +11,7 @@ export default function NotFound() {
       <p className="text-base">Try another page:</p>
       <div className="flex flex-col gap-3">
         {menuItems.map(({ name, to, icon }) => (
-          <Link href={to} key={to} className="flex flex-1 items-center gap-4 rounded border border-green-950 px-3 py-2">
+          <Link href={to} key={to} className="flex flex-1 items-center gap-4 rounded-sm border border-green-950 px-3 py-2">
             <Image src={icon} width={20} height={20} alt="" className="h-5 w-5" unoptimized />
             <h2 className="text-base font-medium">{name}</h2>
           </Link>

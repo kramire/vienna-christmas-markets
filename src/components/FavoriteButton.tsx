@@ -20,7 +20,7 @@ const FavoriteButton = ({ isFavorite, onClick }: Props) => {
       <Image
         src={isFavorite ? FilledHeartIcon : EmptyHeartIcon}
         alt={isFavorite ? 'Click to unmark this event as a favorite.' : 'Click to mark this event as a favorite.'}
-        className="h-5 w-5 flex-shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
+        className="h-5 w-5 shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
         width={20}
         height={20}
         unoptimized

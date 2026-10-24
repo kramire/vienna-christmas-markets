@@ -41,7 +41,7 @@ const MapResultPopupContent = ({ result, onClose }: Props) => {
   }, [])
 
   return (
-    <div className="absolute bottom-4 z-10 flex w-full gap-2 rounded bg-white p-3 sm:left-1/2 sm:w-1/2 sm:-translate-x-1/2 sm:gap-3 sm:p-4">
+    <div className="absolute bottom-4 z-10 flex w-full gap-2 rounded-sm bg-white p-3 sm:left-1/2 sm:w-1/2 sm:-translate-x-1/2 sm:gap-3 sm:p-4">
       <MapResultImage resultId={id} />
       <div className="flex-1 space-y-1 sm:space-y-2">
         <h2 className="text-base font-semibold text-green-950 sm:text-lg">{name}</h2>
@@ -60,7 +60,7 @@ const MapResultPopupContent = ({ result, onClose }: Props) => {
           )}
         </dl>
       </div>
-      <button onClick={handleClose} className="h-5 w-5 flex-shrink-0">
+      <button onClick={handleClose} className="h-5 w-5 shrink-0">
         <Image src={CloseIcon} width={16} height={16} alt="Close popup" className="h-4 w-4 opacity-50" unoptimized />
       </button>
     </div>

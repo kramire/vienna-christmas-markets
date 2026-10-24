@@ -31,7 +31,7 @@ export const Location = ({ result }: Props) => {
         </div>
       )}
       <a href={googleMapsLink} target="_blank">
-        <Map results={[result]} center={coordinates} zoom={14} className="z-0 h-40 w-full rounded-md shadow" />
+        <Map results={[result]} center={coordinates} zoom={14} className="z-0 h-40 w-full rounded-md shadow-sm" />
       </a>
     </>
   )

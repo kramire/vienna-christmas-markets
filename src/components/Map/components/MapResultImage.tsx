@@ -21,7 +21,7 @@ const MapResultImage = ({ resultId, size = 'default', imageLoading = 'lazy' }: P
         width={128}
         height={128}
         className={cn(
-          'flex-shrink-0 rounded object-cover',
+          'shrink-0 rounded-sm object-cover',
           size === 'small' ? 'h-20 w-20' : 'h-20 w-20 sm:h-32 sm:w-32',
         )}
         loading={imageLoading}
@@ -31,7 +31,7 @@ const MapResultImage = ({ resultId, size = 'default', imageLoading = 'lazy' }: P
   return (
     <div
       className={cn(
-        'flex flex-shrink-0 items-center justify-center rounded border border-solid border-gray-200 bg-gray-100 object-cover',
+        'flex shrink-0 items-center justify-center rounded-sm border border-solid border-gray-200 bg-gray-100 object-cover',
         size === 'small' ? 'h-20 w-20' : 'h-20 w-20 sm:h-32 sm:w-32',
       )}
     >

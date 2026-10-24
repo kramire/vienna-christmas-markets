@@ -26,7 +26,7 @@ function RouteStopCard({ stopId, stopDescription, idx }: Props) {
   const imgSrc = resultToImgUrlMapping[id]
 
   return (
-    <li className="flex w-full flex-shrink-0 flex-col overflow-hidden rounded-lg shadow-md md:flex-row">
+    <li className="flex w-full shrink-0 flex-col overflow-hidden rounded-lg shadow-md md:flex-row">
       <div className="relative h-64 w-full md:h-auto md:w-1/3">
         <RouteCardImage imgSrc={imgSrc} altText={name} />
       </div>

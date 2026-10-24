@@ -14,7 +14,7 @@ const FilterItem = ({ label, isSelected, handleClick, isLoading }: Props) => (
   <button
     onClick={handleClick}
     className={cn(
-      'flex flex-shrink-0 items-center gap-1 rounded-3xl border border-solid border-green-950 px-3 py-1 text-sm md:text-base',
+      'flex shrink-0 items-center gap-1 rounded-3xl border border-solid border-green-950 px-3 py-1 text-sm md:text-base hover:cursor-pointer',
       isSelected ? 'pr-2 font-medium text-white' : 'text-green-950',
       isSelected || isLoading ? 'border-none bg-green-900' : 'bg-white',
     )}

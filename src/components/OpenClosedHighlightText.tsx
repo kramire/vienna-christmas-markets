@@ -13,7 +13,7 @@ const OpenClosedHighlightText = ({ start, end, times }: Props) => {
 
   if (start && new Date(start).getFullYear() < new Date().getFullYear()) {
     return (
-      <div className="mx-auto w-fit rounded bg-orange-700/80 px-5 py-1 text-sm font-bold text-white">
+      <div className="mx-auto w-fit rounded-sm bg-orange-700/80 px-5 py-1 text-sm font-bold text-white">
         Opening dates coming soon
       </div>
     )
@@ -21,7 +21,7 @@ const OpenClosedHighlightText = ({ start, end, times }: Props) => {
 
   if (isClosedForSeason) {
     return (
-      <div className="mx-auto w-fit rounded bg-red-700/80 px-5 py-1 text-sm font-bold text-white">
+      <div className="mx-auto w-fit rounded-sm bg-red-700/80 px-5 py-1 text-sm font-bold text-white">
         Closed for the season
       </div>
     )
@@ -29,7 +29,7 @@ const OpenClosedHighlightText = ({ start, end, times }: Props) => {
 
   if (isOpen) {
     return (
-      <span className="mx-auto rounded bg-green-100 px-4 py-1 text-xs font-medium text-green-800 sm:mx-0 sm:w-fit">
+      <span className="mx-auto rounded-sm bg-green-100 px-4 py-1 text-xs font-medium text-green-800 sm:mx-0 sm:w-fit">
         Open now!
       </span>
     )

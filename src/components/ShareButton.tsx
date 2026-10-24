@@ -20,7 +20,7 @@ const ShareButton = ({ shareUrl }: Props) => {
       <Image
         src={ShareIcon}
         alt="Share this link"
-        className="h-5 w-5 flex-shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
+        className="h-5 w-5 shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
         width={20}
         height={20}
         unoptimized
