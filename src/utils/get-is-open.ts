@@ -24,7 +24,9 @@ export const getIsOpen = (
   }
 
   // Convert startTime and endTime to today's Date objects for comparison
-  const [startTime, endTime] = todayTimes
+  const startTime = todayTimes?.[0]
+  const endTime = todayTimes?.[1]
+
   if (!startTime || !endTime) return null // Data not available
   const startDateTime = setTimeOnDate(localizedDate, startTime)
   const endDateTime = setTimeOnDate(localizedDate, endTime)

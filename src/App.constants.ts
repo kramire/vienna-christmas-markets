@@ -152,8 +152,6 @@ export const offeringsMapping: { [key in Offering]: { name: string; icon: Static
 
 export const weekDays = ['M', 'T', 'W', 'R', 'F', 'S', 'S']
 
-export const NEAR_ME_KM_DISTANCE_AWAY = 2
-
 export const priceTypeMapping: { [key in PriceType]: string } = {
   [PriceType.CURLING_PER_HALF_HOUR]: 'Curling - 1/2 hour',
   [PriceType.CURLING_PER_HOUR]: 'Curling - 1 hour',

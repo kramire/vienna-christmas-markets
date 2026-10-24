@@ -67,7 +67,6 @@ export interface Event extends Result {
 export enum FilterType {
   OPEN_NOW = 'OPEN_NOW',
   FAVORITE = 'FAVORITE',
-  NEAR_ME = 'NEAR_ME',
   CURLING = 'CURLING',
   FAMILY_ORIENTED = 'FAMILY_ORIENTED',
 }

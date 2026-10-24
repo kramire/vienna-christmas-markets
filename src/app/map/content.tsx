@@ -7,7 +7,6 @@ import useFilters from '../../hooks/use-filters'
 import { useEffect } from 'react'
 import useFavorites from '../../hooks/use-favorites'
 import useDeviceLocation from '../../hooks/use-device-location'
-import { NEAR_ME_KM_DISTANCE_AWAY } from '../../App.constants'
 import Legend from './components/Legend'
 
 interface Props {
@@ -21,13 +20,6 @@ export default function Content({ results }: Props) {
   const { favorites } = useFavorites()
 
   useEffect(() => {
-    if (deviceLocation || !filters.NEAR_ME) return
-    getDeviceLocation().then(() => {
-      toggleFilter(FilterType.NEAR_ME)()
-    })
-  }, [filters.NEAR_ME])
-
-  useEffect(() => {
     resetFilters()
   }, [])
 
@@ -39,10 +31,9 @@ export default function Content({ results }: Props) {
         <p className="text-sm md:text-base">
           {shownResults.length} {shownResults.length === 1 ? 'result' : 'results'} found
         </p>
-        {filters.NEAR_ME && deviceLocation && <p>{` within ${NEAR_ME_KM_DISTANCE_AWAY}km`}</p>}
       </div>
       <div className="space-y-4">
-        <Filters filters={filters} toggleFilter={toggleFilter} isLoadingLocation={isLoadingLocation} />
+        <Filters filters={filters} toggleFilter={toggleFilter} />
         <Legend />
       </div>
       <Map

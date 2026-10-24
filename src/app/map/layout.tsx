@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <LayoutWrapper className="min-h-[calc(100vh-132px)]">
+    <LayoutWrapper>
       <HeaderText text={HEADER_TEXT} />
       {children}
     </LayoutWrapper>

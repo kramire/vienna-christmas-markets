@@ -1,8 +1,8 @@
-import { cn } from '../utils/cn'
-
-function LayoutWrapper({ children, className }: { children: React.ReactNode; className?: string }) {
+function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div className={cn('m-auto flex h-full w-full flex-col gap-2 p-3 lg:gap-4 lg:py-5', className)}>{children}</div>
+    <div className="m-auto flex h-full min-h-[calc(100vh-132px)] w-full flex-col gap-2 p-3 lg:gap-4 lg:py-5">
+      {children}
+    </div>
   )
 }
 

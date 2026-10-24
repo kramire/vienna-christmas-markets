@@ -70,16 +70,25 @@ const Map = ({ results, className, center = WIEN_CENTER, zoom = 13, markerVarian
     }).addTo(map)
 
     setMap(map)
+
+    return () => {
+      map.remove()
+    }
   }, [isScriptLoaded])
 
-  // Once we have a map, initiate the layer for the markers
+  // Once we have a map, initiate the marker layer
   useEffect(() => {
-    if (map) {
-      //@ts-ignore
-      setMapMarkerLayer(window.L.layerGroup([]))
+    if (!map) return
+
+    //@ts-ignore
+    const markerLayer = window.L.layerGroup().addTo(map)
+
+    setMapMarkerLayer(markerLayer)
+
+    return () => {
+      markerLayer.remove()
     }
   }, [map])
-
   // Clear any previous markers, and add the results as markers.
   useEffect(() => {
     if (!mapMarkerLayer) return

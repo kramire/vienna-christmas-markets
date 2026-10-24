@@ -1,4 +1,3 @@
-import React from 'react'
 import ResultCard from './ResultCard'
 import { Event, Market } from '../../../App.types'
 import ResultsListWrapper from '../../../components/ResultsWrapper'
