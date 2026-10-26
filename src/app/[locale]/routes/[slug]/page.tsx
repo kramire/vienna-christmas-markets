@@ -8,10 +8,18 @@ import Link from 'next/link'
 import React from 'react'
 import { HeaderText } from '../../../components/HeaderText'
 import { getTranslations } from 'next-intl/server'
+import { routing } from '@/i18n/routing'
 
 // Generate static params for the [slug] dynamic route
 export async function generateStaticParams() {
-  return routeData.map(({ slug }) => ({ slug }))
+  return routeData
+    .map(({ slug }) => ({ slug }))
+    .flatMap(({ slug }) =>
+      routing.locales.map((locale) => ({
+        locale,
+        slug,
+      })),
+    )
 }
 
 type Params = Promise<{ slug: string }>

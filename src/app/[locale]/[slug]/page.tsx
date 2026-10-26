@@ -3,10 +3,19 @@ import { Market, Event, ResultType } from '../../App.types'
 import data from '../../data.json'
 
 import Content from './content'
+import { routing } from '../../../i18n/routing'
 
 // Generate static params for the [slug] dynamic route based on active markets and events
 export async function generateStaticParams() {
-  return data.filter(({ type }) => [ResultType.MARKET, ResultType.EVENT].includes(type as ResultType)).map(({ slug }) => ({ slug }))
+  return data
+    .filter(({ type }) => [ResultType.MARKET, ResultType.EVENT].includes(type as ResultType))
+    .map(({ slug }) => ({ slug }))
+    .flatMap(({ slug }) =>
+      routing.locales.map((locale) => ({
+        locale,
+        slug,
+      })),
+    )
 }
 
 type Params = Promise<{ slug: string }>
