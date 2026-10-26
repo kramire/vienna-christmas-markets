@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 import { ViewTransition } from 'react'
 
 import { Event, Market } from '../../../App.types'
-import { resultToImgUrlMapping, WEBSITE_URL } from '../../../App.constants'
+import { resultToImgUrlMapping, TIMEZONE, WEBSITE_URL } from '../../../App.constants'
 
 import Hours from '../../Hours'
 import OpenClosedHighlightText from '../../OpenClosedHighlightText'
@@ -40,6 +40,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
       day: 'numeric',
       month: 'short',
       year: 'numeric',
+      timeZone: TIMEZONE
     })
     : 'TBD'
 
@@ -48,6 +49,7 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
       day: 'numeric',
       month: 'short',
       year: 'numeric',
+      timeZone: TIMEZONE
     })
     : 'TBD'
 

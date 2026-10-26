@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MapResultImage from './MapResultImage'
 import { useFormatter, useTranslations } from 'next-intl'
+import { TIMEZONE } from '@/app/App.constants'
 
 const CloseIcon = '/close.svg'
 
@@ -22,6 +23,7 @@ const MapResultPopupContent = ({ result, onClose }: Props) => {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
+      timeZone: TIMEZONE
     })
     : null
 
@@ -30,6 +32,7 @@ const MapResultPopupContent = ({ result, onClose }: Props) => {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
+      timeZone: TIMEZONE
     })
     : null
 

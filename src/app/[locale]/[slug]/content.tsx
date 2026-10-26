@@ -1,7 +1,7 @@
 'use client'
 
 import { Market, Event } from '../../App.types'
-import { resultToImgUrlMapping, WEBSITE_URL } from '../../App.constants'
+import { resultToImgUrlMapping, TIMEZONE, WEBSITE_URL } from '../../App.constants'
 import { Offerings } from './components/Offerings'
 import { Location } from './components/Location'
 import MainImage from './components/MainImage'
@@ -35,6 +35,7 @@ function Content({ result }: Props) {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
+      timeZone: TIMEZONE
     })
     : 'TBD'
 
@@ -43,6 +44,7 @@ function Content({ result }: Props) {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
+      timeZone: TIMEZONE
     })
     : 'TBD'
 

@@ -217,3 +217,5 @@ export const HOME_LINKED_SECTIONS: Array<LinkedSection> = [
     descriptionKey: 'favoritesDescription',
   },
 ]
+
+export const TIMEZONE = 'Europe/Vienna'
