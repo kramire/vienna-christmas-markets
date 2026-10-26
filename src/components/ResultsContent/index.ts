@@ -1,1 +1,0 @@
-export { ResultsContent } from './ResultsContent'
