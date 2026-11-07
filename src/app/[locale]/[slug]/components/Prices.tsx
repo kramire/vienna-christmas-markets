@@ -13,10 +13,7 @@ export const Prices = ({ prices, isThisYearsPricing }: Props) => {
   return (
     <>
       <h2 className="text-xl font-semibold text-green-950">{t('whatYoullPay')}</h2>
-      <span className="text-xs">{t('pricesNote')}</span>
-      {isThisYearsPricing === false && (
-        <span className="text-xs text-red-600">{t('notThisYearsPricing')}</span>
-      )}
+      {isThisYearsPricing === false && <span className="text-xs">{t('pricesNote')}</span>}
       {prices.map(({ type, value, currency, hasRange = false }) => (
         <div key={type} className="flex items-center justify-between">
           <span>{t(priceTypeMapping[type])}</span>

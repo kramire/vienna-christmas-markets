@@ -27,7 +27,7 @@ function Content({ result }: Props) {
 
   const { getIsFavorite, toggleFavorite } = useFavorites()
 
-  const { id, name, start, end, slug, offerings, description, prices } = result
+  const { id, name, start, end, slug, offerings, description, prices, isThisYearsPricing, website } = result
   const imgSrc = resultToImgUrlMapping[id]
 
   const startDate = start
@@ -62,7 +62,10 @@ function Content({ result }: Props) {
       </div>
       <div className="flex w-full flex-1 flex-col justify-between gap-5 p-6 md:p-12 md:pt-8">
         <h1 className="text-4xl font-semibold">{name}</h1>
-        {description && <p className="pb-2 text-sm sm:text-base">{description}</p>}
+        <div className="space-y-1">
+          {description && <p className="text-sm sm:text-base">{description}</p>}
+          {website && <a href={website} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm underline">Website</a>}
+        </div>
         <hr className="text-green-950/40" />
         <h2 className="text-xl font-semibold">{t('whenItIs')}</h2>
         <dl className="space-y-4 [&>div]:grid [&>div]:grid-cols-[16px_1fr] [&>div]:gap-x-4 [&_dd]:font-semibold [&_img]:row-span-2 [&_img]:mt-1">
@@ -78,7 +81,7 @@ function Content({ result }: Props) {
         <hr className="text-green-950/40" />
         <Location result={result} />
         <hr className="text-green-950/40" />
-        {prices && prices.length > 0 && <Prices prices={prices} />}
+        {prices && prices.length > 0 && <Prices prices={prices} isThisYearsPricing={isThisYearsPricing} />}
       </div>
     </div>
   )

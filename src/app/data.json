@@ -173,23 +173,29 @@
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
     "description": "Enjoy the backdrop of the famous St. Stephen's Cathedral at this centrally-located market. Either go early to avoid the crowds, or sneak away to the nearby Haas & Haas.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
-        "value": 5.8,
+        "value": 6.2,
         "currency": "EUR",
         "hasRange": true
       },
       {
         "type": "PUNCH",
-        "value": 5.8,
+        "value": 6.2,
         "currency": "EUR",
         "hasRange": true
       },
       {
         "type": "NON_ALCOHOLIC",
-        "value": 4.9,
+        "value": 5,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
         "currency": "EUR"
       }
     ]
@@ -731,7 +737,7 @@
       "OFFERING_KIDS_RIDES"
     ],
     "description": "This famous Christmas market is one of the largest. From ice skating to kids rides, to shopping and curling, there's plenty to do. Plus it's set in front of the beautiful Schönbrunn Palace.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
@@ -747,7 +753,7 @@
       },
       {
         "type": "NON_ALCOHOLIC",
-        "value": 3,
+        "value": 4.5,
         "currency": "EUR",
         "hasRange": true
       },
@@ -923,21 +929,21 @@
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
     "description": "A hidden gem right next to the cathedral! This small cozy courtyard has decorations, fireplaces, and a freshly grilled würstel!",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
-        "value": 5.8,
+        "value": 6.1,
         "currency": "EUR"
       },
       {
         "type": "PUNCH",
-        "value": 6.9,
+        "value": 7.2,
         "currency": "EUR"
       },
       {
         "type": "NON_ALCOHOLIC",
-        "value": 4.9,
+        "value": 5.2,
         "currency": "EUR"
       }
     ]
@@ -966,13 +972,23 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "CURLING_PER_HALF_HOUR",
         "value": 50,
         "currency": "EUR",
         "hasRange": true
+      },
+      {
+        "type": "MULLED_WINE",
+        "value": 5.7,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.7,
+        "currency": "EUR"
       }
     ]
   },
@@ -1562,7 +1578,7 @@
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING", "OFFERING_KIDS_RIDES"],
     "description": "The smallest market on this list, with just one drink stand. Not a must, unless you happen to be there.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
@@ -1577,6 +1593,11 @@
       {
         "type": "NON_ALCOHOLIC",
         "value": 4.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 4,
         "currency": "EUR"
       }
     ]
