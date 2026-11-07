@@ -49,7 +49,7 @@ function Content({ result }: Props) {
     : 'TBD'
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row text-green-950">
       <div className="relative -mx-1 flex h-72 w-full px-1 md:sticky md:top-8 md:mt-8 md:h-96 md:flex-1">
         <div className="absolute right-3 top-3 z-10 flex gap-3">
           <ShareButton shareUrl={`${WEBSITE_URL}/${slug}`} />
@@ -61,10 +61,10 @@ function Content({ result }: Props) {
         </ViewTransition>
       </div>
       <div className="flex w-full flex-1 flex-col justify-between gap-5 p-6 md:p-12 md:pt-8">
-        <h1 className="text-4xl font-semibold text-green-950">{name}</h1>
+        <h1 className="text-4xl font-semibold">{name}</h1>
         {description && <p className="pb-2 text-sm sm:text-base">{description}</p>}
-        <hr />
-        <h2 className="text-xl font-semibold text-green-950">{t('whenItIs')}</h2>
+        <hr className="text-green-950/40" />
+        <h2 className="text-xl font-semibold">{t('whenItIs')}</h2>
         <dl className="space-y-4 [&>div]:grid [&>div]:grid-cols-[16px_1fr] [&>div]:gap-x-4 [&_dd]:font-semibold [&_img]:row-span-2 [&_img]:mt-1">
           <div>
             <Image src={CalendarIcon} width={16} height={16} alt="" className="h-4 w-4" unoptimized />
@@ -73,11 +73,11 @@ function Content({ result }: Props) {
           </div>
           <Hours result={result} />
         </dl>
-        <hr />
+        <hr className="text-green-950/40" />
         <Offerings offerings={offerings} />
-        <hr />
+        <hr className="text-green-950/40" />
         <Location result={result} />
-        <hr />
+        <hr className="text-green-950/40" />
         {prices && prices.length > 0 && <Prices prices={prices} />}
       </div>
     </div>

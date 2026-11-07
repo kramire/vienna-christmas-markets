@@ -1,5 +1,6 @@
 import './globals.css'
 import Header from '../components/Header'
+import { routing } from '../../i18n/routing'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { CURRENT_YEAR, WEBSITE_URL } from '../App.constants'
@@ -11,6 +12,10 @@ const poppins = Poppins({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
 })
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('homePage')

@@ -14,6 +14,7 @@ export interface Result {
   offerings: Array<Offering>
   alternateTimes?: Array<{ date: string; time: Array<Array<string> | null> }>
   description?: string
+  isThisYearsPricing?: boolean
   prices?: Array<Price>
   hasCreditCardPayment?: boolean
 }
