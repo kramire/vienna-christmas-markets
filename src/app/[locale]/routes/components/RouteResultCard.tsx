@@ -26,7 +26,7 @@ async function RouteResultCard({ result, resultIdx }: Props) {
     <li key={id} className="flex overflow-hidden rounded-lg shadow-md">
       <Link href={`/routes/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
-          <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
+          <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} hasHoverEffect />
         </div>
         <div className="flex w-full flex-1 flex-col space-y-4 p-4">
           <div className="space-y-1">

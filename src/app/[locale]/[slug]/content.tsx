@@ -52,9 +52,9 @@ function Content({ result }: Props) {
     <div className="flex flex-col md:flex-row text-green-950">
       <div className="relative -mx-1 flex h-72 w-full px-1 md:sticky md:top-8 md:mt-8 md:h-96 md:flex-1">
         <div className="absolute right-3 top-3 z-10 flex gap-3">
+          <AddToCalendarButton result={result} />
           <ShareButton shareUrl={`${WEBSITE_URL}/${slug}`} />
           <FavoriteButton isFavorite={getIsFavorite(id)} onClick={toggleFavorite(id)} />
-          <AddToCalendarButton result={result} />
         </div>
         <ViewTransition name={`view-transition-image-${id}`}>
           <MainImage imgSrc={imgSrc} altText={name} />

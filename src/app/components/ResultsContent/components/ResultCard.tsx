@@ -58,12 +58,12 @@ const ResultCard = ({ result, isFavorite, toggleFavorite, resultIdx }: Props) =>
       <Link href={`/${result.slug}`} className="flex w-full flex-col">
         <div className="relative h-64 w-full">
           <div className="absolute top-3 right-3 z-10 flex gap-2">
+            <AddToCalendarButton result={result} />
             <ShareButton shareUrl={`${WEBSITE_URL}/${result.slug}`} />
             <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite(id)} />
-            <AddToCalendarButton result={result} />
           </div>
           <ViewTransition name={`view-transition-image-${id}`}>
-            <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} />
+            <CardImage imgSrc={imgSrc} altText={name} imageLoading={resultIdx <= 2 ? 'eager' : 'lazy'} hasHoverEffect />
           </ViewTransition>
         </div>
         <div className="flex w-full flex-1 flex-col space-y-2 p-4">

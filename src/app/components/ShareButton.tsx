@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
+import { ActionButton } from './ActionButton'
 
 const ShareIcon = '/arrow-up-from-bracket.svg'
 
@@ -18,17 +18,13 @@ const ShareButton = ({ shareUrl }: Props) => {
       console.log(`Error: ${err}`)
     }
   }
+
   return (
-    <button onClick={handleClick} className="flex rounded-full bg-white p-2 duration-300 ease-in-out active:scale-90">
-      <Image
-        src={ShareIcon}
-        alt={t('shareThisPage')}
-        className="h-5 w-5 shrink-0 sm:duration-300 sm:ease-in-out sm:hover:scale-110"
-        width={20}
-        height={20}
-        unoptimized
-      />
-    </button>
+    <ActionButton
+      onClick={handleClick}
+      ariaLabel={t('shareThisPage')}
+      icon={ShareIcon}
+    />
   )
 }
 

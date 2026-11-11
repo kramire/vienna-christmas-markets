@@ -5,9 +5,10 @@ interface Props {
   imgSrc: StaticImageData
   altText: string
   imageLoading?: 'eager' | 'lazy'
+  hasHoverEffect?: boolean
 }
 
-const CardImage = ({ imgSrc, altText, imageLoading = 'lazy' }: Props) => {
+const CardImage = ({ imgSrc, altText, imageLoading = 'lazy', hasHoverEffect = false }: Props) => {
   if (imgSrc) {
     return (
       <Image
@@ -16,7 +17,7 @@ const CardImage = ({ imgSrc, altText, imageLoading = 'lazy' }: Props) => {
         loading={imageLoading}
         fill
         sizes="(max-width: 699px) 100vw, (max-width: 1047px) 50vw, 33vw"
-        className="border-b border-gray-300 object-cover"
+        className={`border-b border-gray-300 object-cover ${hasHoverEffect ? 'hover:scale-105 transition-transform duration-300' : ''}`}
       />
     )
   }
