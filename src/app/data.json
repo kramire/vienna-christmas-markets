@@ -2409,11 +2409,12 @@
     "isActive": true,
     "district": "1060",
     "address": "Esterházygasse 9, 1060 Wien",
-    "coordinates": { "lat": 48.1938649, "lng": 16.3476768 },
+    "coordinates": { "lat": 48.194652, "lng": 16.352305 },
     "transportation": ["U4", "13A", "57A"],
     "start": "11/05/2026",
     "end": null,
     "website": "https://www.instagram.com/monamiwiengarten/p/DfAKwccgR9u/",
+    "description": "New for 2026! Stay warm with a seasonal drink in a cozy garden. Plus, every Wednesday the mulled wine is free!",
     "times": [
       null,
       null,

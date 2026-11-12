@@ -22,7 +22,7 @@
     "popUpsDescription": "Entdecke festliche Veranstaltungen, Punschstände, und Eisstockschießen.",
     "lightsTitle": "Weihnachtsbeleuchtung",
     "lightsDescription": "Bestaune Wiens wunderschöne Weihnachtsbeleuchtung.",
-    "toursTitle": "Weihnachtliche Rundgänge",
+    "toursTitle": "Weihnachtliche Spaziergänge",
     "toursDescription": "Entdecke die festliche Stadt auf ausgewählten Routen zu Fuß.",
     "mapTitle": "Alle Highlights auf einen Blick",
     "mapDescription": "Entdecke Weihnachtsmärkte und festliche Erlebnisse in deiner Nähe.",
@@ -63,7 +63,7 @@
     "street": "Straße"
   },
   "toursPage": {
-    "title": "Weihnachtliche Rundgänge durch Wien",
+    "title": "Weihnachtliche Spaziergänge durch Wien",
     "metaTitle":"Weihnachtliche Routen durch Wien – {currentYear}",
     "metaDescription":"Entdecke Routen für selbst geführte Spaziergänge durch Wien. Die Routen führen dich zu Christkindlmärkten, weihnachtlichen Pop-ups und festlicher Beleuchtung.",
     "route": "Route {number}: {name}",
