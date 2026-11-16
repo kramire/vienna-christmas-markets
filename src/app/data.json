@@ -2357,8 +2357,6 @@
     "imgUrl": "",
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
-    "isThisYearsPricing": false,
-    "prices": [],
     "description": "New for 2026! What makes this market so special is it's fantastic light display. The twinkling glow of lights hangs in the trees, across the landscape, and covers the fountain.",
     "isThisYearsPricing": true,
     "prices": [

@@ -5,7 +5,6 @@ import IMG_SRC_1 from '../../public/Musuem-Quartier-Christmas-market.webp'
 import IMG_SRC_2 from '../../public/Spittelberg-Market.webp'
 import IMG_SRC_3 from '../../public/Tuerkenschanzpark-Christmas-market.webp'
 import IMG_SRC_4 from '../../public/Saint-Stephens-Cathedral-at-Christmas.webp'
-import IMG_SRC_5 from '../../public/Genuss-Christmas-market.webp'
 import IMG_SRC_6 from '../../public/Altes-AKH-Christmas-market.webp'
 import IMG_SRC_7 from '../../public/am-hof.webp'
 import IMG_SRC_8 from '../../public/Maria-Theresien-Platz-Christmas-market.webp'
@@ -23,7 +22,6 @@ import IMG_SRC_23 from '../../public/atmosphere-rooftop.webp'
 import IMG_SRC_27 from '../../public/klyo.webp'
 import IMG_SRC_31 from '../../public/feuerdorf.webp'
 import IMG_SRC_32 from '../../public/franz-jonas-platz.webp'
-import IMG_SRC_33 from '../../public/wienter-zauber.webp'
 import IMG_SRC_35 from '../../public/hauptbahnhof.webp'
 import IMG_SRC_37 from '../../public/verkehrsmuseum.webp'
 import IMG_SRC_38 from '../../public/simmering.webp'
@@ -54,10 +52,11 @@ import IMG_SRC_74 from '../../public/jasonmirgottstrasse.webp'
 import IMG_SRC_75 from '../../public/trattnerhof.webp'
 import IMG_SRC_76 from '../../public/Skybar.webp'
 import IMG_SRC_77 from '../../public/eisstock-bahn-alte-donau.webp'
-import IMG_SRC_78 from '../../public/schwarzenbergplatz.webp'
+// import IMG_SRC_78 from '../../public/schwarzenbergplatz.webp'
 import IMG_SRC_79 from '../../public/punsch-karitativ.webp'
 import IMG_SRC_80 from '../../public/bauernmarkt.webp'
 import IMG_SRC_81 from '../../public/obkirchergasse.webp'
+import IMG_SRC_83 from '../../public/schwarzengbergplatz_2026.webp'
 
 import EISSTOCK from '../../public/eisstock.png'
 import ICE_SKATE from '../../public/ice-skate.png'
@@ -80,7 +79,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   2: IMG_SRC_2,
   3: IMG_SRC_3,
   4: IMG_SRC_4,
-  5: IMG_SRC_5,
+  // 5: IMG_SRC_5,
   6: IMG_SRC_6,
   7: IMG_SRC_7,
   8: IMG_SRC_8,
@@ -98,7 +97,7 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   27: IMG_SRC_27,
   31: IMG_SRC_31,
   32: IMG_SRC_32,
-  33: IMG_SRC_33,
+  // 33: IMG_SRC_33,
   35: IMG_SRC_35,
   37: IMG_SRC_37,
   38: IMG_SRC_38,
@@ -129,10 +128,11 @@ export const resultToImgUrlMapping: { [key in number]: StaticImageData } = {
   75: IMG_SRC_75,
   76: IMG_SRC_76,
   77: IMG_SRC_77,
-  78: IMG_SRC_78,
+  // 78: IMG_SRC_78,
   79: IMG_SRC_79,
   80: IMG_SRC_80,
   81: IMG_SRC_81,
+  83: IMG_SRC_83,
 }
 
 export const sortSelectOptions = {
