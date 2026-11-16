@@ -24,23 +24,23 @@
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_CURLING"],
     "description": "Enjoy curling, live DJ sets, concerts, and stands serving drinks. Check the website for the full program schedule.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
-        "value": 4.6,
-        "currency": "EUR",
-        "hasRange": true
-      },
-      {
-        "type": "PUNCH",
         "value": 4.8,
         "currency": "EUR",
         "hasRange": true
       },
       {
+        "type": "PUNCH",
+        "value": 4.9,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
         "type": "NON_ALCOHOLIC",
-        "value": 3.5,
+        "value": 4,
         "currency": "EUR",
         "hasRange": true
       },
@@ -81,23 +81,23 @@
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
     "description": "A local favorite! This cozy market winds through narrow cobblestone streets, offering shopping at artisan stalls, plus plenty of food and drink. Go early before it gets crowded.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
-        "value": 4.8,
+        "value": 5,
         "currency": "EUR",
         "hasRange": true
       },
       {
         "type": "PUNCH",
-        "value": 4.8,
+        "value": 5,
         "currency": "EUR",
         "hasRange": true
       },
       {
         "type": "NON_ALCOHOLIC",
-        "value": 3.5,
+        "value": 3.2,
         "currency": "EUR",
         "hasRange": true
       },
@@ -2359,7 +2359,26 @@
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
     "isThisYearsPricing": false,
     "prices": [],
-    "description": "New for 2026! More information to come."
+    "description": "New for 2026! What makes this market so special is it's fantastic light display. The twinkling glow of lights hangs in the trees, across the landscape, and covers the fountain.",
+    "isThisYearsPricing": true,
+    "prices": [
+      {
+        "type": "MULLED_WINE",
+        "value": 6.2,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 7.6,
+        "currency": "EUR",
+        "hasRange": true
+      },
+      {
+        "type": "MUG_DEPOSIT",
+        "value": 5,
+        "currency": "EUR"
+      }
+    ]
   },
   {
     "id": 84,
