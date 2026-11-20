@@ -1139,11 +1139,21 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
         "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "PUNCH",
+        "value": 5.5,
+        "currency": "EUR"
+      },
+      {
+        "type": "NON_ALCOHOLIC",
+        "value": 5,
         "currency": "EUR"
       },
       {
@@ -1681,7 +1691,7 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
