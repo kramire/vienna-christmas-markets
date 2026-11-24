@@ -308,7 +308,7 @@
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
     "description": "This central market has some unique traits, including medieval-style mugs, a champagne bar, and a tree of dangling lights.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
@@ -548,7 +548,7 @@
     "type": "MARKET",
     "offerings": ["OFFERING_GASTRONOMY", "OFFERING_SHOPPING"],
     "description": "Insider tip: grab a drink, and enjoy it by the adjacent fountain. You'll have more space while enjoying the festive atmosphere.",
-    "isThisYearsPricing": false,
+    "isThisYearsPricing": true,
     "prices": [
       {
         "type": "MULLED_WINE",
@@ -562,7 +562,7 @@
       },
       {
         "type": "NON_ALCOHOLIC",
-        "value": 4,
+        "value": 4.5,
         "currency": "EUR"
       },
       {
@@ -928,7 +928,7 @@
     "imgUrl": "",
     "type": "EVENT",
     "offerings": ["OFFERING_GASTRONOMY"],
-    "description": "A hidden gem right next to the cathedral! This small cozy courtyard has decorations, fireplaces, and a freshly grilled würstel!",
+    "description": "A hidden gem right next to the cathedral! This small cozy courtyard has decorations, fireplaces, and a few warm snacks.",
     "isThisYearsPricing": true,
     "prices": [
       {
